@@ -29,12 +29,15 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, MenuLogin::class.java)
             startActivity(intent)
             finish() // Optional: Menutup MainActivity agar tidak kembali ke sini saat tombol kembali ditekan di MainActivity2
-        }, 2800)
+        }, 1800)
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.soundopening)
-        val volume = 0.3f
-        mediaPlayer.setVolume(volume, volume)
+        mediaPlayer = MediaPlayer.create(this, R.raw.marimba)
         mediaPlayer.start()
+
+        /*mediaPlayer = MediaPlayer.create(this, R.raw.soundopening)*/
+        val volume = 0.6f
+        mediaPlayer.setVolume(volume, volume)
+       /* mediaPlayer.start()*/
     }
     override fun onDestroy() {
         super.onDestroy()

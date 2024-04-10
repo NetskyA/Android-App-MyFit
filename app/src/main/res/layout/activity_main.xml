@@ -7,7 +7,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Login.MainActivity">
+        tools:context=".MainActivity"
+        android:background="@color/black">
 
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="match_parent"
