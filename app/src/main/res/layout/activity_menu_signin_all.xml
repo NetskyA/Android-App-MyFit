@@ -7,8 +7,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MenuLogin"
-        android:background="@color/black">
+        tools:context=".SignAll.MenuSigninAll">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -41,7 +40,7 @@
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="140dp"
             android:layout_height="70dp"
-            android:src="@drawable/logogf"
+            android:src="@drawable/logo"
             android:layout_marginTop="50dp"
             app:layout_constraintBottom_toTopOf="@+id/Upper"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -54,8 +53,7 @@
             android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sign_up_to_start_fit_lifestyle"
-            android:textColor="@color/white"
+            android:text="Sign up to start fit lifestyle"
             android:textSize="30sp"
             android:textStyle="bold"
             android:layout_marginTop="25dp"
@@ -69,8 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:text="@string/email_address"
-            android:textColor="@color/white"
+            android:text="Email address"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -85,9 +82,9 @@
             android:layout_marginTop="25dp"
             android:autofillHints="emailAddress"
             android:background="@drawable/borderbackground"
-            android:hint="@string/name_domain_com"
+            android:hint="Name@domain.com"
             android:paddingStart="14dp"
-            android:textColor="@color/white"
+            android:textColor="@color/dark_grey"
             android:textColorHint="@color/grey"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -97,11 +94,10 @@
             tools:ignore="RtlSymmetry" />
 
         <TextView
-            android:id="@+id/text3"
-            android:layout_width="wrap_content"
+            android:id="@+id/signinwithphone"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="@string/use_phone_number_instead"
             android:textColor="@color/blue_main"
             android:textSize="12sp"
             android:textStyle="bold"
@@ -113,7 +109,7 @@
         <Button
             android:id="@+id/nextSignIn"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_marginTop="35dp"
             android:text="Next"
             android:textSize="22sp"
@@ -122,7 +118,7 @@
             android:background="@drawable/borderblue"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/text3"
+            app:layout_constraintTop_toTopOf="@+id/signinwithphone"
             tools:ignore="HardcodedText" />
 
         <LinearLayout
@@ -149,7 +145,6 @@
                 android:layout_height="wrap_content"
                 android:padding="25dp"
                 android:text="or"
-                android:textColor="@color/grey"
                 android:textSize="16sp"
                 tools:ignore="HardcodedText" />
 
@@ -171,13 +166,15 @@
         <Button
             android:id="@+id/signwithgoogle"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="24dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/border"
             android:text="Sign up with Google"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="22sp"
+            android:drawableStart="@drawable/google"
+            android:paddingLeft="20dp"
+            android:paddingRight="40dp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
@@ -187,11 +184,13 @@
         <Button
             android:id="@+id/signwithfacebook"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="50dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="55dp"
             android:text="Sign up with Facebook"
-            android:textSize="20sp"
-            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:drawableStart="@drawable/facebook"
+            android:paddingLeft="20dp"
+            android:paddingRight="40dp"
             android:textAllCaps="false"
             android:background="@drawable/border"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -202,11 +201,13 @@
         <Button
             android:id="@+id/signwithapple"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="50dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="55dp"
             android:text="Sign up with Apple"
-            android:textSize="20sp"
-            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:drawableStart="@drawable/apple"
+            android:paddingLeft="20dp"
+            android:paddingRight="40dp"
             android:textAllCaps="false"
             android:background="@drawable/border"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -238,7 +239,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Already have an account? "
-                android:textColor="@color/grey"
                 tools:ignore="HardcodedText" />
 
             <TextView

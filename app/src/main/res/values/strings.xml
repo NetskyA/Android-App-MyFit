@@ -1,8 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MyFit</string>
-    <string name="sign_up_to_start_a_fit_lifestyle">Sign up to start a fit lifestyle</string>
-    <string name="sign_up_to_start_fit_lifestyle">Sign up to start fit lifestyle</string>
-    <string name="email_address">Email address</string>
-    <string name="name_domain_com">name@domain.com</string>
-    <string name="use_phone_number_instead">Use phone number instead.</string>
+    <!-- Other strings and resources -->
+    <string name="MyFit">MyFit</string>
+    <string-array name="region_names">
+        <item>Indonesia</item>
+        <item>US</item>
+        <item>UK</item>
+        <item>Canada</item>
+        <item>Australia</item>
+        <item>Brunei</item>
+        <item>Burma (Myanmar)</item>
+        <item>Cambodia</item>
+        <item>Timor-Leste</item>
+        <item>Laos</item>
+        <item>Malaysia</item>
+        <item>Philippines</item>
+        <item>Singapore</item>
+        <item>Thailand</item>
+        <item>Vietnam</item>
+        <!--Tambahkan wilayah Asia Selatan lainnya sesuai kebutuhan -->
+    </string-array>
+
+    <string-array name="region_ids">
+        <item>+62</item>
+        <item>+1</item>
+        <item>+44</item>
+        <item>+1</item>
+        <item>+61</item>
+        <item>+673</item> <!-- Kode Brunei -->
+        <item>+95</item> <!-- Kode Burma (Myanmar) -->
+        <item>+855</item> <!-- Kode Cambodia -->
+        <item>+670</item> <!-- Kode Timor-Leste -->
+        <item>+856</item> <!-- Kode Laos -->
+        <item>+60</item> <!-- Kode Malaysia -->
+        <item>+63</item> <!-- Kode Philippines -->
+        <item>+65</item> <!-- Kode Singapore -->
+        <item>+66</item> <!-- Kode Thailand -->
+        <item>+84</item> <!-- Kode Vietnam -->
+        <!--Tambahkan kode wilayah Asia Selatan lainnya sesuai kebutuhan -->
+    </string-array>
+
+
+    <!-- Other strings and resources -->
 </resources>
+
