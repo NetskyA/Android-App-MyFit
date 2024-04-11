@@ -53,7 +53,7 @@
             android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign up to start fit lifestyle"
+            android:text="Log in to MyFit"
             android:textSize="30sp"
             android:textStyle="bold"
             android:layout_marginTop="25dp"
@@ -62,82 +62,77 @@
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="@+id/Upper" />
 
-        <TextView
-            android:id="@+id/text2"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Tengah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="Email address"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/text1" />
-
-        <EditText
-            android:id="@+id/usernameSignIn"
-            android:layout_width="340dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="25dp"
-            android:autofillHints="emailAddress"
-            android:background="@drawable/borderbackground"
-            android:hint="Name@domain.com"
-            android:paddingStart="14dp"
-            android:textColor="@color/dark_grey"
-            android:textColorHint="@color/grey"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/text2"
-            tools:ignore="RtlSymmetry" />
-
-        <TextView
-            android:id="@+id/signinwithphone"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:textColor="@color/blue_main"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/usernameSignIn" />
-
-
-        <TextView
-            android:id="@+id/messageSignIn"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:background="@drawable/borderyellow"
-            android:textAlignment="textStart"
-            android:padding="3dp"
-            android:visibility="gone"
-            android:text="This address is already linked to an existing account. To continue, log in."
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/signinwithphone" />
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="150dp" />
 
         <Button
-            android:id="@+id/nextSignIn"
+            android:id="@+id/loginwithgoogle"
             android:layout_width="0dp"
             android:layout_height="45dp"
-            android:layout_marginTop="50dp"
-            android:text="Next"
-            android:textSize="22sp"
-            android:textColor="@color/white"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/border"
+            android:text="Continue with Google"
             android:textAllCaps="false"
-            android:background="@drawable/borderblue"
+            android:textSize="22sp"
+            android:drawableStart="@drawable/google"
+            android:paddingLeft="20dp"
+            android:paddingRight="40dp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengah"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/loginwithfacebook"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="55dp"
+            android:text="Continue with Facebook"
+            android:textSize="22sp"
+            android:drawableStart="@drawable/facebook"
+            android:paddingLeft="20dp"
+            android:paddingRight="40dp"
+            android:textAllCaps="false"
+            android:background="@drawable/border"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/messageSignIn"
+            app:layout_constraintTop_toTopOf="@+id/loginwithgoogle"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/loginwithapple"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="55dp"
+            android:text="Continue with Apple"
+            android:textSize="22sp"
+            android:drawableStart="@drawable/apple"
+            android:paddingLeft="20dp"
+            android:paddingRight="40dp"
+            android:textAllCaps="false"
+            android:background="@drawable/border"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/loginwithfacebook"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/loginwithphonenumber"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="55dp"
+            android:text="Continue with phone number"
+            android:textSize="22sp"
+            android:textAllCaps="false"
+            android:background="@drawable/border"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/loginwithapple"
             tools:ignore="HardcodedText" />
 
         <LinearLayout
@@ -145,12 +140,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="45dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/nextSignIn">
+            app:layout_constraintTop_toTopOf="@+id/loginwithphonenumber">
 
             <View
                 android:layout_width="0dp"
@@ -175,63 +170,127 @@
                 android:background="@color/grey" />
         </LinearLayout>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Tengah"
+        <TextView
+            android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="430dp" />
-
-        <Button
-            android:id="@+id/signwithgoogle"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="55dp"
-            android:background="@drawable/border"
-            android:text="Sign up with Google"
-            android:textAllCaps="false"
-            android:textSize="22sp"
-            android:drawableStart="@drawable/google"
-            android:paddingLeft="20dp"
-            android:paddingRight="40dp"
+            android:layout_marginTop="65dp"
+            android:text="Email or username"
+            android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/Tengah"
-            tools:ignore="HardcodedText" />
+            app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+        <EditText
+            android:id="@+id/etusernameLogIn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="emailAddress"
+            android:background="@drawable/borderbackground"
+            android:hint="Email or username"
+            android:paddingStart="14dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/text2"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Password"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/etusernameLogIn" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/coveretpassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/text3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPasswordLogin"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:background="@drawable/borderbackground"
+                android:inputType="textPassword"
+                android:paddingStart="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey"
+                tools:ignore="RtlSymmetry" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/coveretpassword">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/material_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Remember me"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/forgotpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/blue_main"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
 
         <Button
-            android:id="@+id/signwithfacebook"
+            android:id="@+id/nextMenuLogIn"
             android:layout_width="0dp"
             android:layout_height="45dp"
-            android:layout_marginTop="55dp"
-            android:text="Sign up with Facebook"
+            android:layout_marginTop="80dp"
+            android:text="Log In"
             android:textSize="22sp"
-            android:drawableStart="@drawable/facebook"
-            android:paddingLeft="20dp"
-            android:paddingRight="40dp"
+            android:textColor="@color/white"
             android:textAllCaps="false"
-            android:background="@drawable/border"
+            android:background="@drawable/borderblue"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/signwithgoogle"
-            tools:ignore="HardcodedText" />
-
-        <Button
-            android:id="@+id/signwithapple"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="55dp"
-            android:text="Sign up with Apple"
-            android:textSize="22sp"
-            android:drawableStart="@drawable/apple"
-            android:paddingLeft="20dp"
-            android:paddingRight="40dp"
-            android:textAllCaps="false"
-            android:background="@drawable/border"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/signwithfacebook"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout2"
             tools:ignore="HardcodedText" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -257,15 +316,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Already have an account? "
+                android:text="Don't have an account? "
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/cheattoLogin"
+                android:id="@+id/signuphere"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Login in here."
+                android:text="Sign up here."
                 android:textColor="@color/blue_main"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />

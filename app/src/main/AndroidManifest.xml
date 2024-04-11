@@ -15,6 +15,18 @@
         android:theme="@style/Theme.MyFit"
         tools:targetApi="31">
         <activity
+            android:name=".LoginAll.MenuLoginAll"
+            android:exported="false" />
+        <activity
+            android:name=".HomeUser.HomeUser"
+            android:exported="false" />
+        <activity
+            android:name=".SignEmail.MenuSigninEmail3"
+            android:exported="false" />
+        <activity
+            android:name=".SignEmail.MenuSigninEmail2"
+            android:exported="false" />
+        <activity
             android:name=".SignEmail.MenuSigninEmail"
             android:exported="false" />
         <activity

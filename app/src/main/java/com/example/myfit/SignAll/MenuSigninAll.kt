@@ -10,6 +10,7 @@ import androidx.core.text.HtmlCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
+import com.example.myfit.LoginAll.MenuLoginAll
 import com.example.myfit.R
 import com.example.myfit.SignEmail.MenuSigninEmail
 import com.example.myfit.SignPhone.MenuSigninPhone
@@ -31,6 +32,9 @@ class MenuSigninAll : AppCompatActivity() {
         }
         binding.nextSignIn.setOnClickListener{
             startActivity(Intent(this, MenuSigninEmail::class.java))
+        }
+        binding.cheattoLogin.setOnClickListener{
+            startActivity(Intent(this, MenuLoginAll::class.java))
         }
     }
 }

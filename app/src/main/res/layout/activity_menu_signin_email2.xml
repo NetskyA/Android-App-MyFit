@@ -7,7 +7,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SignEmail.MenuSigninEmail">
+        tools:context=".SignEmail.MenuSigninEmail2">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -86,7 +86,7 @@
                     android:orientation="horizontal">
 
                     <View
-                        android:layout_width="90dp"
+                        android:layout_width="190dp"
                         android:layout_height="2dp"
                         android:layout_gravity="start"
                         android:layout_weight="0"
@@ -94,7 +94,7 @@
                         tools:ignore="NestedWeights" />
 
                     <View
-                        android:layout_width="190dp"
+                        android:layout_width="90dp"
                         android:layout_height="2dp"
                         android:layout_gravity="start"
                         android:layout_weight="0"
@@ -106,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:text="Step 1 of 3"
+                    android:text="Step 2 of 3"
                     android:textColor="@color/grey"
                     android:textSize="15sp" />
 
@@ -115,7 +115,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:text="Create a password"
+                    android:text="Tell us about yourself"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -135,12 +135,12 @@
             app:layout_constraintTop_toTopOf="@+id/linearLayout2"/>
 
         <TextView
-            android:id="@+id/titlepswd"
+            android:id="@+id/titlename"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Password"
-            android:textColor="@color/white"
+            android:text="Name"
+            android:textColor="@color/blue_main"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -148,201 +148,254 @@
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="@+id/Tengahtengah"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/coveretpassword"
+        <TextView
+            android:id="@+id/titlename1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
+            android:layout_height="20dp"
             android:layout_marginTop="20dp"
+            android:text="This name will appear on your profile"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/titlepswd">
+            app:layout_constraintTop_toTopOf="@+id/titlename"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
-                android:layout_width="335dp"
+            <EditText
+                android:id="@+id/etNameUser"
+                android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/borderbackground"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:paddingStart="15dp"
                 android:textSize="20sp"
+                android:hint="Your name"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey"
-                tools:ignore="RtlSymmetry" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/titlecpswd"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:text="Confirm Password"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/coveretpassword"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/coveretconfirmpassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/titlecpswd">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etConfirmPassword"
-                android:layout_width="335dp"
-                android:layout_height="40dp"
-                android:background="@drawable/borderbackground"
-                android:inputType="textPassword"
-                android:paddingStart="15dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/grey"
-                tools:ignore="RtlSymmetry" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/required"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="Your password must contain at least"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/coveretconfirmpassword"/>
+                tools:ignore="RtlSymmetry"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/titlename1"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Tengahtengahlagi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="415dp"
+            app:layout_constraintGuide_begin="300dp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/required"/>
+            app:layout_constraintTop_toTopOf="@+id/etNameUser"/>
+
+        <TextView
+            android:id="@+id/titledatebirth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Date of birth"
+            android:textColor="@color/blue_main"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagi"/>
+
+        <TextView
+            android:id="@+id/titledatebirth1"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="This name will appear on your profile"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/titledatebirth"/>
 
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagi"
-            tools:ignore="UseCompoundDrawables">
+            app:layout_constraintTop_toTopOf="@+id/titledatebirth1">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/circle"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:text="@string/_1_letter"
+            <EditText
+                android:id="@+id/etdaybirth"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/borderbackground"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:hint="dd"
+                android:layout_gravity="center"
                 android:textColor="@color/white"
-                android:textSize="13sp"
-                tools:ignore="RtlSymmetry" />
+                android:textColorHint="@color/grey"
+                tools:ignore="RtlSymmetry"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
+
+            <Spinner
+                android:id="@+id/monthSpinner"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/borderbackground"
+                android:paddingStart="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/grey"
+                android:textColorHint="@color/grey"
+                tools:ignore="RtlSymmetry"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/etdaybirth"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
+
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/borderbackground"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:hint="yyyy"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey"
+                tools:ignore="RtlSymmetry"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/spinner"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout4"
+        <TextView
+            android:id="@+id/titledatebirtherrormsg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
+            android:layout_marginTop="55dp"
+            android:text="Please enter the year of your birth date using four digits (e.g., 1990)."
+            android:textColor="@color/light_red"
+            android:textSize="15sp"
+            android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout3"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/circle"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:text="@string/_1_number_or_special_character_example_example"
-                android:textColor="@color/white"
-                android:textSize="13sp"
-                tools:ignore="RtlSymmetry" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout4"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/circle"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:text="10 characters"
-                android:textColor="@color/white"
-                android:textSize="13sp"
-                tools:ignore="RtlSymmetry" />
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Tengahtengahlagilagi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="670dp"
+            app:layout_constraintGuide_begin="420dp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/titledatebirtherrormsg"
+            app:layout_constraintTop_toTopOf="@+id/etNameUser"/>
+
+        <TextView
+            android:id="@+id/titlegender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Gender"
+            android:textColor="@color/blue_main"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout5"/>
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagilagi"/>
+
+        <TextView
+            android:id="@+id/titlegender1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="We use your gender to help personalize our content recommendations home feed."
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/titlegender"/>
+
+        <RadioGroup
+            android:id="@+id/genderRadioGroup1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="35dp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/titlegender1">
+
+            <RadioButton
+                android:id="@+id/rbMan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Man" />
+
+            <RadioButton
+                android:id="@+id/rbWoman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                android:text="Woman" />
+
+            <RadioButton
+                android:id="@+id/rbNonBinary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                android:text="Non-binary" />
+
+            <RadioButton
+                android:id="@+id/rbNotToSay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Not to say" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Tengahtengahlagilagidan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="670dp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/titledatebirtherrormsg"
+            app:layout_constraintTop_toTopOf="@+id/genderRadioGroup1"/>
 
         <Button
-            android:id="@+id/nextSignInInputPassword"
+            android:id="@+id/nextSignInDateForm"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="30dp"
@@ -353,7 +406,8 @@
             android:textSize="22sp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagilagi"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagilagidan"
             tools:ignore="HardcodedText" />
 
         <LinearLayout
@@ -366,7 +420,7 @@
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/nextSignInInputPassword">
+            app:layout_constraintTop_toTopOf="@+id/nextSignInDateForm">
 
             <TextView
                 android:layout_width="250dp"
@@ -378,7 +432,6 @@
 Privacy Policy and Terms of Service apply. "
                 tools:ignore="HardcodedText" />
         </LinearLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

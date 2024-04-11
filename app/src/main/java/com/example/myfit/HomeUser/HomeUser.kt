@@ -1,6 +1,5 @@
-package com.example.myfit.SignPhone
+package com.example.myfit.HomeUser
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,23 +7,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.example.myfit.R
-import com.example.myfit.SignEmail.MenuSigninEmail
-import com.example.myfit.databinding.ActivityMenuSigninPhone2Binding
+import com.example.myfit.databinding.ActivityHomeUserBinding
 
-class MenuSigninPhone2 : AppCompatActivity() {
-    lateinit var binding: ActivityMenuSigninPhone2Binding
+class HomeUser : AppCompatActivity() {
+    lateinit var binding: ActivityHomeUserBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_menu_signin_phone2)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_menu_signin_phone2)
+        setContentView(R.layout.activity_home_user)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home_user)
         /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }*/
-        binding.nextSignInPhoneSixCode.setOnClickListener{
-            startActivity(Intent(this, MenuSigninEmail::class.java))
-        }
     }
 }

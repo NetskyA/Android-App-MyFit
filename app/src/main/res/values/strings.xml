@@ -2,6 +2,8 @@
 <resources>
     <!-- Other strings and resources -->
     <string name="MyFit">MyFit</string>
+    <string name="_1_letter">1 letter</string>
+    <string name="_1_number_or_special_character_example_example"><![CDATA[1 number or special character example (example: # ? ! &)]]></string>
     <string-array name="region_names">
         <item>Indonesia</item>
         <item>US</item>
@@ -18,7 +20,6 @@
         <item>Singapore</item>
         <item>Thailand</item>
         <item>Vietnam</item>
-        <!--Tambahkan wilayah Asia Selatan lainnya sesuai kebutuhan -->
     </string-array>
 
     <string-array name="region_ids">
@@ -37,10 +38,7 @@
         <item>+65</item> <!-- Kode Singapore -->
         <item>+66</item> <!-- Kode Thailand -->
         <item>+84</item> <!-- Kode Vietnam -->
-        <!--Tambahkan kode wilayah Asia Selatan lainnya sesuai kebutuhan -->
     </string-array>
 
-
-    <!-- Other strings and resources -->
 </resources>
 

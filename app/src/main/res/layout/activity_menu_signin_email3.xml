@@ -7,7 +7,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SignEmail.MenuSigninEmail">
+        tools:context=".SignEmail.MenuSigninEmail3">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -86,19 +86,13 @@
                     android:orientation="horizontal">
 
                     <View
-                        android:layout_width="90dp"
+                        android:layout_width="280dp"
                         android:layout_height="2dp"
                         android:layout_gravity="start"
                         android:layout_weight="0"
                         android:background="@color/blue_main"
                         tools:ignore="NestedWeights" />
 
-                    <View
-                        android:layout_width="190dp"
-                        android:layout_height="2dp"
-                        android:layout_gravity="start"
-                        android:layout_weight="0"
-                        android:background="@color/white" />
                 </LinearLayout>
 
                 <TextView
@@ -106,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:text="Step 1 of 3"
+                    android:text="Step 3 of 3"
                     android:textColor="@color/grey"
                     android:textSize="15sp" />
 
@@ -115,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:text="Create a password"
+                    android:text="Terms Conditions"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -128,221 +122,138 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="180dp"
+            app:layout_constraintGuide_begin="230dp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="@+id/linearLayout2"/>
 
-        <TextView
-            android:id="@+id/titlepswd"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Password"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/Tengahtengah"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/coveretpassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/titlepswd">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
-                android:layout_width="335dp"
-                android:layout_height="40dp"
-                android:background="@drawable/borderbackground"
-                android:inputType="textPassword"
-                android:paddingStart="15dp"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/grey"
-                tools:ignore="RtlSymmetry" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/titlecpswd"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:text="Confirm Password"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/coveretpassword"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/coveretconfirmpassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/titlecpswd">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etConfirmPassword"
-                android:layout_width="335dp"
-                android:layout_height="40dp"
-                android:background="@drawable/borderbackground"
-                android:inputType="textPassword"
-                android:paddingStart="15dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/grey"
-                tools:ignore="RtlSymmetry" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/required"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="Your password must contain at least"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/coveretconfirmpassword"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Tengahtengahlagi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="415dp"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/required"/>
 
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/background"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagi"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengah"
             tools:ignore="UseCompoundDrawables">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/circle"
-                tools:ignore="ContentDescription" />
+            <CheckBox
+                android:id="@+id/hoverCheckBox1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:padding="8dp"
+                android:layout_margin="6dp"
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:text="@string/_1_letter"
+                android:layout_margin="5dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="center"
+                android:text="I would prefer not to receive marketing messages from MyFit"
                 android:textColor="@color/white"
-                android:textSize="13sp"
+                android:textSize="17sp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout4"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_height="80dp"
             android:orientation="horizontal"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/background"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="@+id/linearLayout3"
             tools:ignore="UseCompoundDrawables">
 
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/circle"
-                tools:ignore="ContentDescription" />
+            <CheckBox
+                android:id="@+id/hoverCheckBox2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:padding="8dp"
+                android:layout_margin="6dp"
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:text="@string/_1_number_or_special_character_example_example"
+                android:layout_margin="5dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="center"
+                android:text="Share my registration data with MyFit's content providers for marketing purposes."
                 android:textColor="@color/white"
-                android:textSize="13sp"
+                android:textSize="17sp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textTerms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="By clicking on sign-up, you agree to MyFit's Terms and Conditions of Use."
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@+id/Right"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout4"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/circle"
-                tools:ignore="ContentDescription" />
+            app:layout_constraintTop_toTopOf="@+id/textTerms">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:text="10 characters"
-                android:textColor="@color/white"
+                android:textColor="@color/grey"
                 android:textSize="13sp"
-                tools:ignore="RtlSymmetry" />
+                android:text="By clicking on sign-up, you agree to the."
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" MyFit Privacy Policy."
+                android:textColor="@color/blue_main"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Tengahtengahlagilagi"
+            android:id="@+id/Tengahtengahlagilagidan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="670dp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout5"/>
+            app:layout_constraintStart_toStartOf="@+id/linearLayout5"/>
 
         <Button
-            android:id="@+id/nextSignInInputPassword"
+            android:id="@+id/nextSignInSubmitTerms"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="30dp"
@@ -353,7 +264,8 @@
             android:textSize="22sp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagilagi"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagilagidan"
             tools:ignore="HardcodedText" />
 
         <LinearLayout
@@ -366,7 +278,7 @@
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/nextSignInInputPassword">
+            app:layout_constraintTop_toTopOf="@+id/nextSignInSubmitTerms">
 
             <TextView
                 android:layout_width="250dp"
@@ -378,7 +290,6 @@
 Privacy Policy and Terms of Service apply. "
                 tools:ignore="HardcodedText" />
         </LinearLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
