@@ -232,6 +232,7 @@
                 android:inputType="textPassword"
                 android:paddingStart="15dp"
                 android:textSize="20sp"
+                android:hint="Password"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey"
                 tools:ignore="RtlSymmetry" />

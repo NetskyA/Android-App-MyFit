@@ -79,7 +79,7 @@
                 android:background="@drawable/borderbackground"
                 android:hint="6 digit code"
                 android:paddingStart="15dp"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="10dp"
                 tools:ignore="HardcodedText,RtlSymmetry" />
@@ -115,6 +115,7 @@
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:text="Start"
+            android:layout_marginTop="30dp"
             android:textSize="22sp"
             android:textColor="@color/white"
             android:textAllCaps="false"
@@ -152,6 +153,7 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
+                android:id="@+id/backToSignInPhone2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

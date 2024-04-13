@@ -5,4 +5,12 @@
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
 
     </style>
+
+    <style name ="TEXT">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="HINT">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
 </resources>

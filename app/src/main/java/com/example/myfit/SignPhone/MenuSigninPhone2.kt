@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.example.myfit.R
+import com.example.myfit.SignAll.MenuSigninAll
 import com.example.myfit.SignEmail.MenuSigninEmail
 import com.example.myfit.databinding.ActivityMenuSigninPhone2Binding
 
@@ -25,6 +26,10 @@ class MenuSigninPhone2 : AppCompatActivity() {
         }*/
         binding.nextSignInPhoneSixCode.setOnClickListener{
             startActivity(Intent(this, MenuSigninEmail::class.java))
+        }
+
+        binding.backToSignInPhone2.setOnClickListener{
+            startActivity(Intent(this, MenuSigninPhone::class.java))
         }
     }
 }

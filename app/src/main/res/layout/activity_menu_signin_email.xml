@@ -116,7 +116,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:text="Create a password"
-                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -140,7 +139,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Password"
-            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -167,7 +165,7 @@
                 android:inputType="textPassword"
                 android:paddingStart="15dp"
                 android:textSize="20sp"
-                android:textColor="@color/white"
+                android:hint="Password"
                 android:textColorHint="@color/grey"
                 tools:ignore="RtlSymmetry" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -178,7 +176,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
             android:text="Confirm Password"
-            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -204,8 +201,8 @@
                 android:background="@drawable/borderbackground"
                 android:inputType="textPassword"
                 android:paddingStart="15dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"
+                android:hint="Confirm Password"
+                android:textSize="20sp"
                 android:textColorHint="@color/grey"
                 tools:ignore="RtlSymmetry" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -216,7 +213,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:text="Your password must contain at least"
-            android:textColor="@color/white"
+            style="@style/TEXT"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -261,7 +258,6 @@
                 android:paddingStart="10dp"
                 android:paddingTop="5dp"
                 android:text="@string/_1_letter"
-                android:textColor="@color/white"
                 android:textSize="13sp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
@@ -293,7 +289,6 @@
                 android:paddingStart="10dp"
                 android:paddingTop="5dp"
                 android:text="@string/_1_number_or_special_character_example_example"
-                android:textColor="@color/white"
                 android:textSize="13sp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
@@ -325,7 +320,6 @@
                 android:paddingStart="10dp"
                 android:paddingTop="5dp"
                 android:text="10 characters"
-                android:textColor="@color/white"
                 android:textSize="13sp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>

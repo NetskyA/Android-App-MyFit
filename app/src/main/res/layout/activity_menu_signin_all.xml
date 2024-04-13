@@ -84,7 +84,6 @@
             android:background="@drawable/borderbackground"
             android:hint="Name@domain.com"
             android:paddingStart="14dp"
-            android:textColor="@color/dark_grey"
             android:textColorHint="@color/grey"
             android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/Right"

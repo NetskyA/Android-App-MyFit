@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.text.Spanned
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.example.myfit.HomeUser.HomeUser
 import com.example.myfit.R
@@ -29,6 +26,7 @@ class MenuLoginAll : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }*/
+
         val boldAndUnderlineText: Spanned = HtmlCompat.fromHtml("<u><b>Forgot password?</b></u>", HtmlCompat.FROM_HTML_MODE_LEGACY)
         binding.forgotpassword.text = boldAndUnderlineText
         binding.forgotpassword.setTypeface(null, Typeface.BOLD)
@@ -45,11 +43,12 @@ class MenuLoginAll : AppCompatActivity() {
         }
 
         binding.signuphere.setOnClickListener{
-            startActivity(Intent(this, MenuSigninAll::class.java))
+            /*startActivity(Intent(this, MenuSigninAll::class.java))*/
+            finish()
         }
+
         binding.nextMenuLogIn.setOnClickListener{
             startActivity(Intent(this, HomeUser::class.java))
         }
-
     }
 }

@@ -17,27 +17,35 @@
         <activity
             android:name=".LoginAll.MenuLoginAll"
             android:exported="false" />
+
         <activity
             android:name=".HomeUser.HomeUser"
             android:exported="false" />
+
         <activity
             android:name=".SignEmail.MenuSigninEmail3"
             android:exported="false" />
+
         <activity
             android:name=".SignEmail.MenuSigninEmail2"
             android:exported="false" />
+
         <activity
             android:name=".SignEmail.MenuSigninEmail"
             android:exported="false" />
+
         <activity
             android:name=".SignPhone.MenuSigninPhone2"
             android:exported="false" />
+
         <activity
             android:name=".SignAll.MenuSigninAll"
             android:exported="false" />
+
         <activity
             android:name=".SignPhone.MenuSigninPhone"
             android:exported="false" />
+
         <activity
             android:name=".Main.MainActivity"
             android:exported="true">

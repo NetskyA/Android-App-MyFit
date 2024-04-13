@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.example.myfit.R
+import com.example.myfit.SignAll.MenuSigninAll
 import com.example.myfit.databinding.ActivityMenuSigninAllBinding
 import com.example.myfit.databinding.ActivityMenuSigninPhoneBinding
 
@@ -29,6 +30,10 @@ class MenuSigninPhone : AppCompatActivity() {
 
         binding.nextSignInPhone.setOnClickListener{
             startActivity(Intent(this, MenuSigninPhone2::class.java))
+        }
+
+        binding.backToSignInPhone.setOnClickListener{
+            startActivity(Intent(this, MenuSigninAll::class.java))
         }
     }
 }
