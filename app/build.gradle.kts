@@ -59,5 +59,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0")
     implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
-
+    implementation("com.intuit.ssp:ssp-android:1.1.1")
+    implementation("com.intuit.sdp:sdp-android:1.1.1")
 }

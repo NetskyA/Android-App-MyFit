@@ -35,7 +35,7 @@ class MenuSigninEmail3 : AppCompatActivity() {
         binding.ButtonArrowBack.setOnClickListener{
             startActivity(Intent(this, MenuSigninEmail2::class.java))
         }
-        binding.nextSignInSubmitTerms.setOnClickListener{
+        binding.nextFinishSignInSubmitTerms.setOnClickListener{
             startActivity(Intent(this, HomeUser::class.java))
         }
     }

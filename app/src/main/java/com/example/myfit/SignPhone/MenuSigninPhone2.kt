@@ -29,7 +29,7 @@ class MenuSigninPhone2 : AppCompatActivity() {
         }
 
         binding.backToSignInPhone2.setOnClickListener{
-            startActivity(Intent(this, MenuSigninPhone::class.java))
+            startActivity(Intent(this, MenuSigninAll::class.java))
         }
     }
 }

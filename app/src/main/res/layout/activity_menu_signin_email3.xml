@@ -63,9 +63,9 @@
 
             <ImageView
                 android:id="@+id/ButtonArrowBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/back" />
 
@@ -80,19 +80,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp"
+                    android:layout_marginBottom="@dimen/_3sdp"
                     android:layout_gravity="start"
                     android:layout_weight="0"
                     android:orientation="horizontal">
 
                     <View
-                        android:layout_width="280dp"
-                        android:layout_height="3dp"
+                        android:layout_width="@dimen/_240sdp"
+                        android:layout_height="@dimen/_2sdp"
                         android:layout_gravity="start"
                         android:layout_weight="0"
                         android:background="@color/blue_main"
                         tools:ignore="NestedWeights" />
-
                 </LinearLayout>
 
                 <TextView
@@ -102,16 +101,15 @@
                     android:layout_gravity="start"
                     android:text="Step 3 of 3"
                     android:textColor="@color/grey"
-                    android:textSize="15sp" />
+                    android:textSize="@dimen/_10ssp" />
 
                 <TextView
                     android:id="@+id/textCrtPass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:text="Terms Conditions"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:text="Create a password"
+                    android:textSize="@dimen/_12ssp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -132,7 +130,7 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="@dimen/_50sdp"
             android:orientation="horizontal"
             android:gravity="center"
             android:layout_gravity="center"
@@ -145,29 +143,29 @@
 
             <CheckBox
                 android:id="@+id/hoverCheckBox1"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:padding="8dp"
-                android:layout_margin="6dp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
-                android:layout_margin="5dp"
-                android:paddingLeft="10dp"
+                android:layout_margin="@dimen/_4sdp"
+                android:paddingLeft="@dimen/_3sdp"
                 android:layout_gravity="center"
                 android:text="I would prefer not to receive marketing messages from MyFit"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="@dimen/_13ssp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout4"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="@dimen/_50sdp"
             android:orientation="horizontal"
             android:layout_marginTop="100dp"
             android:gravity="center"
@@ -181,22 +179,22 @@
 
             <CheckBox
                 android:id="@+id/hoverCheckBox2"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:padding="8dp"
-                android:layout_margin="6dp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
-                android:layout_margin="5dp"
-                android:paddingLeft="10dp"
+                android:layout_margin="@dimen/_4sdp"
+                android:paddingLeft="@dimen/_3sdp"
                 android:layout_gravity="center"
                 android:text="Share my registration data with MyFit's content providers for marketing purposes."
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="@dimen/_13ssp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
 
@@ -204,10 +202,10 @@
             android:id="@+id/textTerms"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:text="By clicking on sign-up, you agree to MyFit's Terms and Conditions of Use."
             android:textColor="@color/grey"
-            android:textSize="13sp"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintEnd_toEndOf="@+id/Right"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
@@ -228,7 +226,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey"
-                android:textSize="13sp"
+                android:textSize="@dimen/_10ssp"
                 android:text="By clicking on sign-up, you agree to the."
                 tools:ignore="HardcodedText" />
 
@@ -237,7 +235,7 @@
                 android:layout_height="wrap_content"
                 android:text=" MyFit Privacy Policy."
                 android:textColor="@color/blue_main"
-                android:textSize="13sp"
+                android:textSize="@dimen/_10ssp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
@@ -247,21 +245,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="670dp"
+            app:layout_constraintGuide_begin="@dimen/_520sdp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/linearLayout5"/>
 
         <Button
-            android:id="@+id/nextSignInSubmitTerms"
+            android:id="@+id/nextFinishSignInSubmitTerms"
             android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_marginTop="@dimen/_25sdp"
             android:background="@drawable/borderblue"
-            android:text="Next"
+            android:text="Start"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="@dimen/_20ssp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
@@ -270,7 +268,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/_20sdp"
             android:layout_gravity="center"
             android:layout_marginTop="80dp"
             android:gravity="center"
@@ -278,13 +276,13 @@
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/nextSignInSubmitTerms">
+            app:layout_constraintTop_toTopOf="@+id/nextFinishSignInSubmitTerms">
 
             <TextView
-                android:layout_width="250dp"
+                android:layout_width="@dimen/_170sdp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="10sp"
+                android:textSize="@dimen/_7sdp"
                 android:textAlignment="center"
                 android:text="This site is protected by reCAPTCHA and the Google
 Privacy Policy and Terms of Service apply. "
