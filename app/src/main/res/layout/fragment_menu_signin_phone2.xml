@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Main.MainActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.07" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Upper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="120dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.93" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/logo"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toTopOf="@+id/Upper"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/Left"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <TextView
+            android:id="@+id/textaddPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:text="Enter phone number"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/logo" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstraintLayout1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/textaddPhone">
+
+            <EditText
+                android:id="@+id/etinputsixcode"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/borderbackground"
+                android:hint="6 digit code"
+                android:paddingStart="15dp"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="10dp"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textmsg"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="55dp"
+            android:text="Enter the 6 digit code we sent to your phone number."
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/ConstraintLayout1"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textmsg1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Get new codes?"
+            android:textColor="@color/blue_main"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/textmsg"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/nextSignInPhoneSixCode"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Start"
+            android:layout_marginTop="30dp"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/borderblue"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengah"
+            tools:ignore="HardcodedText" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Tengahtengah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="670dp" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/nextSignInPhoneSixCode">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Choose other methods? "
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/backToSignInPhone2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Back to Sign in."
+                android:textColor="@color/blue_main"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
