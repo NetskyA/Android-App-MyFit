@@ -7,7 +7,9 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SignEmail.MenuSigninEmail3">
+        tools:context=".SignEmail.MenuSigninEmail3"
+        android:background="@drawable/backgroundimage1">
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -107,6 +109,7 @@
                     android:id="@+id/textCrtPass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
                     android:layout_gravity="start"
                     android:text="Create a password"
                     android:textSize="@dimen/_12ssp"
@@ -284,8 +287,8 @@
                 android:layout_gravity="center"
                 android:textSize="@dimen/_7sdp"
                 android:textAlignment="center"
-                android:text="This site is protected by reCAPTCHA and the Google
-Privacy Policy and Terms of Service apply. "
+                android:textColor="@color/white"
+                android:text="Start your health not with regret, but with a smile. Let's start your healthy life with us."
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 

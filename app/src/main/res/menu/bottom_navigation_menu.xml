@@ -3,21 +3,26 @@
     <item
         android:id="@+id/item_1"
         android:enabled="true"
-        android:icon="@drawable/homewhite"/>
+        android:icon="@drawable/homefeed"
+        android:title="Home"/>
     <item
         android:id="@+id/item_2"
         android:enabled="true"
-        android:icon="@drawable/homedark"/>
+        android:icon="@drawable/menu"
+        android:title="Menu"/>
     <item
         android:id="@+id/item_3"
         android:enabled="true"
-        android:icon="@drawable/homedark"/>
+        android:icon="@drawable/dailymenu"
+        android:title="Daily"/>
     <item
         android:id="@+id/item_4"
         android:enabled="true"
-        android:icon="@drawable/homedark"/>
+        android:icon="@drawable/diet"
+        android:title="Diet"/>
     <item
         android:id="@+id/item_5"
         android:enabled="true"
-        android:icon="@drawable/homedark"/>
+        android:icon="@drawable/profileuser"
+        android:title="Setting"/>
 </menu>

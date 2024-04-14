@@ -7,7 +7,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Main.MainActivity">
+        tools:context=".Main.MainActivity"
+        android:background="@drawable/backgroundimage2">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -58,6 +59,7 @@
             android:text="Enter phone number"
             android:textSize="23sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
@@ -89,6 +91,8 @@
                 android:layout_marginStart="20dp"
                 android:background="@drawable/borderbackground"
                 android:paddingStart="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey"
                 android:hint="Number phone"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -140,6 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textColor="@color/grey"
                 android:text="Choose other methods? "
                 tools:ignore="HardcodedText" />
 

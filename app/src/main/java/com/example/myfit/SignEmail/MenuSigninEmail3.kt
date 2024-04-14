@@ -1,6 +1,7 @@
 package com.example.myfit.SignEmail
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MotionEvent
 import androidx.activity.enableEdgeToEdge
@@ -38,5 +39,6 @@ class MenuSigninEmail3 : AppCompatActivity() {
         binding.nextFinishSignInSubmitTerms.setOnClickListener{
             startActivity(Intent(this, HomeUser::class.java))
         }
+
     }
 }

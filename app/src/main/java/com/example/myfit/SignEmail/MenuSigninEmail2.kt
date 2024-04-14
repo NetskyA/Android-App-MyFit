@@ -1,11 +1,14 @@
 package com.example.myfit.SignEmail
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.RadioButton
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
@@ -34,7 +37,6 @@ class MenuSigninEmail2 : AppCompatActivity() {
             spinner.adapter = adapter
         }
 
-        // Set the spinner to a specific month, e.g., March
         spinner.setSelection(Month.April.index)
 
         binding.ButtonArrowBack.setOnClickListener {
@@ -42,6 +44,14 @@ class MenuSigninEmail2 : AppCompatActivity() {
         }
         binding.nextSignInDateForm.setOnClickListener {
             startActivity(Intent(this, MenuSigninEmail3::class.java))
+        }
+
+        val radioButtonsIds = arrayOf(R.id.rbMan, R.id.rbWoman, R.id.rbWoman, R.id.rbNonBinary, R.id.rbNotToSay)
+
+        radioButtonsIds.forEach { radioButtonId ->
+            val radioButton = findViewById<RadioButton>(radioButtonId)
+            radioButton.setTextColor(ContextCompat.getColor(this, R.color.white))
+            radioButton.buttonTintList = ContextCompat.getColorStateList(this, R.color.blue_main)
         }
     }
 

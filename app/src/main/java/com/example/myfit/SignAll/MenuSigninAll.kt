@@ -2,6 +2,7 @@ package com.example.myfit.SignAll
 
 import android.content.Intent
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Bundle
 import android.text.Spanned
 import androidx.activity.enableEdgeToEdge
@@ -36,5 +37,18 @@ class MenuSigninAll : AppCompatActivity() {
         binding.cheattoLogin.setOnClickListener{
             startActivity(Intent(this, MenuLoginAll::class.java))
         }
+
+        val videoPath = "android.resource://" + packageName + "/" + R.raw.backgroundmovie
+        val uri = Uri.parse(videoPath)
+        binding.videoView.setVideoURI(uri)
+
+        // Set up a listener to loop the video continuously
+        binding.videoView.setOnCompletionListener {
+            // Restart the video when it completes
+            binding.videoView.start()
+        }
+
+        // Start the video as soon as it is ready
+        binding.videoView.start()
     }
 }

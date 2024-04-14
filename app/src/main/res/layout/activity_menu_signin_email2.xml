@@ -7,7 +7,9 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SignEmail.MenuSigninEmail2">
+        tools:context=".SignEmail.MenuSigninEmail2"
+        android:background="@drawable/backgroundimage1">
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -115,6 +117,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
+                    android:textColor="@color/grey"
                     android:text="Create a password"
                     android:textSize="@dimen/_12ssp"
                     android:textStyle="bold" />
@@ -152,6 +155,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_18sdp"
+            android:textColor="@color/grey"
             android:text="This name will appear on your profile"
             android:textSize="@dimen/_9sdp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -206,6 +210,7 @@
             android:layout_width="0dp"
             android:layout_height="20dp"
             android:layout_marginTop="@dimen/_18sdp"
+            android:textColor="@color/grey"
             android:text="This name will appear on your profile"
             android:textSize="@dimen/_9sdp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -251,8 +256,6 @@
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:textSize="@dimen/_15ssp"
-                android:textColor="@color/grey"
-                android:textColorHint="@color/grey"
                 tools:ignore="RtlSymmetry"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -322,6 +325,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_18sdp"
+            android:textColor="@color/grey"
             android:text="We use your gender to help personalize our content recommendations home feed."
             android:textSize="@dimen/_9sdp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -344,24 +348,35 @@
                 android:id="@+id/rbMan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                style="@style/CustomRadioButton"
                 android:text="Man" />
 
             <RadioButton
                 android:id="@+id/rbWoman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                style="@style/CustomRadioButton"
+                android:layout_marginStart="@dimen/_6sdp"
                 android:text="Woman" />
 
             <RadioButton
                 android:id="@+id/rbNonBinary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                style="@style/CustomRadioButton"
+                android:layout_marginStart="@dimen/_6sdp"
                 android:text="Non-binary" />
 
             <RadioButton
                 android:id="@+id/rbNotToSay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                style="@style/CustomRadioButton"
+                android:layout_marginStart="@dimen/_6sdp"
                 android:text="Not to say"/>
         </RadioGroup>
 
@@ -409,9 +424,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="@dimen/_7sdp"
+                android:textColor="@color/grey"
                 android:textAlignment="center"
-                android:text="This site is protected by reCAPTCHA and the Google
-Privacy Policy and Terms of Service apply. "
+                android:text="Start your health not with regret, but with a smile. Let's start your healthy life with us."
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 

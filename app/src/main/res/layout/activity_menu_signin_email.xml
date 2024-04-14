@@ -12,7 +12,8 @@
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".SignEmail.MenuSigninEmail">
+            tools:context=".SignEmail.MenuSigninEmail"
+            android:background="@drawable/backgroundimage1">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/Left"
@@ -121,6 +122,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
                         android:text="Create a password"
+                        android:textColor="@color/grey"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -145,6 +147,7 @@
                 android:layout_marginTop="@dimen/_9sdp"
                 style="@style/TEXT"
                 android:text="Password"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -157,6 +160,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true"
+                android:textColorHint="@color/grey"
                 android:layout_marginTop="@dimen/_15sdp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -182,6 +186,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_55sdp"
                 android:text="Confirm Password"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
                 style="@style/TEXT"
                 android:textStyle="bold"
@@ -195,6 +200,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true"
+                android:textColorHint="@color/grey"
                 android:layout_marginTop="@dimen/_15sdp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -233,6 +239,7 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:text="Your password must contain at least"
                 android:textSize="@dimen/_12ssp"
+                android:textColor="@color/grey"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -263,6 +270,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
+                    android:textColor="@color/grey"
                     android:paddingStart="@dimen/_7sdp"
                     android:layout_gravity="center"
                     android:text="@string/_1_letter"
@@ -296,6 +304,7 @@
                     android:layout_weight="5"
                     android:paddingStart="@dimen/_7sdp"
                     android:layout_gravity="center"
+                    android:textColor="@color/grey"
                     android:text="@string/_1_number_or_special_character_example_example"
                     android:textSize="@dimen/_10ssp"
                     tools:ignore="RtlSymmetry" />
@@ -328,6 +337,7 @@
                     android:paddingStart="@dimen/_7sdp"
                     android:text="10 characters"
                     android:layout_gravity="center"
+                    android:textColor="@color/grey"
                     android:textSize="@dimen/_10ssp"
                     tools:ignore="RtlSymmetry" />
             </LinearLayout>
@@ -374,10 +384,10 @@
                     android:layout_width="@dimen/_170sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textColor="@color/grey"
                     android:textSize="@dimen/_7sdp"
                     android:textAlignment="center"
-                    android:text="This site is protected by reCAPTCHA and the Google
-Privacy Policy and Terms of Service apply. "
+                    android:text="Start your health not with regret, but with a smile. Let's start your healthy life with us."
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 

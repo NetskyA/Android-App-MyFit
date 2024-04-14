@@ -14,6 +14,12 @@
             android:layout_height="match_parent"
             tools:context=".SignAll.MenuSigninAll">
 
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"/>
+
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/Left"
                 android:layout_width="wrap_content"
@@ -60,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:text="Sign up to start fit lifestyle"
                 android:textSize="@dimen/_30ssp"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -72,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_80sdp"
                 android:text="Email address"
+                android:textColor="@color/grey"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -138,6 +146,7 @@
                 android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:background="@drawable/borderblue"
+                android:elevation="@dimen/_4sdp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintStart_toStartOf="@+id/Left"
                 app:layout_constraintTop_toTopOf="@+id/signinwithphone"
@@ -195,6 +204,7 @@
                 android:text="Sign up with Google"
                 android:textAllCaps="false"
                 android:textSize="@dimen/_16ssp"
+                android:textColor="@color/grey"
                 android:drawableStart="@drawable/google"
                 android:paddingLeft="@dimen/_40sdp"
                 android:paddingRight="@dimen/_40sdp"
@@ -213,6 +223,7 @@
                 android:textSize="@dimen/_16ssp"
                 android:drawableStart="@drawable/facebook"
                 android:paddingLeft="@dimen/_40sdp"
+                android:textColor="@color/grey"
                 android:paddingRight="@dimen/_40sdp"
                 android:textAllCaps="false"
                 android:background="@drawable/border"
@@ -231,6 +242,7 @@
                 android:drawableStart="@drawable/apple"
                 android:paddingLeft="@dimen/_40sdp"
                 android:paddingRight="@dimen/_40sdp"
+                android:textColor="@color/grey"
                 android:textAllCaps="false"
                 android:background="@drawable/border"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -262,6 +274,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textColor="@color/grey"
                     android:text="Already have an account? "
                     tools:ignore="HardcodedText" />
 

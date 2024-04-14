@@ -7,7 +7,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Main.MainActivity">
+        tools:context=".Main.MainActivity"
+        android:background="@drawable/backgroundimage2">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -56,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
             android:text="Enter phone number"
+            android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -79,6 +81,8 @@
                 android:layout_height="40dp"
                 android:background="@drawable/borderbackground"
                 android:hint="6 digit code"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey"
                 android:paddingStart="15dp"
                 android:textSize="20sp"
                 tools:layout_editor_absoluteX="16dp"
@@ -94,6 +98,7 @@
             android:layout_marginTop="55dp"
             android:text="Enter the 6 digit code we sent to your phone number."
             android:textSize="15sp"
+            android:textColor="@color/grey"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="@+id/ConstraintLayout1"
             tools:ignore="HardcodedText" />
@@ -150,6 +155,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textColor="@color/grey"
                 android:text="Choose other methods? "
                 tools:ignore="HardcodedText" />
 

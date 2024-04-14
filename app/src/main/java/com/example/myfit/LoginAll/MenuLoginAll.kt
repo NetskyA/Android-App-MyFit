@@ -2,6 +2,7 @@ package com.example.myfit.LoginAll
 
 import android.content.Intent
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Bundle
 import android.text.Spanned
 import androidx.activity.enableEdgeToEdge
@@ -52,5 +53,18 @@ class MenuLoginAll : AppCompatActivity() {
         binding.nextMenuLogIn.setOnClickListener{
             startActivity(Intent(this, HomeUser::class.java))
         }
+
+        val videoPath = "android.resource://" + packageName + "/" + R.raw.backgroundmovie1
+        val uri = Uri.parse(videoPath)
+        binding.videoView1.setVideoURI(uri)
+
+        // Set up a listener to loop the video continuously
+        binding.videoView1.setOnCompletionListener {
+            // Restart the video when it completes
+            binding.videoView1.start()
+        }
+
+        // Start the video as soon as it is ready
+        binding.videoView1.start()
     }
 }
