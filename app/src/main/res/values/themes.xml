@@ -9,7 +9,10 @@
     <style name ="TEXT">
         <item name="android:textColor">@color/dark_grey</item>
     </style>
-
+    <style name="Theme">
+        <item name="colorSurface">@color/blue_main</item>
+        <item name="colorOnSurfaceVariant">@color/dark_grey</item>
+    </style>
     <style name="HINT">
         <item name="android:hint">@color/grey</item>
     </style>

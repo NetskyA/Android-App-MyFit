@@ -30,6 +30,8 @@ class MenuLoginAll : AppCompatActivity() {
         val boldAndUnderlineText: Spanned = HtmlCompat.fromHtml("<u><b>Forgot password?</b></u>", HtmlCompat.FROM_HTML_MODE_LEGACY)
         binding.forgotpassword.text = boldAndUnderlineText
         binding.forgotpassword.setTypeface(null, Typeface.BOLD)
+
+
         binding.materialSwitch.setOnCheckedChangeListener { view, isChecked ->
             if (isChecked) {
                 // The switch is checked.
