@@ -3,8 +3,8 @@
     <item
         android:id="@+id/item_1"
         android:enabled="true"
-        android:icon="@drawable/homefeed"
-        android:title="Home"/>
+        android:icon="@drawable/feed"
+        android:title="Feed"/>
     <item
         android:id="@+id/item_2"
         android:enabled="true"

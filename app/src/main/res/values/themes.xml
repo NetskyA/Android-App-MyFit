@@ -21,6 +21,7 @@
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
         <item name="android:itemIconDisabledAlpha">@color/icon_color1</item>
+        <item name="itemIconSize">@dimen/_22sdp</item>
     </style>
 
 </resources>

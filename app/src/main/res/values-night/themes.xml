@@ -1,7 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MyFit" parent="Theme.AppCompat.DayNight">
-        <!-- Customize your dark theme here. -->
          <item name="colorPrimary">@color/blue_main</item>
     </style>
     <style name="Theme.MyFit" parent="Theme.AppCompat.Light.NoActionBar">
@@ -22,5 +21,6 @@
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
         <item name="android:itemIconDisabledAlpha">@color/icon_color</item>
+        <item name="itemIconSize">@dimen/_22sdp</item>
     </style>
 </resources>

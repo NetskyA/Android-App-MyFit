@@ -19,14 +19,10 @@ class HomeUser : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_home_user)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home_user)
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }*/
         val navView: BottomNavigationView = findViewById(R.id.bottom_navigation)
         val iconColor = ContextCompat.getColorStateList(this, R.color.icon_color)
         navView.itemIconTintList = iconColor
+        navView.selectedItemId = R.id.item_3
         navView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_1 -> {
@@ -38,15 +34,15 @@ class HomeUser : AppCompatActivity() {
                     true
                 }
                 R.id.item_3 -> {
-                    // Load Notifications Fragmentt
+                    // Load Notifications Fragment
                     true
                 }
                 R.id.item_4 -> {
-                    // Load Notifications Fragmentt
+                    // Load Diet Fragment
                     true
                 }
                 R.id.item_5 -> {
-                    // Load Notifications Fragmentt
+                    // Load Settings Fragment
                     true
                 }
                 else -> false
@@ -57,6 +53,5 @@ class HomeUser : AppCompatActivity() {
                 .replace(R.id.fragment_container, fragment)
                 .commit()
         }
-
     }
 }

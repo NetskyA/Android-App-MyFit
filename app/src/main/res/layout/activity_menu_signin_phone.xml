@@ -77,8 +77,9 @@
 
             <Spinner
                 android:id="@+id/number_regions"
-                android:layout_width="75dp"
+                android:layout_width="@dimen/_60sdp"
                 android:layout_height="40dp"
+                android:padding="@dimen/_6sdp"
                 android:background="@drawable/borderbackground"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

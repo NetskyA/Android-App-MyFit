@@ -25,7 +25,8 @@ class MenuSigninPhone : AppCompatActivity() {
         val regionIds = resources.getStringArray(R.array.region_ids)
         val combinedRegions = regionNames.zip(regionIds).map { "(${it.second}) ${it.first}" }
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, combinedRegions)
+        val adapter = ArrayAdapter(this, R.layout.spinner_item, combinedRegions)
+        adapter.setDropDownViewResource(R.layout.spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.numberRegions.adapter = adapter
 

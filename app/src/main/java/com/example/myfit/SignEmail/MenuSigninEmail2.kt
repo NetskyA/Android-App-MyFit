@@ -31,7 +31,7 @@ class MenuSigninEmail2 : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.months_array,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
@@ -47,12 +47,10 @@ class MenuSigninEmail2 : AppCompatActivity() {
         }
 
         val radioButtonsIds = arrayOf(R.id.rbMan, R.id.rbWoman, R.id.rbWoman, R.id.rbNonBinary, R.id.rbNotToSay)
-
         radioButtonsIds.forEach { radioButtonId ->
             val radioButton = findViewById<RadioButton>(radioButtonId)
             radioButton.setTextColor(ContextCompat.getColor(this, R.color.white))
             radioButton.buttonTintList = ContextCompat.getColorStateList(this, R.color.blue_main)
         }
     }
-
 }
