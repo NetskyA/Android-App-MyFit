@@ -10,12 +10,10 @@
     <style name ="TEXT">
         <item name="android:textColor">@color/blue_main</item>
     </style>
-
     <style name="Theme">
         <item name="colorSurface">@color/blue_main</item>
         <item name="colorOnSurfaceVariant">@color/dark_grey</item>
     </style>
-
     <style name="IMAGES">
         <item name="android:src">@drawable/user</item>
     </style>
@@ -23,6 +21,6 @@
         <item name="android:background">@color/dark_grey</item>
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
+        <item name="android:itemIconDisabledAlpha">@color/icon_color</item>
     </style>
-
 </resources>

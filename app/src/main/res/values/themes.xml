@@ -6,7 +6,6 @@
     <style name="Theme.MyFit" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/blue_main</item>
     </style>
-
     <style name ="TEXT">
         <item name="android:textColor">@color/dark_grey</item>
     </style>
@@ -21,6 +20,7 @@
         <item name="android:background">@color/white</item>
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
+        <item name="android:itemIconDisabledAlpha">@color/icon_color1</item>
     </style>
 
 </resources>

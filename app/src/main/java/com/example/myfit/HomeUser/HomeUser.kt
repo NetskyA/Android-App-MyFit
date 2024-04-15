@@ -3,6 +3,7 @@ package com.example.myfit.HomeUser
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
@@ -24,6 +25,8 @@ class HomeUser : AppCompatActivity() {
             insets
         }*/
         val navView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        val iconColor = ContextCompat.getColorStateList(this, R.color.icon_color)
+        navView.itemIconTintList = iconColor
         navView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_1 -> {

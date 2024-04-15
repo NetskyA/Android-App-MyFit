@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Hovered state -->
-    <item android:state_hovered="true" android:drawable="@color/blue_main" />
-    <!-- Default state -->
-    <item android:drawable="@android:color/white" />
-</selector>

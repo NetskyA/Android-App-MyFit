@@ -9,7 +9,7 @@
         android:id="@+id/item_2"
         android:enabled="true"
         android:icon="@drawable/menu"
-        android:title="Menu"/>
+        android:title="Custom"/>
     <item
         android:id="@+id/item_3"
         android:enabled="true"
