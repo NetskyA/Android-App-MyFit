@@ -61,4 +61,5 @@ dependencies {
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
     implementation("com.intuit.ssp:ssp-android:1.1.1")
     implementation("com.intuit.sdp:sdp-android:1.1.1")
+    implementation("com.google.android.material:material:1.6.0")
 }

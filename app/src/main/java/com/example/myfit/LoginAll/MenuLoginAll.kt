@@ -57,14 +57,9 @@ class MenuLoginAll : AppCompatActivity() {
         val videoPath = "android.resource://" + packageName + "/" + R.raw.backgroundmovie1
         val uri = Uri.parse(videoPath)
         binding.videoView1.setVideoURI(uri)
-
-        // Set up a listener to loop the video continuously
         binding.videoView1.setOnCompletionListener {
-            // Restart the video when it completes
             binding.videoView1.start()
         }
-
-        // Start the video as soon as it is ready
         binding.videoView1.start()
     }
 }
