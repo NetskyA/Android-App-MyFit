@@ -46,11 +46,23 @@ class HomeUsers : Fragment() {
         navigationBarView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_1 -> {
-                    // Respond to navigation item 1 click
+                    // Load Home Fragment
                     true
                 }
                 R.id.item_2 -> {
-                    // Respond to navigation item 2 click
+                    // Load Dashboard Fragment
+                    true
+                }
+                R.id.item_3 -> {
+                    // Load Notifications Fragment
+                    true
+                }
+                R.id.item_4 -> {
+                    // Load Diet Fragment
+                    true
+                }
+                R.id.item_5 -> {
+                    // Load Settings Fragment
                     true
                 }
                 else -> false
