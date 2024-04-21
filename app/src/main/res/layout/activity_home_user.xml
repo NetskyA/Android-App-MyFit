@@ -9,38 +9,37 @@ tools:context=".MenuDiet.MenuDiet">
 <!-- TODO: Update blank fragment layout -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/backgroundimage2">
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.07" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Upper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="110dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Upper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="110dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.88" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.93" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
@@ -55,33 +54,20 @@ tools:context=".MenuDiet.MenuDiet">
             app:navGraph="@navigation/navigation" />
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/Right"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginTop="@dimen/_11sdp"
-        style="@style/TEXT"
-        app:layout_constraintStart_toStartOf="@+id/Left"
-        app:layout_constraintTop_toTopOf="@+id/Bottom">
+            android:layout_width="@dimen/_275sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            style="@style/TEXT"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Bottom">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            style="@style/Navigationcolor"
-            android:layout_height="@dimen/_63sdp"
-            app:menu="@menu/bottom_navigation_menu"/>
-    </LinearLayout>
-    <!--
-            <LinearLayout
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                    android:id="@+id/bottom_navigation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:menu="@menu/bottom_navigation_menu" />
-
-            </LinearLayout>-->
+                style="@style/Navigationcolor"
+                android:layout_height="@dimen/_63sdp"
+                app:menu="@menu/bottom_navigation_menu"/>
+        </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

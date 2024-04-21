@@ -4,25 +4,28 @@
         android:id="@+id/Menu_Item_Feed"
         android:enabled="true"
         android:icon="@drawable/feed"
-        android:title="Feed"/>
+        android:title="feed" />
     <item
         android:id="@+id/Menu_Item_Custom"
         android:enabled="true"
         android:icon="@drawable/menu"
-        android:title="Custom"/>
+        android:title="custom"
+        />
     <item
         android:id="@+id/Menu_Item_Daily"
         android:enabled="true"
         android:icon="@drawable/dailymenu"
-        android:title="Daily"/>
+        android:title="daily"
+        />
     <item
         android:id="@+id/Menu_Item_Diet"
         android:enabled="true"
         android:icon="@drawable/diet"
-        android:title="Diet"/>
+        android:title="menu"
+        />
     <item
         android:id="@+id/Menu_Item_Setting"
         android:enabled="true"
         android:icon="@drawable/profileuser"
-        android:title="Setting"/>
+        android:title="profile"/>
 </menu>

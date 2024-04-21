@@ -16,11 +16,13 @@
     <style name="IMAGES">
         <item name="android:src">@drawable/user</item>
     </style>
-    <style name="Navigationcolor" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <style name="Backgrounds">
         <item name="android:background">@color/dark_grey</item>
+    </style>
+    <style name="Navigationcolor" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@drawable/backgroundnavigations2</item>
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
-        <item name="android:itemIconDisabledAlpha">@color/icon_color</item>
-        <item name="itemIconSize">@dimen/_22sdp</item>
+        <item name="itemIconSize">@dimen/_25sdp</item>
     </style>
 </resources>

@@ -10,8 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/backgroundimage2">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -46,7 +45,6 @@
             android:layout_height="match_parent"
             android:text="Menu Daily"
             android:textSize="@dimen/_30sdp"
-            android:textColor="@color/white"
             android:gravity="center"
             app:layout_constraintTop_toTopOf="@+id/Upper"
             app:layout_constraintStart_toStartOf="@+id/Left"

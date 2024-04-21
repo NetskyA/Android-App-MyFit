@@ -16,12 +16,14 @@
     <style name="HINT">
         <item name="android:hint">@color/grey</item>
     </style>
-    <style name="Navigationcolor" >
-        <item name="android:background">@color/white</item>
+    <style name="Backgrounds">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+    <style name="Navigationcolor">
+        <item name="android:background">@drawable/backgroundnavigations3</item>
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
-        <item name="android:itemIconDisabledAlpha">@color/icon_color1</item>
-        <item name="itemIconSize">@dimen/_22sdp</item>
+        <item name="itemIconSize">@dimen/_25sdp</item>
     </style>
 
 </resources>
