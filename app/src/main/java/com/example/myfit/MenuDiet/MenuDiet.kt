@@ -33,6 +33,9 @@ class MenuDiet : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+/*
+        pppsej
+*/
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu_diet, container, false)
