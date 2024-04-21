@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.myfit.R
 import com.google.android.material.navigation.NavigationBarView
 
@@ -42,26 +43,29 @@ class HomeUsers : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val navigationBarView = view.findViewById<NavigationBarView>(R.id.navigation)
+        val navigationBarView = view.findViewById<NavigationBarView>(R.id.bottom_navigation)
+        navigationBarView.selectedItemId = R.id.Menu_Item_Daily
         navigationBarView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.item_1 -> {
-                    // Load Home Fragment
+                R.id.Menu_Item_Feed -> {
+                    // Load Feed Fragment
                     true
                 }
-                R.id.item_2 -> {
-                    // Load Dashboard Fragment
+                R.id.Menu_Item_Custom -> {
+                    // Load Custom Fragment
                     true
                 }
-                R.id.item_3 -> {
-                    // Load Notifications Fragment
+                R.id.Menu_Item_Daily -> {
+                    // Load Daily Fragment
+                    val action = HomeUsersDirections.actionHomeUsersToMenuDaily() // lek lempar data dalem kurung e dipassing param
+                    findNavController().navigate(action)
                     true
                 }
-                R.id.item_4 -> {
+                R.id.Menu_Item_Diet -> {
                     // Load Diet Fragment
                     true
                 }
-                R.id.item_5 -> {
+                R.id.Menu_Item_Setting -> {
                     // Load Settings Fragment
                     true
                 }

@@ -1,13 +1,12 @@
 package com.example.myfit.SignEmail
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.MotionEvent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.myfit.HomeUser.HomeUser
+import com.example.myfit.HomeUser.HomeUserActivity
 import com.example.myfit.R
 import com.example.myfit.databinding.ActivityMenuSigninEmail3Binding
 
@@ -37,7 +36,7 @@ class MenuSigninEmail3 : AppCompatActivity() {
             startActivity(Intent(this, MenuSigninEmail2::class.java))
         }
         binding.nextFinishSignInSubmitTerms.setOnClickListener{
-            startActivity(Intent(this, HomeUser::class.java))
+            startActivity(Intent(this, HomeUserActivity::class.java))
         }
 
     }

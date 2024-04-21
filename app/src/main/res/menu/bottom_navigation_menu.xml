@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/item_1"
+        android:id="@+id/Menu_Item_Feed"
         android:enabled="true"
         android:icon="@drawable/feed"
         android:title="Feed"/>
     <item
-        android:id="@+id/item_2"
+        android:id="@+id/Menu_Item_Custom"
         android:enabled="true"
         android:icon="@drawable/menu"
         android:title="Custom"/>
     <item
-        android:id="@+id/item_3"
+        android:id="@+id/Menu_Item_Daily"
         android:enabled="true"
         android:icon="@drawable/dailymenu"
         android:title="Daily"/>
     <item
-        android:id="@+id/item_4"
+        android:id="@+id/Menu_Item_Diet"
         android:enabled="true"
         android:icon="@drawable/diet"
         android:title="Diet"/>
     <item
-        android:id="@+id/item_5"
+        android:id="@+id/Menu_Item_Setting"
         android:enabled="true"
         android:icon="@drawable/profileuser"
         android:title="Setting"/>

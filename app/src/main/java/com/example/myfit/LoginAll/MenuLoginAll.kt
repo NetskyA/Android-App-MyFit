@@ -9,9 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
 import androidx.databinding.DataBindingUtil
-import com.example.myfit.HomeUser.HomeUser
+import com.example.myfit.HomeUser.HomeUserActivity
 import com.example.myfit.R
-import com.example.myfit.SignAll.MenuSigninAll
 import com.example.myfit.databinding.ActivityMenuLoginAllBinding
 
 class MenuLoginAll : AppCompatActivity() {
@@ -51,7 +50,7 @@ class MenuLoginAll : AppCompatActivity() {
         }
 
         binding.nextMenuLogIn.setOnClickListener{
-            startActivity(Intent(this, HomeUser::class.java))
+            startActivity(Intent(this, HomeUserActivity::class.java))
         }
 
         val videoPath = "android.resource://" + packageName + "/" + R.raw.backgroundmovie1

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentContainerView
 import com.example.myfit.R
 import com.example.myfit.SignAll.MenuSigninAll
 import com.example.myfit.databinding.ActivityMainBinding
@@ -13,6 +14,7 @@ import com.example.myfit.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var mediaPlayer: MediaPlayer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -17,6 +17,9 @@
         android:theme="@style/Theme.MyFit"
         tools:targetApi="31">
         <activity
+            android:name=".HomeUser.HomeUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".SearchContent.SearchContent"
             android:exported="false" />
         <activity

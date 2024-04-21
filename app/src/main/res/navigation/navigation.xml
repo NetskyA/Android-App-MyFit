@@ -8,10 +8,17 @@
         android:id="@+id/homeUsers"
         android:name="com.example.myfit.HomeUser.HomeUsers"
         android:label="fragment_home_users"
-        tools:layout="@layout/fragment_home_users" />
+        tools:layout="@layout/fragment_home_users" >
+        <action
+            android:id="@+id/action_homeUsers_to_menuDaily"
+            app:destination="@id/menuDaily" />
+    </fragment>
     <fragment
         android:id="@+id/menuDaily"
         android:name="com.example.myfit.MenuDaily.MenuDaily"
         android:label="fragment_menu_daily"
         tools:layout="@layout/fragment_menu_daily" />
+    <action
+        android:id="@+id/action_global_homeUsers"
+        app:destination="@id/homeUsers" />
 </navigation>
