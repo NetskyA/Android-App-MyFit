@@ -46,35 +46,7 @@ class MenuDiet : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val navigationBarView = view.findViewById<NavigationBarView>(R.id.bottom_navigation)
-        navigationBarView.selectedItemId = R.id.Menu_Item_Diet
-        navigationBarView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.Menu_Item_Feed -> {
-                    // Load Feed Fragment
-                    true
-                }
-                R.id.Menu_Item_Custom -> {
-                    // Load Custom Fragment
-                    true
-                }
-                R.id.Menu_Item_Daily -> {
-                    // Load Daily Fragment
-                    findNavController().navigate(R.id.action_global_menuDaily)
-                    true
-                }
-                R.id.Menu_Item_Diet -> {
-                    // Load Diet Fragment
-                    // BIarkan kosong karena sudah berada di Diet Fragment
-                    true
-                }
-                R.id.Menu_Item_Setting -> {
-                    // Load Settings Fragment
-                    true
-                }
-                else -> false
-            }
-        }
+
     }
 
     companion object {

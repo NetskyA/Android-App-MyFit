@@ -35,4 +35,13 @@
         android:name="com.example.myfit.ProfileSetting.MenuProfile"
         android:label="fragment_menu_profile"
         tools:layout="@layout/fragment_menu_profile" />
+    <action
+        android:id="@+id/action_global_menuFeeds2"
+        app:destination="@id/menuFeeds2" />
+    <action
+        android:id="@+id/action_global_menuCustoms"
+        app:destination="@id/menuCustoms" />
+    <action
+        android:id="@+id/action_global_menuProfile"
+        app:destination="@id/menuProfile" />
 </navigation>

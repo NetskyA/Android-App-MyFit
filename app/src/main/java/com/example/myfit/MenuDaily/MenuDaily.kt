@@ -40,6 +40,10 @@ class MenuDaily : Fragment() {
         return inflater.inflate(R.layout.fragment_menu_daily, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
 
 
     companion object {
