@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="@dimen/_11sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             style="@style/TEXT"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="@+id/Bottom">
