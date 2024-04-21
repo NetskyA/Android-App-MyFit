@@ -20,4 +20,19 @@
     <action
         android:id="@+id/action_global_menuDiet"
         app:destination="@id/menuDiet" />
+    <fragment
+        android:id="@+id/menuCustoms"
+        android:name="com.example.myfit.MenuCustom.MenuCustoms"
+        android:label="fragment_menu_customs"
+        tools:layout="@layout/fragment_menu_customs" />
+    <fragment
+        android:id="@+id/menuFeeds2"
+        android:name="com.example.myfit.MenuFeed.MenuFeeds"
+        android:label="fragment_menu_feeds"
+        tools:layout="@layout/fragment_menu_feeds" />
+    <fragment
+        android:id="@+id/menuProfile"
+        android:name="com.example.myfit.ProfileSetting.MenuProfile"
+        android:label="fragment_menu_profile"
+        tools:layout="@layout/fragment_menu_profile" />
 </navigation>

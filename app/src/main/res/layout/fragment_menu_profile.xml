@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuDaily.MenuDaily">
+    tools:context=".ProfileSetting.MenuProfile">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,6 +40,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.93" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Menu Feeds"
+            android:textSize="@dimen/_30sdp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="@+id/Upper"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintEnd_toEndOf="@+id/Right"
+            app:layout_constraintBottom_toTopOf="@+id/Bottom"/>
 
         <LinearLayout
             android:layout_width="match_parent"
