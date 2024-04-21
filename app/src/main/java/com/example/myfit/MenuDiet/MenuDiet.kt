@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.myfit.R
+import com.google.android.material.navigation.NavigationBarView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,6 +41,40 @@ class MenuDiet : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu_diet, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val navigationBarView = view.findViewById<NavigationBarView>(R.id.bottom_navigation)
+        navigationBarView.selectedItemId = R.id.Menu_Item_Diet
+        navigationBarView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.Menu_Item_Feed -> {
+                    // Load Feed Fragment
+                    true
+                }
+                R.id.Menu_Item_Custom -> {
+                    // Load Custom Fragment
+                    true
+                }
+                R.id.Menu_Item_Daily -> {
+                    // Load Daily Fragment
+                    findNavController().navigate(R.id.action_global_menuDaily)
+                    true
+                }
+                R.id.Menu_Item_Diet -> {
+                    // Load Diet Fragment
+                    // BIarkan kosong karena sudah berada di Diet Fragment
+                    true
+                }
+                R.id.Menu_Item_Setting -> {
+                    // Load Settings Fragment
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     companion object {

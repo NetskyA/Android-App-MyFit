@@ -3,22 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeUsers">
-    <fragment
-        android:id="@+id/homeUsers"
-        android:name="com.example.myfit.HomeUser.HomeUsers"
-        android:label="fragment_home_users"
-        tools:layout="@layout/fragment_home_users" >
-        <action
-            android:id="@+id/action_homeUsers_to_menuDaily"
-            app:destination="@id/menuDaily" />
-    </fragment>
+    app:startDestination="@id/menuDaily">
     <fragment
         android:id="@+id/menuDaily"
         android:name="com.example.myfit.MenuDaily.MenuDaily"
         android:label="fragment_menu_daily"
         tools:layout="@layout/fragment_menu_daily" />
     <action
-        android:id="@+id/action_global_homeUsers"
-        app:destination="@id/homeUsers" />
+        android:id="@+id/action_global_menuDaily"
+        app:destination="@id/menuDaily" />
+    <fragment
+        android:id="@+id/menuDiet"
+        android:name="com.example.myfit.MenuDiet.MenuDiet"
+        android:label="fragment_menu_diet"
+        tools:layout="@layout/fragment_menu_diet" />
+    <action
+        android:id="@+id/action_global_menuDiet"
+        app:destination="@id/menuDiet" />
 </navigation>
