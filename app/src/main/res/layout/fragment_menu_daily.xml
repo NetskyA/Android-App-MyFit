@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_11sdp"
             style="@style/TEXT"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="@+id/Bottom">
@@ -55,7 +55,7 @@
                 android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
                 style="@style/Navigationcolor"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_63sdp"
                 app:menu="@menu/bottom_navigation_menu"/>
         </LinearLayout>
         <!--
