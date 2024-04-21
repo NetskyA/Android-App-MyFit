@@ -9,4 +9,9 @@
         android:name="com.example.myfit.HomeUser.HomeUsers"
         android:label="fragment_home_users"
         tools:layout="@layout/fragment_home_users" />
+    <fragment
+        android:id="@+id/menuDaily"
+        android:name="com.example.myfit.MenuDaily.MenuDaily"
+        android:label="fragment_menu_daily"
+        tools:layout="@layout/fragment_menu_daily" />
 </navigation>

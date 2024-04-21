@@ -126,7 +126,6 @@
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
-
             </LinearLayout>
 
             <androidx.constraintlayout.widget.Guideline
@@ -230,7 +229,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
                 app:layout_constraintTop_toTopOf="@+id/coveretconfirmpassword"/>
-
 
             <TextView
                 android:id="@+id/required"
@@ -365,7 +363,8 @@
                 android:textSize="@dimen/_20ssp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/Left"            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagilagi"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagilagi"
                 tools:ignore="HardcodedText" />
 
             <LinearLayout
@@ -390,11 +389,6 @@
                     android:text="Start your health not with regret, but with a smile. Let's start your healthy life with us."
                     tools:ignore="HardcodedText" />
             </LinearLayout>
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
-
-
 </layout>
