@@ -20,7 +20,8 @@
         <item name="android:background">@color/dark_grey</item>
     </style>
     <style name="Navigationcolor" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:background">@drawable/backgroundnavigations2</item>
+        <!--<item name="android:background">@drawable/backgroundnavigations2</item>-->
+        <item name="android:background">#F7E6E6E6</item>
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
         <item name="itemIconSize">@dimen/_25sdp</item>

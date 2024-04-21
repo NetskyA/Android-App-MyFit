@@ -20,7 +20,8 @@
         <item name="android:background">#FFFFFF</item>
     </style>
     <style name="Navigationcolor">
-        <item name="android:background">@drawable/backgroundnavigations3</item>
+        <!--<item name="android:background">@drawable/backgroundnavigations3</item>-->
+        <item name="android:background">#F7E6E6E6</item>
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
         <item name="itemIconSize">@dimen/_25sdp</item>

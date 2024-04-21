@@ -17,14 +17,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.07" />
+            app:layout_constraintGuide_percent="0.02" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Upper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="110dp" />
+            app:layout_constraintGuide_begin="0dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Bottom"
@@ -38,18 +38,193 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.93" />
+            app:layout_constraintGuide_percent="0.98" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/lybar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Menu Profile"
-            android:textSize="@dimen/_30sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:orientation="vertical"
+            android:background="@drawable/backgroundnavigations3"
             android:gravity="center"
-            app:layout_constraintTop_toTopOf="@+id/Upper"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintEnd_toEndOf="@+id/Right"
-            app:layout_constraintBottom_toTopOf="@+id/Bottom"/>
+            app:layout_constraintTop_toTopOf="@+id/Upper">
+
+            <LinearLayout
+                android:id="@+id/lybar1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_30sdp">
+
+                    <ImageView
+                        android:id="@+id/iv_share"
+                        android:layout_width="50dp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/share"
+                        android:visibility="visible"
+                        android:layout_gravity="center"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_userprofiles"
+                        android:layout_width="@dimen/_210sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/user" />
+
+                    <ImageView
+                        android:id="@+id/iv_menusetting"
+                        android:layout_width="50dp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/setting"
+                        android:layout_gravity="center"
+                        android:visibility="visible"
+                        />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_7sdp">
+
+                <TextView
+                    android:id="@+id/tv_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aldiaafn"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/tap"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_20sdp">
+
+                <TextView
+                    android:id="@+id/tv_favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2.1k favorite"
+                    android:textSize="15sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Tengahtengah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="210dp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/lybar"/>
+
+        <LinearLayout
+            android:id="@+id/lytengah"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_500sdp"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengah">
+
+
+            <LinearLayout
+                android:id="@+id/lytengah1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/lytengah"
+                tools:ignore="Suspicious0dp">
+
+                <TextView
+                    android:id="@+id/tv_created"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Created"
+                    android:textSize="@dimen/_22ssp"
+                    android:layout_gravity="start"
+                    android:textColor="@color/blue_main"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="@+id/lytengah1"/>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Craft your healthiest menu, your way!"
+                    android:textSize="15sp"
+                    android:textColor="@color/icon_color"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="@+id/tv_created"/>
+
+                <TextView
+                    android:id="@+id/tv_countcreated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="20 Post"
+                    android:textSize="@dimen/_12ssp"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/blue_main"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_gravity="center">
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/listview"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="10.0sp"
+                    android:layout_gravity="center"
+                    android:scrollbars="none"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

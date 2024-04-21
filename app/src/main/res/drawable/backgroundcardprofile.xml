@@ -24,12 +24,14 @@
         </shape>
     </item>
 
-    <!-- Content Layer -->
+    <!-- Content Layer with Gradient Background -->
     <item>
         <shape>
-            <solid android:color="#F8F5F5F5" /> <!-- Light white smoke color for background -->
+            <gradient
+                android:startColor="#E0E0E0"
+                android:endColor="#FFFFFF"
+                android:angle="270"/> <!-- Gradient from dark grey to white -->
             <corners android:radius="20dp" />
-            <stroke android:width="1dp" android:color="#F7EDEDED" /> <!-- Light white smoke border -->
         </shape>
     </item>
 </layer-list>

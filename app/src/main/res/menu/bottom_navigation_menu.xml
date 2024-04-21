@@ -9,8 +9,7 @@
         android:id="@+id/Menu_Item_Custom"
         android:enabled="true"
         android:icon="@drawable/menu"
-        android:title="custom"
-        />
+        android:title="custom" />
     <item
         android:id="@+id/Menu_Item_Daily"
         android:enabled="true"
