@@ -34,7 +34,11 @@
         android:id="@+id/menuProfile"
         android:name="com.example.myfit.ProfileSetting.MenuProfile"
         android:label="fragment_menu_profile"
-        tools:layout="@layout/fragment_menu_profile" />
+        tools:layout="@layout/fragment_menu_profile" >
+        <action
+            android:id="@+id/action_menuProfile_to_menuProfileSeeting"
+            app:destination="@id/menuProfileSeeting" />
+    </fragment>
     <action
         android:id="@+id/action_global_menuFeeds2"
         app:destination="@id/menuFeeds2" />

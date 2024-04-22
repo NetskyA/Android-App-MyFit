@@ -52,10 +52,10 @@ class MenuProfile : Fragment() {
         recyclerViewContent.adapter = menuProfileAdapter
         recyclerViewContent.layoutManager = layoutManager
 
-        /*binding.iv_menusetting.setOnClickListener {
-            val stepmove = MenuProfile.actionGlobalLogin()
+        binding.lybar2.setOnClickListener {
+            val stepmove = MenuProfileDirections.actionMenuProfileToMenuProfileSeeting()
             findNavController().navigate(stepmove)
-        }*/
+        }
 
     }
 }
