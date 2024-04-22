@@ -17,7 +17,7 @@
         <item name="android:hint">@color/grey</item>
     </style>
     <style name="Backgrounds">
-        <item name="android:background">#FFFFFF</item>
+        <item name="android:background">#E8E8E8</item>
     </style>
     <style name="Navigationcolor">
         <!--<item name="android:background">@drawable/backgroundnavigations3</item>-->

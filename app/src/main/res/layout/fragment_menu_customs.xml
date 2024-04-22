@@ -45,6 +45,7 @@
             android:layout_height="match_parent"
             android:text="Menu Customs"
             android:textSize="@dimen/_30sdp"
+            android:textColor="@color/icon_color"
             android:gravity="center"
             android:layout_marginTop="@dimen/_50sdp"
             android:layout_marginBottom="@dimen/_50sdp"

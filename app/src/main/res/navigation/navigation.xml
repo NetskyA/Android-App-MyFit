@@ -44,4 +44,9 @@
     <action
         android:id="@+id/action_global_menuProfile"
         app:destination="@id/menuProfile" />
+    <fragment
+        android:id="@+id/menuProfileSeeting"
+        android:name="com.example.myfit.ProfileSetting.MenuProfileSeeting"
+        android:label="fragment_menu_profile_seeting"
+        tools:layout="@layout/fragment_menu_profile_seeting" />
 </navigation>
