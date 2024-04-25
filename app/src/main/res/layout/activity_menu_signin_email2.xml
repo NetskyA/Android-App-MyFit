@@ -140,7 +140,6 @@
             android:id="@+id/titlename"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_9sdp"
             android:text="Name"
             android:textColor="@color/blue_main"
             android:textSize="@dimen/_13ssp"
@@ -186,7 +185,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="300dp"
+            app:layout_constraintGuide_begin="@dimen/_208sdp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
@@ -286,7 +285,7 @@
             android:id="@+id/titledatebirtherrormsg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="@dimen/_50sdp"
             android:text="Please enter the year of your birth date using four digits (e.g., 1990)."
             android:textColor="@color/light_red"
             android:textSize="15sp"
@@ -301,7 +300,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/_315sdp"
+            app:layout_constraintGuide_begin="@dimen/_277sdp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/titledatebirtherrormsg"
@@ -326,7 +325,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_18sdp"
             android:textColor="@color/grey"
-            android:text="We use your gender to help personalize our content recommendations home feed."
+            android:text="We use your gender to help with the diet."
             android:textSize="@dimen/_9sdp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
@@ -338,7 +337,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
@@ -381,7 +380,265 @@
         </RadioGroup>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Tengahtengahlagilagidan"
+            android:id="@+id/Tengahtengahapadah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_334sdp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/titledatebirtherrormsg"
+            app:layout_constraintTop_toTopOf="@+id/genderRadioGroup1"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_67sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahapadah">
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/titleheight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Height"
+                    android:textColor="@color/blue_main"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/titleheight1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textColor="@color/grey"
+                    android:text="Your height is much needed"
+                    android:textSize="@dimen/_9sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/ettitleheight"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:background="@drawable/borderbackground"
+                    android:hint="Your height"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/_15ssp"
+                    tools:ignore="RtlSymmetry" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_30sdp"
+                app:layout_constraintEnd_toStartOf="@+id/linearLayout4">
+                <TextView
+                    android:id="@+id/titleweight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight"
+                    android:textColor="@color/blue_main"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/titleweight1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textColor="@color/grey"
+                    android:text="Your weight is much needed"
+                    android:textSize="@dimen/_9sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/ettitleweight"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:background="@drawable/borderbackground"
+                    android:hint="Your weight"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/_15ssp"
+                    tools:ignore="RtlSymmetry" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Tengahtengahapadahini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_400sdp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/titledatebirtherrormsg"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahapadah"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_71sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahapadahini">
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/titleage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age"
+                    android:textColor="@color/blue_main"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/titleage1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textColor="@color/grey"
+                    android:text="Your age is much needed"
+                    android:textSize="@dimen/_9sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/ettitleage"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:background="@drawable/borderbackground"
+                    android:hint="Your age"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/_15ssp"
+                    tools:ignore="RtlSymmetry" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_30sdp"
+                app:layout_constraintEnd_toStartOf="@+id/linearLayout5">
+                <TextView
+                    android:id="@+id/titlebloodtype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blood Type"
+                    android:textColor="@color/blue_main"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/titlebloodtype1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textColor="@color/grey"
+                    android:text="blood type is much needed"
+                    android:textSize="@dimen/_9sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/ettitlebloodtype"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:background="@drawable/borderbackground"
+                    android:hint="Your blood type"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/_15ssp"
+                    tools:ignore="RtlSymmetry" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Tengahtengahlagiterus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_468sdp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/titledatebirtherrormsg"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahapadah"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_70sdp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagiterus">
+
+            <TextView
+                android:id="@+id/titlealaergi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Allergy"
+                android:textColor="@color/blue_main"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/titlealaergi1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:textColor="@color/grey"
+                android:text="What are your allergies"
+                android:textSize="@dimen/_9sdp"
+                />
+
+            <EditText
+                android:id="@+id/ettitlealaergi"
+                android:layout_width="@dimen/_258sdp"
+                android:layout_height="@dimen/_33sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:paddingStart="15dp"
+                android:background="@drawable/borderbackground"
+                android:hint="Your allergies"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_15ssp"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Tengahtengahlagiterusaja"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -389,7 +646,7 @@
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/titledatebirtherrormsg"
-            app:layout_constraintTop_toTopOf="@+id/genderRadioGroup1"/>
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagiterus"/>
 
         <Button
             android:id="@+id/nextSignInDateForm"
@@ -404,7 +661,7 @@
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagilagidan"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengahlagiterusaja"
             tools:ignore="HardcodedText" />
 
         <LinearLayout
