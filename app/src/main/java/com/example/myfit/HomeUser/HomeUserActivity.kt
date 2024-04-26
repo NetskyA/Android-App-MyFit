@@ -3,14 +3,8 @@ package com.example.myfit.HomeUser
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import androidx.navigation.findNavController
-import com.example.myfit.MenuCustom.MenuCustoms
-import com.example.myfit.MenuDaily.MenuDaily
-import com.example.myfit.MenuDiet.MenuDiet
-import com.example.myfit.MenuFeed.MenuFeeds
-import com.example.myfit.ProfileSetting.MenuProfile
 import com.example.myfit.R
 import com.google.android.material.navigation.NavigationBarView
 

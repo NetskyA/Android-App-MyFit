@@ -1,5 +1,6 @@
 package com.example.myfit.ProfileSetting
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myfit.HomeUser.HomeUserActivity
 import com.example.myfit.R
 import com.example.myfit.databinding.FragmentMenuProfileBinding
 
@@ -53,8 +55,9 @@ class MenuProfile : Fragment() {
         recyclerViewContent.layoutManager = layoutManager
 
         binding.lybar2.setOnClickListener {
-            val stepmove = MenuProfileDirections.actionMenuProfileToMenuProfileSeeting()
-            findNavController().navigate(stepmove)
+//            val stepmove = MenuProfileDirections.actionMenuProfileToMenuProfileSeeting()
+//            findNavController().navigate(stepmove)
+            startActivity(Intent(this.context, MenuProfileSettingV2::class.java))
         }
 
     }

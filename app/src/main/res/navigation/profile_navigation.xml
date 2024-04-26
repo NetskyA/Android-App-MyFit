@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_navigation"
+    app:startDestination="@id/profileSettingAccount">
+
+    <fragment
+        android:id="@+id/profileSettingAccount"
+        android:name="com.example.myfit.ProfileSetting.ProfileSettingAccount"
+        android:label="fragment_profile_setting_account"
+        tools:layout="@layout/fragment_profile_setting_account" />
+    <fragment
+        android:id="@+id/profileSettingBody"
+        android:name="com.example.myfit.ProfileSetting.ProfileSettingBody"
+        android:label="fragment_profile_setting_body"
+        tools:layout="@layout/fragment_profile_setting_body" />
+    <action
+        android:id="@+id/action_global_profileSettingAccount"
+        app:destination="@id/profileSettingAccount" />
+    <action
+        android:id="@+id/action_global_profileSettingBody"
+        app:destination="@id/profileSettingBody" />
+</navigation>
