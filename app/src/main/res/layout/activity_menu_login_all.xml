@@ -98,41 +98,6 @@
             app:layout_constraintTop_toTopOf="@+id/Tengah"
             tools:ignore="HardcodedText" />
 
-        <Button
-            android:id="@+id/loginwithfacebook"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="55dp"
-            android:background="@drawable/border"
-            android:drawableStart="@drawable/facebook"
-            android:paddingLeft="20dp"
-            android:paddingRight="40dp"
-            android:text="Continue with Facebook"
-            android:textAllCaps="false"
-            android:textColor="@color/grey"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/loginwithgoogle"
-            tools:ignore="HardcodedText" />
-
-        <Button
-            android:id="@+id/loginwithapple"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="55dp"
-            android:background="@drawable/border"
-            android:drawableStart="@drawable/apple"
-            android:paddingLeft="20dp"
-            android:paddingRight="40dp"
-            android:text="Continue with Apple"
-            android:textAllCaps="false"
-            android:textColor="@color/grey"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/loginwithfacebook"
-            tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/loginwithphonenumber"
@@ -142,11 +107,14 @@
             android:background="@drawable/border"
             android:text="Continue with phone number"
             android:textAllCaps="false"
+            android:paddingLeft="20dp"
+            android:paddingRight="40dp"
+            android:drawableStart="@drawable/telephone"
             android:textColor="@color/grey"
             android:textSize="22sp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/loginwithapple"
+            app:layout_constraintTop_toTopOf="@+id/loginwithgoogle"
             tools:ignore="HardcodedText" />
 
         <LinearLayout
@@ -154,7 +122,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="70dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
@@ -189,7 +157,7 @@
             android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="@dimen/_60sdp"
             android:text="Email or username"
             android:textColor="@color/grey"
             android:textSize="15sp"
@@ -298,11 +266,18 @@
         </LinearLayout>
 
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Tengahtengah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="655dp" />
+
         <Button
             android:id="@+id/nextMenuLogIn"
             android:layout_width="0dp"
             android:layout_height="45dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="@dimen/_40sdp"
             android:background="@drawable/borderblue"
             android:text="Log In"
             android:textAllCaps="false"
@@ -310,27 +285,20 @@
             android:textSize="22sp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengah"
             tools:ignore="HardcodedText" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Tengahtengah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="740dp" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="@dimen/_55sdp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/Tengahtengah">
+            app:layout_constraintTop_toTopOf="@+id/nextMenuLogIn">
 
             <TextView
                 android:layout_width="wrap_content"

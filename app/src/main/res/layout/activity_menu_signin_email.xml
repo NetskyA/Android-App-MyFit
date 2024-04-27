@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="110dp" />
+                app:layout_constraintGuide_percent="0.11916584" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/Bottom"
@@ -121,7 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:text="Create a password"
+                        android:text="Create a Email &amp; Password"
                         android:textColor="@color/grey"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold" />
@@ -133,17 +133,49 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="180dp"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintGuide_percent="0.18054162"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Email address"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout2"/>
+                app:layout_constraintTop_toTopOf="@+id/Tengahtengah" />
+
+            <EditText
+                android:id="@+id/usernameSignIn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_33sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:autofillHints="emailAddress"
+                android:background="@drawable/borderbackground"
+                android:hint="Name@domain.com"
+                android:paddingStart="@dimen/_12sdp"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/text2"
+                tools:ignore="RtlSymmetry" />
+
 
             <TextView
                 android:id="@+id/titlepswd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_40sdp"
                 style="@style/TEXT"
                 android:text="Password"
                 android:textColor="@color/white"
@@ -152,7 +184,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
-                app:layout_constraintTop_toTopOf="@+id/Tengahtengah"/>
+                app:layout_constraintTop_toTopOf="@+id/usernameSignIn"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/coveretpassword"
@@ -160,7 +192,7 @@
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true"
                 android:textColorHint="@color/grey"
-                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
@@ -183,7 +215,7 @@
                 android:id="@+id/titlecpswd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_50sdp"
                 android:text="Confirm Password"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
@@ -200,7 +232,7 @@
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true"
                 android:textColorHint="@color/grey"
-                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
@@ -224,7 +256,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="@dimen/_280sdp"
+                app:layout_constraintGuide_begin="@dimen/_305sdp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
@@ -234,7 +266,7 @@
                 android:id="@+id/required"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:text="Your password must contain at least"
                 android:textSize="@dimen/_12ssp"
                 android:textColor="@color/grey"

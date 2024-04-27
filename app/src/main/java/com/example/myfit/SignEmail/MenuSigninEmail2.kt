@@ -46,7 +46,7 @@ class MenuSigninEmail2 : AppCompatActivity() {
             startActivity(Intent(this, MenuSigninEmail3::class.java))
         }
 
-        val radioButtonsIds = arrayOf(R.id.rbMan, R.id.rbWoman, R.id.rbWoman, R.id.rbNonBinary, R.id.rbNotToSay)
+        val radioButtonsIds = arrayOf(R.id.rbMan, R.id.rbWoman, R.id.rbWoman, R.id.rbNonBinary)
         radioButtonsIds.forEach { radioButtonId ->
             val radioButton = findViewById<RadioButton>(radioButtonId)
             radioButton.setTextColor(ContextCompat.getColor(this, R.color.white))

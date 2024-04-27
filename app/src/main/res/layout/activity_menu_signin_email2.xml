@@ -141,7 +141,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Name"
-            android:textColor="@color/blue_main"
+            android:textColor="@color/white"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -196,7 +196,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Date of birth"
-            android:textColor="@color/blue_main"
+            android:textColor="@color/white"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -311,7 +311,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Gender"
-            android:textColor="@color/blue_main"
+            android:textColor="@color/white"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -369,14 +369,7 @@
                 android:layout_marginStart="@dimen/_6sdp"
                 android:text="Non-binary" />
 
-            <RadioButton
-                android:id="@+id/rbNotToSay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                style="@style/CustomRadioButton"
-                android:layout_marginStart="@dimen/_6sdp"
-                android:text="Not to say"/>
+
         </RadioGroup>
 
         <androidx.constraintlayout.widget.Guideline
@@ -409,7 +402,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Height"
-                    android:textColor="@color/blue_main"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_13ssp"
                     android:textStyle="bold" />
 
@@ -449,7 +442,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Weight"
-                    android:textColor="@color/blue_main"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_13ssp"
                     android:textStyle="bold" />
 
@@ -511,7 +504,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Age"
-                    android:textColor="@color/blue_main"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_13ssp"
                     android:textStyle="bold" />
 
@@ -551,7 +544,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Blood Type"
-                    android:textColor="@color/blue_main"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_13ssp"
                     android:textStyle="bold" />
 
@@ -607,7 +600,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Allergy"
-                android:textColor="@color/blue_main"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold" />
 

@@ -1,15 +1,342 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFEB3B"
     tools:context=".ProfileSetting.ProfileSettingAccount">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Form Account" />
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.07" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Upper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="60dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.93" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Upper">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/Upper">
+
+                <TextView
+                    android:id="@+id/textViewdata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Data Personal"
+                    android:gravity="center"
+                    android:textSize="@dimen/_20ssp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/Right"
+                    app:layout_constraintStart_toStartOf="@+id/Left"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewdata">
+
+                    <TextView
+                        android:id="@+id/text5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name :"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/blue_main"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/Tengahtengah" />
+
+                    <EditText
+                        android:id="@+id/editprofilename"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/text2"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/Right"
+                    app:layout_constraintStart_toStartOf="@+id/Left"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewdata">
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/blue_main"
+                        android:text="Email :"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/Tengahtengah" />
+
+                    <EditText
+                        android:id="@+id/editprofileemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:autofillHints="emailAddress"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/text2"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/Right"
+                    app:layout_constraintStart_toStartOf="@+id/Left"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewdata">
+
+                    <TextView
+                        android:id="@+id/text6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Password :"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/blue_main"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/Tengahtengah" />
+
+                    <EditText
+                        android:id="@+id/editprofilepassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/_15ssp"
+                        android:inputType="number"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/text2"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/Right"
+                    app:layout_constraintStart_toStartOf="@+id/Left"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewdata">
+
+                    <TextView
+                        android:id="@+id/text7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile :"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/blue_main"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/Tengahtengah" />
+
+                    <EditText
+                        android:id="@+id/editprofilemobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/_15ssp"
+                        android:inputType="number"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/text2"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/Right"
+                    app:layout_constraintStart_toStartOf="@+id/Left"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewdata">
+
+                    <TextView
+                        android:id="@+id/text8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date of birth"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/blue_main"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/Tengahtengah" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_13sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/Right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/Left"
+                        app:layout_constraintTop_toTopOf="@+id/titledatebirth1">
+
+                        <EditText
+                            android:id="@+id/etdaybirth"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_33sdp"
+                            android:background="@drawable/borders3"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_15ssp"
+                            android:hint="dd"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/grey"
+                            tools:ignore="RtlSymmetry"
+                            app:layout_constraintEnd_toStartOf="@+id/Right"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/Left"
+                            app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
+
+                        <Spinner
+                            android:id="@+id/monthSpinner"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_33sdp"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:background="@drawable/borders3"
+                            android:textAlignment="center"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_15ssp"
+                            tools:ignore="RtlSymmetry"
+                            app:layout_constraintEnd_toStartOf="@+id/Right"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/etdaybirth"
+                            app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
+
+                        <EditText
+                            android:id="@+id/etyearsbirth"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_33sdp"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:background="@drawable/borders3"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_15ssp"
+                            android:hint="yyyy"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/grey"
+                            tools:ignore="RtlSymmetry"
+                            app:layout_constraintEnd_toStartOf="@+id/Right"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/Left"
+                            app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/editallpersonaldata"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/borders2"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/nextSignIn"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:text="Edit Profile"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_15ssp"
+                            android:textColor="@color/white"
+                            android:textAllCaps="false"
+                            android:background="@drawable/borderblue"
+                            android:elevation="@dimen/_4sdp"
+                            app:layout_constraintEnd_toStartOf="@+id/Right"
+                            app:layout_constraintStart_toStartOf="@+id/Left"
+                            app:layout_constraintTop_toTopOf="@+id/signinwithphone"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

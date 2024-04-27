@@ -3,7 +3,7 @@
     <!-- Right Shadow Layer -->
     <item android:right="4dp" android:top="4dp" android:bottom="4dp">
         <shape>
-            <solid android:color="#800084d3"/> <!-- Semi-transparent blue shadow -->
+            <solid android:color="#80FFFFFF"/> <!-- Semi-transparent blue shadow -->
             <corners android:radius="20dp"/>
         </shape>
     </item>
@@ -11,7 +11,7 @@
     <!-- Left Shadow Layer -->
     <item android:left="4dp" android:top="4dp" android:bottom="4dp">
         <shape>
-            <solid android:color="#800084d3"/> <!-- Semi-transparent blue shadow -->
+            <solid android:color="#80FFFFFF"/> <!-- Semi-transparent blue shadow -->
             <corners android:radius="20dp"/>
         </shape>
     </item>
@@ -19,7 +19,7 @@
     <!-- Bottom Shadow Layer -->
     <item android:bottom="4dp">
         <shape>
-            <solid android:color="#800084d3"/> <!-- Semi-transparent blue shadow -->
+            <solid android:color="#80FFFFFF"/> <!-- Semi-transparent blue shadow -->
             <corners android:radius="20dp"/>
         </shape>
     </item>

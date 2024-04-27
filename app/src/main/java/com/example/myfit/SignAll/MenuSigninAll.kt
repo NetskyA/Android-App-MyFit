@@ -25,10 +25,10 @@ class MenuSigninAll : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu_signin_all)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_menu_signin_all)
-        val boldAndUnderlineText: Spanned = HtmlCompat.fromHtml("<u><b>Use phone number instead.</b></u>", HtmlCompat.FROM_HTML_MODE_LEGACY)
+/*        val boldAndUnderlineText: Spanned = HtmlCompat.fromHtml("<u><b>Use phone number instead.</b></u>", HtmlCompat.FROM_HTML_MODE_LEGACY)
         binding.signinwithphone.text = boldAndUnderlineText
-        binding.signinwithphone.setTypeface(null, Typeface.BOLD)
-        binding.signinwithphone.setOnClickListener{
+        binding.signinwithphone.setTypeface(null, Typeface.BOLD)*/
+        binding.signwithumberphone.setOnClickListener{
             startActivity(Intent(this, MenuSigninPhone::class.java))
         }
         binding.nextSignIn.setOnClickListener{
@@ -38,7 +38,7 @@ class MenuSigninAll : AppCompatActivity() {
             startActivity(Intent(this, MenuLoginAll::class.java))
         }
 
-        val videoPath = "android.resource://" + packageName + "/" + R.raw.backgroundmovie
+        val videoPath = "android.resource://" + packageName + "/" + R.raw.backgroundmovie2
         val uri = Uri.parse(videoPath)
         binding.videoView.setVideoURI(uri)
 
