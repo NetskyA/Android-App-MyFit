@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfit.HomeUser.HomeUserActivity
+import com.example.myfit.MenuFeed.MenuFeedOpened
 import com.example.myfit.R
 import com.example.myfit.databinding.FragmentMenuProfileBinding
 
@@ -50,7 +51,9 @@ class MenuProfile : Fragment() {
 
         recyclerViewContent = binding.rvFeedcontent
         layoutManager = GridLayoutManager(context, 2)
-        menuProfileAdapter = MenuProfileAdapter(temp)
+        menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+            startActivity(Intent(this.context, MenuFeedOpened::class.java))
+        })
         recyclerViewContent.adapter = menuProfileAdapter
         recyclerViewContent.layoutManager = layoutManager
 

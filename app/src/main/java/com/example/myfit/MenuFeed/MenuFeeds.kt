@@ -1,5 +1,6 @@
 package com.example.myfit.MenuFeed
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -48,7 +49,9 @@ class MenuFeeds : Fragment() {
         var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
         recyclerViewContent = binding.rvFeedcontent
         layoutManager = GridLayoutManager(context, 2)
-        menuProfileAdapter = MenuProfileAdapter(temp)
+        menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+            startActivity(Intent(this.context, MenuFeedOpened::class.java))
+        })
         recyclerViewContent.adapter = menuProfileAdapter
         recyclerViewContent.layoutManager = layoutManager
     }
