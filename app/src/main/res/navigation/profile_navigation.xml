@@ -10,14 +10,14 @@
         android:name="com.example.myfit.ProfileSetting.ProfileSettingAccount"
         android:label="fragment_profile_setting_account"
         tools:layout="@layout/fragment_profile_setting_account" />
+    <action
+        android:id="@+id/action_global_profileSettingAccount"
+        app:destination="@id/profileSettingAccount" />
     <fragment
         android:id="@+id/profileSettingBody"
         android:name="com.example.myfit.ProfileSetting.ProfileSettingBody"
         android:label="fragment_profile_setting_body"
         tools:layout="@layout/fragment_profile_setting_body" />
-    <action
-        android:id="@+id/action_global_profileSettingAccount"
-        app:destination="@id/profileSettingAccount" />
     <action
         android:id="@+id/action_global_profileSettingBody"
         app:destination="@id/profileSettingBody" />
