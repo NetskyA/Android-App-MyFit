@@ -20,7 +20,6 @@ class MenuProfileSettingV2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-
         binding = ActivityMenuProfileSettingV2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -32,8 +31,8 @@ class MenuProfileSettingV2 : AppCompatActivity() {
             findNavController(R.id.fragmentContainerView2).navigate(R.id.action_global_profileSettingBody)
         }
 
-     /*   binding.mpBtnBack.setOnClickListener {
-            findNavController(R.id.fragmentContainerView2).navigate(R.id.action_global_menuProfile)
-        }*/
+        binding.mpBtnBack.setOnClickListener {
+            finish()
+        }
     }
 }

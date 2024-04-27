@@ -17,6 +17,9 @@
         android:theme="@style/Theme.MyFit"
         tools:targetApi="31">
         <activity
+            android:name=".MenuFeed.MenuFeedOpened"
+            android:exported="false" />
+        <activity
             android:name=".ProfileSetting.MenuProfileSettingV2"
             android:exported="false" />
         <activity
