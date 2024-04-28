@@ -4,7 +4,7 @@
     <item android:bottom="0dp">
         <shape>
             <solid android:color="#800084d3"/> <!-- Semi-transparent blue shadow -->
-            <corners android:radius="20dp"/>
+            <corners android:radius="15dp"/>
         </shape>
     </item>
 
@@ -14,7 +14,7 @@
             <gradient
                 android:startColor="#B700BCD4"
                 android:angle="270"/>
-                <corners android:radius="20dp" />
+                <corners android:radius="15dp" />
         </shape>
     </item>
 </layer-list>
