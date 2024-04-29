@@ -43,7 +43,8 @@
         <LinearLayout
             android:id="@+id/apaja"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_400sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgroundnavigations2"
             android:orientation="vertical">
 
             <LinearLayout
@@ -64,27 +65,24 @@
 
                 <TextView
                     android:id="@+id/tvAccount"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_195sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/blue_main"
                     android:text="Explore"
-                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
                     android:textStyle="bold"
                     android:textSize="@dimen/_20sdp" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="@dimen/_280sdp"
-                android:layout_height="@dimen/_300sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginBottom="-185dp"
-                android:layout_gravity="center"
-                android:background="@drawable/backgroundnavigations2"
-                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/profileuser"
+                    android:layout_marginStart="@dimen/_5sdp" />
 
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/gambarcontent"
@@ -92,7 +90,7 @@
                 android:layout_height="@dimen/_210sdp"
                 android:layout_gravity="center"
                 android:background="@drawable/backgroundnavigations3"
-                android:layout_marginTop="-205dp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:orientation="horizontal">
 
             </LinearLayout>
@@ -101,7 +99,24 @@
                 android:layout_width="@dimen/_280sdp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aldiaafn"
+                    android:textStyle="bold"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textSize="@dimen/_15ssp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
@@ -138,7 +153,7 @@
 
             <LinearLayout
                 android:layout_width="@dimen/_280sdp"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_150sdp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:orientation="horizontal">
@@ -154,6 +169,20 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="800dp"
+            android:text="Start your health not with regret, but with a smile. Let's start your healthy life with us."
+            android:textAlignment="center"
+            android:textColor="@color/blue_main"
+            android:textSize="@dimen/_7sdp"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/apaja"
+            tools:ignore="HardcodedText" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

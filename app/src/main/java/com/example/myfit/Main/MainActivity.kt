@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer = MediaPlayer.create(this, R.raw.marimba)
         mediaPlayer.start()
 
-        val volume = 0.6f
+        val volume = 1.5f
         mediaPlayer.setVolume(volume, volume)
     }
     override fun onDestroy() {

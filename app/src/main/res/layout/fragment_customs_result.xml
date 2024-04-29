@@ -8,6 +8,110 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFEB3B"
-        android:orientation="vertical"></LinearLayout>
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/uploadimagemenucustoms"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/borders4"
+            android:scaleType="centerInside"
+            android:paddingStart="@dimen/_12sdp"
+            android:src="@drawable/galerry"
+            android:paddingBottom="@dimen/_2sdp"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aldiaafn"
+                android:textStyle="bold"
+                android:gravity="start"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_15ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/likefeed2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_7sdp"
+                android:textColor="@color/blue_main"
+                android:textSize="@dimen/_20ssp" />
+
+            <TextView
+                android:layout_width="@dimen/_203sdp"
+                android:layout_height="wrap_content"
+                android:text="likes"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:textColor="@color/blue_main"
+                android:textSize="@dimen/_18ssp" />
+
+            <ImageView
+                android:id="@+id/imagesfeed2"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/favoritebefore"
+                android:paddingTop="@dimen/_3sdp"
+                android:scaleType="centerCrop" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:gravity="start"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_15ssp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/nextSubmitMenuCustoms"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/borderblue"
+            android:text="Upload"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
 </FrameLayout>

@@ -54,15 +54,6 @@
                 android:layout_gravity="center"
                 android:scaleType="centerCrop" />
 
-            <ImageView
-                android:id="@+id/imagesfeed2"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_marginTop="-36dp"
-                android:layout_marginEnd="12dp"
-                android:layout_gravity="end"
-                android:src="@drawable/favoritebefore"
-                android:scaleType="centerCrop" />
 
         </LinearLayout>
 
