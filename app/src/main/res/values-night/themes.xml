@@ -6,6 +6,9 @@
     <style name="Theme.MyFit" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/blue_main</item>
     </style>
+    <style name="Fab" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="backgroundColor">@color/white</item>
+    </style>
     <style name ="TEXT">
         <item name="android:textColor">@color/blue_main</item>
     </style>
@@ -25,5 +28,6 @@
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
         <item name="itemIconSize">@dimen/_25sdp</item>
+        <item name="backgroundColor">@style/Fab</item>
     </style>
 </resources>

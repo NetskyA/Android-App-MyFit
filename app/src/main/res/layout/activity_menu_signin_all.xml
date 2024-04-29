@@ -60,7 +60,7 @@
                 android:layout_width="@dimen/_240sdp"
                 android:layout_height="wrap_content"
                 android:text="Discover what's best for your health!"
-                android:textSize="@dimen/_30ssp"
+                android:textSize="@dimen/_25ssp"
                 android:textColor="@color/white"
                 android:layout_marginTop="@dimen/_30sdp"
                 android:textStyle="bold"
@@ -122,10 +122,10 @@
 
                         <Button
                             android:id="@+id/nextSignIn"
-                            android:layout_width="@dimen/_258sdp"
+                            android:layout_width="@dimen/_265sdp"
                             android:layout_height="@dimen/_35sdp"
                             android:text="Create new account"
-                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
                             android:layout_gravity="center"
                             android:textSize="@dimen/_15ssp"
                             android:textColor="@color/white"
@@ -141,7 +141,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_18sdp"
                             android:gravity="center">
 
                             <TextView
@@ -159,7 +159,7 @@
                         <LinearLayout
                             android:id="@+id/linearLayout"
                             android:layout_width="@dimen/_258sdp"
-                            android:layout_height="@dimen/_40sdp"
+                            android:layout_height="@dimen/_35sdp"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginBottom="@dimen/_5sdp"
                             android:layout_gravity="center"

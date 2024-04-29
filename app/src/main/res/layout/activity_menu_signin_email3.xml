@@ -161,7 +161,7 @@
                 android:layout_gravity="center"
                 android:text="I would prefer not to receive marketing messages from MyFit"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_10ssp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
 
@@ -197,7 +197,7 @@
                 android:layout_gravity="center"
                 android:text="Share my registration data with MyFit's content providers for marketing purposes."
                 android:textColor="@color/white"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_10ssp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
 
@@ -233,14 +233,6 @@
                 android:text="By clicking on sign-up, you agree to the."
                 tools:ignore="HardcodedText" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" MyFit Privacy Policy."
-                android:textColor="@color/blue_main"
-                android:textSize="@dimen/_10ssp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline

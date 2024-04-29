@@ -1,5 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <style name="Fab" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="backgroundColor">@color/grey</item>
+    </style>
     <style name="Base.Theme.MyFit" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/blue_main</item>
     </style>
@@ -25,6 +28,7 @@
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
         <item name="itemIconSize">@dimen/_25sdp</item>
+        <item name="backgroundColor">@style/Fab</item>
     </style>
 
 </resources>

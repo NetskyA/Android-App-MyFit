@@ -130,7 +130,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -138,15 +138,26 @@
                     android:id="@+id/rv_feedcontent"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    app:layout_constraintEnd_toStartOf="@+id/Right"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/Left"
-                    app:layout_constraintTop_toTopOf="@+id/lytengah1"/>
+                    android:layout_marginTop="@dimen/_5sdp">
 
-            </LinearLayout>
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/extended_fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/grey"
+                    android:contentDescription="More"
+                    android:text="Show"
+                    app:icon="@drawable/plus"
+                    android:theme="@style/Fab"/>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
