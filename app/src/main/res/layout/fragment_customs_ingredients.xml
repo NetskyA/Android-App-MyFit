@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuCustom.CustomsIngredients">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/backgroundnavigations2"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:orientation="vertical">
+
+
+        <ImageButton
+            android:id="@+id/uploadimagemenucustoms"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/borders4"
+            android:paddingStart="@dimen/_12sdp"
+            android:src="@drawable/galerry"
+            android:paddingBottom="@dimen/_2sdp"/>
+
+
+        <EditText
+            android:id="@+id/etNamaMenuCustoms"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:hint="Menu name"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/borders4"
+            android:textColorHint="@color/grey"
+            android:paddingStart="@dimen/_20sdp"
+            android:textSize="@dimen/_14sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_2sdp"/>
+
+        <EditText
+            android:id="@+id/etNamabahanbahan"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:hint="Ingredients"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/borders4"
+            android:textColorHint="@color/grey"
+            android:paddingStart="@dimen/_20sdp"
+            android:textSize="@dimen/_14sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_2sdp"/>
+
+        <EditText
+            android:id="@+id/etNamanutrisi"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:hint="Nutrition"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/borders4"
+            android:textColorHint="@color/grey"
+            android:paddingStart="@dimen/_20sdp"
+            android:textSize="@dimen/_14sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_2sdp"/>
+
+        <EditText
+            android:id="@+id/etCaraMemasak"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:hint="How to make (Optional)"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/borders4"
+            android:textColorHint="@color/grey"
+            android:paddingStart="@dimen/_20sdp"
+            android:textSize="@dimen/_14sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_2sdp"/>
+
+        <EditText
+            android:id="@+id/etNotemenu"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:hint="Note (Optional)"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/borders4"
+            android:textColorHint="@color/grey"
+            android:paddingStart="@dimen/_20sdp"
+            android:textSize="@dimen/_14sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_2sdp"/>
+
+        <Button
+            android:id="@+id/nextCheckmenu"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/borderblue"
+            android:text="Check"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+</FrameLayout>
+

@@ -154,13 +154,111 @@
                     android:layout_marginTop="@dimen/_6sdp"
                     android:orientation="vertical">
 
-                    <androidx.fragment.app.FragmentContainerView
-                        android:id="@+id/CustomsContainer"
-                        android:name="androidx.navigation.fragment.NavHostFragment"
+
+                    <ImageButton
+                        android:id="@+id/uploadimagemenucustoms"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:defaultNavHost="true"
-                        app:navGraph="@navigation/custom_navigation" />
+                        android:layout_height="@dimen/_140sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:background="@drawable/borders4"
+                        android:paddingStart="@dimen/_12sdp"
+                        android:src="@drawable/galerry"
+                        android:paddingBottom="@dimen/_2sdp"/>
+
+
+                    <EditText
+                        android:id="@+id/etNamaMenuCustoms"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:hint="Menu name"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:background="@drawable/borders4"
+                        android:textColorHint="@color/grey"
+                        android:paddingStart="@dimen/_20sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_2sdp"/>
+
+                    <EditText
+                        android:id="@+id/etNamabahanbahan"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:hint="Ingredients"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:background="@drawable/borders4"
+                        android:textColorHint="@color/grey"
+                        android:paddingStart="@dimen/_20sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_2sdp"/>
+
+                    <EditText
+                        android:id="@+id/etNamanutrisi"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:hint="Nutrition"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:background="@drawable/borders4"
+                        android:textColorHint="@color/grey"
+                        android:paddingStart="@dimen/_20sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_2sdp"/>
+
+                    <EditText
+                        android:id="@+id/etCaraMemasak"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:hint="How to make (Optional)"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:background="@drawable/borders4"
+                        android:textColorHint="@color/grey"
+                        android:paddingStart="@dimen/_20sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_2sdp"/>
+
+                    <EditText
+                        android:id="@+id/etNotemenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:hint="Note (Optional)"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:background="@drawable/borders4"
+                        android:textColorHint="@color/grey"
+                        android:paddingStart="@dimen/_20sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_2sdp"/>
+
+                    <Button
+                        android:id="@+id/nextCheckmenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:background="@drawable/borderblue"
+                        android:text="Check"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        tools:ignore="HardcodedText" />
+
                 </LinearLayout>
 
             </LinearLayout>
