@@ -6,80 +6,203 @@
     android:layout_height="match_parent"
     tools:context=".MenuDiet.MenuDiet">
 
-    <!-- TODO: Update blank fragment layout -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.07" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Upper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="110dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Bottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.90" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.93" />
-
-        <TextView
+    <!-- TODO: Update blank fragment layout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            style="@style/Backgrounds"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Menu Diet"
-            android:textSize="@dimen/_30sdp"
-            android:gravity="center"
-            app:layout_constraintTop_toTopOf="@+id/Upper"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintEnd_toEndOf="@+id/Right"
-            app:layout_constraintBottom_toTopOf="@+id/Bottom"/>
+            android:paddingBottom="@dimen/_80sdp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/backgroundmenudiet">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/Right"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            android:layout_marginTop="@dimen/_11sdp"-->
-<!--            style="@style/TEXT"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/Left"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/Bottom">-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
 
-<!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--                android:id="@+id/bottom_navigation"-->
-<!--                android:layout_width="match_parent"-->
-<!--                style="@style/Navigationcolor"-->
-<!--                android:layout_height="@dimen/_63sdp"-->
-<!--                app:menu="@menu/bottom_navigation_menu"/>-->
-<!--        </LinearLayout>-->
-        <!--
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <com.google.android.material.bottomnavigation.BottomNavigationView
-                        android:id="@+id/bottom_navigation"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="100dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="97" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <TextView
+                android:id="@+id/tvTitleHelo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:text="Hello, Aldi"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.01"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/hello"
+                app:layout_constraintBottom_toTopOf="@+id/Upper"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tvTitleHelo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.90" />
+
+            <TextView
+                android:id="@+id/tvTitleWe"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:text="Prepare the best 7 days for you"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_27sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
+                app:layout_constraintEnd_toEndOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.015"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleHelo"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageView
+                android:layout_width="@dimen/_187sdp"
+                android:layout_height="@dimen/_187sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/orangdiet"
+                app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvTitleWe"
+                app:layout_constraintTop_toTopOf="@+id/Upper"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Tengahtengah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3316413" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayoutmenudiet1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_280sdp"
+                android:layout_marginTop="298dp"
+                android:background="@drawable/backgroundnavigations6"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/Upper">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/monday"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.052"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.021" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDiet"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                    tools:layout_editor_absoluteX="17dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:text="Delete"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.111"
+                    app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDiet"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayoutmenudiet2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_280sdp"
+                android:layout_marginTop="392dp"
+                android:background="@drawable/backgroundnavigations6"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayoutmenudiet1">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            app:layout_constraintEnd_toStartOf="@+id/Right"-->
+            <!--            app:layout_constraintHorizontal_bias="0.0"-->
+            <!--            android:layout_marginTop="@dimen/_11sdp"-->
+            <!--            style="@style/TEXT"-->
+            <!--            app:layout_constraintStart_toStartOf="@+id/Left"-->
+            <!--            app:layout_constraintTop_toTopOf="@+id/Bottom">-->
+
+            <!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
+            <!--                android:id="@+id/bottom_navigation"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                style="@style/Navigationcolor"-->
+            <!--                android:layout_height="@dimen/_63sdp"-->
+            <!--                app:menu="@menu/bottom_navigation_menu"/>-->
+            <!--        </LinearLayout>-->
+            <!--
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:menu="@menu/bottom_navigation_menu" />
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.bottomnavigation.BottomNavigationView
+                            android:id="@+id/bottom_navigation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:menu="@menu/bottom_navigation_menu" />
 
-                </LinearLayout>-->
+                    </LinearLayout>-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </FrameLayout>

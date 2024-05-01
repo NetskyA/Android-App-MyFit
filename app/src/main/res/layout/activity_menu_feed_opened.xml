@@ -67,10 +67,10 @@
                     android:id="@+id/tvAccount"
                     android:layout_width="@dimen/_195sdp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:textAlignment="center"
                     android:textColor="@color/blue_main"
                     android:text="Explore"
-                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:textStyle="bold"
                     android:textSize="@dimen/_20sdp" />
 
