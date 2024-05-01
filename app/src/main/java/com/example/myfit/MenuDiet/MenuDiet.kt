@@ -31,8 +31,8 @@ private const val ARG_PARAM2 = "param2"
 class MenuDiet : Fragment() {
     private lateinit var binding: FragmentMenuDietBinding
     private lateinit var recyclerViewContent: RecyclerView
-    private lateinit var menuProfileAdapter: MenuProfileAdapter
     private lateinit var layoutManager: RecyclerView.LayoutManager
+    private lateinit var menuEditAdapter: MenuDietAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,11 +55,10 @@ class MenuDiet : Fragment() {
         var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
         recyclerViewContent = binding.recyclerViewmenuResultDiet
         layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
-        menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-            startActivity(Intent(this.context, MenuDiet::class.java))
+        menuEditAdapter = MenuDietAdapter(temp, onDetailClickListener = {
+            startActivity(Intent(this.context, MenuFeedOpened::class.java))
         })
-
-        recyclerViewContent.adapter = menuProfileAdapter
+        recyclerViewContent.adapter = menuEditAdapter
         recyclerViewContent.layoutManager = layoutManager
     }
 
