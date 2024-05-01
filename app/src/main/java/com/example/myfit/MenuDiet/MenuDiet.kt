@@ -32,7 +32,11 @@ class MenuDiet : Fragment() {
     private lateinit var binding: FragmentMenuDietBinding
     private lateinit var recyclerViewContent: RecyclerView
     private lateinit var layoutManager: RecyclerView.LayoutManager
-    private lateinit var menuEditAdapter: MenuDietAdapter
+    private lateinit var menuDietAdapter: MenuDietAdapter
+
+    private lateinit var recyclerViewContentSearch: RecyclerView
+    private lateinit var layoutManagerSearch: RecyclerView.LayoutManager
+    private lateinit var menuDietSearchAdapter: MenuDietSearchAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,11 +59,19 @@ class MenuDiet : Fragment() {
         var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test4" )
         recyclerViewContent = binding.recyclerViewmenuResultDiet
         layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
-        menuEditAdapter = MenuDietAdapter(temp, onDetailClickListener = {
+        menuDietAdapter = MenuDietAdapter(temp, onDetailClickListener = {
             startActivity(Intent(this.context, MenuFeedOpened::class.java))
         })
-        recyclerViewContent.adapter = menuEditAdapter
+        recyclerViewContent.adapter = menuDietAdapter
         recyclerViewContent.layoutManager = layoutManager
+
+        recyclerViewContentSearch = binding.recyclerViewmenuResultDiet2
+        layoutManagerSearch = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
+        menuDietSearchAdapter = MenuDietSearchAdapter(temp, onDetailClickListener = {
+            startActivity(Intent(this.context, MenuFeedOpened::class.java))
+        })
+        recyclerViewContentSearch.adapter = menuDietSearchAdapter
+        recyclerViewContentSearch.layoutManager = layoutManagerSearch
     }
 
 }
