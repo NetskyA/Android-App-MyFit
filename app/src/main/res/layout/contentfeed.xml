@@ -52,13 +52,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="#F44336"
                 android:scaleType="centerCrop" />
 
-
         </LinearLayout>
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

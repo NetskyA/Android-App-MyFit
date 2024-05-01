@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,22 +9,24 @@
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
+        style="@style/Backgrounds"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundmenudiet">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.07" />
+            app:layout_constraintGuide_percent="0.03" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Upper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="110dp" />
+            app:layout_constraintGuide_end="955dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Bottom"
@@ -38,48 +40,94 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.93" />
+            app:layout_constraintGuide_percent="0.96" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/user"
+            app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
+            app:layout_constraintEnd_toStartOf="@+id/tvTitleWe"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.268"
+            app:shapeAppearance="@style/CircularFull" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Menu Daily"
-            android:textSize="@dimen/_30sdp"
-            android:gravity="center"
-            app:layout_constraintTop_toTopOf="@+id/Upper"
+            android:id="@+id/tvTitleWe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:text="Hello,"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintEnd_toEndOf="@+id/Right"
-            app:layout_constraintBottom_toTopOf="@+id/Bottom"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.291" />
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/Right"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            android:layout_marginTop="@dimen/_11sdp"-->
-<!--            style="@style/TEXT"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/Left"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/Bottom">-->
+        <TextView
+            android:id="@+id/tvTitleWe2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Aldi"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintStart_toEndOf="@+id/tvTitleWe"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.176" />
 
-<!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--                android:id="@+id/bottom_navigation"-->
-<!--                android:layout_width="match_parent"-->
-<!--                style="@style/Navigationcolor"-->
-<!--                android:layout_height="@dimen/_63sdp"-->
-<!--                app:menu="@menu/bottom_navigation_menu"/>-->
-<!--        </LinearLayout>-->
-        <!--
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <com.google.android.material.bottomnavigation.BottomNavigationView
-                        android:id="@+id/bottom_navigation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:menu="@menu/bottom_navigation_menu" />
 
-                </LinearLayout>-->
+        <TextView
+            android:id="@+id/tvTitleWe3"
+            android:layout_width="@dimen/_190sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="148dp"
+            android:fontFamily="@font/bungasai"
+            android:text="Are you ready to commit to your plan"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/imagebanner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.642"
+            app:layout_constraintStart_toEndOf="@+id/tvTitleWe3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/Tengahtengah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_210sdp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/carousel_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_400sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengah" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+</RelativeLayout>

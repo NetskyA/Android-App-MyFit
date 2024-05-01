@@ -6,49 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfit.MenuFeed.MenuFeedOpened
-import com.example.myfit.ProfileSetting.MenuProfileAdapter
-import com.example.myfit.R
 import com.example.myfit.databinding.FragmentMenuDietBinding
-import com.example.myfit.databinding.FragmentMenuFeedsBinding
-import com.google.android.material.navigation.NavigationBarView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MenuDiet.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MenuDiet : Fragment() {
     private lateinit var binding: FragmentMenuDietBinding
-    private lateinit var recyclerViewContent: RecyclerView
-    private lateinit var layoutManager: RecyclerView.LayoutManager
-    private lateinit var menuDietAdapter: MenuDietAdapter
-
-    private lateinit var recyclerViewContentSearch: RecyclerView
-    private lateinit var layoutManagerSearch: RecyclerView.LayoutManager
-    private lateinit var menuDietSearchAdapter: MenuDietSearchAdapter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         binding = FragmentMenuDietBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -56,22 +25,31 @@ class MenuDiet : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test4" )
-        recyclerViewContent = binding.recyclerViewmenuResultDiet
-        layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
-        menuDietAdapter = MenuDietAdapter(temp, onDetailClickListener = {
-            startActivity(Intent(this.context, MenuFeedOpened::class.java))
-        })
-        recyclerViewContent.adapter = menuDietAdapter
-        recyclerViewContent.layoutManager = layoutManager
-
-        recyclerViewContentSearch = binding.recyclerViewmenuResultDiet2
-        layoutManagerSearch = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
-        menuDietSearchAdapter = MenuDietSearchAdapter(temp, onDetailClickListener = {
-            startActivity(Intent(this.context, MenuFeedOpened::class.java))
-        })
-        recyclerViewContentSearch.adapter = menuDietSearchAdapter
-        recyclerViewContentSearch.layoutManager = layoutManagerSearch
+        val temp: ArrayList<String> = arrayListOf("test", "test2", "test3", "test4")
+        setupRecyclerView(binding.recyclerViewmenuResultDiet, temp, LinearLayoutManager.HORIZONTAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDiet2, temp, LinearLayoutManager.VERTICAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietThursday, temp, LinearLayoutManager.HORIZONTAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietThursday2, temp, LinearLayoutManager.VERTICAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietWednesday, temp, LinearLayoutManager.HORIZONTAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietWednesday2, temp, LinearLayoutManager.VERTICAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietTursday, temp, LinearLayoutManager.HORIZONTAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietTursday2, temp, LinearLayoutManager.VERTICAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietFriday, temp, LinearLayoutManager.HORIZONTAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietFriday2, temp, LinearLayoutManager.VERTICAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietSaturday, temp, LinearLayoutManager.HORIZONTAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietSaturday2, temp, LinearLayoutManager.VERTICAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietSunday, temp, LinearLayoutManager.HORIZONTAL)
+        setupRecyclerView(binding.recyclerViewmenuResultDietSunday2, temp, LinearLayoutManager.VERTICAL)
     }
 
+    private fun setupRecyclerView(recyclerView: RecyclerView, data: ArrayList<String>, orientation: Int) {
+        val layoutManager = LinearLayoutManager(context, orientation, false)
+        val adapter = if (orientation == LinearLayoutManager.HORIZONTAL) {
+            MenuDietAdapter(data) { startActivity(Intent(context, MenuFeedOpened::class.java)) }
+        } else {
+            MenuDietSearchAdapter(data) { startActivity(Intent(context, MenuFeedOpened::class.java)) }
+        }
+        recyclerView.layoutManager = layoutManager
+        recyclerView.adapter = adapter
+    }
 }

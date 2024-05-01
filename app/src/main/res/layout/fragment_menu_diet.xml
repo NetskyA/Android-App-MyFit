@@ -109,12 +109,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="392dp" />
+                app:layout_constraintGuide_begin="382dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/linearLayoutmenudiet1"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_280sdp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="298dp"
                 android:background="@drawable/backgroundnavigations6"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -135,12 +135,25 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.026" />
 
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/hide"
+                    android:text="Hide"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewmenuResultDiet"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.875"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewmenuResultDiet"
                     android:layout_width="@dimen/_187sdp"
                     android:layout_height="@dimen/_65sdp"
                     android:layout_marginStart="13dp"
-                    android:layout_marginTop="@dimen/_10sdp"
                     app:layout_constraintBottom_toTopOf="@+id/searchView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView4"
@@ -152,21 +165,19 @@
                     android:id="@+id/searchView"
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/backgroundnavigations1"
                     android:gravity="center"
-                    app:layout_constraintBottom_toTopOf="@+id/Tengahtengahlaginih"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.509"
+                    app:layout_constraintHorizontal_bias="0.49"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/buttondelete"
-                    app:layout_constraintVertical_bias="0.355" />
-
+                    app:layout_constraintTop_toBottomOf="@+id/buttondelete" />
 
                 <Button
                     android:id="@+id/buttondelete"
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_60sdp"
-                    android:layout_marginTop="70dp"
+                    android:layout_marginTop="@dimen/_42sdp"
                     android:background="@drawable/backgroundnavigations1"
                     android:text="Delete"
                     android:textColor="@color/white"
@@ -175,22 +186,18 @@
                     app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDiet"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/Tengahtengahlaginih"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_begin="498dp"
-                    app:layout_constraintGuide_percent="0.6" />
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewmenuResultDiet2"
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_11sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/Tengahtengahlaginih" />
+                    app:layout_constraintTop_toBottomOf="@+id/searchView"
+                    app:layout_constraintVertical_bias="1.0" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -198,44 +205,578 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/linearLayoutmenudiet2"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_280sdp"
-                android:layout_marginTop="392dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_260sdp"
                 android:background="@drawable/backgroundnavigations6"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
                 app:layout_constraintTop_toTopOf="@+id/linearLayoutmenudiet1">
 
+                <ImageView
+                    android:id="@+id/imageViewTursday"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/tuesday"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.034"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.026" />
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/hide"
+                    android:text="Hide"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewmenuResultDietTursday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.875"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewTursday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietTursday"
+                    android:layout_width="@dimen/_187sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/searchViewTursday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewTursday"
+                    app:layout_constraintVertical_bias="0.243">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <SearchView
+                    android:id="@+id/searchViewTursday"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttondeleteTursday" />
+
+                <Button
+                    android:id="@+id/buttondeleteTursday"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_42sdp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:text="Delete"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.25"
+                    app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDietTursday"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietTursday2"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchViewTursday" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!--        <LinearLayout-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            app:layout_constraintEnd_toStartOf="@+id/Right"-->
-            <!--            app:layout_constraintHorizontal_bias="0.0"-->
-            <!--            android:layout_marginTop="@dimen/_11sdp"-->
-            <!--            style="@style/TEXT"-->
-            <!--            app:layout_constraintStart_toStartOf="@+id/Left"-->
-            <!--            app:layout_constraintTop_toTopOf="@+id/Bottom">-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayoutmenudiet3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="340dp"
+                android:background="@drawable/backgroundnavigations6"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayoutmenudiet2">
 
-            <!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
-            <!--                android:id="@+id/bottom_navigation"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                style="@style/Navigationcolor"-->
-            <!--                android:layout_height="@dimen/_63sdp"-->
-            <!--                app:menu="@menu/bottom_navigation_menu"/>-->
-            <!--        </LinearLayout>-->
-            <!--
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <com.google.android.material.bottomnavigation.BottomNavigationView
-                            android:id="@+id/bottom_navigation"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:menu="@menu/bottom_navigation_menu" />
+                <ImageView
+                    android:id="@+id/imageViewWednesday"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/wednesday"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.034"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.026" />
 
-                    </LinearLayout>-->
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/hide"
+                    android:text="Hide"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewmenuResultDietWednesday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.875"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewWednesday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.727" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietWednesday"
+                    android:layout_width="@dimen/_187sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/searchViewWednesday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewWednesday"
+                    app:layout_constraintVertical_bias="0.243">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <SearchView
+                    android:id="@+id/searchViewWednesday"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttondeleteWednesday" />
+
+                <Button
+                    android:id="@+id/buttondeleteWednesday"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_42sdp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:text="Delete"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.25"
+                    app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDietWednesday"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietWednesday2"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchViewWednesday"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayoutmenudiet4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="340dp"
+                android:background="@drawable/backgroundnavigations6"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayoutmenudiet3">
+
+                <ImageView
+                    android:id="@+id/imageViewThursday"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/thursday"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.034"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.026" />
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/hide"
+                    android:text="Hide"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewmenuResultDietThursday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.875"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewThursday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietThursday"
+                    android:layout_width="@dimen/_187sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/searchViewThursday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewThursday"
+                    app:layout_constraintVertical_bias="0.243">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <SearchView
+                    android:id="@+id/searchViewThursday"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttondeleteThursday" />
+
+                <Button
+                    android:id="@+id/buttondeleteThursday"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_42sdp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:text="Delete"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.25"
+                    app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDietThursday"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietThursday2"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchViewThursday" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayoutmenudiet5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="344dp"
+                android:background="@drawable/backgroundnavigations6"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayoutmenudiet4">
+
+                <ImageView
+                    android:id="@+id/imageViewFriday"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/friday"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.034"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.026" />
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/hide"
+                    android:text="Hide"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewmenuResultDietFriday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.883"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewFriday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietFriday"
+                    android:layout_width="@dimen/_187sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/searchViewFriday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewFriday"
+                    app:layout_constraintVertical_bias="0.545">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <SearchView
+                    android:id="@+id/searchViewFriday"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttondeleteFriday" />
+
+                <Button
+                    android:id="@+id/buttondeleteFriday"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_42sdp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:text="Delete"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.25"
+                    app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDietFriday"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietFriday2"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchViewFriday"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayoutmenudiet6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="340dp"
+                android:background="@drawable/backgroundnavigations6"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayoutmenudiet5">
+
+                <ImageView
+                    android:id="@+id/imageViewSaturday"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/saturday"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.034"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.026" />
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/hide"
+                    android:text="Hide"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewmenuResultDietSaturday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.875"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewSaturday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietSaturday"
+                    android:layout_width="@dimen/_187sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/searchViewSaturday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewSaturday"
+                    app:layout_constraintVertical_bias="0.243">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <SearchView
+                    android:id="@+id/searchViewSaturday"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttondeleteSaturday" />
+
+                <Button
+                    android:id="@+id/buttondeleteSaturday"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_42sdp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:text="Delete"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.25"
+                    app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDietSaturday"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietSaturday2"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchViewSaturday"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayoutmenudiet7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="340dp"
+                android:background="@drawable/backgroundnavigations6"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayoutmenudiet6">
+
+                <ImageView
+                    android:id="@+id/imageViewSunday"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/sunday"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.034"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.026" />
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/hide"
+                    android:text="Hide"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewmenuResultDietSunday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.875"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewSunday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietSunday"
+                    android:layout_width="@dimen/_187sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/searchViewSunday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewSunday"
+                    app:layout_constraintVertical_bias="0.243">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <SearchView
+                    android:id="@+id/searchViewSunday"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttondeleteSunday" />
+
+                <Button
+                    android:id="@+id/buttondeleteSunday"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_42sdp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:text="Delete"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.25"
+                    app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDietSunday"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDietSunday2"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchViewSunday"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayoutmenudiet8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="340dp"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/linearLayoutmenudiet7">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_25sdp"
+                    android:fontFamily="@font/cocogooseprosemilightitalictrial"
+                    android:background="@drawable/backgroundnavigations3"
+                    android:text="Ready"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.25"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
