@@ -13,4 +13,7 @@
         <item name="colorAccent">@color/blue_main</item>
         <item name="android:buttonTint">@color/grey</item>
     </style>
+    <style name="Circular">
+        <item name="cornerSize">10%</item>
+    </style>
 </resources>

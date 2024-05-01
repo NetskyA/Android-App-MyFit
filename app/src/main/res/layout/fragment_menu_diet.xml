@@ -109,8 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.3316413" />
-
+                app:layout_constraintGuide_begin="392dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/linearLayoutmenudiet1"
@@ -131,32 +130,67 @@
                     android:src="@drawable/monday"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.052"
+                    app:layout_constraintHorizontal_bias="0.034"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.021" />
+                    app:layout_constraintVertical_bias="0.026" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewmenuResultDiet"
-                    android:layout_width="@dimen/_200sdp"
+                    android:layout_width="@dimen/_187sdp"
                     android:layout_height="@dimen/_65sdp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/searchView"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView4"
-                    tools:layout_editor_absoluteX="17dp">
+                    app:layout_constraintVertical_bias="0.243">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
+                <SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="@drawable/backgroundnavigations1"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toTopOf="@+id/Tengahtengahlaginih"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.509"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttondelete"
+                    app:layout_constraintVertical_bias="0.355" />
+
+
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
+                    android:id="@+id/buttondelete"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="70dp"
                     android:background="@drawable/backgroundnavigations1"
                     android:text="Delete"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.111"
+                    app:layout_constraintHorizontal_bias="0.25"
                     app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDiet"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/Tengahtengahlaginih"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="498dp"
+                    app:layout_constraintGuide_percent="0.6" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewmenuResultDiet2"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/Tengahtengahlaginih" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/_62sdp"
-    android:layout_height="@dimen/_62sdp">
+    android:layout_width="@dimen/_240sdp"
+    android:layout_height="wrap_content">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,32 +37,27 @@
 
         <LinearLayout
             android:id="@+id/lybarmenudiet"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
             android:background="@drawable/backgroundnavigations3"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/imagesmenudiet"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop" />
 
-            <ImageView
-                android:id="@+id/cancelmenudiet"
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
-                android:src="@drawable/cancel"
-                android:layout_gravity="end"
-                android:layout_marginTop="-75dp"
-                android:layout_marginEnd="@dimen/_6sdp"
-                android:scaleType="centerCrop" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imvCircular"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_4sdp"
+                android:src="@drawable/examplemenu"
+                app:layout_constraintEnd_toStartOf="@+id/imvCircularWithStroke"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:shapeAppearanceOverlay="@style/Circular"/>
 
         </LinearLayout>
 

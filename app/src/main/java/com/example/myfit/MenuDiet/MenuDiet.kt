@@ -52,7 +52,7 @@ class MenuDiet : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
+        var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test4" )
         recyclerViewContent = binding.recyclerViewmenuResultDiet
         layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
         menuEditAdapter = MenuDietAdapter(temp, onDetailClickListener = {
