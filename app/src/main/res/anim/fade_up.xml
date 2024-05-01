@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"> <!-- Keeps the view in the end state post-animation -->
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0"
+        android:duration="500" /> <!-- Duration for fade -->
+
+    <translate
+        android:fromYDelta="0%"
+        android:duration="500" />
+</set>

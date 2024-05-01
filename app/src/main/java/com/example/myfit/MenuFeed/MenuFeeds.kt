@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfit.ProfileSetting.MenuProfileAdapter
@@ -55,6 +58,12 @@ class MenuFeeds : Fragment() {
         })
         recyclerViewContent.adapter = menuProfileAdapter
         recyclerViewContent.layoutManager = layoutManager
+
+        val rvfeedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
+        val fadeUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        rvfeedcontent.startAnimation(fadeUpAnimation)
+
+
     }
 
 

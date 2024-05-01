@@ -6,9 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfit.MenuFeed.MenuFeedOpened
+import com.example.myfit.R
 import com.example.myfit.databinding.FragmentMenuDietBinding
 
 class MenuDiet : Fragment() {
@@ -24,6 +28,12 @@ class MenuDiet : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val imageView: ImageView = requireView().findViewById(R.id.menudietnih)
+        val textWe: TextView = requireView().findViewById(R.id.tvTitleWe)
+        val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        imageView.startAnimation(fadeInAnimation)
+        val fadeInAnimation2 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        textWe.startAnimation(fadeInAnimation2)
 
         val temp: ArrayList<String> = arrayListOf("test", "test2", "test3", "test4")
         setupRecyclerView(binding.recyclerViewmenuResultDiet, temp, LinearLayoutManager.HORIZONTAL)
