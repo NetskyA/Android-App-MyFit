@@ -1,5 +1,6 @@
 package com.example.myfit.MenuDaily
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +10,12 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.myfit.MenuFeed.MenuFeedOpened
+import com.example.myfit.ProfileSetting.MenuProfileAdapter
 import com.example.myfit.R
 import com.example.myfit.databinding.FragmentMenuDailyBinding
 import com.example.myfit.databinding.FragmentMenuDietBinding
@@ -20,7 +26,6 @@ import com.google.android.material.navigation.NavigationBarView
 class MenuDaily : Fragment() {
 
     private lateinit var binding: FragmentMenuDailyBinding
-    private lateinit var listAdapter: MenuDailyAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,32 +41,20 @@ class MenuDaily : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var data = mutableListOf<String>("test", "test2", "test3", "test4")
+        var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
+
         val imageView: ImageView = requireView().findViewById(R.id.imageView7)
         val textWe: TextView = requireView().findViewById(R.id.tvTitleWe3)
-        val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        val clycontentmenutoday: ConstraintLayout = requireView().findViewById(R.id.lycontentmenutoday)
+
+        val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in_right)
         imageView.startAnimation(fadeInAnimation)
 
-        val fadeInAnimation2 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        val fadeInAnimation1 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        clycontentmenutoday.startAnimation(fadeInAnimation1)
+
+        val fadeInAnimation2 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in_left)
         textWe.startAnimation(fadeInAnimation2)
-
-
-        /*        binding.carouselRecyclerView.layoutManager = CarouselLayoutManager()
-                listAdapter = MenuDailyAdapter(data)
-                binding.carouselRecyclerView.adapter = listAdapter*/
-
-/*        val videoPath = "android.resource://" + requireActivity().packageName + "/" + R.raw.backgroundmovie1
-        val uri = Uri.parse(videoPath)
-        binding.videoView.setVideoURI(uri)
-
-        // Set up a listener to loop the video continuously
-        binding.videoView.setOnCompletionListener {
-            // Restart the video when it completes
-            binding.videoView.start()
-        }
-
-        // Start the video as soon as it is ready
-        binding.videoView.start()*/
 
     }
 }

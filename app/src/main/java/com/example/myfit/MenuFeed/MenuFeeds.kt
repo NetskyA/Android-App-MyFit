@@ -60,7 +60,7 @@ class MenuFeeds : Fragment() {
         recyclerViewContent.layoutManager = layoutManager
 
         val rvfeedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
-        val fadeUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        val fadeUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
         rvfeedcontent.startAnimation(fadeUpAnimation)
 
 

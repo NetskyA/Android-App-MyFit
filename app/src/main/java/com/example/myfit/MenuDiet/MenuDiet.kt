@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfit.MenuFeed.MenuFeedOpened
@@ -34,6 +35,25 @@ class MenuDiet : Fragment() {
         imageView.startAnimation(fadeInAnimation)
         val fadeInAnimation2 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         textWe.startAnimation(fadeInAnimation2)
+
+        val menuDietLayoutIds = listOf(
+            R.id.linearLayoutmenudiet1,
+            R.id.linearLayoutmenudiet2,
+            R.id.linearLayoutmenudiet3,
+            R.id.linearLayoutmenudiet4,
+            R.id.linearLayoutmenudiet5,
+            R.id.linearLayoutmenudiet6,
+            R.id.linearLayoutmenudiet7
+        )
+
+        // Load the animation once
+        val fadeInAnimation1 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
+
+        // Apply the same animation to each ConstraintLayout found by ID
+        menuDietLayoutIds.forEach { layoutId ->
+            val layout = requireView().findViewById<ConstraintLayout>(layoutId)
+            layout.startAnimation(fadeInAnimation1)
+        }
 
         val temp: ArrayList<String> = arrayListOf("test", "test2", "test3", "test4")
         setupRecyclerView(binding.recyclerViewmenuResultDiet, temp, LinearLayoutManager.HORIZONTAL)

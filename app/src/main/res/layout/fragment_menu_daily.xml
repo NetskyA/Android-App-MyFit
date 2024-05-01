@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_end="955dp" />
+            app:layout_constraintGuide_percent="0.04212638" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Bottom"
@@ -42,6 +42,7 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.96" />
 
+
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="@dimen/_40sdp"
@@ -52,7 +53,7 @@
             app:layout_constraintHorizontal_bias="0.55"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.268"
+            app:layout_constraintVertical_bias="0.25"
             app:shapeAppearance="@style/CircularFull" />
 
         <TextView
@@ -66,23 +67,22 @@
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.291" />
+            app:layout_constraintVertical_bias="0.259" />
 
         <TextView
             android:id="@+id/tvTitleWe2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="32dp"
             android:text="Aldi"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintHorizontal_bias="0.028"
             app:layout_constraintStart_toEndOf="@+id/tvTitleWe"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.176" />
-
+            app:layout_constraintVertical_bias="0.174" />
 
         <TextView
             android:id="@+id/tvTitleWe3"
@@ -115,18 +115,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/_210sdp" />
+            app:layout_constraintGuide_begin="@dimen/_260sdp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/carousel_recycler_view"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lycontentmenutoday"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_400sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:clipChildren="false"
-            android:clipToPadding="false"
+            android:layout_height="@dimen/_300sdp"
+            android:background="@drawable/backgroundnavigations2"
+            app:layout_constraintBottom_toTopOf="@+id/Bottom"
             app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toTopOf="@+id/Tengahtengah" />
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengah"
+            app:layout_constraintVertical_bias="0.0">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

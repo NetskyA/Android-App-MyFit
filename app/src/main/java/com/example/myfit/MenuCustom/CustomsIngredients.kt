@@ -7,9 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.myfit.R

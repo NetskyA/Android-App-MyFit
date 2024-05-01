@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.LinearLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.myfit.R
@@ -36,6 +38,11 @@ class MenuCustoms : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val apajanih2: LinearLayout = requireView().findViewById(R.id.apajanih2)
+
+        val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
+        apajanih2.startAnimation(fadeInAnimation)
 
         binding.btnAddCustoms.setOnClickListener {
             // Navigate

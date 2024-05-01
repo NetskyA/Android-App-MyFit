@@ -12,14 +12,13 @@ class MenuDailyAdapter (val data: MutableList<String>): RecyclerView.Adapter<Men
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var itemView = LayoutInflater.from(parent.context).inflate(R.layout.card, parent, false)
+        var itemView = LayoutInflater.from(parent.context).inflate(R.layout.fragment_menu_daily, parent, false)
         return ViewHolder(itemView)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
     }
 
-    // digunakan untuk mengetahui ukuran dari list view yang akan di iterasikan
     override fun getItemCount(): Int {
         return data.size
     }

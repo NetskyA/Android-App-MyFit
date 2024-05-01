@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,7 +50,10 @@ class MenuProfile : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
+        val rv_feedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
 
+        val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
+        rv_feedcontent.startAnimation(fadeInAnimation)
         recyclerViewContent = binding.rvFeedcontent
         layoutManager = GridLayoutManager(context, 2)
         menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {

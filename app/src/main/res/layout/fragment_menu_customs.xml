@@ -96,6 +96,7 @@
 
 
             <LinearLayout
+                android:id="@+id/apajanih2"
                 android:layout_width="@dimen/_275sdp"
                 android:layout_height="@dimen/_480sdp"
                 android:orientation="vertical"
