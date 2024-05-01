@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfit.MenuFeed.MenuFeedOpened
 import com.example.myfit.ProfileSetting.MenuProfileAdapter
@@ -49,12 +51,14 @@ class MenuDiet : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
         recyclerViewContent = binding.recyclerViewmenuResultDiet
-        layoutManager = GridLayoutManager(context, 2)
+        layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
         menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
             startActivity(Intent(this.context, MenuDiet::class.java))
         })
+
         recyclerViewContent.adapter = menuProfileAdapter
         recyclerViewContent.layoutManager = layoutManager
     }
