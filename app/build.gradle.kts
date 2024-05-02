@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myfit"
+    namespace = "id.ac.istts.myfit"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.myfit"
+        applicationId = "id.ac.istts.myfit"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

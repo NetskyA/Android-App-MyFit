@@ -6,7 +6,7 @@
     app:startDestination="@id/menuDaily">
     <fragment
         android:id="@+id/menuDaily"
-        android:name="com.example.myfit.MenuDaily.MenuDaily"
+        android:name="id.ac.istts.myfit.MenuDaily.MenuDaily"
         android:label="fragment_menu_daily"
         tools:layout="@layout/fragment_menu_daily" />
     <action
@@ -14,7 +14,7 @@
         app:destination="@id/menuDaily" />
     <fragment
         android:id="@+id/menuDiet"
-        android:name="com.example.myfit.MenuDiet.MenuDiet"
+        android:name="id.ac.istts.myfit.MenuDiet.MenuDiet"
         android:label="fragment_menu_diet"
         tools:layout="@layout/fragment_menu_diet" />
     <action
@@ -22,7 +22,7 @@
         app:destination="@id/menuDiet" />
     <fragment
         android:id="@+id/menuCustoms"
-        android:name="com.example.myfit.MenuCustom.MenuCustoms"
+        android:name="id.ac.istts.myfit.MenuCustom.MenuCustoms"
         android:label="fragment_menu_customs"
         tools:layout="@layout/fragment_menu_customs" />
     <fragment

@@ -7,7 +7,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SignEmail.MenuSigninEmail3"
+        tools:context="id.ac.istts.myfit.SignEmail.MenuSigninEmail3"
         android:background="@drawable/backgroundimage1">
 
 

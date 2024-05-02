@@ -29,15 +29,7 @@
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".SearchContent.SearchContent"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".MenuDaily.MenuDaily"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".VidioV"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
@@ -45,23 +37,19 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HomeUser.HomeUser"
+            android:name="id.ac.istts.myfit.SignEmail.MenuSigninEmail3"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SignEmail.MenuSigninEmail3"
+            android:name="id.ac.istts.myfit.SignEmail.MenuSigninEmail2"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SignEmail.MenuSigninEmail2"
+            android:name="id.ac.istts.myfit.SignEmail.MenuSigninEmail"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SignEmail.MenuSigninEmail"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".SignPhone.MenuSigninPhone2"
+            android:name="id.ac.istts.myfit.SignPhone.MenuSigninPhone2"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -69,7 +57,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SignPhone.MenuSigninPhone"
+            android:name="id.ac.istts.myfit.SignPhone.MenuSigninPhone"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

@@ -6,7 +6,7 @@
     app:startDestination="@id/customsIngredients">
     <fragment
         android:id="@+id/customsIngredients"
-        android:name="com.example.myfit.MenuCustom.CustomsIngredients"
+        android:name="id.ac.istts.myfit.MenuCustom.CustomsIngredients"
         android:label="fragment_customs_ingredients"
         tools:layout="@layout/fragment_customs_ingredients" />
     <action
@@ -14,7 +14,7 @@
         app:destination="@id/customsIngredients" />
     <fragment
         android:id="@+id/customsResult"
-        android:name="com.example.myfit.MenuCustom.CustomsResult"
+        android:name="id.ac.istts.myfit.MenuCustom.CustomsResult"
         android:label="fragment_customs_result"
         tools:layout="@layout/fragment_customs_result" />
     <action
