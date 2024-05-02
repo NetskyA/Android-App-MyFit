@@ -50,46 +50,46 @@
             android:src="@drawable/user"
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintEnd_toStartOf="@+id/tvTitleWe"
-            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.25"
+            app:layout_constraintVertical_bias="0.213"
             app:shapeAppearance="@style/CircularFull" />
 
         <TextView
             android:id="@+id/tvTitleWe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="76dp"
+            android:layout_marginStart="84dp"
             android:text="Hello,"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.259" />
+            app:layout_constraintVertical_bias="0.23" />
 
         <TextView
             android:id="@+id/tvTitleWe2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="35dp"
             android:text="Aldi"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.028"
+            app:layout_constraintHorizontal_bias="0.058"
             app:layout_constraintStart_toEndOf="@+id/tvTitleWe"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.174" />
+            app:layout_constraintVertical_bias="0.145" />
 
         <TextView
             android:id="@+id/tvTitleWe3"
             android:layout_width="@dimen/_190sdp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="148dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="116dp"
             android:fontFamily="@font/bungasai"
             android:text="Are you ready to commit to your plan"
             android:textColor="@color/white"
@@ -115,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/_260sdp" />
+            app:layout_constraintGuide_percent="0.43"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lycontentmenutoday"
