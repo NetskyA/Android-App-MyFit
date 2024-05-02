@@ -1,4 +1,4 @@
-package com.example.myfit.ProfileSetting
+package id.ac.istts.myfit.ProfileSetting
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

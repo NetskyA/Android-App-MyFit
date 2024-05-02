@@ -37,19 +37,19 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="id.ac.istts.myfit.SignEmail.MenuSigninEmail3"
+            android:name=".SignEmail.MenuSigninEmail3"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="id.ac.istts.myfit.SignEmail.MenuSigninEmail2"
+            android:name=".SignEmail.MenuSigninEmail2"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="id.ac.istts.myfit.SignEmail.MenuSigninEmail"
+            android:name=".SignEmail.MenuSigninEmail"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="id.ac.istts.myfit.SignPhone.MenuSigninPhone2"
+            android:name=".SignPhone.MenuSigninPhone2"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -57,7 +57,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="id.ac.istts.myfit.SignPhone.MenuSigninPhone"
+            android:name=".SignPhone.MenuSigninPhone"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

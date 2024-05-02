@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.MenuFeed.MenuFeedOpened
 import id.ac.istts.myfit.ProfileSetting.MenuProfileAdapter
+import id.ac.istts.myfit.ProfileSetting.MenuProfileSettingV2
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuProfileBinding
 

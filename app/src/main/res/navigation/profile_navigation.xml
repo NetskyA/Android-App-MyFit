@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/profileSettingAccount"
-        android:name="com.example.myfit.ProfileSetting.ProfileSettingAccount"
+        android:name="id.ac.istts.myfit.ProfileSetting.ProfileSettingAccount"
         android:label="fragment_profile_setting_account"
         tools:layout="@layout/fragment_profile_setting_account" />
     <action
@@ -15,7 +15,7 @@
         app:destination="@id/profileSettingAccount" />
     <fragment
         android:id="@+id/profileSettingBody"
-        android:name="com.example.myfit.ProfileSetting.ProfileSettingBody"
+        android:name="id.ac.istts.myfit.ProfileSetting.ProfileSettingBody"
         android:label="fragment_profile_setting_body"
         tools:layout="@layout/fragment_profile_setting_body" />
     <action
