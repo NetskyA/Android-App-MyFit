@@ -141,39 +141,33 @@
             app:layout_constraintTop_toBottomOf="@+id/lycontentmenutoday"
             app:layout_constraintVertical_bias="0.54">
 
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/back2"
+
+            <Button
+                android:id="@+id/buttonnext"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgroundnavigations4"
+                android:text="Previous"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                app:layout_constraintEnd_toStartOf="@+id/buttonprevios"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.727" />
 
-
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/buttonprevios"
+                android:layout_width="@dimen/_110sdp"
                 android:layout_height="wrap_content"
-                android:text="Next Day"
-                android:textSize="@dimen/_20ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView9"
-                app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/back3"
+                android:background="@drawable/backgroundnavigations4"
+                android:text="Next"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
