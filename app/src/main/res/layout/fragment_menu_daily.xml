@@ -50,10 +50,10 @@
             android:src="@drawable/user"
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintEnd_toStartOf="@+id/tvTitleWe"
-            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.213"
+            app:layout_constraintVertical_bias="0.15"
             app:shapeAppearance="@style/CircularFull" />
 
         <TextView
@@ -67,33 +67,33 @@
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.23" />
+            app:layout_constraintVertical_bias="0.16" />
 
         <TextView
             android:id="@+id/tvTitleWe2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="30dp"
             android:text="Aldi"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintHorizontal_bias="0.034"
             app:layout_constraintStart_toEndOf="@+id/tvTitleWe"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.145" />
+            app:layout_constraintVertical_bias="0.078" />
 
         <TextView
             android:id="@+id/tvTitleWe3"
             android:layout_width="@dimen/_190sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="116dp"
+            android:layout_marginTop="126dp"
             android:fontFamily="@font/bungasai"
             android:text="Are you ready to commit to your plan"
             android:textColor="@color/white"
-            android:textSize="@dimen/_30ssp"
+            android:textSize="@dimen/_25ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,12 +115,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.43"/>
+            app:layout_constraintGuide_percent="0.40"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lycontentmenutoday"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_300sdp"
+            android:layout_height="@dimen/_280sdp"
             android:background="@drawable/backgroundnavigations2"
             app:layout_constraintBottom_toTopOf="@+id/Bottom"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -130,6 +130,53 @@
             app:layout_constraintVertical_bias="0.0">
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintBottom_toTopOf="@+id/Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toBottomOf="@+id/lycontentmenutoday"
+            app:layout_constraintVertical_bias="0.54">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/back2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next Day"
+                android:textSize="@dimen/_20ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/back3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

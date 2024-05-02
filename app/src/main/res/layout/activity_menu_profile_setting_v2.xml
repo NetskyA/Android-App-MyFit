@@ -175,7 +175,6 @@
                             android:layout_height="match_parent"
                             android:text="Personal"
                             android:textAlignment="center"
-                            android:textColor="@color/grey"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -206,7 +205,6 @@
                             android:layout_height="match_parent"
                             android:text="Body"
                             android:textAlignment="center"
-                            android:textColor="@color/grey"
                             android:textSize="16sp" />
 
                     </LinearLayout>
