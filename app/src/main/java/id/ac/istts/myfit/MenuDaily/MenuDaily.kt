@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.fragment.findNavController
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuDailyBinding
 
@@ -17,6 +18,7 @@ import id.ac.istts.myfit.databinding.FragmentMenuDailyBinding
 class MenuDaily : Fragment() {
 
     private lateinit var binding: FragmentMenuDailyBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -54,6 +56,10 @@ class MenuDaily : Fragment() {
 
         val fadeInAnimation4 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         buttonprevios.startAnimation(fadeInAnimation4)
+
+        binding.lycontentmenutoday.setOnClickListener {
+            findNavController().navigate(R.id.action_menuDaily_to_selectedDayMenus)
+        }
 
     }
 }

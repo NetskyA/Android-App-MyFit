@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.ProfileSetting.MenuProfileAdapter
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuFeedsBinding
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener
 
 class MenuFeeds : Fragment() {
     // TODO: Rename and change types of parameters
@@ -50,8 +52,24 @@ class MenuFeeds : Fragment() {
         val fadeUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
         rvfeedcontent.startAnimation(fadeUpAnimation)
 
+        binding.svSearch.setOnQueryTextFocusChangeListener { v, hasFocus ->
+            if (hasFocus) {
+                binding.lytengah.visibility = View.GONE
+                binding.lysearch.visibility = View.VISIBLE
+            }
+        }
+
+        KeyboardVisibilityEvent.setEventListener(requireActivity(), object : KeyboardVisibilityEventListener {
+            override fun onVisibilityChanged(isOpen: Boolean) {
+                if (!isOpen) {
+                    binding.lysearch.visibility = View.GONE
+                    binding.lytengah.visibility = View.VISIBLE
+                    binding.svSearch.setQuery("", false)
+                    binding.svSearch.clearFocus()
+                }
+            }
+        })
+
 
     }
-
-
 }

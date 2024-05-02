@@ -71,6 +71,7 @@
                 android:gravity="center">
 
                 <SearchView
+                    android:id="@+id/svSearch"
                     android:layout_width="@dimen/_270sdp"
                     android:layout_height="@dimen/_30sdp"
                     android:background="@drawable/backgroundnavigations1"
@@ -101,6 +102,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_500sdp"
             android:orientation="vertical"
+            android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
@@ -121,12 +123,12 @@
                     android:id="@+id/tv_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Discover the freedom to be better"
-                    android:textSize="15sp"
                     android:paddingStart="@dimen/_5sdp"
+                    android:text="Discover the freedom to be better"
                     android:textColor="@color/icon_color"
+                    android:textSize="15sp"
                     android:visibility="visible"
-                    app:layout_constraintTop_toTopOf="@+id/tv_created"/>
+                    app:layout_constraintTop_toTopOf="@+id/tv_created" />
 
             </LinearLayout>
 
@@ -151,10 +153,24 @@
                     android:backgroundTint="@color/blue_main"
                     android:contentDescription="More"
                     android:textColor="@color/white"
-                    app:icon="@drawable/showmore"
-                    android:theme="@style/Fab"/>
+                    android:theme="@style/Fab"
+                    app:icon="@drawable/showmore" />
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lysearch"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_500sdp"
+            android:background="#F44336"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/Right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Left"
+            app:layout_constraintTop_toTopOf="@+id/Tengahtengah">
 
         </LinearLayout>
 

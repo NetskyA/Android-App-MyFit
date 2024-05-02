@@ -8,7 +8,11 @@
         android:id="@+id/menuDaily"
         android:name="id.ac.istts.myfit.MenuDaily.MenuDaily"
         android:label="fragment_menu_daily"
-        tools:layout="@layout/fragment_menu_daily" />
+        tools:layout="@layout/fragment_menu_daily" >
+        <action
+            android:id="@+id/action_menuDaily_to_selectedDayMenus"
+            app:destination="@id/selectedDayMenus" />
+    </fragment>
     <action
         android:id="@+id/action_global_menuDaily"
         app:destination="@id/menuDaily" />
@@ -45,4 +49,9 @@
     <action
         android:id="@+id/action_global_menuProfile"
         app:destination="@id/menuProfile" />
+    <fragment
+        android:id="@+id/selectedDayMenus"
+        android:name="id.ac.istts.myfit.MenuDaily.SelectedDayMenus"
+        android:label="fragment_selected_day_menus"
+        tools:layout="@layout/fragment_selected_day_menus" />
 </navigation>
