@@ -1,4 +1,4 @@
-package com.example.myfit.MenuFeed
+package id.ac.istts.myfit.MenuFeed
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.ProfileSetting.MenuProfileAdapter
 import id.ac.istts.myfit.R
-import id.ac.istts.myfit.MenuFeed.MenuFeedOpened
 import id.ac.istts.myfit.databinding.FragmentMenuFeedsBinding
 
 class MenuFeeds : Fragment() {

@@ -27,17 +27,14 @@
         tools:layout="@layout/fragment_menu_customs" />
     <fragment
         android:id="@+id/menuFeeds2"
-        android:name="com.example.myfit.MenuFeed.MenuFeeds"
+        android:name="id.ac.istts.myfit.MenuFeed.MenuFeeds"
         android:label="fragment_menu_feeds"
         tools:layout="@layout/fragment_menu_feeds" />
     <fragment
         android:id="@+id/menuProfile"
-        android:name="com.example.myfit.ProfileSetting.MenuProfile"
+        android:name="id.ac.istts.myfit.ProfileSetting.MenuProfile"
         android:label="fragment_menu_profile"
         tools:layout="@layout/fragment_menu_profile" >
-        <action
-            android:id="@+id/action_menuProfile_to_menuProfileSeeting"
-            app:destination="@id/menuProfileSeeting" />
     </fragment>
     <action
         android:id="@+id/action_global_menuFeeds2"
@@ -48,9 +45,4 @@
     <action
         android:id="@+id/action_global_menuProfile"
         app:destination="@id/menuProfile" />
-    <fragment
-        android:id="@+id/menuProfileSeeting"
-        android:name="com.example.myfit.ProfileSetting.MenuProfileSetting"
-        android:label="fragment_menu_profile_seeting"
-        tools:layout="@layout/fragment_menu_profile_setting" />
 </navigation>
