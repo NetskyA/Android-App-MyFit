@@ -164,7 +164,6 @@
             android:id="@+id/lysearch"
             android:layout_width="0dp"
             android:layout_height="@dimen/_500sdp"
-            android:background="#F44336"
             android:orientation="vertical"
             android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/Right"

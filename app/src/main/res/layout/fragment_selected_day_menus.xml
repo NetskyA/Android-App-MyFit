@@ -9,8 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        style="@style/Backgrounds">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -42,8 +41,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/backgroundnavigations2"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -67,7 +65,7 @@
                     android:layout_width="@dimen/_195sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:text="Explore"
+                    android:text="Daily Menu"
                     android:textAlignment="center"
                     android:textColor="@color/blue_main"
                     android:textSize="@dimen/_20sdp"
