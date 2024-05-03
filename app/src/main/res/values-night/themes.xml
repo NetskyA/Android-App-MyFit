@@ -21,6 +21,7 @@
     </style>
     <style name="Backgrounds">
         <item name="android:background">@color/dark_grey</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="Navigationcolor" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <!--<item name="android:background">@drawable/backgroundnavigations2</item>-->
