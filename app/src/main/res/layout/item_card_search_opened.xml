@@ -41,7 +41,7 @@
             android:layout_width="@dimen/_275sdp"
             android:layout_height="@dimen/_70sdp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="p"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent">
