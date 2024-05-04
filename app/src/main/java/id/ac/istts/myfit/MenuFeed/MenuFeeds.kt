@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.EditText
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.ProfileSetting.MenuProfileAdapter
 import id.ac.istts.myfit.R
@@ -20,8 +23,7 @@ class MenuFeeds : Fragment() {
     private lateinit var binding: FragmentMenuFeedsBinding
     private lateinit var recyclerViewContent: RecyclerView
     private lateinit var menuProfileAdapter: MenuProfileAdapter
-    private lateinit var layoutManager: RecyclerView.LayoutManager
-
+    private lateinit var layoutManagerContent: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,37 +41,24 @@ class MenuFeeds : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Isi RV sementara
         var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
+
         recyclerViewContent = binding.rvFeedcontent
-        layoutManager = GridLayoutManager(context, 2)
+        layoutManagerContent = GridLayoutManager(context, 2)
         menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
             startActivity(Intent(this.context, MenuFeedOpened::class.java))
         })
         recyclerViewContent.adapter = menuProfileAdapter
-        recyclerViewContent.layoutManager = layoutManager
+        recyclerViewContent.layoutManager = layoutManagerContent
 
         val rvfeedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
         val fadeUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
         rvfeedcontent.startAnimation(fadeUpAnimation)
 
-        binding.svSearch.setOnQueryTextFocusChangeListener { v, hasFocus ->
-            if (hasFocus) {
-                binding.lytengah.visibility = View.GONE
-                binding.lysearch.visibility = View.VISIBLE
-            }
+        binding.svSearch.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFeeds2_to_menuFeedsSearch2)
         }
-
-        KeyboardVisibilityEvent.setEventListener(requireActivity(), object : KeyboardVisibilityEventListener {
-            override fun onVisibilityChanged(isOpen: Boolean) {
-                if (!isOpen) {
-                    binding.lysearch.visibility = View.GONE
-                    binding.lytengah.visibility = View.VISIBLE
-                    binding.svSearch.setQuery("", false)
-                    binding.svSearch.clearFocus()
-                }
-            }
-        })
-
-
     }
 }

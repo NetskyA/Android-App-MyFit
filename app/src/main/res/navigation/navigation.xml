@@ -33,7 +33,11 @@
         android:id="@+id/menuFeeds2"
         android:name="id.ac.istts.myfit.MenuFeed.MenuFeeds"
         android:label="fragment_menu_feeds"
-        tools:layout="@layout/fragment_menu_feeds" />
+        tools:layout="@layout/fragment_menu_feeds" >
+        <action
+            android:id="@+id/action_menuFeeds2_to_menuFeedsSearch2"
+            app:destination="@id/menuFeedsSearch2" />
+    </fragment>
     <fragment
         android:id="@+id/menuProfile"
         android:name="id.ac.istts.myfit.ProfileSetting.MenuProfile"
@@ -54,4 +58,9 @@
         android:name="id.ac.istts.myfit.MenuDaily.SelectedDayMenus"
         android:label="fragment_selected_day_menus"
         tools:layout="@layout/fragment_selected_day_menus" />
+    <fragment
+        android:id="@+id/menuFeedsSearch2"
+        android:name="id.ac.istts.myfit.MenuFeed.MenuFeedsSearch"
+        android:label="fragment_menu_feeds_search"
+        tools:layout="@layout/fragment_menu_feeds_search" />
 </navigation>

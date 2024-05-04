@@ -41,36 +41,36 @@
             android:layout_width="@dimen/_275sdp"
             android:layout_height="@dimen/_70sdp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/itemSearch_ivProfile"
+                style="@style/CircularFull"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="match_parent"
-                android:src="@drawable/user"
-                style="@style/CircularFull"
                 android:scaleType="centerInside"
-                android:id="@+id/selectedDayMenu_ivBack"/>
+                android:src="@drawable/user" />
 
             <TextView
+                android:id="@+id/itemSearch_tvProfileName"
                 android:layout_width="@dimen/_215sdp"
                 android:layout_height="match_parent"
-                android:text="Aldiaafn"
-                android:textSize="@dimen/_20sdp"
                 android:gravity="center_vertical"
                 android:paddingStart="@dimen/_15sdp"
-                android:textStyle="bold"
-                android:id="@+id/namaprofileinsearch"/>
+                android:text="Aldiaafn"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/itemSearch_ivRemove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/cancel"
-                android:scaleType="centerInside"
                 android:layout_gravity="center"
-                android:id="@+id/selectedDayMenu_ivHeart"/>
+                android:scaleType="centerInside"
+                android:src="@drawable/cancel" />
 
         </LinearLayout>
 
