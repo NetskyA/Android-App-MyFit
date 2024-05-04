@@ -63,7 +63,7 @@
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="@+id/Upper">
 
-            <LinearLayout
+            <FrameLayout
                 android:id="@+id/lybar1"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
@@ -78,12 +78,20 @@
                     android:gravity="center"
                     android:iconifiedByDefault="false"
                     android:inputType="none"
+                    android:layout_gravity="center"
                     android:queryHint="Search"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+                <View
+                    android:id="@+id/overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@android:color/transparent"/>
 
-            </LinearLayout>
+            </FrameLayout>
 
         </LinearLayout>
 
