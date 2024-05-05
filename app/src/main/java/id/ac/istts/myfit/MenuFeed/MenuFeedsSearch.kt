@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuFeedsSearchBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,12 +46,16 @@ class MenuFeedsSearch : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var temp2:ArrayList<String> = arrayListOf("test","test2","test3","test4")
-
+        val rvfeedcontent: RecyclerView = requireView().findViewById(R.id.menuFeedsSearch_rvSearch)
         recyclerViewSearch = binding.menuFeedsSearchRvSearch
         layoutManagerSearch = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         menuFeedSearchAdapter = MenuFeedSearchAdapter(temp2, onDetailClickListener = {
             // TODO: Open profile
         })
+
+        val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        rvfeedcontent.startAnimation(fadeInAnimation)
+
         recyclerViewSearch.adapter = menuFeedSearchAdapter
         recyclerViewSearch.layoutManager = layoutManagerSearch
 

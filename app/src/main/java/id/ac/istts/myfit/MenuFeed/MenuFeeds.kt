@@ -16,8 +16,6 @@ import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.ProfileSetting.MenuProfileAdapter
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuFeedsBinding
-import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
-import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener
 
 class MenuFeeds : Fragment() {
     // TODO: Rename and change types of parameters

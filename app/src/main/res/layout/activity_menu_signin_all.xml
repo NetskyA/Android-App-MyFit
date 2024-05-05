@@ -138,10 +138,11 @@
                             tools:ignore="HardcodedText" />
 
                         <LinearLayout
+                            android:id="@+id/linearLayouttoLogin"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/_30sdp"
                             android:orientation="horizontal"
-                            android:layout_marginTop="@dimen/_18sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:gravity="center">
 
                             <TextView
@@ -160,7 +161,6 @@
                             android:id="@+id/linearLayout"
                             android:layout_width="@dimen/_258sdp"
                             android:layout_height="@dimen/_35sdp"
-                            android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginBottom="@dimen/_5sdp"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
