@@ -1,4 +1,5 @@
 const {
+  test,
   register,
   login,
 } = require("../controllers/UserController");
@@ -6,6 +7,9 @@ const {
 const { Router } = require("express");
 
 const router = Router();
+
+// Test
+router.get("/users/test", test)
 
 // Enpoint Users
 router.post("/users/register", register); // Buat register user
