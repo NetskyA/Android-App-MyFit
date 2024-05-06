@@ -74,7 +74,7 @@ class MenuSigninAll : AppCompatActivity() {
         // Start the video as soon as it is ready
         binding.videoView.start()
     }
-
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQ_ONE_TAP) {
@@ -106,7 +106,7 @@ class MenuSigninAll : AppCompatActivity() {
         signInRequest = BeginSignInRequest.builder()
             .setPasswordRequestOptions(
                 BeginSignInRequest.PasswordRequestOptions.builder()
-                    .setSupported(true)
+                    .setSupported(false)
                     .build()
             )
             .setGoogleIdTokenRequestOptions(
