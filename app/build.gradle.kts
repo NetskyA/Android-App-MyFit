@@ -68,4 +68,9 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC2")
+
+
+    // sign in with google
+    implementation("com.google.android.gms:play-services-auth:21.1.0")
+    implementation("com.google.android.gms:play-services-auth-api-phone:18.0.0")
 }

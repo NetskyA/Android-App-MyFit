@@ -9,7 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import id.ac.istts.myfit.Month
+import id.ac.istts.myfit.Util.Month
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.ActivityMenuSigninEmail2Binding
 

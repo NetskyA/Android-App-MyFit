@@ -1,4 +1,4 @@
-package id.ac.istts.myfit
+package id.ac.istts.myfit.Util
 
 enum class Month(val index: Int) {
     January(0),
