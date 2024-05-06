@@ -116,7 +116,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:text="Create a Username, Email &amp; Password"
+                        android:text="Create a Username, Email, &amp; Password"
                         android:textColor="@color/grey"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold" />
@@ -330,7 +330,7 @@
                     android:paddingStart="@dimen/_7sdp"
                     android:layout_gravity="center"
                     android:text="@string/_1_letter"
-                    android:textSize="@dimen/_10ssp"
+                    android:textSize="@dimen/_9ssp"
                     tools:ignore="RtlSymmetry" />
             </LinearLayout>
 
@@ -362,7 +362,7 @@
                     android:layout_gravity="center"
                     android:textColor="@color/grey"
                     android:text="@string/_1_number_or_special_character_example_example"
-                    android:textSize="@dimen/_10ssp"
+                    android:textSize="@dimen/_9ssp"
                     tools:ignore="RtlSymmetry" />
             </LinearLayout>
 
@@ -394,7 +394,7 @@
                     android:text="10 characters"
                     android:layout_gravity="center"
                     android:textColor="@color/grey"
-                    android:textSize="@dimen/_10ssp"
+                    android:textSize="@dimen/_9ssp"
                     tools:ignore="RtlSymmetry" />
             </LinearLayout>
 
