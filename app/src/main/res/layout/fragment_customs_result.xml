@@ -40,7 +40,7 @@
                 android:textStyle="bold"
                 android:gravity="start"
                 android:paddingStart="@dimen/_10sdp"
-                android:textSize="@dimen/_15ssp" />
+                android:textSize="@dimen/_12ssp" />
 
         </LinearLayout>
 
@@ -60,7 +60,7 @@
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_7sdp"
                 android:textColor="@color/blue_main"
-                android:textSize="@dimen/_20ssp" />
+                android:textSize="@dimen/_12ssp" />
 
             <TextView
                 android:layout_width="@dimen/_203sdp"
@@ -69,7 +69,7 @@
                 android:layout_gravity="center"
                 android:gravity="start"
                 android:textColor="@color/blue_main"
-                android:textSize="@dimen/_18ssp" />
+                android:textSize="@dimen/_12ssp" />
 
             <ImageView
                 android:id="@+id/customResult_ivLikes"
@@ -95,7 +95,7 @@
                 android:text="Description"
                 android:gravity="start"
                 android:paddingStart="@dimen/_10sdp"
-                android:textSize="@dimen/_15ssp" />
+                android:textSize="@dimen/_12ssp" />
 
         </LinearLayout>
 

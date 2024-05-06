@@ -7,7 +7,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            tools:context=".SignAll.MenuSigninAll">
+            tools:context=".SignAll.MenuSigninAll"
+            style="@style/Backgrounds">
 
             <VideoView
                 android:id="@+id/videoView"

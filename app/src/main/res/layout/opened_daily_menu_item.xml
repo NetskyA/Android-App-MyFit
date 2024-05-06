@@ -117,6 +117,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/openedDaily_lyDescription"
                 android:layout_width="@dimen/_280sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_gravity="center"
@@ -133,6 +134,19 @@
                     android:textSize="@dimen/_15ssp" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/openedDailydate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Mei 2024"
+                android:textColor="@color/blue_main"
+                android:textSize="@dimen/_10ssp" />
+
 
         </LinearLayout>
 
