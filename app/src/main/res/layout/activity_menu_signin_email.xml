@@ -121,7 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:text="Create a Email &amp; Password"
+                        android:text="Create a Username, Email &amp; Password"
                         android:textColor="@color/grey"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold" />
@@ -140,11 +140,11 @@
                 app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
 
             <TextView
-                android:id="@+id/text2"
+                android:id="@+id/textnms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Email address"
+                android:text="Username"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold"
@@ -158,6 +158,37 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_33sdp"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:autofillHints="emailAddress"
+                android:background="@drawable/borderbackground"
+                android:hint="username"
+                android:paddingStart="@dimen/_12sdp"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/textnms"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_55sdp"
+                android:text="Email address"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/Right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Left"
+                app:layout_constraintTop_toTopOf="@+id/textnms" />
+
+            <EditText
+                android:id="@+id/userEmailSignIn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_33sdp"
+                android:layout_marginTop="@dimen/_16sdp"
                 android:autofillHints="emailAddress"
                 android:background="@drawable/borderbackground"
                 android:hint="Name@domain.com"
@@ -184,7 +215,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
-                app:layout_constraintTop_toTopOf="@+id/usernameSignIn"/>
+                app:layout_constraintTop_toTopOf="@+id/userEmailSignIn"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/coveretpassword"
@@ -215,7 +246,7 @@
                 android:id="@+id/titlecpswd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_46sdp"
                 android:text="Confirm Password"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
@@ -256,7 +287,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="@dimen/_305sdp"
+                app:layout_constraintGuide_begin="@dimen/_355sdp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"

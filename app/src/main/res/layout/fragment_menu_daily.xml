@@ -73,16 +73,13 @@
             android:id="@+id/tvTitleWe2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="52dp"
             android:text="Aldi"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
-            app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.034"
             app:layout_constraintStart_toEndOf="@+id/tvTitleWe"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.078" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvTitleWe3"
@@ -115,12 +112,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.40"/>
+            app:layout_constraintGuide_percent="0.40" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lycontentmenutoday"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_280sdp"
+            android:layout_height="@dimen/_310sdp"
             android:background="@drawable/backgroundnavigations2"
             app:layout_constraintBottom_toTopOf="@+id/Bottom"
             app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -141,33 +138,19 @@
             app:layout_constraintTop_toBottomOf="@+id/lycontentmenutoday"
             app:layout_constraintVertical_bias="0.54">
 
-
-            <Button
-                android:id="@+id/buttonnext"
-                android:layout_width="@dimen/_110sdp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgroundnavigations4"
-                android:text="Previous"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_15ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/buttonprevios"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.727" />
-
-            <Button
+            <TextView
                 android:id="@+id/buttonprevios"
-                android:layout_width="@dimen/_110sdp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgroundnavigations4"
-                android:text="Next"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_15ssp"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="Show next"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/blue_main"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
