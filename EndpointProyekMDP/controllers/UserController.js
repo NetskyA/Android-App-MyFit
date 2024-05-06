@@ -1,5 +1,6 @@
 const { Sequelize } = require("sequelize");
 
+const bcrypt = require('bcrypt');
 const multer = require('multer');
 const fs = require('fs');
 
@@ -27,14 +28,18 @@ module.exports = {
 
   //   return res.status(201).send(testFunction("Success!"))
   // },
-
+  test: (req, res) => {
+    return res.status(200).send("Test")
+  },
   register: async (req, res) => {
     const {username, password, image} = req.body
     // console.log(image)
 
+    const hashPass = await bcrypt.hash(password, 10)
+
     await User.create({
       username: username,
-      password: password,
+      password: hashPass,
       image: `uploads/${username}.jpg`
     })
 
@@ -57,10 +62,13 @@ module.exports = {
     const cekUser = await User.findOne({
       where: {
         username: username,
-        password: password
       }
     })
     if(!cekUser) return res.status(400).json("-1")
+
+    const cekPass = await bcrypt.compare(password, cekUser.password);
+
+    if(!cekPass) return res.status(400).send("-1")
 
     const binaryData = fs.readFileSync(cekUser.image)
     // Convert binary data to base64 encoded string
