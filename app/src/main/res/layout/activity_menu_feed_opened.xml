@@ -161,7 +161,6 @@
                     android:layout_width="@dimen/_280sdp"
                     android:layout_height="@dimen/_150sdp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_5sdp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -174,6 +173,21 @@
                         android:textSize="@dimen/_15ssp" />
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/uploadcontentfeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mei 2024"
+                    android:textAlignment="center"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:textColor="@color/blue_main"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/Right"
+                    app:layout_constraintStart_toStartOf="@+id/Left"
+                    app:layout_constraintTop_toTopOf="@+id/apaja"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 

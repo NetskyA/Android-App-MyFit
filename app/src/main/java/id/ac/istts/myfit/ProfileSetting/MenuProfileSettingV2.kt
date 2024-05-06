@@ -25,6 +25,14 @@ class MenuProfileSettingV2 : AppCompatActivity() {
             findNavController(R.id.fragmentContainerView2).navigate(R.id.action_global_profileSettingBody)
         }
 
+        binding.ibAccount.setOnClickListener {
+            findNavController(R.id.fragmentContainerView2).navigate(R.id.action_global_profileSettingAccount)
+        }
+
+        binding.ibBody.setOnClickListener {
+            findNavController(R.id.fragmentContainerView2).navigate(R.id.action_global_profileSettingBody)
+        }
+
         binding.mpBtnBack.setOnClickListener {
             finish()
         }
