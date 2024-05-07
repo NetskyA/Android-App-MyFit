@@ -86,11 +86,11 @@
             android:layout_width="@dimen/_190sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="126dp"
+            android:layout_marginTop="144dp"
             android:fontFamily="@font/bungasai"
             android:text="Are you ready to commit to your plan"
             android:textColor="@color/white"
-            android:textSize="@dimen/_25ssp"
+            android:textSize="@dimen/_30ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

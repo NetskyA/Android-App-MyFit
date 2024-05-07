@@ -49,9 +49,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/backgroundnavigations3"
-
+                android:orientation="vertical"
+                android:background="@drawable/borders2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,30 +58,23 @@
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/imvCircular"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="@dimen/_90sdp"
-                    android:layout_margin="@dimen/_4sdp"
-                    android:background="@drawable/backgroundnavigations1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:src="@drawable/examplemenu"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/backgroundnavigations2"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:shapeAppearanceOverlay="@style/Circular"/>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:text="Sauteed Carrot Beans"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_14ssp"
-                        android:fontFamily="@font/bungasai"
-                        android:textStyle="bold"
-                        tools:ignore="HardcodedText" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -94,13 +86,149 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
+                            <ImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:src="@drawable/circle"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_3sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"/>
+
                             <TextView
-                                android:id="@+id/tvCalories"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="wrap_content"
+                                android:text="NUTRITION"
+                                android:textColor="@color/blue_main"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_15ssp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvCarbohydrat"
+                                android:layout_width="@dimen/_84sdp"
+                                android:layout_height="wrap_content"
+                                android:text="Carbohydrat :"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvCarbohydratValue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="100"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvCholesterol"
+                                android:layout_width="@dimen/_84sdp"
+                                android:layout_height="wrap_content"
+                                android:text="Cholesterol :"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvCholesterolValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvVitaminC"
+                                android:layout_width="@dimen/_84sdp"
+                                android:layout_height="wrap_content"
+                                android:text="Vitamin C :"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvVitaminCValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textSize="@dimen/_14ssp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvVitaminD"
+                                android:layout_width="@dimen/_84sdp"
+                                android:layout_height="wrap_content"
+                                android:text="Vitamin D :"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvVitaminDValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textSize="@dimen/_14ssp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvCalcium"
+                                android:layout_width="@dimen/_84sdp"
+                                android:layout_height="wrap_content"
+                                android:text="Calcium :"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvCalciumValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvCalories"
+                                android:layout_width="@dimen/_84sdp"
+                                android:layout_height="wrap_content"
                                 android:text="Calories:"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/_12ssp" />
+                                android:textSize="@dimen/_14ssp" />
 
                             <TextView
                                 android:id="@+id/tvCaloriesValue"
@@ -108,23 +236,44 @@
                                 android:layout_height="wrap_content"
                                 android:text="100"
                                 android:layout_marginStart="@dimen/_5sdp"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/_12ssp" />
+                                android:textSize="@dimen/_14ssp" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvSodium"
+                                android:layout_width="@dimen/_84sdp"
+                                android:layout_height="wrap_content"
+                                android:text="Sodium :"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvSodiumValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textSize="@dimen/_14ssp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:id="@+id/tvProtein"
-                                android:layout_width="wrap_content"
+                                android:layout_width="@dimen/_84sdp"
                                 android:layout_height="wrap_content"
                                 android:text="Protein:"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/_12ssp" />
+                                android:textSize="@dimen/_14ssp" />
 
                             <TextView
                                 android:id="@+id/tvProteinValue"
@@ -132,47 +281,22 @@
                                 android:layout_height="wrap_content"
                                 android:text="100"
                                 android:layout_marginStart="@dimen/_5sdp"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/_12ssp" />
+                                android:textSize="@dimen/_14ssp" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvCarbs"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Carbs:"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/_12ssp" />
-
-                            <TextView
-                                android:id="@+id/tvCarbsValue"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="100"
-                                android:layout_marginStart="@dimen/_5sdp"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/_12ssp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:id="@+id/tvSugar"
-                                android:layout_width="wrap_content"
+                                android:layout_width="@dimen/_84sdp"
                                 android:layout_height="wrap_content"
                                 android:text="Sugar:"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/_12ssp" />
+                                android:textSize="@dimen/_14ssp" />
 
                             <TextView
                                 android:id="@+id/tvSugarValue"
@@ -180,9 +304,152 @@
                                 android:layout_height="wrap_content"
                                 android:text="100"
                                 android:layout_marginStart="@dimen/_5sdp"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/_12ssp" />
+                                android:textSize="@dimen/_14ssp" />
 
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvFat"
+                                android:layout_width="@dimen/_84sdp"
+                                android:layout_height="wrap_content"
+                                android:text="Fat :"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvFatValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvGlycemicIndex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Glycemic Index:"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvGlycemicIndexValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:textStyle="bold"
+                                android:paddingStart="@dimen/_4sdp"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvGlycemicLoad"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Glycemic Load :"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvGlycemicLoadValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:textStyle="bold"
+                                android:paddingStart="@dimen/_4sdp"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvNutritionScore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nutrition Score :"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/tvNutritionScoreValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:textStyle="bold"
+                                android:paddingStart="@dimen/_2sdp"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/_94sdp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:src="@drawable/circle"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_3sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="IGREDIENTS"
+                                android:textColor="@color/blue_main"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_15ssp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvIngredientname1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bell pepper"
+                                android:textSize="@dimen/_14ssp" />
 
                         </LinearLayout>
 
@@ -190,22 +457,76 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:orientation="vertical">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_3sdp"
-                android:background="@drawable/backgroundnavigations3"
-                android:text="Add"
-                android:fontFamily="@font/cocogooseprooutlinedtrial"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_17ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-                tools:ignore="HardcodedText" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:src="@drawable/circle"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_3sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"/>
+
+                        <TextView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:text="DESCRIPTION"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue_main"
+                            android:textSize="@dimen/_15ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50sdp"
+                            android:hint="Notes"
+                            android:textStyle="italic"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:background="@drawable/backgroundnavigation1"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_14ssp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/borders2"
+                    android:text="Add"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:fontFamily="@font/bungasai"
+                    android:textColor="@color/blue_main"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_17ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

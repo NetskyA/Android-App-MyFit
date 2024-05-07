@@ -39,7 +39,7 @@
             android:id="@+id/lybarmenudiet"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
-            android:background="@drawable/backgroundnavigations3"
+            android:background="@drawable/backgroundnavigations1"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"

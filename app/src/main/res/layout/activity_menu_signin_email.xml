@@ -118,7 +118,7 @@
                         android:layout_gravity="start"
                         android:text="Create a Username, Email, &amp; Password"
                         android:textColor="@color/grey"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -294,7 +294,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text="Your password must contain at least"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_14ssp"
                 android:textColor="@color/grey"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/Right"

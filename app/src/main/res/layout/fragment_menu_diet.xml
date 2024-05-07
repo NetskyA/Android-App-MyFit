@@ -113,7 +113,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutDropdown"
-                android:layout_width="405dp"
+                android:layout_width="0dp"
                 android:layout_height="116dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -124,19 +124,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="261dp"
+                    android:layout_marginEnd="255dp"
                     android:text="Choose Day"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.864"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Spinner
                     android:id="@+id/menuDiet_spDay"
-                    android:layout_width="401dp"
-                    android:layout_height="49dp"
+                    android:layout_width="@dimen/_270sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:background="@drawable/borders2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -168,29 +170,16 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.026" />
 
-                <ImageView
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
-                    android:src="@drawable/hide"
-                    android:text="Hide"
-                    android:textColor="@color/dark_grey"
-                    android:textSize="@dimen/_15sdp"
-                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewmenuResultDiet"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.875"
-                    app:layout_constraintStart_toEndOf="@+id/imageView4"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewmenuResultDiet"
                     android:layout_width="@dimen/_187sdp"
                     android:layout_height="@dimen/_65sdp"
-                    android:layout_marginStart="13dp"
+                    android:layout_marginStart="12dp"
                     app:layout_constraintBottom_toTopOf="@+id/searchView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView4"
-                    app:layout_constraintVertical_bias="0.243">
+                    app:layout_constraintVertical_bias="0.705">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
@@ -198,9 +187,10 @@
                     android:id="@+id/searchView"
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="@dimen/_30sdp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="12dp"
                     android:background="@drawable/backgroundnavigations1"
-                    android:gravity="center"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Search menu"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.49"
                     app:layout_constraintStart_toStartOf="parent"
@@ -210,20 +200,19 @@
                     android:id="@+id/buttondelete"
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_60sdp"
-                    android:layout_marginTop="@dimen/_42sdp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/backgroundnavigations1"
                     android:text="Delete"
                     android:textColor="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.25"
                     app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDiet"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewmenuResultDiet2"
                     android:layout_width="@dimen/_250sdp"
-                    android:layout_height="@dimen/_100sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_height="@dimen/_280sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginBottom="@dimen/_11sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -250,13 +239,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/backgroundnavigations3"
-                    android:fontFamily="@font/cocogooseprosemilightitalictrial"
                     android:text="Ready"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_18sdp"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteY="26dp" />
+                    tools:layout_editor_absoluteY="26dp"
+                    tools:ignore="MissingConstraints" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

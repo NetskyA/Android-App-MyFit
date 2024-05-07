@@ -43,7 +43,7 @@ class MenuDiet : Fragment() {
         val spinner = binding.menuDietSpDay
         spinner.setSelection(0, false)
         spinner.adapter = ArrayAdapter(requireContext(), R.layout.spinner_item_diet, resources.getStringArray(R.array.day))
-        spinner.onItemSelectedListener = object :
+        /*spinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 Toast.makeText(requireContext(), "Selected: " + spinner.selectedItem.toString(), Toast.LENGTH_SHORT).show()
@@ -52,7 +52,7 @@ class MenuDiet : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // write code to perform some action
             }
-        }
+        }*/
 
         val menuDietLayoutIds = listOf(
             R.id.linearLayoutmenudiet1,

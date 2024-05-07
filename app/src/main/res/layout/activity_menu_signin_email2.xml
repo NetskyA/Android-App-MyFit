@@ -119,7 +119,7 @@
                     android:layout_gravity="start"
                     android:textColor="@color/grey"
                     android:text="Create a password"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_14ssp"
                     android:textStyle="bold" />
             </LinearLayout>
 

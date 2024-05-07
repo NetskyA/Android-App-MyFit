@@ -180,7 +180,7 @@
                                 android:layout_gravity="center"
                                 android:text="OR"
                                 android:textColor="#8E8E8E"
-                                android:textSize="@dimen/_12ssp"
+                                android:textSize="@dimen/_14ssp"
                                 tools:ignore="HardcodedText" />
 
                             <View

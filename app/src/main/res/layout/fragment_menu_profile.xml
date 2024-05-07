@@ -129,7 +129,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2.1k favorite"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_14ssp"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:visibility="visible"/>
@@ -225,7 +225,7 @@
                             android:layout_height="wrap_content"
                             android:text="Filter : "
                             android:layout_gravity="center"
-                            android:textSize="@dimen/_12ssp"
+                            android:textSize="@dimen/_14ssp"
                             android:paddingStart="@dimen/_7sdp"
                             android:textColor="@color/blue_main"
                             android:visibility="visible"
