@@ -7,8 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,14 +39,23 @@ class MenuDiet : Fragment() {
         val fadeInAnimation2 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         textWe.startAnimation(fadeInAnimation2)
 
+        // Spinner Day
+        val spinner = binding.menuDietSpDay
+        spinner.setSelection(0, false)
+        spinner.adapter = ArrayAdapter(requireContext(), R.layout.spinner_item_diet, resources.getStringArray(R.array.day))
+        spinner.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                Toast.makeText(requireContext(), "Selected: " + spinner.selectedItem.toString(), Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // write code to perform some action
+            }
+        }
+
         val menuDietLayoutIds = listOf(
             R.id.linearLayoutmenudiet1,
-            R.id.linearLayoutmenudiet2,
-            R.id.linearLayoutmenudiet3,
-            R.id.linearLayoutmenudiet4,
-            R.id.linearLayoutmenudiet5,
-            R.id.linearLayoutmenudiet6,
-            R.id.linearLayoutmenudiet7
         )
 
         // Load the animation once
@@ -58,18 +70,6 @@ class MenuDiet : Fragment() {
         val temp: ArrayList<String> = arrayListOf("test", "test2", "test3", "test4")
         setupRecyclerView(binding.recyclerViewmenuResultDiet, temp, LinearLayoutManager.HORIZONTAL)
         setupRecyclerView(binding.recyclerViewmenuResultDiet2, temp, LinearLayoutManager.VERTICAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietThursday, temp, LinearLayoutManager.HORIZONTAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietThursday2, temp, LinearLayoutManager.VERTICAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietWednesday, temp, LinearLayoutManager.HORIZONTAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietWednesday2, temp, LinearLayoutManager.VERTICAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietTursday, temp, LinearLayoutManager.HORIZONTAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietTursday2, temp, LinearLayoutManager.VERTICAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietFriday, temp, LinearLayoutManager.HORIZONTAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietFriday2, temp, LinearLayoutManager.VERTICAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietSaturday, temp, LinearLayoutManager.HORIZONTAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietSaturday2, temp, LinearLayoutManager.VERTICAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietSunday, temp, LinearLayoutManager.HORIZONTAL)
-        setupRecyclerView(binding.recyclerViewmenuResultDietSunday2, temp, LinearLayoutManager.VERTICAL)
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView, data: ArrayList<String>, orientation: Int) {
