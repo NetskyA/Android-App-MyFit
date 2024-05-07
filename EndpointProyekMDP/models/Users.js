@@ -62,6 +62,14 @@ Users.init(
       type: DataTypes.TEXT,
       allowNull: true
     },
+    otp:{
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    otp_expired:{
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
     status : {
       type: DataTypes.INTEGER(1),
       defaultValue: 1
