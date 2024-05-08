@@ -15,10 +15,14 @@ import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.android.gms.common.api.ApiException
 import id.ac.istts.myfit.LoginAll.MenuLoginAll
+import id.ac.istts.myfit.MyFitApplication
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.SignEmail.MenuSigninEmail
 import id.ac.istts.myfit.SignPhone.MenuSigninPhone
 import id.ac.istts.myfit.databinding.ActivityMenuSigninAllBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MenuSigninAll : AppCompatActivity() {
     lateinit var binding: ActivityMenuSigninAllBinding
@@ -73,6 +77,7 @@ class MenuSigninAll : AppCompatActivity() {
         }
         // Start the video as soon as it is ready
         binding.videoView.start()
+
     }
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

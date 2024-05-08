@@ -153,7 +153,8 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_33sdp"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:autofillHints="emailAddress"
+                android:autofillHints="username"
+                android:inputType="text"
                 android:background="@drawable/borderbackground"
                 android:hint="username"
                 android:paddingStart="@dimen/_12sdp"
@@ -187,6 +188,8 @@
                 android:autofillHints="emailAddress"
                 android:background="@drawable/borderbackground"
                 android:hint="Name@domain.com"
+                android:imeOptions="actionNext"
+                android:inputType="text|textEmailAddress"
                 android:paddingStart="@dimen/_12sdp"
                 android:textColorHint="@color/grey"
                 android:textSize="@dimen/_15ssp"
@@ -230,6 +233,7 @@
                     android:layout_height="@dimen/_33sdp"
                     android:background="@drawable/borderbackground"
                     android:inputType="textPassword"
+                    android:autofillHints="password"
                     android:paddingStart="@dimen/_12sdp"
                     android:textSize="@dimen/_15ssp"
                     android:hint="Password"
@@ -274,6 +278,7 @@
                     android:hint="Confirm Password"
                     android:textSize="@dimen/_15ssp"
                     android:textColorHint="@color/grey"
+                    android:autofillHints="password"
                     tools:ignore="RtlSymmetry" />
             </com.google.android.material.textfield.TextInputLayout>
 
