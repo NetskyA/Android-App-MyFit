@@ -33,7 +33,7 @@ class MenuSigninEmail3 : AppCompatActivity() {
             true // Return true to indicate that the event was handled
         }
         binding.ButtonArrowBack.setOnClickListener{
-            startActivity(Intent(this, MenuSigninEmail2::class.java))
+            finish()
         }
         binding.nextFinishSignInSubmitTerms.setOnClickListener{
             startActivity(Intent(this, HomeUserActivity::class.java))

@@ -17,6 +17,6 @@ router.get("/users/test", test)
 router.post("/users/register", register); // Buat register user
 router.post("/users/login", login); // Buat login user
 
-router.post("/users/cekEmailandUsername", cekEmailandUsername)
+router.post("/users/cekEmailandUsername", cekEmailandUsername) // Buat cek email dan username duplicate
 
 module.exports = router;

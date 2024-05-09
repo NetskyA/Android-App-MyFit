@@ -18,4 +18,7 @@ interface UserService {
     @POST("api/users/cekEmailandUsername")
     suspend fun cekEmailandUsername(@Body user: User): ErrorMsg
 
+    @POST("api/users/login")
+    suspend fun loginUser(@Body user: User): User
+
 }

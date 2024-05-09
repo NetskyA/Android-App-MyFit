@@ -24,6 +24,24 @@ internal class UserPreference(context: Context) {
     private val preferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
     // USER
+
+    fun login(user: User) {
+        val editor = preferences.edit()
+        editor.putString(USERNAME, user.username)
+        editor.putString(EMAIL, user.email)
+        editor.putString(PASSWORD, user.password)
+        editor.putString(NAME, user.name)
+        editor.putString(PHONE, user.phone)
+        editor.putString(DOB, user.dob)
+        editor.putInt(GENDER, user.gender ?: 0)
+        editor.putInt(WEIGHT, user.weight ?: 0)
+        editor.putInt(HEIGHT, user.weight ?: 0)
+        editor.putString(BLOOD_TYPE, user.blood_type)
+        editor.putString(ALLERGY, user.allergy)
+        editor.putInt(AGE, user.age ?:0)
+        editor.putString(IMAGE, user.image)
+        editor.apply()
+    }
     fun setRegisterEmail1(username: String, email: String,password: String) {
         val editor = preferences.edit()
         editor.putString(USERNAME, username)
@@ -34,7 +52,7 @@ internal class UserPreference(context: Context) {
     fun setRegisterEmail2(name: String, day: String, month: String, year: String, gender: Int, weight: String, height: String, bloodtype: String, allergy: String,age: Int) {
         val editor = preferences.edit()
         editor.putString(NAME, name)
-        editor.putString(DOB, "$day-$month-$year")
+        editor.putString(DOB, "$day/$month/$year")
         editor.putInt(GENDER, gender)
         editor.putInt(WEIGHT, weight.toIntOrNull() ?: 0)
         editor.putInt(HEIGHT, height.toIntOrNull() ?: 0)

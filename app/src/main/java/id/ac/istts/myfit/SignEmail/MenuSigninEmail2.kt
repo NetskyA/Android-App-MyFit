@@ -88,7 +88,8 @@ class MenuSigninEmail2 : AppCompatActivity() {
             val bloodType = binding.ettitlebloodtype.text.toString()
             val allergy = binding.ettitlealaergi.text.toString()
             ioScope.launch {
-                val hasil = vm.cekData(nama, day, month, year, gender!!, weight, height, bloodType, allergy)
+                val hasil = vm.cekData(nama, day, month, year,
+                    gender, weight, height, bloodType, allergy)
                 if(hasil=="Empty") {
                     runOnUiThread {
                         Toast.makeText(

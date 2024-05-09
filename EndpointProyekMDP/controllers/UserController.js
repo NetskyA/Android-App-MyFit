@@ -1,15 +1,13 @@
-const { Sequelize,Op } = require("sequelize");
+const { Sequelize, Op } = require("sequelize");
 
-const bcrypt = require('bcrypt');
-const multer = require('multer');
-const fs = require('fs');
+const bcrypt = require("bcrypt");
+const multer = require("multer");
+const fs = require("fs");
 
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: "uploads/" });
 
 const User = require("../models/Users");
-const {
-  testFunction,
-} = require("../service/Functions");
+const { testFunction } = require("../service/Functions");
 
 module.exports = {
   // register: async (req, res) => {
@@ -29,30 +27,44 @@ module.exports = {
   //   return res.status(201).send(testFunction("Success!"))
   // },
   test: (req, res) => {
-    return res.status(200).send({test:"wkwk"})
+    return res.status(200).send({ test: "wkwk" });
   },
 
   cekEmailandUsername: async (req, res) => {
-    const {username,email} = req.body
+    const { username, email } = req.body;
 
     let user = await User.findOne({
       where: {
-        [Op.or]: [{username: username},{email: email}]
-      }
-    })
+        [Op.or]: [{ username: username }, { email: email }],
+      },
+    });
 
-    if(user){
-      return res.status(200).send({text:"Duplicate"})
-    }else{
-      return res.status(200).send({text:"Ok"})
+    if (user) {
+      return res.status(200).send({ text: "Duplicate" });
+    } else {
+      return res.status(200).send({ text: "Ok" });
     }
   },
 
   register: async (req, res) => {
-    const {username,email,password,phone,name,dob,gender,height,weight,age,blood_type,allergy, image} = req.body
+    const {
+      username,
+      email,
+      password,
+      phone,
+      name,
+      dob,
+      gender,
+      height,
+      weight,
+      age,
+      blood_type,
+      allergy,
+      image,
+    } = req.body;
     // console.log(image)
-    console.log(req.body) 
-    const hashPass = await bcrypt.hash(password, 10)
+    console.log(req.body);
+    const hashPass = await bcrypt.hash(password, 10);
 
     await User.create({
       username: username,
@@ -60,15 +72,15 @@ module.exports = {
       email: email,
       phone: phone,
       name: name,
-      dob:dob,
-      gender:gender,
-      height:height, 
-      weight:weight,
-      age:age,
-      blood_type:blood_type,
-      allergy:allergy,
-      image:image
-    })
+      dob: dob,
+      gender: gender,
+      height: height,
+      weight: weight,
+      age: age,
+      blood_type: blood_type,
+      allergy: allergy,
+      image: image,
+    });
 
     // const imageBuffer = Buffer.from(image, 'base64');
 
@@ -81,27 +93,42 @@ module.exports = {
 
     // fs.renameSync(`uploads/temp.png`, `uploads/${title}`);
     // return res.status(200).send("Register Success!");
-    return res.status(201).send({text:"Ok"});
+    return res.status(201).send({ text: "Ok" });
   },
 
   login: async (req, res) => {
-    const {username, password} = req.body
+    const { username, email, password } = req.body;
 
     const cekUser = await User.findOne({
       where: {
-        username: username,
-      }
-    })
-    if(!cekUser) return res.status(400).json("-1")
+        [Op.or]: [{ username: username }, { email: email }],
+      },
+    });
+
+    if (!cekUser) return res.status(200).send({ password: "0" });
 
     const cekPass = await bcrypt.compare(password, cekUser.password);
 
-    if(!cekPass) return res.status(400).send("-1")
+    if (!cekPass) return res.status(200).send({ password: "1" });
 
-    const binaryData = fs.readFileSync(cekUser.image)
-    // Convert binary data to base64 encoded string
-    const img = Buffer(binaryData).toString('base64')
+    // const binaryData = fs.readFileSync(cekUser.image)
+    // // Convert binary data to base64 encoded string
+    // const img = Buffer(binaryData).toString('base64')
 
-    return res.status(200).json(img+"")
-  }
+    // return res.status(200).json(img+"")
+    return res.status(200).send({
+      name: cekUser.dataValues.name,
+      username: cekUser.dataValues.username,
+      email: cekUser.dataValues.email,
+      phone: cekUser.dataValues.phone,
+      dob: cekUser.dataValues.dob,
+      gender: cekUser.dataValues.gender,
+      height: cekUser.dataValues.height,
+      weight: cekUser.dataValues.weight,
+      age: cekUser.dataValues.age,
+      blood_type: cekUser.dataValues.blood_type,
+      allergy: cekUser.dataValues.allergy,
+      image: cekUser.dataValues.image,
+    });
+  },
 };
