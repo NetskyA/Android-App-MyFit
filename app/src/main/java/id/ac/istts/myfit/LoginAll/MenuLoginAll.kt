@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.HomeUser.HomeUserActivity
 import id.ac.istts.myfit.R
+import id.ac.istts.myfit.SignPhone.MenuSigninPhone
 import id.ac.istts.myfit.databinding.ActivityMenuLoginAllBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,7 +27,6 @@ class MenuLoginAll : AppCompatActivity() {
     lateinit var binding: ActivityMenuLoginAllBinding
     val ioScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     lateinit var vm: MenuLoginAllViewModel
-    private lateinit var userPreference: UserPreference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +44,10 @@ class MenuLoginAll : AppCompatActivity() {
         binding.forgotpassword.text = boldAndUnderlineText
         binding.forgotpassword.setTypeface(null, Typeface.BOLD)
 
+        binding.loginwithphonenumber.setOnClickListener{
+            startActivity(Intent(this, MenuSigninPhone::class.java))
+            finish()
+        }
 
         binding.materialSwitch.setOnCheckedChangeListener { view, isChecked ->
             if (isChecked) {
@@ -69,30 +73,34 @@ class MenuLoginAll : AppCompatActivity() {
                 val hasil = vm.cekLogin(data, password)
                 runOnUiThread {
                     if(hasil == "Empty") {
-                        runOnUiThread {
-                            Toast.makeText(this@MenuLoginAll, "Please fill all the field", Toast.LENGTH_SHORT).show()
-                        }
+                        Toast.makeText(this@MenuLoginAll, "Please fill all the field", Toast.LENGTH_SHORT).show()
                     }else if(hasil == "User not found") {
                         binding.etusernameLogIn.requestFocus()
                         val imm =
                             getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                         imm.showSoftInput(binding.etusernameLogIn, InputMethodManager.SHOW_IMPLICIT)
-                        runOnUiThread {
-                            Toast.makeText(this@MenuLoginAll, "User not found", Toast.LENGTH_SHORT)
+
+                        Toast.makeText(this@MenuLoginAll, "User not found", Toast.LENGTH_SHORT)
                                 .show()
-                        }
+
                     }else if(hasil == "Password not match") {
                         binding.etusernameLogIn.requestFocus()
                         val imm =
                             getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                         imm.showSoftInput(binding.etusernameLogIn, InputMethodManager.SHOW_IMPLICIT)
-                        runOnUiThread {
-                            Toast.makeText(this@MenuLoginAll, "Password not match", Toast.LENGTH_SHORT)
+                        Toast.makeText(
+                                this@MenuLoginAll,
+                                "Password not match",
+                                Toast.LENGTH_SHORT)
                                 .show()
-                        }
+
+                    }else if(hasil == "Error") {
+                        Toast.makeText(
+                            this@MenuLoginAll,
+                            "Error, No Internet Connection",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }else{
-                        userPreference = UserPreference(this@MenuLoginAll)
-                        Log.e("Pref", userPreference.getUser().toString())
                         startActivity(Intent(this@MenuLoginAll, HomeUserActivity::class.java))
                         finish()
                     }

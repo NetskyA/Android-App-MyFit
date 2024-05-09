@@ -1,4 +1,4 @@
-package id.ac.istts.myfit.LoginAll
+package id.ac.istts.myfit.SignPhone
 
 import android.app.Application
 import android.util.Log
@@ -9,26 +9,26 @@ import id.ac.istts.myfit.MyFitApplication
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class MenuLoginAllViewModel(application: Application) : AndroidViewModel(application) {
+class MenuSigninPhoneViewModel (application: Application) : AndroidViewModel(application) {
     private val userPreference: UserPreference = UserPreference(application)
-    suspend fun cekLogin(data: String, password: String): String {
-        if(data.isEmpty() || password.isEmpty()){
+
+    fun extractCountryCode(input: String): String? {
+        val regex = "\\+\\d+".toRegex()
+        return regex.find(input)?.value
+    }
+
+    suspend fun cekPhone(code: String,phone: String):String{
+        if(phone.isEmpty()){
             return "Empty"
         }
-
+        val countryCode = extractCountryCode(code)
+        val phoneNum = "${countryCode} ${phone}"
         return withContext(Dispatchers.IO) {
             try {
-                val response = MyFitApplication.retrofitUserService?.loginUser(
-                    User(
-                        email = data,
-                        username = data,
-                        password = password
-                    )
-                )
+                val response = MyFitApplication.retrofitUserService?.cekPhoneNumber(phoneNum)
                 if(response!!.password.toString()=="0"){
-                    return@withContext "User not found"
-                }else if(response.password.toString()=="1"){
-                    return@withContext "Password not match"
+                    userPreference.setPhone(phoneNum)
+                    return@withContext "Not Registered"
                 }
                 userPreference.login(response)
                 return@withContext "Ok"

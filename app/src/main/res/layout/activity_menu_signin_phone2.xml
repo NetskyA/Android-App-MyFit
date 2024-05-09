@@ -81,13 +81,14 @@
                 android:layout_height="40dp"
                 android:background="@drawable/borderbackground"
                 android:hint="6 digit code"
+                android:inputType="number"
+                android:paddingStart="15dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey"
-                android:paddingStart="15dp"
                 android:textSize="20sp"
+                tools:ignore="HardcodedText,RtlSymmetry"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="10dp"
-                tools:ignore="HardcodedText,RtlSymmetry" />
+                tools:layout_editor_absoluteY="10dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

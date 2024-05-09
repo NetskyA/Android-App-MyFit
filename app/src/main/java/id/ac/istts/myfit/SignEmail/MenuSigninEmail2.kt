@@ -152,7 +152,6 @@ class MenuSigninEmail2 : AppCompatActivity() {
                     runOnUiThread {
                         startActivity(Intent(this@MenuSigninEmail2, MenuSigninEmail3::class.java))
                     }
-
                 }
             }
         }

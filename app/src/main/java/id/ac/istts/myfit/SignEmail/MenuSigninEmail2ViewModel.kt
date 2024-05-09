@@ -77,8 +77,7 @@ class MenuSigninEmail2ViewModel(application: Application) : AndroidViewModel(app
         }
 
         val intGender = if(gender == "Non-binary") 1 else if(gender == "Male") 2 else if(gender == "Female") 3 else 0
-        userPreference.setRegisterEmail2(name, day,month,year,intGender,weight,height,bloodtype,allergy,age.value!!)
-        Log.e("Data", userPreference.getUser().toString() )
+        userPreference.setRegisterEmail2(name, day.toInt(),monthInt,year.toInt(),intGender,weight,height,bloodtype,allergy,age.value!!)
         return withContext(Dispatchers.IO) {
             try {
                 val response = MyFitApplication.retrofitUserService?.registerUser(userPreference.getUser())

@@ -42,6 +42,19 @@ internal class UserPreference(context: Context) {
         editor.putString(IMAGE, user.image)
         editor.apply()
     }
+
+    fun setPhone(phone: String) {
+        val editor = preferences.edit()
+        editor.putString(PHONE, phone)
+        editor.apply()
+    }
+
+    fun clearPref() {
+        val editor = preferences.edit()
+        editor.clear()
+        editor.apply()
+    }
+
     fun setRegisterEmail1(username: String, email: String,password: String) {
         val editor = preferences.edit()
         editor.putString(USERNAME, username)
@@ -49,7 +62,7 @@ internal class UserPreference(context: Context) {
         editor.putString(PASSWORD, password)
         editor.apply()
     }
-    fun setRegisterEmail2(name: String, day: String, month: String, year: String, gender: Int, weight: String, height: String, bloodtype: String, allergy: String,age: Int) {
+    fun setRegisterEmail2(name: String, day: Int, month: Int, year: Int, gender: Int, weight: String, height: String, bloodtype: String, allergy: String,age: Int) {
         val editor = preferences.edit()
         editor.putString(NAME, name)
         editor.putString(DOB, "$day/$month/$year")

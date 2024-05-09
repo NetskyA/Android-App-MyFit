@@ -21,4 +21,12 @@ interface UserService {
     @POST("api/users/login")
     suspend fun loginUser(@Body user: User): User
 
+    @POST("api/users/cekPhoneNumber")
+    suspend fun cekPhoneNumber(@Query("phone") phone:String): User
+
+    @POST("api/users/sendCode")
+    suspend fun sendCode(@Query("email") email:String):ErrorMsg
+
+    @POST("api/users/verifyOtp")
+    suspend fun verifyOtp(@Query("email") email:String,@Query("otp") otp:String):ErrorMsg
 }
