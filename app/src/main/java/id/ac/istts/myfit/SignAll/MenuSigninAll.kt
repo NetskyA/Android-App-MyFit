@@ -61,6 +61,7 @@ class MenuSigninAll : AppCompatActivity() {
         linearLayout22.startAnimation(fadeInAnimation)
 
 
+
         binding.nextSignIn.setOnClickListener {
             startActivity(Intent(this, MenuSigninEmail::class.java))
         }
