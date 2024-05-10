@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const multer = require("multer");
 const fs = require("fs");
 
-const upload = multer({ dest: "uploads/" });
+const profile = multer({ dest: "uploads/profile" });
 
 const User = require("../models/Users");
 const { testFunction } = require("../service/Functions");
@@ -83,17 +83,6 @@ module.exports = {
       image: image,
     });
 
-    // const imageBuffer = Buffer.from(image, 'base64');
-
-    // fs.writeFile(`uploads/${username}.jpg`, imageBuffer, (err) => {
-    //     if (err) {
-    //         console.error(err);
-    //         return res.status(500).send('Error saving image');
-    //     }
-    // });
-
-    // fs.renameSync(`uploads/temp.png`, `uploads/${title}`);
-    // return res.status(200).send("Register Success!");
     return res.status(201).send({ text: "Ok" });
   },
 
@@ -112,10 +101,6 @@ module.exports = {
 
     if (!cekPass) return res.status(200).send({ password: "1" });
 
-    // const binaryData = fs.readFileSync(cekUser.image)
-    // // Convert binary data to base64 encoded string
-    // const img = Buffer(binaryData).toString('base64')
-    // return res.status(200).json(img+"")
     console.log(cekUser.dataValues.id)
 
     return res.status(200).send({
@@ -265,7 +250,6 @@ module.exports = {
       {
         username: username,
         email: email,
-        password:password,
         phone:phone,
         name:name,
         dob:dob,
@@ -354,4 +338,39 @@ module.exports = {
     console.log("Ok")
     return res.status(200).send({text: "Ok"})
   },
+
+  uploadImageProfil: async (req, res)=>{
+    const {id, image} = req.query
+    console.log(image)
+    console.log(id)
+    const imageBuffer = Buffer.from(image, 'base64');
+
+    fs.writeFile(`uploads/profile/${id}.jpg`, imageBuffer, (err) => {
+        if (err) {
+            console.error(err);
+            return res.status(200).send({text: 'Fail'});
+        }
+    });
+    await User.update(
+      {
+        image:`uploads/profile/${id}.jpg`,
+      }, {
+        where: {
+          id: id
+        }
+      }
+    )
+    return res.status(200).send({text: "Ok"})
+    // fs.renameSync(`uploads/temp.png`, `uploads/${title}`);
+    // return res.status(200).send("Register Success!");
+  },
+
+  getImageProfil: async (req, res)=>{
+    const {id} = req.query
+    const user = await User.getByPk(id)
+    const binaryData = fs.readFileSync(user.image)
+    // Convert binary data to base64 encoded string
+    const img = Buffer(binaryData).toString('base64')
+    return res.status(200).send({text: img+""})
+  }
 };

@@ -105,4 +105,10 @@ internal class UserPreference(context: Context) {
         editor.putInt(AGE, age)
         editor.apply()
     }
+
+    fun setImage(image: String){
+        val editor = preferences.edit()
+        editor.putString(IMAGE, image)
+        editor.apply()
+    }
 }

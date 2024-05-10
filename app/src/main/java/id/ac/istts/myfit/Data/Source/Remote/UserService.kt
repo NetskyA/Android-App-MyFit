@@ -41,4 +41,13 @@ interface UserService {
 
     @POST("api/users/checkUsername")
     suspend fun checkUsername(@Query("id") id:String, @Query("username") username:String):ErrorMsg
+
+    @POST("api/users/uploadImage")
+    suspend fun uploadImage(@Query("id") id:String, @Query("image") image:String):ErrorMsg
+
+    @POST("api/users/getImage")
+    suspend fun getImage(@Query("id") id:String):ErrorMsg
+
+    @GET("api/users/test")
+    suspend fun test():ErrorMsg
 }

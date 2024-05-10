@@ -10,6 +10,8 @@ const {
   checkEmail,
   checkPhone,
   checkUsername,
+  uploadImageProfil,
+  getImageProfil,
 
 } = require("../controllers/UserController"); //function user
 
@@ -40,5 +42,9 @@ router.post("/users/checkEmail", checkEmail) // Buat pengecekan email kembar
 router.post("/users/checkPhone", checkPhone) // Buat pengecekan phone kembar
 
 router.post("/users/checkUsername", checkUsername) // Buat pengecekan username kembar
+
+router.post("/users/uploadImage", uploadImageProfil) // Buat upload image profile
+
+router.post("/users/getImage", getImageProfil) // Buat get imaeg profile
 
 module.exports = router;
