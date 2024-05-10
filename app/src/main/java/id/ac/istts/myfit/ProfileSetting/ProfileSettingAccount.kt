@@ -49,12 +49,34 @@ class ProfileSettingAccount : Fragment() {
         binding.editprofilemobile.isEnabled = false
 
         var tempDate = userPreference.getUser().dob.toString()
-        var date = tempDate.split("/")
+        if(!tempDate.equals("")){
+            var date = tempDate.split("/")
 
-        binding.etdaybirth.setText(date[0])
-        binding.etdaybirth.isEnabled = false
-        binding.etyearsbirth.setText(date[2])
-        binding.etyearsbirth.isEnabled = false
+            binding.etdaybirth.setText(date[0])
+            binding.etdaybirth.isEnabled = false
+            binding.etyearsbirth.setText(date[2])
+            binding.etyearsbirth.isEnabled = false
+        }
+
+        binding.nextSignIn.setOnClickListener{
+            if(binding.nextSignIn.text.toString().equals("Edit Profile")){
+                binding.nextSignIn.setText("Save")
+                binding.editprofilename.isEnabled = true
+                binding.editprofileemail.isEnabled = true
+                binding.editprofilepassword.isEnabled = true
+                binding.editprofilemobile.isEnabled = true
+                binding.etdaybirth.isEnabled = true
+                binding.etyearsbirth.isEnabled = true
+            }else{
+                binding.nextSignIn.setText("Edit Profile")
+                binding.editprofilename.isEnabled = false
+                binding.editprofileemail.isEnabled = false
+                binding.editprofilepassword.isEnabled = false
+                binding.editprofilemobile.isEnabled = false
+                binding.etdaybirth.isEnabled = false
+                binding.etyearsbirth.isEnabled = false
+            }
+        }
 
         binding.editprofilename.setCompoundDrawablesWithIntrinsicBounds(R.drawable.namamenu, 0, 0, 0)
         binding.editprofileemail.setCompoundDrawablesWithIntrinsicBounds(R.drawable.namamenu, 0, 0, 0)

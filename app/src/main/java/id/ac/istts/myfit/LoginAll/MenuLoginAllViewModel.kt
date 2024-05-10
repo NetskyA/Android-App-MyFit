@@ -25,6 +25,7 @@ class MenuLoginAllViewModel(application: Application) : AndroidViewModel(applica
                         password = password
                     )
                 )
+                Log.e("USER", response.toString())
                 if(response!!.password.toString()=="0"){
                     return@withContext "User not found"
                 }else if(response.password.toString()=="1"){

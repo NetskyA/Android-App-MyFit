@@ -115,9 +115,11 @@ module.exports = {
     // const binaryData = fs.readFileSync(cekUser.image)
     // // Convert binary data to base64 encoded string
     // const img = Buffer(binaryData).toString('base64')
-
     // return res.status(200).json(img+"")
+    console.log(cekUser.dataValues.id)
+
     return res.status(200).send({
+      id: cekUser.dataValues.id,
       name: cekUser.dataValues.name,
       username: cekUser.dataValues.username,
       email: cekUser.dataValues.email,
