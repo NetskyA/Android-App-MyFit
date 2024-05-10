@@ -55,15 +55,11 @@ class MenuSigninAll : AppCompatActivity() {
         }
 
         val linearLayout22 = binding.linearLayout22
-        val text1 = binding.text1
-        val text2 = binding.text2
 
         // Load and apply the animation
         val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_up)
         linearLayout22.startAnimation(fadeInAnimation)
-        val fadeInAnimation1 = AnimationUtils.loadAnimation(this, R.anim.fade_in_left)
-        binding.text1.startAnimation(fadeInAnimation1)
-        binding.text2.startAnimation(fadeInAnimation1)
+
 
         binding.nextSignIn.setOnClickListener {
             startActivity(Intent(this, MenuSigninEmail::class.java))

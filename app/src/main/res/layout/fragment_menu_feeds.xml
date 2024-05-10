@@ -72,7 +72,7 @@
 
                 <SearchView
                     android:id="@+id/svSearch"
-                    android:layout_width="@dimen/_270sdp"
+                    android:layout_width="@dimen/_280sdp"
                     android:layout_height="@dimen/_30sdp"
                     android:background="@drawable/backgroundnavigations1"
                     android:gravity="center"

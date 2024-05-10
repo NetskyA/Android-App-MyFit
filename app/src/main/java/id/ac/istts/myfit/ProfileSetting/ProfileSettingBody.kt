@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import id.ac.istts.myfit.R
+import id.ac.istts.myfit.databinding.FragmentProfileSettingAccountBinding
+import id.ac.istts.myfit.databinding.FragmentProfileSettingBodyBinding
 
 class ProfileSettingBody : Fragment() {
-
+    lateinit var binding: FragmentProfileSettingBodyBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,6 +20,16 @@ class ProfileSettingBody : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_setting_body, container, false)
+        binding = FragmentProfileSettingBodyBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.editprofileheight.setCompoundDrawablesWithIntrinsicBounds(R.drawable.heightimg, 0, 0, 0)
+        binding.editprofileweight.setCompoundDrawablesWithIntrinsicBounds(R.drawable.weightimg, 0, 0, 0)
+        binding.editprofileage.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ageimg, 0, 0, 0)
+        binding.editprofilebloodtype.setCompoundDrawablesWithIntrinsicBounds(R.drawable.bloodtype, 0, 0, 0)
+
     }
 }

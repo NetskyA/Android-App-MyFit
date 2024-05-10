@@ -10,6 +10,7 @@
             tools:context="id.ac.istts.myfit.SignEmail.MenuSigninEmail"
             android:background="@drawable/backgroundimage1">
 
+
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/Left"
                 android:layout_width="wrap_content"
@@ -154,7 +155,8 @@
                 android:layout_height="@dimen/_33sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:autofillHints="username"
-                android:inputType="text"
+                android:inputType="textAutoComplete"
+                android:textColor="@color/white"
                 android:background="@drawable/borderbackground"
                 android:hint="username"
                 android:paddingStart="@dimen/_12sdp"
@@ -188,6 +190,7 @@
                 android:autofillHints="emailAddress"
                 android:background="@drawable/borderbackground"
                 android:hint="Name@domain.com"
+                android:textColor="@color/white"
                 android:imeOptions="actionNext"
                 android:inputType="text|textEmailAddress"
                 android:paddingStart="@dimen/_12sdp"
@@ -234,6 +237,7 @@
                     android:background="@drawable/borderbackground"
                     android:inputType="textPassword"
                     android:autofillHints="password"
+                    android:textColor="@color/white"
                     android:paddingStart="@dimen/_12sdp"
                     android:textSize="@dimen/_15ssp"
                     android:hint="Password"
@@ -276,6 +280,7 @@
                     android:inputType="textPassword"
                     android:paddingStart="@dimen/_12sdp"
                     android:hint="Confirm Password"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_15ssp"
                     android:textColorHint="@color/grey"
                     android:autofillHints="password"

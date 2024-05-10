@@ -3,12 +3,15 @@ package id.ac.istts.myfit.SignEmail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.SignAll.MenuSigninAll
@@ -31,6 +34,7 @@ class MenuSigninEmail : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }*/
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_menu_signin_email)
         binding.nextSignInInputPassword.setOnClickListener{
             var username = binding.usernameSignIn.text.toString()

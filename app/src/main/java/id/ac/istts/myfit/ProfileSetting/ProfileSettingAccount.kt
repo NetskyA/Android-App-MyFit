@@ -56,6 +56,10 @@ class ProfileSettingAccount : Fragment() {
         binding.etyearsbirth.setText(date[2])
         binding.etyearsbirth.isEnabled = false
 
+        binding.editprofilename.setCompoundDrawablesWithIntrinsicBounds(R.drawable.namamenu, 0, 0, 0)
+        binding.editprofileemail.setCompoundDrawablesWithIntrinsicBounds(R.drawable.namamenu, 0, 0, 0)
+        binding.editprofilepassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.passimg, 0, 0, 0)
+        binding.editprofilemobile.setCompoundDrawablesWithIntrinsicBounds(R.drawable.telephoneimg, 0, 0, 0)
 
     }
 }

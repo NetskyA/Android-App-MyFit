@@ -215,7 +215,7 @@
 
             <LinearLayout
                 android:layout_width="@dimen/_260sdp"
-                android:layout_height="@dimen/_420sdp"
+                android:layout_height="@dimen/_450sdp"
                 android:layout_gravity="center"
                 android:background="@drawable/borderyellow"
                 android:orientation="vertical"
@@ -231,7 +231,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:layout_height="@dimen/_400sdp"
+                    android:layout_height="@dimen/_440sdp"
                     app:defaultNavHost="true"
                     app:navGraph="@navigation/profile_navigation" />
 
@@ -264,6 +264,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textSize="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/light_red"
                     android:textAlignment="center"
                     android:text="Delete your account"
