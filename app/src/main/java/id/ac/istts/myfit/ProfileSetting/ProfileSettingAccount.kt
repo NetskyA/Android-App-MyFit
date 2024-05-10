@@ -43,8 +43,8 @@ class ProfileSettingAccount : Fragment() {
         binding.editprofilename.isEnabled = false
         binding.editprofileemail.setText(userPreference.getUser().email)
         binding.editprofileemail.isEnabled = false
-        binding.editprofilepassword.setText(userPreference.getUser().password)
-        binding.editprofilepassword.isEnabled = false
+        binding.editprofileusernmae.setText(userPreference.getUser().password)
+        binding.editprofileusernmae.isEnabled = false
         binding.editprofilemobile.setText(userPreference.getUser().phone)
         binding.editprofilemobile.isEnabled = false
 
@@ -63,7 +63,7 @@ class ProfileSettingAccount : Fragment() {
                 binding.nextSignIn.setText("Save")
                 binding.editprofilename.isEnabled = true
                 binding.editprofileemail.isEnabled = true
-                binding.editprofilepassword.isEnabled = true
+                binding.editprofileusernmae.isEnabled = true
                 binding.editprofilemobile.isEnabled = true
                 binding.etdaybirth.isEnabled = true
                 binding.etyearsbirth.isEnabled = true
@@ -71,7 +71,7 @@ class ProfileSettingAccount : Fragment() {
                 binding.nextSignIn.setText("Edit Profile")
                 binding.editprofilename.isEnabled = false
                 binding.editprofileemail.isEnabled = false
-                binding.editprofilepassword.isEnabled = false
+                binding.editprofileusernmae.isEnabled = false
                 binding.editprofilemobile.isEnabled = false
                 binding.etdaybirth.isEnabled = false
                 binding.etyearsbirth.isEnabled = false
@@ -79,8 +79,8 @@ class ProfileSettingAccount : Fragment() {
         }
 
         binding.editprofilename.setCompoundDrawablesWithIntrinsicBounds(R.drawable.namamenu, 0, 0, 0)
-        binding.editprofileemail.setCompoundDrawablesWithIntrinsicBounds(R.drawable.namamenu, 0, 0, 0)
-        binding.editprofilepassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.passimg, 0, 0, 0)
+        binding.editprofileemail.setCompoundDrawablesWithIntrinsicBounds(R.drawable.emailimg, 0, 0, 0)
+        binding.editprofileusernmae.setCompoundDrawablesWithIntrinsicBounds(R.drawable.passimg, 0, 0, 0)
         binding.editprofilemobile.setCompoundDrawablesWithIntrinsicBounds(R.drawable.telephoneimg, 0, 0, 0)
 
     }

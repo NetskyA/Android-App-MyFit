@@ -21,4 +21,12 @@
     <action
         android:id="@+id/action_global_profileSettingBody"
         app:destination="@id/profileSettingBody" />
+    <fragment
+        android:id="@+id/profileSettingPassword"
+        android:name="id.ac.istts.myfit.ProfileSetting.ProfileSettingPassword"
+        android:label="fragment_profile_setting_password"
+        tools:layout="@layout/fragment_profile_setting_password" />
+    <action
+        android:id="@+id/action_global_profileSettingPassword"
+        app:destination="@id/profileSettingPassword" />
 </navigation>

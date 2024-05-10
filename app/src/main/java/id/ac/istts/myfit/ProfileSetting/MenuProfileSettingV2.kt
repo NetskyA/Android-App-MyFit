@@ -3,9 +3,12 @@ package id.ac.istts.myfit.ProfileSetting
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.animation.AnimationUtils
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.SignAll.MenuSigninAll
@@ -50,8 +53,24 @@ class MenuProfileSettingV2 : AppCompatActivity() {
             findNavController(R.id.fragmentContainerView2).navigate(R.id.action_global_profileSettingBody)
         }
 
+        binding.llSecurity.setOnClickListener {
+            findNavController(R.id.fragmentContainerView2).navigate(R.id.action_global_profileSettingPassword)
+        }
+
+        binding.ibSecurity.setOnClickListener {
+            findNavController(R.id.fragmentContainerView2).navigate(R.id.action_global_profileSettingPassword)
+        }
+
         binding.mpBtnBack.setOnClickListener {
             finish()
         }
+
+        val linearLayout22 = binding.fragmentContainerView2
+
+        // Load and apply the animation
+        val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_up)
+        linearLayout22.startAnimation(fadeInAnimation)
+
+
     }
 }
