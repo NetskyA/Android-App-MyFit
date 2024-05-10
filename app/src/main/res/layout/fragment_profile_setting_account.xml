@@ -255,19 +255,19 @@
                             android:id="@+id/etdaybirth"
                             android:layout_width="@dimen/_60sdp"
                             android:layout_height="@dimen/_33sdp"
+                            android:layout_gravity="center"
                             android:background="@drawable/borders3"
+                            android:hint="dd"
                             android:inputType="number"
                             android:textAlignment="center"
-                            android:textSize="@dimen/_15ssp"
-                            android:hint="dd"
-                            android:layout_gravity="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textColorHint="@color/grey"
-                            tools:ignore="RtlSymmetry"
+                            android:textSize="@dimen/_15ssp"
                             app:layout_constraintEnd_toStartOf="@+id/Right"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="@+id/Left"
-                            app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
+                            app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+                            tools:ignore="RtlSymmetry" />
 
                         <Spinner
                             android:id="@+id/monthSpinner"
@@ -288,20 +288,20 @@
                             android:id="@+id/etyearsbirth"
                             android:layout_width="@dimen/_60sdp"
                             android:layout_height="@dimen/_33sdp"
+                            android:layout_gravity="center"
                             android:layout_marginStart="@dimen/_4sdp"
                             android:background="@drawable/borders3"
+                            android:hint="yyyy"
                             android:inputType="number"
                             android:textAlignment="center"
-                            android:textSize="@dimen/_15ssp"
-                            android:hint="yyyy"
-                            android:layout_gravity="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textColorHint="@color/grey"
-                            tools:ignore="RtlSymmetry"
+                            android:textSize="@dimen/_15ssp"
                             app:layout_constraintEnd_toStartOf="@+id/Right"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="@+id/Left"
-                            app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
+                            app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+                            tools:ignore="RtlSymmetry" />
                     </LinearLayout>
 
                     <LinearLayout

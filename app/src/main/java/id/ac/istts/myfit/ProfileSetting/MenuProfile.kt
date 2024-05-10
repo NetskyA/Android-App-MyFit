@@ -1,7 +1,10 @@
 package id.ac.istts.myfit.ProfileSetting
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.ContextMenu
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +12,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.MenuFeed.MenuFeedOpened
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuProfileBinding
@@ -18,6 +22,8 @@ class MenuProfile : Fragment() {
     private lateinit var recyclerViewContent: RecyclerView
     private lateinit var menuProfileAdapter: MenuProfileAdapter
     private lateinit var layoutManager: RecyclerView.LayoutManager
+
+    private lateinit var userPreference: UserPreference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +43,11 @@ class MenuProfile : Fragment() {
 
         var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
         val rv_feedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
+
+        userPreference = UserPreference(requireContext())
+        Log.e("PREFERENCE", userPreference.getUser().toString())
+
+        binding.tvProfile.setText(userPreference.getUser().username)
 
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
         rv_feedcontent.startAnimation(fadeInAnimation)

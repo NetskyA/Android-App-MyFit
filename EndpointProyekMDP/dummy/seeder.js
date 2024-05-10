@@ -8,9 +8,13 @@ const sequelize = require("../database/connection");
 
 const Users = require("../models/Users");
 const Menus = require("../models/Menus");
+const Likes = require("../models/Likes");
+const Diets = require("../models/Diets");
 
 const users = require("./users");
 const menus = require("./menus");
+const likes = require("./likes");
+const diets = require("./diets");
 
 (async function () {
     try {
@@ -53,6 +57,21 @@ const menus = require("./menus");
                 note: menus[i].note,
                 like: menus[i].like,
                 date: menus[i].date,
+            })
+        }
+
+        for (let i = 0; i < likes.length; i++) {
+            await Likes.create({
+                user_id: likes[i].user_id,
+                menu_id: likes[i].menu_id,
+            })
+        }
+
+        for (let i = 0; i < diets.length; i++) {
+            await Diets.create({
+                user_id: diets[i].user_id,
+                menu: diets[i].menu,
+                day: diets[i].day,
             })
         }
 

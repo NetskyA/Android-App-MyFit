@@ -7,7 +7,7 @@ const {
   sendCode,
   verifyOtp,
 
-} = require("../controllers/UserController");
+} = require("../controllers/UserController"); //function user
 
 const { Router } = require("express");
 
@@ -18,6 +18,7 @@ router.get("/users/test", test)
 
 // Enpoint Users
 router.post("/users/register", register); // Buat register user
+
 router.post("/users/login", login); // Buat login user
 
 router.post("/users/cekEmailandUsername", cekEmailandUsername) // Buat cek email dan username duplicate

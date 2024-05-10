@@ -22,6 +22,9 @@ class MenuProfileSettingV2 : AppCompatActivity() {
         binding = ActivityMenuProfileSettingV2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         userPreference = UserPreference(this)
+//        Log.e("PREFERENCEPROFIL", userPreference.getUser().toString())
+        binding.tvProfile.setText(userPreference.getUser().username)
+
         binding.button3.setOnClickListener{
             userPreference.clearPref()
             startActivity(Intent(this,MenuSigninAll::class.java))

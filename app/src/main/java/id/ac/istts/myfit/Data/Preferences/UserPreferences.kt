@@ -6,6 +6,7 @@ import id.ac.istts.myfit.Data.User
 internal class UserPreference(context: Context) {
     companion object {
         private const val PREFS_NAME = "userPref"
+        private const val ID = "id"
         private const val NAME = "name"
         private const val EMAIL = "email"
         private const val PASSWORD = "password"
@@ -27,6 +28,7 @@ internal class UserPreference(context: Context) {
 
     fun login(user: User) {
         val editor = preferences.edit()
+        editor.putInt(ID, user.id ?: 0)
         editor.putString(USERNAME, user.username)
         editor.putString(EMAIL, user.email)
         editor.putString(PASSWORD, user.password)
@@ -76,6 +78,7 @@ internal class UserPreference(context: Context) {
     }
     fun getUser(): User {
         val model = User()
+        model.id = preferences.getInt(ID, 0)
         model.name = preferences.getString(NAME, "")
         model.email = preferences.getString(EMAIL, "")
         model.password = preferences.getString(PASSWORD, "")
@@ -91,4 +94,6 @@ internal class UserPreference(context: Context) {
         model.image = preferences.getString(IMAGE, "")
         return model
     }
+
+
 }
