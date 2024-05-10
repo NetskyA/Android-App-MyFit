@@ -286,18 +286,18 @@
                             android:id="@+id/monthSpinner"
                             android:layout_width="@dimen/_100sdp"
                             android:layout_height="@dimen/_40sdp"
+                            android:layout_gravity="center"
                             android:layout_marginStart="@dimen/_4sdp"
                             android:background="@drawable/borders4"
                             android:textAlignment="center"
-                            android:layout_gravity="center"
-                            android:textColor="@color/black"
+                            android:textColor="@color/grey"
                             android:textColorHint="@color/grey"
                             android:textSize="@dimen/_15ssp"
-                            tools:ignore="RtlSymmetry"
                             app:layout_constraintEnd_toStartOf="@+id/Right"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toEndOf="@+id/etdaybirth"
-                            app:layout_constraintTop_toTopOf="@+id/linearLayout3"/>
+                            app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+                            tools:ignore="RtlSymmetry" />
 
                         <EditText
                             android:id="@+id/etyearsbirth"

@@ -95,5 +95,14 @@ internal class UserPreference(context: Context) {
         return model
     }
 
-
+    fun setUpdateProfileAccount(name: String, day: Int, month: Int, year: Int, username:String, email:String, phone:String, age: Int){
+        val editor = preferences.edit()
+        editor.putString(NAME, name)
+        editor.putString(DOB, "$day/$month/$year")
+        editor.putString(USERNAME, username)
+        editor.putString(EMAIL, email)
+        editor.putString(PHONE, phone)
+        editor.putInt(AGE, age)
+        editor.apply()
+    }
 }

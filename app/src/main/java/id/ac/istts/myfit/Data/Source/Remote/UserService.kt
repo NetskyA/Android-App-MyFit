@@ -29,4 +29,16 @@ interface UserService {
 
     @POST("api/users/verifyOtp")
     suspend fun verifyOtp(@Query("email") email:String,@Query("otp") otp:String):ErrorMsg
+
+    @POST("api/users/updateProfile")
+    suspend fun updateProfile(@Body user: User): ErrorMsg
+
+    @POST("api/users/checkEmail")
+    suspend fun checkEmail(@Query("id") id:String, @Query("email") email:String):ErrorMsg
+
+    @POST("api/users/checkPhone")
+    suspend fun checkPhone(@Query("id") id:String, @Query("phone") phone:String):ErrorMsg
+
+    @POST("api/users/checkUsername")
+    suspend fun checkUsername(@Query("id") id:String, @Query("username") username:String):ErrorMsg
 }

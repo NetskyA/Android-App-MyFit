@@ -6,6 +6,10 @@ const {
   cekPhoneNumber,
   sendCode,
   verifyOtp,
+  updateProfile,
+  checkEmail,
+  checkPhone,
+  checkUsername,
 
 } = require("../controllers/UserController"); //function user
 
@@ -28,5 +32,13 @@ router.post("/users/cekPhoneNumber", cekPhoneNumber) // Buat cek phone number
 router.post("/users/sendCode", sendCode) // Buat kirim kode otp
 
 router.post("/users/verifyOtp", verifyOtp) // Buat verifikasi kode otp
+
+router.post("/users/updateProfile", updateProfile) // Buat update profil account dan body
+
+router.post("/users/checkEmail", checkEmail) // Buat pengecekan email kembar
+
+router.post("/users/checkPhone", checkPhone) // Buat pengecekan phone kembar
+
+router.post("/users/checkUsername", checkUsername) // Buat pengecekan username kembar
 
 module.exports = router;

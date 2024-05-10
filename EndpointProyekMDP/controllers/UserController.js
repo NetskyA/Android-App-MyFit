@@ -241,5 +241,117 @@ module.exports = {
       allergy: cekUser.dataValues.allergy,
       image: cekUser.dataValues.image,
     });
-  }
+  },
+
+  updateProfile: async (req, res)=>{
+    const {
+      id,
+      username,
+      email,
+      password,
+      phone,
+      name,
+      dob,
+      gender,
+      height,
+      weight,
+      age,
+      blood_type,
+      allergy,
+      image,
+    } = req.body;
+
+    await User.update(
+      {
+        username: username,
+        email: email,
+        password:password,
+        phone:phone,
+        name:name,
+        dob:dob,
+        gender:gender,
+        height:height,
+        weight:weight,
+        age:age,
+        blood_type:blood_type,
+        allergy:allergy,
+        image:image,
+      }, {
+        where: {
+          id: id
+        }
+      }
+    )
+
+    return res.status(200).send({text: "Success!"})
+  },
+
+  checkEmail: async (req, res)=>{
+    const {
+      id,
+      email,
+    } = req.query;
+
+    const cekUser = await User.findOne({
+      where: {
+        id: {
+          [Op.ne]: id
+        },
+        email: email
+      }
+    })
+
+    if(cekUser){
+      console.log("Fail")
+      return res.status(200).send({text: "Fail"})
+    }
+    console.log("Ok")
+    return res.status(200).send({text: "Ok"})
+  },
+
+  checkPhone: async (req, res)=>{
+    const {
+      id,
+      phone,
+    } = req.query;
+
+    const cekUser = await User.findOne({
+      where: {
+        id: {
+          [Op.ne]: id
+        },
+        phone: phone
+      }
+    })
+
+    if(cekUser){
+      console.log("Fail")
+      return res.status(200).send({text: "Fail"})
+    }
+    console.log("Ok")
+    return res.status(200).send({text: "Ok"})
+  },
+
+  checkUsername: async (req, res)=>{
+    const {
+      id,
+      username,
+    } = req.query;
+
+    const cekUser = await User.findOne({
+      where: {
+        id: {
+          [Op.ne]: id
+        },
+        username: username
+      }
+    })
+
+    if(cekUser){
+      console.log("Fail")
+      return res.status(200).send({text: "Fail"})
+    }
+    console.log("Ok")
+    return res.status(200).send({text: "Ok"})
+  },
 };
