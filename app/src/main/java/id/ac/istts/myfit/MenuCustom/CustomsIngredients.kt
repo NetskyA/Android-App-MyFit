@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import id.ac.istts.myfit.MenuCustom.MenuCustoms
@@ -52,6 +53,13 @@ class CustomsIngredients : Fragment() {
         binding.etCaraMemasak.setCompoundDrawablesWithIntrinsicBounds(R.drawable.cooking, 0, 0, 0)
         binding.etNotemenu.setCompoundDrawablesWithIntrinsicBounds(R.drawable.note, 0, 0, 0)
 
+//        binding.etNamaMenuCustoms.isChanged{
+//            Toast.makeText(requireContext(), "Test", Toast.LENGTH_SHORT).show()
+//        }
+
+        binding.nextCheckmenu.setOnClickListener{
+            Toast.makeText(requireContext(), "Test", Toast.LENGTH_SHORT).show()
+        }
     }
 
 

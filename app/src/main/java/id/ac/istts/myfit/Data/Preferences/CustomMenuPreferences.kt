@@ -1,10 +1,9 @@
 package id.ac.istts.myfit.Data.Preferences
 
 import android.content.Context
-import androidx.room.ColumnInfo
 import id.ac.istts.myfit.Data.Menu
 
-internal class MenuPreferences(context: Context) {
+internal class CustomMenuPreferences(context: Context) {
     companion object {
         private const val PREFS_NAME = "customMenuPref"
         private const val ID = "id"
@@ -21,7 +20,7 @@ internal class MenuPreferences(context: Context) {
 
     private val preferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-    fun add(customMenu: Menu) {
+    fun addCustomMenu(customMenu: Menu) {
         val editor = preferences.edit()
         editor.putInt(ID, customMenu.id ?: 0)
         editor.putString(NAME, customMenu.name)
