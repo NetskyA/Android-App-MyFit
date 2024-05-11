@@ -97,7 +97,7 @@ class ProfileSettingBody : Fragment() {
                         }else if(msg=="Error"){
                             Toast.makeText(requireContext(), "Error, No Internet Connection", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "Edited success", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
