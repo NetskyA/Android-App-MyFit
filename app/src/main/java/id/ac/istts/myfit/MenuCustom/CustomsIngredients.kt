@@ -149,6 +149,4 @@ class CustomsIngredients : Fragment() {
             Toast.makeText(requireContext(), "Test", Toast.LENGTH_SHORT).show()
         }
     }
-
-
 }
