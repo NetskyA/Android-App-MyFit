@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require('fs');
 
 function readJSONFile() {
   const data = [];
@@ -49,6 +49,7 @@ function readJSONFile() {
             );
             }
         }
+
         datareturn.push({
             name: jsonData.results[j].title,
             image: jsonData.results[j].image,
