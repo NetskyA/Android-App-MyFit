@@ -1,6 +1,6 @@
 const users = [
-    {email: "user1.@gmail.com", name: "user1"},
-    {email: "user2.@gmail.com", username: "user2", phone: "081123456789", name: "user2", password: "$2b$10$2pf.NATCrm/u.fYb.fi8O.eBzniBM6IOe5oU5jLqnxgBKM2mKxLKu", dob: "12/12/2012", gender: 1, height: 170, weight: 66, age: 12, blood_type: "O", allergy: "Nope"},
+    {email: "zee@gmail.com", username: "zee", phone: "081123456789", name: "Azizi Asadel", password: "$2b$10$eLPKVZ24yygu1J2MUEdB6OweiifAmkx71a5QgT9sky2u6zcgdpo9m", dob: "12/12/2004", gender: 2, height: 164, weight: 53, age: 20, blood_type: "O", allergy: "Nope", image: "uploads/profile/1.jpg"},
+    {email: "vonzy.@gmail.com", username: "vonzy", phone: "081987654321", name: "Vonny Felicia", password: "$2b$10$eLPKVZ24yygu1J2MUEdB6OweiifAmkx71a5QgT9sky2u6zcgdpo9m", dob: "1/2/2001", gender: 2, height: 160, weight: 50, age: 21, blood_type: "AB", allergy: "Nope", image: "uploads/profile/2.jpg"},
 ]
 
 module.exports = users

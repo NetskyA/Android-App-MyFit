@@ -44,7 +44,7 @@ const diets = require("./diets");
                 age: users[i].age,
                 blood_type: users[i].blood_type,
                 allergy: users[i].allergy ,
-                // image  : users[i].image  ,
+                image  : users[i].image  ,
             })
         }
 

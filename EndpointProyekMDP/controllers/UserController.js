@@ -27,8 +27,9 @@ module.exports = {
 
   //   return res.status(201).send(testFunction("Success!"))
   // },
-  test: (req, res) => {
-    return res.status(200).send({ test: "wkwk" });
+  test: async (req, res) => {
+    const hashPass = await bcrypt.hash("123", 10);
+    return res.status(200).send({ test: hashPass });
   },
 
   cekEmailandUsername: async (req, res) => {
