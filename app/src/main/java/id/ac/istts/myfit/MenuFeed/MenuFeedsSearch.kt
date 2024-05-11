@@ -75,7 +75,7 @@ class MenuFeedsSearch : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                Toast.makeText(requireContext(), binding.svSearch.query.toString(), Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), binding.svSearch.query.toString(), Toast.LENGTH_SHORT).show()
                 ioScope.launch {
                     tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
                     mainScope.launch {
