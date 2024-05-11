@@ -16,7 +16,7 @@ class MenuFeedSearchAdapter (
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val ivProfile: ImageView = row.findViewById(R.id.itemSearch_ivProfile)
         val tvProfileName: TextView = row.findViewById(R.id.itemSearch_tvProfileName)
-        val ivRemove: ImageView = row.findViewById(R.id.itemSearch_ivRemove)
+       /* val ivRemove: ImageView = row.findViewById(R.id.itemSearch_ivRemove)*/
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

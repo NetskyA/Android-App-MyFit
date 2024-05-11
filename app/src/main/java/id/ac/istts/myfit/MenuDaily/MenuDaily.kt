@@ -37,7 +37,7 @@ class MenuDaily : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
+        var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2")
 
         val imageView: ImageView = requireView().findViewById(R.id.imageView7)
         val textWe: TextView = requireView().findViewById(R.id.tvTitleWe3)

@@ -6,118 +6,142 @@
     android:layout_height="match_parent"
     tools:context=".MenuCustom.CustomsIngredients">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_6sdp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none">
 
-        <ImageButton
-            android:id="@+id/uploadimagemenucustoms"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_140sdp"
-            android:layout_marginTop="@dimen/_3sdp"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_3sdp"
-            android:background="@drawable/borders4"
-            android:paddingStart="@dimen/_12sdp"
-            android:src="@drawable/galerry"
-            android:paddingBottom="@dimen/_2sdp"/>
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/uploadimagemenucustoms"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:background="@drawable/borders4"
+                android:paddingStart="@dimen/_12sdp"
+                android:src="@drawable/galerry"
+                android:paddingBottom="@dimen/_2sdp"/>
 
 
-        <EditText
-            android:id="@+id/etNamaMenuCustoms"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:hint="Menu name"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_3sdp"
-            android:background="@drawable/borders4"
-            android:textColorHint="@color/grey"
-            android:paddingStart="@dimen/_20sdp"
-            android:textSize="@dimen/_14sdp"
 
-            android:drawablePadding="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_2sdp"/>
+            <EditText
+                android:id="@+id/etNamaMenuCustoms"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="Avocado Juice*"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:background="@drawable/borders4"
+                android:textColorHint="@color/grey"
+                android:paddingStart="@dimen/_20sdp"
+                android:textSize="@dimen/_14sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
 
-        <EditText
-            android:id="@+id/etNamabahanbahan"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:hint="Ingredients"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_3sdp"
-            android:background="@drawable/borders4"
-            android:textColorHint="@color/grey"
-            android:paddingStart="@dimen/_20sdp"
-            android:textSize="@dimen/_14sdp"
-            android:drawablePadding="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_2sdp"/>
 
-        <EditText
-            android:id="@+id/etNamanutrisi"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:hint="Nutrition"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_3sdp"
-            android:background="@drawable/borders4"
-            android:textColorHint="@color/grey"
-            android:paddingStart="@dimen/_20sdp"
-            android:textSize="@dimen/_14sdp"
-            android:drawablePadding="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_2sdp"/>
+            <EditText
+                android:id="@+id/etNamabahanbahan"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="Avocado, Milk, Sugar*"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:background="@drawable/borders4"
+                android:textColorHint="@color/grey"
+                android:paddingStart="@dimen/_20sdp"
+                android:textSize="@dimen/_14sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
 
-        <EditText
-            android:id="@+id/etCaraMemasak"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:hint="How to make (Optional)"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_3sdp"
-            android:background="@drawable/borders4"
-            android:textColorHint="@color/grey"
-            android:paddingStart="@dimen/_20sdp"
-            android:textSize="@dimen/_14sdp"
-            android:drawablePadding="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_2sdp"/>
+            <EditText
+                android:id="@+id/etNamanutrisi"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="Calories, Protein, Fat*"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:background="@drawable/borders4"
+                android:textColorHint="@color/grey"
+                android:paddingStart="@dimen/_20sdp"
+                android:textSize="@dimen/_14sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
 
-        <EditText
-            android:id="@+id/etNotemenu"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:hint="Note (Optional)"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_3sdp"
-            android:background="@drawable/borders4"
-            android:textColorHint="@color/grey"
-            android:paddingStart="@dimen/_20sdp"
-            android:textSize="@dimen/_14sdp"
-            android:drawablePadding="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_2sdp"/>
+            <EditText
+                android:id="@+id/etCaraMemasak"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="How to make (1st A, 2nd B)"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:background="@drawable/borders4"
+                android:textColorHint="@color/grey"
+                android:paddingStart="@dimen/_20sdp"
+                android:textSize="@dimen/_14sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
 
-        <Button
-            android:id="@+id/nextCheckmenu"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_3sdp"
-            android:background="@drawable/borderblue"
-            android:text="Check"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            tools:ignore="HardcodedText" />
+            <EditText
+                android:id="@+id/etNotemenu"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="Note (Alergy, etc)"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:background="@drawable/borders4"
+                android:textColorHint="@color/grey"
+                android:paddingStart="@dimen/_20sdp"
+                android:textSize="@dimen/_14sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="@dimen/_245sdp"
+                android:layout_gravity="center"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:textColor="@color/grey"
+                android:text="Make sure the input is according to the example, the post cannot be deleted and all content is the responsibility of the creator."
+                android:textAlignment="center"
+                android:textSize="@dimen/_10ssp"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/nextCheckmenu"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_17sdp"
+                android:background="@drawable/borderblue"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </FrameLayout>
 

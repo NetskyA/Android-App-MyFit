@@ -15,7 +15,7 @@ class SelectedDayMenusAdapter (
         val tvTitle: TextView = row.findViewById(R.id.openedDaily_tvTitle)
         val tvLikesValue: TextView = row.findViewById(R.id.openedDaily_tvLikesValue)
         val ivLikes: ImageView = row.findViewById(R.id.openedDaily_ivLikes)
-        val tvDescription: TextView = row.findViewById(R.id.openedDaily_tvDescription)
+        /*val tvDescription: TextView = row.findViewById(R.id.openedDaily_tvDescription)*/
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

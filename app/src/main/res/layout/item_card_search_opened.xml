@@ -64,13 +64,13 @@
                 android:textSize="@dimen/_20sdp"
                 android:textStyle="bold" />
 
-            <ImageView
+<!--            <ImageView
                 android:id="@+id/itemSearch_ivRemove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:scaleType="centerInside"
-                android:src="@drawable/cancel" />
+                android:src="@drawable/cancel" />-->
 
         </LinearLayout>
 

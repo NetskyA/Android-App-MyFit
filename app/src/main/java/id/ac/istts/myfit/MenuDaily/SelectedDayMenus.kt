@@ -54,12 +54,11 @@ class SelectedDayMenus : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSelectedDayMenusBinding.bind(view)
 
-        var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
+        var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2")
 
         binding.selectedDayMenuIbBack.setOnClickListener {
             findNavController().navigate(R.id.action_global_menuDaily)
         }
-
         recyclerViewContent = binding.selectedDayMenuRvMenu
         layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         selectedDayMenusAdapter = SelectedDayMenusAdapter(temp)
