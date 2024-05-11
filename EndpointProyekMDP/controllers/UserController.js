@@ -178,7 +178,20 @@ module.exports = {
       from: 'alvinbwiyono@gmail.com',
       to: email,
       subject: 'Sending Email using Node.js',
-      html: `<h1>Welcome</h1><p>That was easy!</p><p>OTP: ${otp}</p>`
+      html: `<body style="margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; display: flex; justify-content: center; align-items: center; height: 100vh; font-size: 16px; color: #333;">
+      <div class="container" style="background: white; width: 350px; border-radius: 8px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); text-align: center; padding: 30px;">
+          <div class="header" style="color: #0080ff; margin-bottom: 10px;">
+              <h1>OTP</h1>
+          </div>
+          <div class="content" style="margin: 20px 0;">
+              <p>Here is the verification code that can be used to login to My Fit</p>
+              <div class="otp" style="font-size: 32px; font-weight: bold; margin: 20px 0; color: #333;">${otp}</div>
+          </div>
+          <div class="footer" style="font-size: 14px; color: #666; margin-top: 30px;">
+              The code above is only valid for 1 minutes. Do not disclose the code to anyone, including the My Fit. 
+          </div>
+      </div>
+  </body>`
     }; 
     
     transporter.sendMail(mailOptions, function(error, info){

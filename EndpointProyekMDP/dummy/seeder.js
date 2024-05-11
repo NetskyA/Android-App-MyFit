@@ -57,6 +57,7 @@ const diets = require("./diets");
                 note: menus[i].note,
                 like: menus[i].like,
                 date: menus[i].date,
+                image: menus[i].image,
             })
         }
 
