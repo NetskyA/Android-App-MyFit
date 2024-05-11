@@ -17,7 +17,6 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.inappmessaging.model.ImageData
 import id.ac.istts.myfit.Data.Modal.ModalDeleteAccount
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.MyFitApplication
