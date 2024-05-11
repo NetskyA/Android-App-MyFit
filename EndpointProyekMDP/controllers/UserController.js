@@ -416,5 +416,30 @@ module.exports = {
     // Convert binary data to base64 encoded string
     const img = Buffer(binaryData).toString('base64')
     return res.status(200).send({text: img+""})
-  }
+  },
+
+  search: async (req, res)=>{
+    const {
+      id,
+      keyword,
+    } = req.query;
+
+    const searchUser = await User.findAll({
+      attributes: ['username', 'image'],
+      where: {
+        id: {
+          [Op.ne]: id
+        },
+        username: {
+          [Op.like]: '%' + keyword + '%' 
+        },
+        // name: {
+        //   [Op.like]: '%' + keyword + '%' 
+        // }
+      }
+    });
+
+
+    return res.status(200).send({searchUser: searchUser})
+  },
 };

@@ -12,6 +12,7 @@ const {
   checkUsername,
   uploadImageProfil,
   getImageProfil,
+  search,
 
 } = require("../controllers/UserController"); //function user
 
@@ -46,5 +47,7 @@ router.post("/users/checkUsername", checkUsername) // Buat pengecekan username k
 router.post("/users/uploadImage", uploadImageProfil) // Buat upload image profile
 
 router.post("/users/getImage", getImageProfil) // Buat get image profile
+
+router.get("/users/search", search) // Buat search user
 
 module.exports = router;

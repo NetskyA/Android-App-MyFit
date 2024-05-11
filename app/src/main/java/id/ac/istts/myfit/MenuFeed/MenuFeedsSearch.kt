@@ -1,34 +1,40 @@
 package id.ac.istts.myfit.MenuFeed
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.SearchView
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
+import id.ac.istts.myfit.Data.Preferences.UserPreference
+import id.ac.istts.myfit.Data.tempUser
+import id.ac.istts.myfit.MenuCustom.CustomIngredientsViewModel
+import id.ac.istts.myfit.ProfileSetting.MenuProfileSettingV2ViewModel
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuFeedsSearchBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MenuFeedsSearch.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MenuFeedsSearch : Fragment() {
     // TODO: Rename and change types of parameters
     private lateinit var binding: FragmentMenuFeedsSearchBinding
     private lateinit var recyclerViewSearch: RecyclerView
     private lateinit var menuFeedSearchAdapter: MenuFeedSearchAdapter
     private lateinit var layoutManagerSearch: RecyclerView.LayoutManager
-
+    private lateinit var userPreference: UserPreference
+    val ioScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
+    val mainScope = CoroutineScope(Dispatchers.Main)
+    lateinit var vm: MenuFeedsSearchViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -44,12 +50,14 @@ class MenuFeedsSearch : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        vm = ViewModelProvider(this).get(MenuFeedsSearchViewModel::class.java)
+        userPreference = UserPreference(requireContext())
 
-        var temp2:ArrayList<String> = arrayListOf("test","test2","test3","test4")
+        var tempSearchUser:List<tempUser> = arrayListOf()
         val rvfeedcontent: RecyclerView = requireView().findViewById(R.id.menuFeedsSearch_rvSearch)
         recyclerViewSearch = binding.menuFeedsSearchRvSearch
         layoutManagerSearch = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        menuFeedSearchAdapter = MenuFeedSearchAdapter(temp2, onDetailClickListener = {
+        menuFeedSearchAdapter = MenuFeedSearchAdapter(tempSearchUser, onDetailClickListener = {
             // TODO: Open profile
         })
 
@@ -61,28 +69,28 @@ class MenuFeedsSearch : Fragment() {
 
         binding.svSearch.requestFocus()
 
-    }
-
-
-
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MenuFeedsSearch.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MenuFeedsSearch().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        binding.svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
             }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Toast.makeText(requireContext(), binding.svSearch.query.toString(), Toast.LENGTH_SHORT).show()
+                ioScope.launch {
+                    tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
+                    mainScope.launch {
+                        menuFeedSearchAdapter = MenuFeedSearchAdapter(tempSearchUser, onDetailClickListener = {
+
+                        })
+                        binding.menuFeedsSearchRvSearch.adapter = menuFeedSearchAdapter
+                    }
+                }
+                return true
+            }
+        })
+        binding.menuFeedsSearchRvSearch.apply {
+            this.layoutManager = layoutManager
+            this.adapter = menuFeedSearchAdapter
+        }
     }
 }

@@ -6,11 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.istts.myfit.Data.tempUser
 import id.ac.istts.myfit.R
 
 class MenuFeedSearchAdapter (
-    val data: ArrayList<String>,
-    val onDetailClickListener:(String) -> Unit
+    val data: List<tempUser>,
+    val onDetailClickListener:(tempUser) -> Unit
 ): RecyclerView.Adapter<MenuFeedSearchAdapter.ViewHolder>() {
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val ivProfile: ImageView = row.findViewById(R.id.itemSearch_ivProfile)
@@ -32,14 +33,16 @@ class MenuFeedSearchAdapter (
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val f = data[position]
 
-        holder.ivProfile.setOnClickListener {
-            onDetailClickListener?.invoke(f)
-        }
-        holder.tvProfileName.setOnClickListener {
-            onDetailClickListener?.invoke(f)
-        }
-        holder.ivRemove.setOnClickListener {
-            // TODO: Remove from search
-        }
+        holder.tvProfileName.setText(f.username)
+
+//        holder.ivProfile.setOnClickListener {
+//            onDetailClickListener?.invoke(f)
+//        }
+//        holder.tvProfileName.setOnClickListener {
+//            onDetailClickListener?.invoke(f)
+//        }
+//        holder.ivRemove.setOnClickListener {
+//            // TODO: Remove from search
+//        }
     }
 }

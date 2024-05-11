@@ -2,6 +2,7 @@ package id.ac.istts.myfit.Data.Source.Remote
 
 import id.ac.istts.myfit.Data.ErrorMsg
 import id.ac.istts.myfit.Data.ImageData
+import id.ac.istts.myfit.Data.SearchResult
 import id.ac.istts.myfit.Data.User
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -48,4 +49,7 @@ interface UserService {
 
     @GET("api/users/test")
     suspend fun test():ErrorMsg
+
+    @GET("api/users/search")
+    suspend fun search(@Query("id") id:String, @Query("keyword") keyword:String): SearchResult
 }
