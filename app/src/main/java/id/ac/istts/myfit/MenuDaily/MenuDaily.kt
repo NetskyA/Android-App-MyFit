@@ -1,6 +1,9 @@
 package id.ac.istts.myfit.MenuDaily
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
+import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuDailyBinding
 
@@ -18,10 +22,9 @@ import id.ac.istts.myfit.databinding.FragmentMenuDailyBinding
 class MenuDaily : Fragment() {
 
     private lateinit var binding: FragmentMenuDailyBinding
-
+    private lateinit var userPreference: UserPreference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -56,9 +59,19 @@ class MenuDaily : Fragment() {
         val fadeInAnimation4 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         buttonprevios.startAnimation(fadeInAnimation4)
 
+        userPreference = UserPreference(requireContext())
+        if(userPreference.getUser().image!=""){
+            binding.imageView6.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+        }
+        binding.tvTitleWe2.setText(userPreference.getUser().username)
+
         binding.lycontentmenutoday.setOnClickListener {
             findNavController().navigate(R.id.action_menuDaily_to_selectedDayMenus)
         }
 
+    }
+    fun decodeBase64ToBitmap(base64Str: String): Bitmap {
+        val imageBytes = Base64.decode(base64Str, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
     }
 }

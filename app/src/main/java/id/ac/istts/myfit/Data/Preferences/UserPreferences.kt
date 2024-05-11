@@ -37,7 +37,7 @@ internal class UserPreference(context: Context) {
         editor.putString(DOB, user.dob)
         editor.putInt(GENDER, user.gender ?: 0)
         editor.putInt(WEIGHT, user.weight ?: 0)
-        editor.putInt(HEIGHT, user.weight ?: 0)
+        editor.putInt(HEIGHT, user.height ?: 0)
         editor.putString(BLOOD_TYPE, user.blood_type)
         editor.putString(ALLERGY, user.allergy)
         editor.putInt(AGE, user.age ?:0)
@@ -104,6 +104,15 @@ internal class UserPreference(context: Context) {
         editor.putString(EMAIL, email)
         editor.putString(PHONE, phone)
         editor.putInt(AGE, age)
+        editor.apply()
+    }
+
+    fun setUpdateProfileBody(gender: Int, height: Int, weight: Int, bloodtype: String){
+        val editor = preferences.edit()
+        editor.putInt(GENDER, gender)
+        editor.putInt(HEIGHT, height)
+        editor.putInt(WEIGHT, weight)
+        editor.putString(BLOOD_TYPE, bloodtype)
         editor.apply()
     }
 

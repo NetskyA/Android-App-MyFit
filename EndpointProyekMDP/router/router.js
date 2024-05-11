@@ -45,6 +45,6 @@ router.post("/users/checkUsername", checkUsername) // Buat pengecekan username k
 
 router.post("/users/uploadImage", uploadImageProfil) // Buat upload image profile
 
-router.post("/users/getImage", getImageProfil) // Buat get imaeg profile
+router.post("/users/getImage", getImageProfil) // Buat get image profile
 
 module.exports = router;

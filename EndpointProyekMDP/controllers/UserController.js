@@ -119,6 +119,13 @@ module.exports = {
 
     console.log(cekUser.dataValues.id)
 
+    let img = ""
+
+    if(cekUser.dataValues.image!=""){
+      const binaryData = fs.readFileSync(cekUser.dataValues.image)
+      img = Buffer(binaryData).toString('base64')
+    }
+
     return res.status(200).send({
       id: cekUser.dataValues.id,
       name: cekUser.dataValues.name,
@@ -132,7 +139,7 @@ module.exports = {
       age: cekUser.dataValues.age,
       blood_type: cekUser.dataValues.blood_type,
       allergy: cekUser.dataValues.allergy,
-      image: cekUser.dataValues.image,
+      image: img,
     });
   },
 
@@ -228,6 +235,13 @@ module.exports = {
     });
     if (!cekUser) return res.status(200).send({ password: "0" }); 
 
+    let img = ""
+
+    if(cekUser.dataValues.image!=""){
+      const binaryData = fs.readFileSync(cekUser.dataValues.image)
+      img = Buffer(binaryData).toString('base64')
+    }
+
     return res.status(200).send({
       id:cekUser.dataValues.id,
       name: cekUser.dataValues.name,
@@ -241,7 +255,7 @@ module.exports = {
       age: cekUser.dataValues.age,
       blood_type: cekUser.dataValues.blood_type,
       allergy: cekUser.dataValues.allergy,
-      image: cekUser.dataValues.image,
+      image: img,
     });
   },
 
@@ -276,7 +290,6 @@ module.exports = {
         age:age,
         blood_type:blood_type,
         allergy:allergy,
-        image:image,
       }, {
         where: {
           id: id
@@ -357,9 +370,9 @@ module.exports = {
   },
 
   uploadImageProfil: async (req, res)=>{
-    const {id, image} = req.query
-    console.log(image)
-    console.log(id)
+    const {id, image} = req.body
+    // console.log(image)
+    // console.log(id)
     const imageBuffer = Buffer.from(image, 'base64');
 
     fs.writeFile(`uploads/profile/${id}.jpg`, imageBuffer, (err) => {

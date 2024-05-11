@@ -2,7 +2,10 @@ package id.ac.istts.myfit.ProfileSetting
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.view.ContextMenu
 import androidx.fragment.app.Fragment
@@ -59,10 +62,27 @@ class MenuProfile : Fragment() {
         recyclerViewContent.adapter = menuProfileAdapter
         recyclerViewContent.layoutManager = layoutManager
 
+        userPreference = UserPreference(requireContext())
+        if(userPreference.getUser().image!=""){
+            binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+        }
+
         binding.lybar2.setOnClickListener {
 //            val stepmove = MenuProfileDirections.actionMenuProfileToMenuProfileSeeting()
 //            findNavController().navigate(stepmove)
             startActivity(Intent(this.context, MenuProfileSettingV2::class.java))
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if(userPreference.getUser().image!=""){
+            binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+        }
+    }
+
+    fun decodeBase64ToBitmap(base64Str: String): Bitmap {
+        val imageBytes = Base64.decode(base64Str, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
     }
 }

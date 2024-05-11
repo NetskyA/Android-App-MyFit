@@ -47,8 +47,8 @@ class MenuProfileSettingV2 : AppCompatActivity() {
         vm = ViewModelProvider(this).get(MenuProfileSettingV2ViewModel::class.java)
         userPreference = UserPreference(this)
 
-        if(!userPreference.getUser().image.equals("") || userPreference.getUser().image!=null){
-//            binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+        if(userPreference.getUser().image!=""){
+            binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
         }
 
         Log.e("PREFERENCEPROFIL", userPreference.getUser().toString())
@@ -113,28 +113,19 @@ class MenuProfileSettingV2 : AppCompatActivity() {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
             val byteArray = outputStream.toByteArray()
             val base64String = Base64.encodeToString(byteArray, Base64.DEFAULT)
-            binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(base64String))
+//            binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(base64String))
 
 
 
             ioScope.launch { //access ke API
-//                val imageData = ImageData(userPreference.getUser().id.toString(), base64String)
-//                var msg = MyFitApplication.retrofitUserService?.uploadImage(userPreference.getUser().id.toString(), base64String)
-//                try {
-//                    var msg = MyFitApplication.retrofitUserService?.uploadImage(userPreference.getUser().id.toString(), base64String)
-//                }catch (err:Exception){
-//                    Log.d("ERROR APA INIIII", err.toString())
-//                }
-
-                var msg = vm.uploadImage(base64String)
-//                val msg = API.retrofitService.upload(base64String)
-
-//                var msg = MyFitApplication.retrofitUserService?.getImage(userPreference.getUser().id.toString())
+                val msg = vm.uploadImage(base64String)
                 mainScope.launch { //update tampilan
-//                    binding.textView.setText(msg)
-                    Log.d("IMAGE DATA", msg)
-//                    binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(msg.text))
-//                    Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
+                    if(msg=="Fail"){
+                        Toast.makeText(this@MenuProfileSettingV2, "Failed to upload image", Toast.LENGTH_SHORT).show()
+                    }else{
+                        Toast.makeText(this@MenuProfileSettingV2, "Upload image success", Toast.LENGTH_SHORT).show()
+                        binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+                    }
                 }
             }
         }

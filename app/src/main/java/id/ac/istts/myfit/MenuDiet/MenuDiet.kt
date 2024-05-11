@@ -15,13 +15,14 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.MenuFeed.MenuFeedOpened
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuDietBinding
 
 class MenuDiet : Fragment() {
     private lateinit var binding: FragmentMenuDietBinding
-
+    private lateinit var userPreference: UserPreference
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +40,8 @@ class MenuDiet : Fragment() {
         val fadeInAnimation2 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         textWe.startAnimation(fadeInAnimation2)
 
+        userPreference = UserPreference(requireContext())
+        binding.tvTitleHelo.setText("Hello, ${userPreference.getUser().username}")
         // Spinner Day
         val spinner = binding.menuDietSpDay
         spinner.setSelection(0, false)

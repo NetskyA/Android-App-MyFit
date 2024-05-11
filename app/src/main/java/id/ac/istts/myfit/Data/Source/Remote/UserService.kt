@@ -1,6 +1,7 @@
 package id.ac.istts.myfit.Data.Source.Remote
 
 import id.ac.istts.myfit.Data.ErrorMsg
+import id.ac.istts.myfit.Data.ImageData
 import id.ac.istts.myfit.Data.User
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -40,7 +41,7 @@ interface UserService {
     suspend fun checkUsername(@Query("id") id:String, @Query("username") username:String):ErrorMsg
 
     @POST("api/users/uploadImage")
-    suspend fun uploadImage(@Query("id") id:String, @Query("image") image:String):ErrorMsg
+    suspend fun uploadImage(@Body imageData: ImageData):ErrorMsg
 
     @POST("api/users/getImage")
     suspend fun getImage(@Query("id") id:String):ErrorMsg

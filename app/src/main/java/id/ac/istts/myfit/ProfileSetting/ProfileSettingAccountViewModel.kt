@@ -2,8 +2,6 @@ package id.ac.istts.myfit.ProfileSetting
 
 import android.app.Application
 import android.os.Build
-import android.util.Log
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -16,7 +14,7 @@ import java.time.LocalDate
 import java.time.Period
 import java.time.Year
 
-class EditProfileAccountViewModel (application: Application) : AndroidViewModel(application) {
+class ProfileSettingAccountViewModel (application: Application) : AndroidViewModel(application) {
     private val userPreference: UserPreference = UserPreference(application)
 
 
@@ -54,7 +52,12 @@ class EditProfileAccountViewModel (application: Application) : AndroidViewModel(
         if( username.isEmpty() || email.isEmpty() || phone.isEmpty()){
             return "Empty"
         }
-        if(day.toInt() > 31 || day.toInt() < 1 || monthInt!! > 12 || monthInt < 1 || year.toInt() < 0 || year.toInt() >= currentYear){
+
+        if(day!="" && year!=""){
+            if(day.toInt() > 31 || day.toInt() < 1 || monthInt!! > 12 || monthInt < 1 || year.toInt() < 0 || year.toInt() >= currentYear){
+                return "Invalid Date"
+            }
+        }else{
             return "Invalid Date"
         }
 
