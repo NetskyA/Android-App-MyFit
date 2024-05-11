@@ -110,6 +110,13 @@ class ProfileSettingAccount : Fragment() {
                 spinner.isEnabled = true
             }else{
                 binding.nextSignIn.setText("Edit Profile")
+
+                vm.calculateAge(
+                    binding.etdaybirth.text.toString(),
+                    binding.monthSpinner.selectedItem.toString(),
+                    binding.etyearsbirth.text.toString()
+                )
+
                 binding.editprofilename.isEnabled = false
                 binding.editprofileemail.isEnabled = false
                 binding.editprofileusernmae.isEnabled = false

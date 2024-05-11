@@ -36,8 +36,8 @@ class ProfileSettingBodyViewModel (application: Application) : AndroidViewModel(
         val intGender = if(gender == "Non-binary") 1 else if(gender == "Male") 2 else if(gender == "Female") 3 else 0
         return withContext(Dispatchers.IO) {
             try {
-                val response = MyFitApplication.retrofitUserService?.updateProfile(userPreference.getUser())
                 userPreference.setUpdateProfileBody(intGender, heightInt, weightInt, bloodtype)
+                val response = MyFitApplication.retrofitUserService?.updateProfile(userPreference.getUser())
                 return@withContext "Success"
             }catch (e: Exception){
                 return@withContext "Error"

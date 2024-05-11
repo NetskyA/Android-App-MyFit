@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
@@ -76,7 +77,6 @@ class ProfileSettingBody : Fragment() {
                 binding.rbMan.isEnabled = true
                 binding.rbNonBinary.isEnabled = true
 
-                binding.editprofileage.isEnabled = true
                 binding.editprofileheight.isEnabled = true
                 binding.editprofileweight.isEnabled = true
                 binding.editprofilebloodtype.isEnabled = true
@@ -89,15 +89,15 @@ class ProfileSettingBody : Fragment() {
                     val msg = vm.cekData(cekGender,binding.editprofileheight.text.toString(), binding.editprofileweight.text.toString(), binding.editprofilebloodtype.text.toString())
                     mainScope.launch {
                         if(msg=="Weight"){
-
+                            Toast.makeText(requireContext(), "Invalid weight", Toast.LENGTH_SHORT).show()
                         }else if(msg=="Height"){
-
+                            Toast.makeText(requireContext(), "Invalid height", Toast.LENGTH_SHORT).show()
                         }else if(msg=="Blood"){
-
+                            Toast.makeText(requireContext(), "Invalid blood type", Toast.LENGTH_SHORT).show()
                         }else if(msg=="Error"){
-
+                            Toast.makeText(requireContext(), "Error, No Internet Connection", Toast.LENGTH_SHORT).show()
                         }else{
-
+                            Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
