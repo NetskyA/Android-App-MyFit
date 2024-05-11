@@ -1,16 +1,12 @@
 package id.ac.istts.myfit.SignEmail
 
 import android.app.Application
-import android.content.Context
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import id.ac.istts.myfit.Data.Preferences.UserPreference
-import id.ac.istts.myfit.Data.User
 import id.ac.istts.myfit.MyFitApplication
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -77,11 +73,11 @@ class MenuSigninEmail2ViewModel(application: Application) : AndroidViewModel(app
         }
 
         val intGender = if(gender == "Non-binary") 1 else if(gender == "Male") 2 else if(gender == "Female") 3 else 0
-        userPreference.setRegisterEmail2(name, day.toInt(),monthInt,year.toInt(),intGender,weight,height,bloodtype,allergy,age.value!!)
         return withContext(Dispatchers.IO) {
             try {
                 val response = MyFitApplication.retrofitUserService?.registerUser(userPreference.getUser())
-                response!!.text
+                userPreference.setRegisterEmail2(name, day.toInt(),monthInt,year.toInt(),intGender,weight,height,bloodtype,allergy,age.value!!,response!!.id!!)
+                return@withContext "Success"
             }catch (e: Exception){
                 return@withContext "Error"
             }

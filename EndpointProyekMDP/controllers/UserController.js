@@ -48,7 +48,7 @@ module.exports = {
   },
 
   register: async (req, res) => {
-    const {
+    let {
       username,
       email,
       password,
@@ -66,8 +66,10 @@ module.exports = {
     // console.log(image)
 
     const hashPass = await bcrypt.hash(password, 10);
-
-    await User.create({
+    if(phone ==''){
+      phone=null
+    }
+    var cekUser = await User.create({
       username: username,
       password: hashPass,
       email: email,
@@ -83,7 +85,21 @@ module.exports = {
       image: image,
     });
 
-    return res.status(201).send({ text: "Ok" });
+    return res.status(200).send({
+      id: cekUser.dataValues.id,
+      name: cekUser.dataValues.name,
+      username: cekUser.dataValues.username,
+      email: cekUser.dataValues.email,
+      phone: cekUser.dataValues.phone,
+      dob: cekUser.dataValues.dob,
+      gender: cekUser.dataValues.gender,
+      height: cekUser.dataValues.height,
+      weight: cekUser.dataValues.weight,
+      age: cekUser.dataValues.age,
+      blood_type: cekUser.dataValues.blood_type,
+      allergy: cekUser.dataValues.allergy,
+      image: cekUser.dataValues.image,
+    });
   },
 
   login: async (req, res) => {
@@ -213,6 +229,7 @@ module.exports = {
     if (!cekUser) return res.status(200).send({ password: "0" }); 
 
     return res.status(200).send({
+      id:cekUser.dataValues.id,
       name: cekUser.dataValues.name,
       username: cekUser.dataValues.username,
       email: cekUser.dataValues.email,

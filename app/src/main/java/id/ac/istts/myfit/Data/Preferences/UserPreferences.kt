@@ -64,8 +64,9 @@ internal class UserPreference(context: Context) {
         editor.putString(PASSWORD, password)
         editor.apply()
     }
-    fun setRegisterEmail2(name: String, day: Int, month: Int, year: Int, gender: Int, weight: String, height: String, bloodtype: String, allergy: String,age: Int) {
+    fun setRegisterEmail2(name: String, day: Int, month: Int, year: Int, gender: Int, weight: String, height: String, bloodtype: String, allergy: String,age: Int,id:Int) {
         val editor = preferences.edit()
+        editor.putInt(ID, id)
         editor.putString(NAME, name)
         editor.putString(DOB, "$day/$month/$year")
         editor.putInt(GENDER, gender)
