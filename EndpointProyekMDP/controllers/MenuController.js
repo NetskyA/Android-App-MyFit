@@ -62,7 +62,17 @@ module.exports = {
         })
 
         return res.status(200).send({text: "Success"})
-    }
+    },
 
+    getAllMenuUser: async(req, res)=>{
+        const {user_id} = req.query
+        const allMenu = await Menu.findAll({
+            where:{
+                user_id: user_id,
+                status:1
+            }
+        })
+        return res.status(200).send({allMenu: allMenu})
+    }
     
 }

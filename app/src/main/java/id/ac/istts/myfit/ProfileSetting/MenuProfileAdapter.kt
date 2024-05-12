@@ -1,14 +1,19 @@
 package id.ac.istts.myfit.ProfileSetting
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.istts.myfit.Data.AllMenuUser
+import id.ac.istts.myfit.Data.Menu
 import id.ac.istts.myfit.R
 
 class MenuProfileAdapter (
-    val data: ArrayList<String>,
+    val data: ArrayList<Menu>,
     val onDetailClickListener:(String) -> Unit
 ): RecyclerView.Adapter<MenuProfileAdapter.ViewHolder>() {
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
@@ -29,8 +34,16 @@ class MenuProfileAdapter (
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val f = data[position]
 
-        holder.imageFeed.setOnClickListener {
-            onDetailClickListener?.invoke(f)
+        if(f.image!=""){
+            holder.imageFeed.setImageBitmap(decodeBase64ToBitmap(f.image.toString()))
         }
+
+//        holder.imageFeed.setOnClickListener {
+//            onDetailClickListener?.invoke(f)
+//        }
+    }
+    fun decodeBase64ToBitmap(base64Str: String): Bitmap {
+        val imageBytes = Base64.decode(base64Str, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
     }
 }

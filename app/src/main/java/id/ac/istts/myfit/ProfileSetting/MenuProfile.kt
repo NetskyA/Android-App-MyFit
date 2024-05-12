@@ -13,19 +13,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.istts.myfit.Data.AllMenuUser
+import id.ac.istts.myfit.Data.Menu
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.MenuFeed.MenuFeedOpened
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuProfileBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MenuProfile : Fragment() {
     private lateinit var binding: FragmentMenuProfileBinding
     private lateinit var recyclerViewContent: RecyclerView
     private lateinit var menuProfileAdapter: MenuProfileAdapter
     private lateinit var layoutManager: RecyclerView.LayoutManager
-
+    var image_code = 1001
+    val ioScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
+    val mainScope = CoroutineScope(Dispatchers.Main)
+    lateinit var vm: MenuProfileViewModel
     private lateinit var userPreference: UserPreference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +53,16 @@ class MenuProfile : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2", "test3","test", "test2", "test3","test", "test2", "test3")
+        vm = ViewModelProvider(this).get(MenuProfileViewModel::class.java)
+//        var temp:ArrayList<String> = arrayListOf("test", "test2")
+//        var temp:AllMenuUser = AllMenuUser(arrayListOf())
+        var temp:ArrayList<Menu> = arrayListOf()
+
+        ioScope.launch {
+            temp = vm.getAllMenuUser(userPreference.getUser().id!!.toInt())
+        }
+
+
         val rv_feedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
 
         userPreference = UserPreference(requireContext())

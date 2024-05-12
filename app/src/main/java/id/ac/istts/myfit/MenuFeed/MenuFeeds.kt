@@ -46,11 +46,11 @@ class MenuFeeds : Fragment() {
 
         recyclerViewContent = binding.rvFeedcontent
         layoutManagerContent = GridLayoutManager(context, 2)
-        menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-            startActivity(Intent(this.context, MenuFeedOpened::class.java))
-        })
-        recyclerViewContent.adapter = menuProfileAdapter
-        recyclerViewContent.layoutManager = layoutManagerContent
+//        menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+//            startActivity(Intent(this.context, MenuFeedOpened::class.java))
+//        })
+//        recyclerViewContent.adapter = menuProfileAdapter
+//        recyclerViewContent.layoutManager = layoutManagerContent
 
         val rvfeedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
         val fadeUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)

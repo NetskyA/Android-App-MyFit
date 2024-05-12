@@ -17,7 +17,11 @@ const {
   checkPass
 } = require("../controllers/UserController"); //function user
 
-const { upload } = require("../controllers/MenuController"); //function menu
+const { 
+  upload,
+  getAllMenuUser,
+
+} = require("../controllers/MenuController"); //function menu
 
 const { Router } = require("express");
 
@@ -59,5 +63,8 @@ router.post("/users/checkPass", checkPass); // Buat check dan update password
 // Menu
 // ==================================================================================
 router.post("/menus/upload", upload); // Buat upload custom menu
+
+router.get("/menus/getAllMenuUser", getAllMenuUser); //Buat get all menu yang dipunya user
+
 
 module.exports = router;

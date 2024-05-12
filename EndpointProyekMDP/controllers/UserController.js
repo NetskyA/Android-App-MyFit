@@ -452,6 +452,7 @@ module.exports = {
         username: {
           [Op.like]: '%' + keyword + '%' 
         },
+        status: 1
         // name: {
         //   [Op.like]: '%' + keyword + '%' 
         // }
