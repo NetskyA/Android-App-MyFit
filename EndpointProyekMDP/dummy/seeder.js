@@ -16,6 +16,8 @@ const menus = require("./menus");
 const likes = require("./likes");
 const diets = require("./diets");
 
+const { generateDummyUsers } = require("../service/Functions");
+
 (async function () {
     try {
         console.log("START SEEDER");
@@ -29,7 +31,7 @@ const diets = require("./diets");
         await conn.end();
 
         await sequelize.sync({ force: true });
-
+        // const users = generateDummyUsers
         for (let i = 0; i < users.length; i++) {
             await Users.create({
                 email: users[i].email,

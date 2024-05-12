@@ -13,10 +13,12 @@ function readJSONFile() {
     fs.readFileSync("../data/smoothie.json", "utf8")
   );
   var datareturn = [];
+  var tempId = 0;
   for (let i = 0; i < data.length; i++) {
     const jsonData = JSON.parse(data[i]);
     for (let j = 0; j < jsonData.results.length; j++) {
         let ingredients = [];
+        tempId++
         for (let k = 0; k < jsonData.results[j].extendedIngredients.length; k++) {
             ingredients.push(jsonData.results[j].extendedIngredients[k].original);
         }
@@ -52,7 +54,7 @@ function readJSONFile() {
 
         datareturn.push({
             name: jsonData.results[j].title,
-            image: jsonData.results[j].image,
+            image: `uploads/menu/${tempId}.jpg`,
             ingredients: JSON.stringify(ingredients),
             nutrition: JSON.stringify(nutrition),
             how_to_make: JSON.stringify(howtomake),

@@ -1,5 +1,8 @@
 package id.ac.istts.myfit.MenuFeed
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,7 +37,9 @@ class MenuFeedSearchAdapter (
         val f = data[position]
 
         holder.tvProfileName.setText(f.username)
-
+        if(f.image!=""){
+            holder.ivProfile.setImageBitmap(decodeBase64ToBitmap(f.image.toString()))
+        }
 //        holder.ivProfile.setOnClickListener {
 //            onDetailClickListener?.invoke(f)
 //        }
@@ -44,5 +49,9 @@ class MenuFeedSearchAdapter (
 //        holder.ivRemove.setOnClickListener {
 //            // TODO: Remove from search
 //        }
+    }
+    fun decodeBase64ToBitmap(base64Str: String): Bitmap {
+        val imageBytes = Base64.decode(base64Str, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
     }
 }

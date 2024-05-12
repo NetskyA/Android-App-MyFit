@@ -30,16 +30,14 @@ class CustomIngredientsViewModel (application: Application) : AndroidViewModel(a
     suspend fun setMenuNote(note: String){
         customMenuPreferences.setMenuNote(note)
     }
-//    suspend fun uploadImage(image: String): String{
-//        return withContext(Dispatchers.IO) {
-//            try {
-//                val imageData = ImageData(customMenuPreferences.getUser().id.toString(), image)
-//                val response = MyFitApplication.retrofitUserService?.uploadImage(imageData)
-//                userPreference.setImage(image)
-//                response.toString()
-//            }catch (e: Exception){
-//                return@withContext "Fail"
-//            }
-//        }
-//    }
+    suspend fun uploadImage(image: String): String{
+        return withContext(Dispatchers.IO) {
+            try {
+                customMenuPreferences.setMenuImage(image)
+                return@withContext "Success"
+            }catch (e: Exception){
+                return@withContext "Fail"
+            }
+        }
+    }
 }

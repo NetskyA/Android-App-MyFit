@@ -2,17 +2,18 @@ package id.ac.istts.myfit.Data.Preferences
 
 import android.content.Context
 import id.ac.istts.myfit.Data.Menu
+import id.ac.istts.myfit.Data.User
 import id.ac.istts.myfit.MenuCustom.CustomsIngredients
 
 internal class CustomMenuPreferences(context: Context) {
     companion object {
         private const val PREFS_NAME = "customMenuPref"
         private const val ID = "id"
-        private const val USERID = "userId"
+        private const val USERID = "user_id"
         private const val NAME = "name"
         private const val INGREDIENTS = "ingredients"
         private const val NUTRITION = "nutrition"
-        private const val HOWTOMAKE = "howToMake"
+        private const val HOWTOMAKE = "how_to_make"
         private const val NOTE = "note"
         private const val LIKE = "like"
         private const val DATE = "date"
@@ -26,16 +27,38 @@ internal class CustomMenuPreferences(context: Context) {
         val editor = preferences.edit()
         editor.putInt(ID, customMenu.id ?: 0)
         editor.putInt(USERID, customMenu.userId ?: 0)
-        editor.putString(NAME, customMenu.name)
-        editor.putString(INGREDIENTS, customMenu.ingredients)
-        editor.putString(NUTRITION, customMenu.nutrition)
-        editor.putString(HOWTOMAKE, customMenu.howToMake)
-        editor.putString(NOTE, customMenu.note)
+        editor.putString(NAME, customMenu.name?: "")
+        editor.putString(INGREDIENTS, customMenu.ingredients?: "")
+        editor.putString(NUTRITION, customMenu.nutrition?: "")
+        editor.putString(HOWTOMAKE, customMenu.how_to_make?: "")
+        editor.putString(NOTE, customMenu.note?: "")
         editor.putInt(LIKE, customMenu.like?:0)
-        editor.putString(DATE, customMenu.date)
-        editor.putInt(STATUS, customMenu.status?:0)
-        editor.putString(IMAGE, customMenu.image)
+        editor.putString(DATE, customMenu.date?: "")
+        editor.putInt(STATUS, customMenu.status?:1)
+        editor.putString(IMAGE, customMenu.image?: "")
         editor.apply()
+    }
+
+    fun clearCustomMenu() {
+        val editor = preferences.edit()
+        editor.clear()
+        editor.apply()
+    }
+
+    fun getCustomMenu(): Menu {
+        val model = Menu()
+        model.id = preferences.getInt(CustomMenuPreferences.ID, 0)
+        model.userId = preferences.getInt(CustomMenuPreferences.USERID, 0)
+        model.name = preferences.getString(CustomMenuPreferences.NAME, "")
+        model.ingredients = preferences.getString(CustomMenuPreferences.INGREDIENTS, "")
+        model.nutrition = preferences.getString(CustomMenuPreferences.NUTRITION, "")
+        model.how_to_make = preferences.getString(CustomMenuPreferences.HOWTOMAKE, "")
+        model.note = preferences.getString(CustomMenuPreferences.NOTE, "")
+        model.like = preferences.getInt(CustomMenuPreferences.LIKE, 0)
+        model.date = preferences.getString(CustomMenuPreferences.DATE, "")
+        model.status = preferences.getInt(CustomMenuPreferences.STATUS, 1)
+        model.image = preferences.getString(CustomMenuPreferences.IMAGE, "")
+        return model
     }
 
     fun setMenuImage(image:String){
@@ -67,6 +90,11 @@ internal class CustomMenuPreferences(context: Context) {
     fun setMenuNote(note:String){
         val editor = preferences.edit()
         editor.putString(NOTE, note)
+        editor.apply()
+    }
+    fun setUserId(id:Int){
+        val editor = preferences.edit()
+        editor.putInt(USERID, id)
         editor.apply()
     }
 }

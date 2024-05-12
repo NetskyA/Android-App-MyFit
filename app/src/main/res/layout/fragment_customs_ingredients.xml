@@ -99,16 +99,16 @@
                 android:id="@+id/etNotemenu"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
-                android:hint="Note (Alergy, etc)"
                 android:layout_marginLeft="@dimen/_4sdp"
                 android:layout_marginRight="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:background="@drawable/borders4"
-                android:textColorHint="@color/grey"
-                android:paddingStart="@dimen/_20sdp"
-                android:textSize="@dimen/_14sdp"
                 android:drawablePadding="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_2sdp"/>
+                android:hint="Note (Alergy, etc) Optional"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_14sdp" />
 
             <TextView
                 android:layout_width="@dimen/_245sdp"

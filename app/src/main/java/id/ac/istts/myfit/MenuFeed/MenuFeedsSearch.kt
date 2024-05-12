@@ -75,15 +75,23 @@ class MenuFeedsSearch : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-//                Toast.makeText(requireContext(), binding.svSearch.query.toString(), Toast.LENGTH_SHORT).show()
-                ioScope.launch {
-                    tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
-                    mainScope.launch {
-                        menuFeedSearchAdapter = MenuFeedSearchAdapter(tempSearchUser, onDetailClickListener = {
+//                Toast.makeText(requireContext(), newText, Toast.LENGTH_SHORT).show()
+                if(binding.svSearch.query.toString()!=""){
+                    ioScope.launch {
+                        tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
+                        mainScope.launch {
+                            menuFeedSearchAdapter = MenuFeedSearchAdapter(tempSearchUser, onDetailClickListener = {
 
-                        })
-                        binding.menuFeedsSearchRvSearch.adapter = menuFeedSearchAdapter
+                            })
+                            binding.menuFeedsSearchRvSearch.adapter = menuFeedSearchAdapter
+                        }
                     }
+                }else{
+                    tempSearchUser = arrayListOf()
+                    menuFeedSearchAdapter = MenuFeedSearchAdapter(tempSearchUser, onDetailClickListener = {
+
+                    })
+                    binding.menuFeedsSearchRvSearch.adapter = menuFeedSearchAdapter
                 }
                 return true
             }

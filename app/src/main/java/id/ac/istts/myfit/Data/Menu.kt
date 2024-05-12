@@ -17,10 +17,10 @@ data class Menu (
     @ColumnInfo(name = "name") var name:String? = "",
     @ColumnInfo(name = "ingredients") var ingredients:String? = "",
     @ColumnInfo(name = "nutrition") var nutrition:String? = "",
-    @ColumnInfo(name = "howToMake") var howToMake:String? = "",
+    @ColumnInfo(name = "how_to_make") var how_to_make:String? = "",
     @ColumnInfo(name = "note") var note:String? = "",
     @ColumnInfo(name = "like") var like:Int? = 0,
     @ColumnInfo(name = "date") var date:String? = "",
-    @ColumnInfo(name = "status") var status:Int? = 0,
+    @ColumnInfo(name = "status") var status:Int? = 1,
     @ColumnInfo(name = "image") var image:String? = "",
 ): Parcelable

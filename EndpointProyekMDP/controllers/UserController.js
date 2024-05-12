@@ -7,26 +7,15 @@ const fs = require("fs");
 const profile = multer({ dest: "uploads/profile" });
 
 const User = require("../models/Users");
-const { testFunction } = require("../service/Functions");
+const { testFunction, generateDummyUsers } = require("../service/Functions");
 const nodemailer = require('nodemailer');
 
 module.exports = {
-  // register: async (req, res) => {
-  //   const { username, email, phone, name, password} = req.body;
-  //   if(username=="" || username=="" || username=="" || username=="" || username==""){
-  //     return res.status(401).send("Field cannot be empty!")
-  //   }
-
-  //   await User.create({
-  //     username: username,
-  //     email: email,
-  //     phone: phone,
-  //     name: name,
-  //     password: password,
-  //   })
-
-  //   return res.status(201).send(testFunction("Success!"))
-  // },
+  uploadDummyUser: async (req, res) => {
+    const users = generateDummyUsers
+    // return res.status(201).send(testFunction("Success!"))
+    return res.status(201).send(users)
+  },
   test: async (req, res) => {
     const hashPass = await bcrypt.hash("123", 10);
     return res.status(200).send({ test: hashPass });
@@ -423,8 +412,8 @@ module.exports = {
       id,
       keyword,
     } = req.query;
-
-    const searchUser = await User.findAll({
+    
+    let searchUser = await User.findAll({
       attributes: ['username', 'image'],
       where: {
         id: {
@@ -439,6 +428,13 @@ module.exports = {
       }
     });
 
+    for (let i = 0; i < searchUser.length; i++) {
+      const user = searchUser[i];
+      if(user.image!=""){
+        const binaryData = fs.readFileSync(user.image)
+        user.image = Buffer(binaryData).toString('base64')
+      }
+    }
 
     return res.status(200).send({searchUser: searchUser})
   },

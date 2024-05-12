@@ -78,10 +78,11 @@
                 android:textSize="@dimen/_13ssp" />
 
             <TextView
+                android:id="@+id/customResultTvUser"
                 android:layout_width="@dimen/_203sdp"
                 android:layout_height="wrap_content"
-                android:text="favorite Aldiaafn"
                 android:gravity="start"
+                android:text="favorite Aldiaafn"
                 android:textSize="@dimen/_13ssp" />
 
         </LinearLayout>

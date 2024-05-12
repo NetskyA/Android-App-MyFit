@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import id.ac.istts.myfit.Data.Source.Remote.MenuService
 import id.ac.istts.myfit.Data.Source.Remote.UserService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -19,6 +20,7 @@ class MyFitApplication : Application() {
     companion object {
 //        lateinit var postRepository: DefaultPostRepository
         var retrofitUserService:UserService? = null
+        var retrofitMenuService:MenuService? = null
         val okHttpClient = OkHttpClient.Builder()
             .connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
@@ -31,11 +33,12 @@ class MyFitApplication : Application() {
 //            ).build()
             val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
             val retrofit = Retrofit.Builder().client(okHttpClient)
-                .baseUrl("http://192.168.0.108:3000")
+                .baseUrl("http://192.168.0.7:3000")
                 .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
                 .build()
 
             retrofitUserService = retrofit.create(UserService::class.java)
+            retrofitMenuService = retrofit.create(MenuService::class.java)
 
             // load repo dari room saja
 //            postRepository = DefaultPostRepository(roomDB)

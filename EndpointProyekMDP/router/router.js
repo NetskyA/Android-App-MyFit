@@ -1,5 +1,6 @@
 const {
   test,
+  // uploadDummyUser,
   register,
   login,
   cekEmailandUsername,
@@ -16,12 +17,18 @@ const {
 
 } = require("../controllers/UserController"); //function user
 
+const {
+  upload,
+
+} = require("../controllers/MenuController"); //function menu
+
 const { Router } = require("express");
 
 const router = Router();
 
 // Test
 router.get("/users/test", test)
+// router.get("/users/uploadDummyUser", uploadDummyUser)
 
 // Enpoint Users
 router.post("/users/register", register); // Buat register user
@@ -49,5 +56,9 @@ router.post("/users/uploadImage", uploadImageProfil) // Buat upload image profil
 router.post("/users/getImage", getImageProfil) // Buat get image profile
 
 router.get("/users/search", search) // Buat search user
+
+// Menu
+// ==================================================================================
+router.post("/menus/upload", upload) // Buat upload custom menu
 
 module.exports = router;
