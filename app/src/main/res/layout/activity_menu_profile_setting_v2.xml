@@ -256,7 +256,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:layout_height="@dimen/_550sdp"
+                    android:layout_height="@dimen/_470sdp"
                     app:defaultNavHost="true"
                     app:navGraph="@navigation/profile_navigation" />
 
