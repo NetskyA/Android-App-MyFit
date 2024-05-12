@@ -12,9 +12,10 @@ const nodemailer = require('nodemailer');
 
 module.exports = {
   uploadDummyUser: async (req, res) => {
-    const users = generateDummyUsers
+    const users = generateDummyUsers();
     // return res.status(201).send(testFunction("Success!"))
-    return res.status(201).send(users)
+    // return res.status(200).send("OK");
+    return res.status(201).send(users);
   },
   test: async (req, res) => {
     const hashPass = await bcrypt.hash("123", 10);
