@@ -38,6 +38,35 @@ module.exports = {
     }
   },
 
+  checkPass: async (req, res) => {
+    let { id, password , newPassword } = req.query;
+    let user = await User.findByPk(parseInt(id));
+
+    const cekPass = await bcrypt.compare(password, user.password);
+
+    if (!cekPass) return res.status(200).send({ password: "0" });
+
+    const hashPass = await bcrypt.hash(newPassword, 10);
+    user.password = hashPass
+    await user.save()
+
+    return res.status(200).send({
+      id: user.id,
+      name: user.name,
+      username: user.username,
+      email: user.email,
+      phone: user.phone,
+      dob: user.dob,
+      gender: user.gender,
+      height: user.height,
+      weight: user.weight,
+      age: user.age,
+      blood_type: user.blood_type,
+      allergy: user.allergy,
+      image: user.image,
+    });
+  },
+
   register: async (req, res) => {
     let {
       username,

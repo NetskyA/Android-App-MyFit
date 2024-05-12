@@ -26,6 +26,9 @@ interface UserService {
     @POST("api/users/sendCode")
     suspend fun sendCode(@Query("email") email:String):ErrorMsg
 
+    @POST("api/users/checkPass")
+    suspend fun checkPass(@Query("id") id:String, @Query("password") password:String, @Query("newPassword") newPassword:String):User
+
     @POST("api/users/verifyOtp")
     suspend fun verifyOtp(@Query("email") email:String,@Query("otp") otp:String):ErrorMsg
 

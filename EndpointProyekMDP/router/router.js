@@ -14,6 +14,7 @@ const {
   uploadImageProfil,
   getImageProfil,
   search,
+  checkPass
 } = require("../controllers/UserController"); //function user
 
 const { upload } = require("../controllers/MenuController"); //function menu
@@ -52,6 +53,8 @@ router.post("/users/uploadImage", uploadImageProfil); // Buat upload image profi
 router.post("/users/getImage", getImageProfil); // Buat get image profile
 
 router.get("/users/search", search); // Buat search user
+
+router.post("/users/checkPass", checkPass); // Buat check dan update password
 
 // Menu
 // ==================================================================================
