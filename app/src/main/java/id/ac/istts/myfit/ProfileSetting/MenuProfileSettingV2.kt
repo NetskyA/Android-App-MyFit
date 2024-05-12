@@ -50,7 +50,7 @@ class MenuProfileSettingV2 : AppCompatActivity() {
             binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
         }
 
-        Log.e("PREFERENCEPROFIL", userPreference.getUser().toString())
+//        Log.e("PREFERENCEPROFIL", userPreference.getUser().toString())
         binding.tvProfile.setText(userPreference.getUser().username)
 
         binding.button3.setOnClickListener{

@@ -11,13 +11,13 @@ class AllMenuUserRepository (
     private val remoteDataSource:MenuService
 ) {
     suspend fun getAllMenus(id: Int): ArrayList<Menu> {
-//        var posts:AllMenuUser = remoteDataSource.getAllMenuUser(id)
-//        Log.d("AAAAAAAAAAAAAAAAAAAAAAAAAAA", posts.allMenuUser.toString())
-//        var tempPost = ArrayList(posts.allMenuUser)
-//        localDataSource.allMenuUserDao().clearDb()
-//        localDataSource.allMenuUserDao().insertMany(tempPost)
-//        return ArrayList(localDataSource.allMenuUserDao().getAll())
-        return arrayListOf()
+        var posts:AllMenuUser = remoteDataSource.getAllMenuUser(id)
+        var tempPost = ArrayList(posts.allMenuUser)
+        localDataSource.allMenuUserDao().clearDb()
+        localDataSource.allMenuUserDao().insertMany(tempPost)
+//        Log.d("AAAAAAAAAAAAAAAAAAAAAAAAAAA", ArrayList(localDataSource.allMenuUserDao().getAll()).toString())
+        return ArrayList(localDataSource.allMenuUserDao().getAll())
+//        return arrayListOf()
     }
     suspend fun getMenuById(id:Int):Menu {
         return localDataSource.allMenuUserDao().getById(id)

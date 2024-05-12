@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -52,33 +53,37 @@ class MenuProfile : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        userPreference = UserPreference(requireContext())
         vm = ViewModelProvider(this).get(MenuProfileViewModel::class.java)
-//        var temp:ArrayList<String> = arrayListOf("test", "test2")
-//        var temp:AllMenuUser = AllMenuUser(arrayListOf())
+
         var temp:ArrayList<Menu> = arrayListOf()
 
-        ioScope.launch {
-            temp = vm.getAllMenuUser(userPreference.getUser().id!!.toInt())
-        }
+        recyclerViewContent = binding.rvFeedcontent
+        layoutManager = GridLayoutManager(context, 2)
+
+        vm.menus.observe(viewLifecycleOwner, Observer { menus ->
+            // Update UI with the new list of menus
+            temp = menus
+            menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+                startActivity(Intent(this.context, MenuFeedOpened::class.java))
+            })
+            recyclerViewContent.adapter = menuProfileAdapter
+            recyclerViewContent.layoutManager = layoutManager
+
+        })
+
+        val userId = userPreference.getUser().id // Replace with actual user ID
+        vm.getAllMenuUser(userId!!.toInt())
 
 
         val rv_feedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
 
-        userPreference = UserPreference(requireContext())
-        Log.e("PREFERENCE", userPreference.getUser().toString())
+//        Log.e("PREFERENCE", userPreference.getUser().toString())
 
         binding.tvProfile.setText(userPreference.getUser().username)
 
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
         rv_feedcontent.startAnimation(fadeInAnimation)
-        recyclerViewContent = binding.rvFeedcontent
-        layoutManager = GridLayoutManager(context, 2)
-        menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-            startActivity(Intent(this.context, MenuFeedOpened::class.java))
-        })
-        recyclerViewContent.adapter = menuProfileAdapter
-        recyclerViewContent.layoutManager = layoutManager
 
         userPreference = UserPreference(requireContext())
         if(userPreference.getUser().image!=""){

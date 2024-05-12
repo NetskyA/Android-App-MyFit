@@ -3,6 +3,7 @@ package id.ac.istts.myfit.ProfileSetting
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,7 +34,6 @@ class MenuProfileAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val f = data[position]
-
         if(f.image!=""){
             holder.imageFeed.setImageBitmap(decodeBase64ToBitmap(f.image.toString()))
         }

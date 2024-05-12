@@ -66,13 +66,20 @@ module.exports = {
 
     getAllMenuUser: async(req, res)=>{
         const {user_id} = req.query
-        const allMenu = await Menu.findAll({
+        const allMenuUser = await Menu.findAll({
             where:{
                 user_id: user_id,
                 status:1
             }
         })
-        return res.status(200).send({allMenu: allMenu})
+        for (let i = 0; i < allMenuUser.length; i++) {
+            const menu = allMenuUser[i];
+            if(menu.image!=""){
+              const binaryData = fs.readFileSync(menu.image)
+              menu.image = Buffer(binaryData).toString('base64')
+            }
+          }
+        return res.status(200).json({allMenuUser: allMenuUser})
     }
     
 }
