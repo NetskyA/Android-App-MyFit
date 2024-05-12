@@ -63,19 +63,6 @@ class CustomsIngredients : Fragment() {
 //        Log.e("PREFERENCE", userPreference.getUser().toString())
         vm = ViewModelProvider(this).get(CustomIngredientsViewModel::class.java)
 
-        binding.nextCheckmenu.setOnClickListener {
-            // Move to Result Fragment
-            findNavController().navigate(R.id.action_global_customsResult)
-
-            // Change Active
-            val navHostFragment = parentFragment as NavHostFragment
-            val menuCustoms = navHostFragment.parentFragment as MenuCustoms
-            menuCustoms.binding.btnResultCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
-            menuCustoms.binding.btnAddCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
-            menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.white))
-            menuCustoms.binding.btnAddCustoms.setTextColor(resources.getColor(R.color.blue_main))
-
-        }
         binding.etNamaMenuCustoms.setCompoundDrawablesWithIntrinsicBounds(R.drawable.namamenu, 0, 0, 0)
         binding.etNamabahanbahan.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ingredients, 0, 0, 0)
         binding.etNamanutrisi.setCompoundDrawablesWithIntrinsicBounds(R.drawable.nutrisi, 0, 0, 0)
@@ -179,14 +166,15 @@ class CustomsIngredients : Fragment() {
             else if(binding.etCaraMemasak.text.toString()=="")Toast.makeText(requireContext(), "How To Make cannot be empty", Toast.LENGTH_SHORT).show()
             else if(customMenuPreferences.getCustomMenu().image=="")Toast.makeText(requireContext(), "Image cannot be empty", Toast.LENGTH_SHORT).show()
 
-//            val navHostFragment = childFragmentManager.findFragmentById(R.id.CustomsContainer) as NavHostFragment
-//            navHostFragment.findNavController().navigate(R.id.action_global_customsResult)
+            findNavController().navigate(R.id.action_global_customsResult)
 
-//            // Change Active
-//            bindingMenuCustomsBinding.btnResultCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
-//            bindingMenuCustomsBinding.btnAddCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
-//            bindingMenuCustomsBinding.btnResultCustoms.setTextColor(resources.getColor(R.color.white))
-//            bindingMenuCustomsBinding.btnAddCustoms.setTextColor(resources.getColor(R.color.blue_main))
+            // Change Active
+            val navHostFragment = parentFragment as NavHostFragment
+            val menuCustoms = navHostFragment.parentFragment as MenuCustoms
+            menuCustoms.binding.btnResultCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
+            menuCustoms.binding.btnAddCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
+            menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.white))
+            menuCustoms.binding.btnAddCustoms.setTextColor(resources.getColor(R.color.blue_main))
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

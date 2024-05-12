@@ -46,12 +46,12 @@
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:scaleType="centerCrop"
                 android:id="@+id/itemSearch_ivProfile"
                 style="@style/CircularFull"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="match_parent"
-                android:scaleType="centerInside"
                 android:src="@drawable/user" />
 
             <TextView

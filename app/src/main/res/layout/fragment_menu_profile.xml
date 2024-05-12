@@ -71,10 +71,10 @@
                     android:visibility="visible" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:scaleType="centerCrop"
                     android:id="@+id/iv_userprofiles"
                     android:layout_width="@dimen/_65sdp"
                     android:layout_height="@dimen/_65sdp"
-                    android:scaleType="centerCrop"
                     android:src="@drawable/_61204" />
 
                 <ImageView
