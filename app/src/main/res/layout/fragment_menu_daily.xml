@@ -75,12 +75,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="52dp"
             android:text="Aldi"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
+            app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintStart_toEndOf="@+id/tvTitleWe"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.16" />
 
         <TextView
             android:id="@+id/tvTitleWe3"
