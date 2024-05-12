@@ -256,9 +256,20 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:layout_height="@dimen/_470sdp"
+                    android:layout_height="@dimen/_495sdp"
                     app:defaultNavHost="true"
                     app:navGraph="@navigation/profile_navigation" />
+
+                <TextView
+                    android:layout_width="@dimen/_170sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_7sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:textColor="@color/dark_grey"
+                    android:textAlignment="center"
+                    android:text="All data will be encrypted to avoid theft of your personal data."
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -279,17 +290,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textSize="@dimen/_7sdp"
-                    android:textColor="@color/dark_grey"
-                    android:textAlignment="center"
-                    android:text="All data will be encrypted to avoid theft of your personal data."
-                    tools:ignore="HardcodedText" />
-
-                <TextView
-                    android:layout_width="@dimen/_170sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_7sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/light_red"
                     android:textAlignment="center"
                     android:text="Delete your account"
