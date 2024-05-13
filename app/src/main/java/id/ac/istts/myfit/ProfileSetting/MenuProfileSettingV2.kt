@@ -8,24 +8,19 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
-import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.RecyclerView
-import id.ac.istts.myfit.Data.Modal.ModalDeleteAccount
+import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
 import id.ac.istts.myfit.Data.Preferences.UserPreference
-import id.ac.istts.myfit.MyFitApplication
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.SignAll.MenuSigninAll
 import id.ac.istts.myfit.databinding.ActivityMenuProfileSettingV2Binding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import java.io.ByteArrayOutputStream
 
@@ -33,6 +28,7 @@ class MenuProfileSettingV2 : AppCompatActivity() {
 
     lateinit var binding: ActivityMenuProfileSettingV2Binding
     private lateinit var userPreference: UserPreference
+    private lateinit var menuPreferences: CustomMenuPreferences
     var image_code = 1001
     val ioScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     val mainScope = CoroutineScope(Dispatchers.Main)
@@ -45,6 +41,7 @@ class MenuProfileSettingV2 : AppCompatActivity() {
         setContentView(binding.root)
         vm = ViewModelProvider(this).get(MenuProfileSettingV2ViewModel::class.java)
         userPreference = UserPreference(this)
+        menuPreferences = CustomMenuPreferences(this)
 
         if(userPreference.getUser().image!=""){
             binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
@@ -55,6 +52,7 @@ class MenuProfileSettingV2 : AppCompatActivity() {
 
         binding.button3.setOnClickListener{
             userPreference.clearPref()
+            menuPreferences.clearCustomMenu()
             startActivity(Intent(this,MenuSigninAll::class.java))
         }
         binding.logoutFromProfileSetting.setOnClickListener {

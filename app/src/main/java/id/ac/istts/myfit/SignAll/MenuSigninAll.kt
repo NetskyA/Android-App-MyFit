@@ -14,23 +14,21 @@ import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.android.gms.common.api.ApiException
+import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.HomeUser.HomeUserActivity
 import id.ac.istts.myfit.LoginAll.MenuLoginAll
-import id.ac.istts.myfit.MyFitApplication
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.SignEmail.MenuSigninEmail
 import id.ac.istts.myfit.SignPhone.MenuSigninPhone
 import id.ac.istts.myfit.databinding.ActivityMenuSigninAllBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MenuSigninAll : AppCompatActivity() {
     lateinit var binding: ActivityMenuSigninAllBinding
     lateinit var vm: MenuSigninAllViewModel
     lateinit var oneTapClient: SignInClient
     private lateinit var userPreference: UserPreference
+    private lateinit var customMenuPreferences: CustomMenuPreferences
     lateinit var signInRequest: BeginSignInRequest
     private var REQ_ONE_TAP = 100
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +42,9 @@ class MenuSigninAll : AppCompatActivity() {
         binding.signinwithphone.text = boldAndUnderlineText
         binding.signinwithphone.setTypeface(null, Typeface.BOLD)*/
         userPreference = UserPreference(this)
+        customMenuPreferences = CustomMenuPreferences(this)
+        Log.e("PREFERENCEPROFIL", userPreference.getUser().toString())
+        Log.e("PREFERENCEPROFIL", customMenuPreferences.getCustomMenu().toString())
         if(userPreference.getUser().email != null && userPreference.getUser().email != ""){
             startActivity(Intent(this, HomeUserActivity::class.java))
             finish()
