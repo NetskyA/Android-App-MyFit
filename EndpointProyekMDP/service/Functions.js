@@ -33,7 +33,7 @@ const generateUser = (id) => ({
   weight: faker.number.int({ min: 40, max: 100 }),
   age: faker.number.int({ min: 18, max: 40 }),
   blood_type: generateBloodType(),
-  allergy: "",
+  allergy: "Nope",
   image: `uploads/profile/${id}.jpg`,
 });
 
