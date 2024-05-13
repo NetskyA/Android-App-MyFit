@@ -104,6 +104,41 @@ module.exports = {
             }
           }
         return res.status(200).json({allMenuUser: allMenuUser})
+    },
+
+    getRandomMenu: async(req, res)=>{
+        const {user_id} = req.query
+        let getRandomMenu = []
+        const allMenu = await Menu.findAll()
+        let randomSize = 20
+        if(allMenu.length<20){
+            randomSize = allMenu.length
+        }
+        for(let i = 0; i < randomSize; i++){
+            let cek = false
+            do {
+                let randomNumber = Math.floor(Math.random() * (allMenu.length+1))
+                cek = false
+                const getMenu = await Menu.findOne({
+                    where: {
+                      id:randomNumber,
+                      user_id: {
+                        [Op.ne]: user_id
+                      },
+                    }
+                })
+                if(getMenu){
+                    for (let j = 0; j < getRandomMenu.length; j++) {
+                        if(getRandomMenu[j].id==getMenu.id){
+                            cek = true
+                        }                    
+                    }    
+                }else cek = true
+                
+                if(cek==false) getRandomMenu.push(getMenu)        
+            } while (cek);
+        }
+        
+        return res.status(200).json({getRandomMenu: getRandomMenu})
     }
-    
 }

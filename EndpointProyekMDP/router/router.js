@@ -21,6 +21,7 @@ const {
   setDummy,
   upload,
   getAllMenuUser,
+  getRandomMenu,
 
 } = require("../controllers/MenuController"); //function menu
 
@@ -67,6 +68,8 @@ router.post("/users/checkPass", checkPass); // Buat check dan update password
 router.post("/menus/upload", upload); // Buat upload custom menu
 
 router.get("/menus/getAllMenuUser", getAllMenuUser); //Buat get all menu yang dipunya user
+
+router.get("/menus/getRandomMenu", getRandomMenu); //Buat get 20 random menu
 
 
 module.exports = router;
