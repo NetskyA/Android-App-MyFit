@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_navigation"
+    app:startDestination="@id/menuFeedsSearch_User">
+
+    <fragment
+        android:id="@+id/menuFeedsSearch_User"
+        android:name="id.ac.istts.myfit.MenuFeed.MenuFeedsSearch_User"
+        android:label="fragment_menu_feeds_search__user"
+        tools:layout="@layout/fragment_menu_feeds_search__user" />
+    <fragment
+        android:id="@+id/menuFeedsSearch_Menu"
+        android:name="id.ac.istts.myfit.MenuFeed.MenuFeedsSearch_Menu"
+        android:label="fragment_menu_feeds_search__menu"
+        tools:layout="@layout/fragment_menu_feeds_search__menu" />
+    <action
+        android:id="@+id/action_global_menuFeedsSearch_User"
+        app:destination="@id/menuFeedsSearch_User" />
+    <action
+        android:id="@+id/action_global_menuFeedsSearch_Menu"
+        app:destination="@id/menuFeedsSearch_Menu" />
+</navigation>

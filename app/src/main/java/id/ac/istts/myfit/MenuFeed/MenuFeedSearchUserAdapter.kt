@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.tempUser
 import id.ac.istts.myfit.R
 
-class MenuFeedSearchAdapter (
+class MenuFeedSearchUserAdapter (
     val data: List<tempUser>,
     val onDetailClickListener:(tempUser) -> Unit
-): RecyclerView.Adapter<MenuFeedSearchAdapter.ViewHolder>() {
+): RecyclerView.Adapter<MenuFeedSearchUserAdapter.ViewHolder>() {
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val ivProfile: ImageView = row.findViewById(R.id.itemSearch_ivProfile)
         val tvProfileName: TextView = row.findViewById(R.id.itemSearch_tvProfileName)

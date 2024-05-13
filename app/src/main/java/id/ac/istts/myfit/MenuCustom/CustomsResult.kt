@@ -2,6 +2,7 @@ package id.ac.istts.myfit.MenuCustom
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Base64
 import androidx.fragment.app.Fragment
@@ -10,8 +11,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
 import id.ac.istts.myfit.Data.Preferences.UserPreference
+import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentCustomsResultBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -73,6 +77,16 @@ class CustomsResult : Fragment() {
                         }
                     }
                 }
+
+                findNavController().navigate(R.id.action_global_customsIngredients)
+
+                // Change Active
+                val navHostFragment = parentFragment as NavHostFragment
+                val menuCustoms = navHostFragment.parentFragment as MenuCustoms
+                menuCustoms.binding.btnAddCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
+                menuCustoms.binding.btnResultCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
+                menuCustoms.binding.btnAddCustoms.setTextColor(resources.getColor(R.color.white))
+                menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.blue_main))
             }
         }
     }

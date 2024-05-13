@@ -38,7 +38,7 @@ class MyFitApplication : Application() {
             ).build()
             val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
             val retrofit = Retrofit.Builder().client(okHttpClient)
-                .baseUrl("http://192.168.234.32:3000")
+                .baseUrl("http://192.168.1.9:3000")
                 .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
                 .build()
 

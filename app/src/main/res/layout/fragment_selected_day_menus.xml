@@ -71,7 +71,8 @@
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold" />
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:scaleType="centerCrop"
                     android:id="@+id/selectedDayMenu_ivProfile"
                     android:layout_width="@dimen/_30sdp"
                     android:layout_height="@dimen/_30sdp"

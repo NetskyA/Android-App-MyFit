@@ -35,13 +35,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" />
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:id="@+id/lybar"
             android:layout_width="@dimen/_131sdp"
             android:layout_height="@dimen/_130sdp"
-            android:background="@drawable/backgroundnavigations2"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
+            app:cardCornerRadius="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,10 +50,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-
                 android:scaleType="centerCrop" />
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

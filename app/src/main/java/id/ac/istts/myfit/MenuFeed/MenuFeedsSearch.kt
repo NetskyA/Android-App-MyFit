@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,13 +29,12 @@ import kotlinx.coroutines.launch
 class MenuFeedsSearch : Fragment() {
     // TODO: Rename and change types of parameters
     private lateinit var binding: FragmentMenuFeedsSearchBinding
-    private lateinit var recyclerViewSearch: RecyclerView
-    private lateinit var menuFeedSearchAdapter: MenuFeedSearchAdapter
-    private lateinit var layoutManagerSearch: RecyclerView.LayoutManager
+
     private lateinit var userPreference: UserPreference
     val ioScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     val mainScope = CoroutineScope(Dispatchers.Main)
     lateinit var vm: MenuFeedsSearchViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -53,20 +53,6 @@ class MenuFeedsSearch : Fragment() {
         vm = ViewModelProvider(this).get(MenuFeedsSearchViewModel::class.java)
         userPreference = UserPreference(requireContext())
 
-        var tempSearchUser:List<tempUser> = arrayListOf()
-        val rvfeedcontent: RecyclerView = requireView().findViewById(R.id.menuFeedsSearch_rvSearch)
-        recyclerViewSearch = binding.menuFeedsSearchRvSearch
-        layoutManagerSearch = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        menuFeedSearchAdapter = MenuFeedSearchAdapter(tempSearchUser, onDetailClickListener = {
-            // TODO: Open profile
-        })
-
-        val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
-        rvfeedcontent.startAnimation(fadeInAnimation)
-
-        recyclerViewSearch.adapter = menuFeedSearchAdapter
-        recyclerViewSearch.layoutManager = layoutManagerSearch
-
         binding.svSearch.requestFocus()
 
         binding.svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -78,27 +64,42 @@ class MenuFeedsSearch : Fragment() {
 //                Toast.makeText(requireContext(), newText, Toast.LENGTH_SHORT).show()
                 if(binding.svSearch.query.toString()!=""){
                     ioScope.launch {
-                        tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
-                        mainScope.launch {
-                            menuFeedSearchAdapter = MenuFeedSearchAdapter(tempSearchUser, onDetailClickListener = {
-
-                            })
-                            binding.menuFeedsSearchRvSearch.adapter = menuFeedSearchAdapter
-                        }
+//                        tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
+//                        mainScope.launch {
+//                            menuFeedSearchAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
+//
+//                            })
+//                            binding.menuFeedsSearchRvSearch.adapter = menuFeedSearchAdapter
+//                        }
                     }
                 }else{
-                    tempSearchUser = arrayListOf()
-                    menuFeedSearchAdapter = MenuFeedSearchAdapter(tempSearchUser, onDetailClickListener = {
-
-                    })
-                    binding.menuFeedsSearchRvSearch.adapter = menuFeedSearchAdapter
+//                    tempSearchUser = arrayListOf()
+//                    menuFeedSearchAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
+//
+//                    })
+//                    binding.menuFeedsSearchRvSearch.adapter = menuFeedSearchAdapter
                 }
                 return true
             }
         })
-        binding.menuFeedsSearchRvSearch.apply {
-            this.layoutManager = layoutManager
-            this.adapter = menuFeedSearchAdapter
+
+        binding.feedSearchBtnUser.setOnClickListener {
+            // Navigate
+            val navHostFragment = childFragmentManager.findFragmentById(R.id.feedSearch_fragmentContainer) as NavHostFragment
+            navHostFragment.findNavController().navigate(R.id.action_global_menuFeedsSearch_User)
+
+            binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.black))
+            binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.icon_color))
         }
+
+        binding.feedSearchBtnMenu.setOnClickListener {
+            // Navigate
+            val navHostFragment = childFragmentManager.findFragmentById(R.id.feedSearch_fragmentContainer) as NavHostFragment
+            navHostFragment.findNavController().navigate(R.id.action_global_menuFeedsSearch_Menu)
+
+            binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.icon_color))
+            binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.black))
+        }
+
     }
 }
