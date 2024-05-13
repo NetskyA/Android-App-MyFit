@@ -97,4 +97,10 @@ internal class CustomMenuPreferences(context: Context) {
         editor.putInt(USERID, user_id)
         editor.apply()
     }
+    fun clearImage(){
+        val editor = preferences.edit()
+        editor.putString(IMAGE, "")
+        editor.apply()
+    }
+
 }

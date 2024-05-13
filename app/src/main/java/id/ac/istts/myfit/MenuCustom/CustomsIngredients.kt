@@ -197,8 +197,13 @@ class CustomsIngredients : Fragment() {
                     if(msg=="Fail"){
                         Toast.makeText(requireContext(), "Failed to upload image", Toast.LENGTH_SHORT).show()
                     }else{
-                        Toast.makeText(requireContext(), "Upload image success", Toast.LENGTH_SHORT).show()
-                        binding.uploadimagemenucustoms.setImageBitmap(decodeBase64ToBitmap(customMenuPreferences.getCustomMenu().image.toString()))
+                        try {
+                            binding.uploadimagemenucustoms.setImageBitmap(decodeBase64ToBitmap(customMenuPreferences.getCustomMenu().image.toString()))
+                            Toast.makeText(requireContext(), "Upload image success", Toast.LENGTH_SHORT).show()
+                        }catch (err: Exception){
+                            vm.clearImage()
+                            Toast.makeText(requireContext(), "Upload image failed", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
             }

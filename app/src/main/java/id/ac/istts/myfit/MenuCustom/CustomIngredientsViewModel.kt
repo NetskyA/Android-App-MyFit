@@ -40,4 +40,7 @@ class CustomIngredientsViewModel (application: Application) : AndroidViewModel(a
             }
         }
     }
+    suspend fun clearImage(){
+        customMenuPreferences.clearImage()
+    }
 }
