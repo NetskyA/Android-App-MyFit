@@ -129,11 +129,11 @@
                     android:id="@+id/tv_favorite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2.1k favorite"
-                    android:textSize="@dimen/_14ssp"
+                    android:text="0 favorite"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:visibility="visible"/>
+                    android:textSize="@dimen/_14ssp"
+                    android:visibility="visible" />
 
             </LinearLayout>
         </LinearLayout>

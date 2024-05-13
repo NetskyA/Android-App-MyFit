@@ -18,6 +18,7 @@ const {
 } = require("../controllers/UserController"); //function user
 
 const { 
+  setDummy,
   upload,
   getAllMenuUser,
 
@@ -30,6 +31,7 @@ const router = Router();
 // Test
 router.get("/users/test", test);
 router.get("/users/uploadDummyUser", uploadDummyUser);
+router.get("/menus/setDummy", setDummy);
 
 // Enpoint Users
 router.post("/users/register", register); // Buat register user

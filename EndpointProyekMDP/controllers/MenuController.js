@@ -11,8 +11,32 @@ const { generateDummyUsers } = require("../service/Functions");
 
 module.exports = {
     setDummy: async(req, res)=>{
-        const tempMenu = await Menu.findAll()
-
+        // const tempMenu = await Menu.findAll()
+        await Menu.update(
+            { user_id: 1 }, 
+            { 
+                where: { 
+                    id: { [Op.between]: [1, 30] } 
+                } 
+            }
+        )
+        await Menu.update(
+            { user_id: 2 }, 
+            { 
+                where: { 
+                    id: { [Op.between]: [31, 50] } 
+                } 
+            }
+        )
+        await Menu.update(
+            { user_id: 0 }, 
+            { 
+                where: { 
+                    id: { [Op.between]: [51, 205] } 
+                } 
+            }
+        )
+        return res.status(200).send("OK")
     },
     upload: async(req, res)=>{
         const {
