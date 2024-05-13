@@ -109,7 +109,19 @@ class MenuProfileSettingV2 : AppCompatActivity() {
             val outputStream = ByteArrayOutputStream()
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
             val byteArray = outputStream.toByteArray()
-            val base64String = Base64.encodeToString(byteArray, Base64.DEFAULT)
+            var base64String: String = ""
+            val maxFileSize = 3 * 1024 * 1024 // 3MB in bytes
+
+            if (byteArray.size > maxFileSize) {
+                // Display a message or handle the error if the file is too large
+                Toast.makeText(this, "Image size Max 3MB", Toast.LENGTH_LONG).show()
+                return
+            } else {
+                // Continue with your processing, such as encoding to Base64
+                base64String = Base64.encodeToString(byteArray, Base64.DEFAULT)
+                // Update UI or further processing
+                // binding.uploadimagemenucustoms.setImageBitmap(decodeBase64ToBitmap(base64String))
+            }
 //            binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(base64String))
 
 

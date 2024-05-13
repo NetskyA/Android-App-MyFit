@@ -11,22 +11,17 @@ import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Base64
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
-import id.ac.istts.myfit.Data.Preferences.UserPreference
-import id.ac.istts.myfit.MenuCustom.MenuCustoms
-import id.ac.istts.myfit.ProfileSetting.ProfileSettingAccountViewModel
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentCustomsIngredientsBinding
-import id.ac.istts.myfit.databinding.FragmentMenuCustomsBinding
-import id.ac.istts.myfit.databinding.FragmentProfileSettingAccountBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -186,8 +181,19 @@ class CustomsIngredients : Fragment() {
             val outputStream = ByteArrayOutputStream()
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
             val byteArray = outputStream.toByteArray()
-            val base64String = Base64.encodeToString(byteArray, Base64.DEFAULT)
-//            binding.uploadimagemenucustoms.setImageBitmap(decodeBase64ToBitmap(base64String))
+            var base64String: String = ""
+            val maxFileSize = 3 * 1024 * 1024 // 3MB in bytes
+
+            if (byteArray.size > maxFileSize) {
+                // Display a message or handle the error if the file is too large
+                Toast.makeText(requireActivity(), "Image size Max 3MB", Toast.LENGTH_LONG).show()
+                return
+            } else {
+                // Continue with your processing, such as encoding to Base64
+                base64String = Base64.encodeToString(byteArray, Base64.DEFAULT)
+                // Update UI or further processing
+                // binding.uploadimagemenucustoms.setImageBitmap(decodeBase64ToBitmap(base64String))
+            }
 
 
 

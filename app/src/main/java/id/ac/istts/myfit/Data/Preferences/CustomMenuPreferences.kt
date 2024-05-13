@@ -2,8 +2,6 @@ package id.ac.istts.myfit.Data.Preferences
 
 import android.content.Context
 import id.ac.istts.myfit.Data.Menu
-import id.ac.istts.myfit.Data.User
-import id.ac.istts.myfit.MenuCustom.CustomsIngredients
 
 internal class CustomMenuPreferences(context: Context) {
     companion object {
@@ -42,7 +40,7 @@ internal class CustomMenuPreferences(context: Context) {
     fun clearCustomMenu() {
         val editor = preferences.edit()
         editor.clear()
-        editor.apply()
+        editor.commit()
     }
 
     fun getCustomMenu(): Menu {
