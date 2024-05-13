@@ -87,7 +87,6 @@ class MenuProfile : Fragment() {
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
         rv_feedcontent.startAnimation(fadeInAnimation)
 
-        userPreference = UserPreference(requireContext())
         if(userPreference.getUser().image!=""){
             binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
         }
