@@ -42,6 +42,21 @@ class MenuProfileViewModel (application: Application) : AndroidViewModel(applica
             }
         }
     }
+    fun sortRecent() {
+        ioScope.launch {
+            try {
+                // Fetch menus from the repository
+                val menusList = allMenuUserRepository.sortRecent()
+                // Update the LiveData with the fetched menus on the main thread
+                withContext(Dispatchers.Main) {
+                    _menus.value = ArrayList(menusList) // Convert the list to ArrayList
+                }
+            } catch (e: Exception) {
+                // Handle exceptions if needed
+                Log.e("Error", "Error fetching menus: ${e.message}")
+            }
+        }
+    }
     fun countFavorite(menus:List<Menu>):Int{
         var fav = 0
         for (m in menus){

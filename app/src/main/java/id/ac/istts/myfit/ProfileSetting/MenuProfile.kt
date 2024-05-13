@@ -71,12 +71,29 @@ class MenuProfile : Fragment() {
             })
             recyclerViewContent.adapter = menuProfileAdapter
             recyclerViewContent.layoutManager = layoutManager
-
         })
 
         val userId = userPreference.getUser().id // Replace with actual user ID
         vm.getAllMenuUser(userId!!.toInt())
 
+        binding.btnbydate.setOnClickListener {
+            if(binding.btnbydate.text=="Recent"){
+                binding.btnbydate.setText("Reset")
+                vm.sortRecent()
+                vm.menus.observe(viewLifecycleOwner, Observer { menus ->
+                    // Update UI with the new list of menus
+                    temp = menus
+                    menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+                        startActivity(Intent(this.context, MenuFeedOpened::class.java))
+                    })
+                    recyclerViewContent.adapter = menuProfileAdapter
+                    recyclerViewContent.layoutManager = layoutManager
+                })
+            }else{
+
+            }
+
+        }
 
         val rv_feedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
 
@@ -96,6 +113,7 @@ class MenuProfile : Fragment() {
 //            findNavController().navigate(stepmove)
             startActivity(Intent(this.context, MenuProfileSettingV2::class.java))
         }
+
     }
 
     override fun onResume() {
