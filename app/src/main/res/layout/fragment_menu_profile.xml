@@ -76,7 +76,7 @@
                     android:layout_height="@dimen/_65sdp"
                     android:scaleType="centerCrop"
                     
-                    android:src="@drawable/_61204" />
+                    android:src="@drawable/user" />
 
                 <ImageView
                     android:id="@+id/menusetting"

@@ -109,9 +109,9 @@
                     android:id="@+id/textCrtPass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/grey"
                     android:layout_gravity="start"
-                    android:text="Create a password"
+                    android:text="Permission"
+                    android:textColor="@color/grey"
                     android:textSize="@dimen/_14ssp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -148,8 +148,9 @@
                 android:id="@+id/hoverCheckBox1"
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
-                android:padding="@dimen/_5sdp"
                 android:layout_margin="@dimen/_5sdp"
+                android:checked="true"
+                android:padding="@dimen/_5sdp"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -184,8 +185,9 @@
                 android:id="@+id/hoverCheckBox2"
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
-                android:padding="@dimen/_5sdp"
                 android:layout_margin="@dimen/_5sdp"
+                android:checked="true"
+                android:padding="@dimen/_5sdp"
                 tools:ignore="MissingConstraints" />
 
             <TextView
