@@ -42,6 +42,13 @@ class MenuProfileViewModel (application: Application) : AndroidViewModel(applica
             }
         }
     }
+    fun countFavorite(menus:List<Menu>):Int{
+        var fav = 0
+        for (m in menus){
+            fav+=m.like!!.toInt()
+        }
+        return fav
+    }
 //    fun getAllMenuUser(id: Int): ArrayList<Menu> {
 //        var menus:ArrayList<Menu> = arrayListOf()
 //        try {

@@ -64,6 +64,8 @@ class MenuProfile : Fragment() {
         vm.menus.observe(viewLifecycleOwner, Observer { menus ->
             // Update UI with the new list of menus
             temp = menus
+            binding.tvCountcreated.setText("${temp.size} Posts")
+            binding.tvFavorite.setText("${vm.countFavorite(temp)} Favorites")
             menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
                 startActivity(Intent(this.context, MenuFeedOpened::class.java))
             })

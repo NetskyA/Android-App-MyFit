@@ -13,7 +13,7 @@ import kotlinx.parcelize.Parcelize
 data class Menu (
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "id") var id:Int? = 0,
-    @ColumnInfo(name = "user_id") var userId:Int? = 0,
+    @ColumnInfo(name = "user_id") var user_id:Int? = 0,
     @ColumnInfo(name = "name") var name:String? = "",
     @ColumnInfo(name = "ingredients") var ingredients:String? = "",
     @ColumnInfo(name = "nutrition") var nutrition:String? = "",

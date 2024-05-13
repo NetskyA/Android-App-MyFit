@@ -165,16 +165,17 @@ class CustomsIngredients : Fragment() {
             else if(binding.etNamanutrisi.text.toString()=="")Toast.makeText(requireContext(), "Nutrition cannot be empty", Toast.LENGTH_SHORT).show()
             else if(binding.etCaraMemasak.text.toString()=="")Toast.makeText(requireContext(), "How To Make cannot be empty", Toast.LENGTH_SHORT).show()
             else if(customMenuPreferences.getCustomMenu().image=="")Toast.makeText(requireContext(), "Image cannot be empty", Toast.LENGTH_SHORT).show()
+            else{
+                findNavController().navigate(R.id.action_global_customsResult)
 
-            findNavController().navigate(R.id.action_global_customsResult)
-
-            // Change Active
-            val navHostFragment = parentFragment as NavHostFragment
-            val menuCustoms = navHostFragment.parentFragment as MenuCustoms
-            menuCustoms.binding.btnResultCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
-            menuCustoms.binding.btnAddCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
-            menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.white))
-            menuCustoms.binding.btnAddCustoms.setTextColor(resources.getColor(R.color.blue_main))
+                // Change Active
+                val navHostFragment = parentFragment as NavHostFragment
+                val menuCustoms = navHostFragment.parentFragment as MenuCustoms
+                menuCustoms.binding.btnResultCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
+                menuCustoms.binding.btnAddCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
+                menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.white))
+                menuCustoms.binding.btnAddCustoms.setTextColor(resources.getColor(R.color.blue_main))
+            }
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -26,7 +26,7 @@ internal class CustomMenuPreferences(context: Context) {
     fun addCustomMenu(customMenu: Menu) {
         val editor = preferences.edit()
         editor.putInt(ID, customMenu.id ?: 0)
-        editor.putInt(USERID, customMenu.userId ?: 0)
+        editor.putInt(USERID, customMenu.user_id ?: 0)
         editor.putString(NAME, customMenu.name?: "")
         editor.putString(INGREDIENTS, customMenu.ingredients?: "")
         editor.putString(NUTRITION, customMenu.nutrition?: "")
@@ -48,7 +48,7 @@ internal class CustomMenuPreferences(context: Context) {
     fun getCustomMenu(): Menu {
         val model = Menu()
         model.id = preferences.getInt(CustomMenuPreferences.ID, 0)
-        model.userId = preferences.getInt(CustomMenuPreferences.USERID, 0)
+        model.user_id = preferences.getInt(CustomMenuPreferences.USERID, 0)
         model.name = preferences.getString(CustomMenuPreferences.NAME, "")
         model.ingredients = preferences.getString(CustomMenuPreferences.INGREDIENTS, "")
         model.nutrition = preferences.getString(CustomMenuPreferences.NUTRITION, "")
@@ -92,9 +92,9 @@ internal class CustomMenuPreferences(context: Context) {
         editor.putString(NOTE, note)
         editor.apply()
     }
-    fun setUserId(id:Int){
+    fun setUserId(user_id:Int){
         val editor = preferences.edit()
-        editor.putInt(USERID, id)
+        editor.putInt(USERID, user_id)
         editor.apply()
     }
 }
