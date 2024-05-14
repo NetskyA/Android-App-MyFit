@@ -47,7 +47,7 @@ class CustomsResult : Fragment() {
         if(customMenuPreferences.getCustomMenu().image!=""){
             binding.uploadimagemenucustoms.setImageBitmap(decodeBase64ToBitmap(customMenuPreferences.getCustomMenu().image.toString()))
         }
-        binding.customResultTvUser.setText("Favorite ${userPreference.getUser().name}")
+        binding.customResultTvUser.setText("${userPreference.getUser().name}")
         binding.customResultTvMenuName.setText(customMenuPreferences.getCustomMenu().name)
         binding.customResultTvNutrition.setText(customMenuPreferences.getCustomMenu().nutrition)
         binding.customResultTvIngredients.setText(customMenuPreferences.getCustomMenu().ingredients)

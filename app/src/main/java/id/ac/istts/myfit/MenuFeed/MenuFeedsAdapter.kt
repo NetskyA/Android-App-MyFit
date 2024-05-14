@@ -1,4 +1,4 @@
-package id.ac.istts.myfit.ProfileSetting
+package id.ac.istts.myfit.MenuFeed
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -9,14 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import id.ac.istts.myfit.Data.AllMenuUser
 import id.ac.istts.myfit.Data.Menu
+import id.ac.istts.myfit.Data.RandomMenu
+import id.ac.istts.myfit.ProfileSetting.MenuProfileAdapter
 import id.ac.istts.myfit.R
+import kotlinx.coroutines.withContext
 
-class MenuProfileAdapter (
-    var data: ArrayList<Menu>,
+class MenuFeedsAdapter (
+    var data: MutableList<RandomMenu>,
     val onDetailClickListener:(String) -> Unit
-): RecyclerView.Adapter<MenuProfileAdapter.ViewHolder>() {
+): RecyclerView.Adapter<MenuFeedsAdapter.ViewHolder>() {
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val imageFeed: ImageView = row.findViewById(R.id.imagesfeed)
     }

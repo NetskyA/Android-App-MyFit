@@ -60,21 +60,23 @@ class MenuProfile : Fragment() {
 
         recyclerViewContent = binding.rvFeedcontent
         layoutManager = GridLayoutManager(context, 2)
+        menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+            startActivity(Intent(this.context, MenuFeedOpened::class.java))
+        })
+        recyclerViewContent.adapter = menuProfileAdapter
+        recyclerViewContent.layoutManager = layoutManager
         vm.getAllMenuUser(userPreference.getUser().id!!.toInt())
         vm.menus.observe(viewLifecycleOwner, Observer { menus ->
             // Update UI with the new list of menus
-            temp = menus
-            binding.tvCountcreated.setText("${temp.size} Posts")
-            binding.tvFavorite.setText("${vm.countFavorite(temp)} Favorites")
-            menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-                startActivity(Intent(this.context, MenuFeedOpened::class.java))
-            })
-            recyclerViewContent.adapter = menuProfileAdapter
-            recyclerViewContent.layoutManager = layoutManager
+            menuProfileAdapter.data = menus
+            menuProfileAdapter.notifyDataSetChanged()
+            binding.tvCountcreated.setText("${menus.size} Posts")
+            binding.tvFavorite.setText("${vm.countFavorite(menus)} Favorites")
+
         })
 
-        val userId = userPreference.getUser().id // Replace with actual user ID
-        vm.getAllMenuUser(userId!!.toInt())
+//        val userId = userPreference.getUser().id // Replace with actual user ID
+//        vm.getAllMenuUser(userId!!.toInt())
 
         binding.btnbydate.setOnClickListener {
             if(binding.btnbydate.text=="Recent"){

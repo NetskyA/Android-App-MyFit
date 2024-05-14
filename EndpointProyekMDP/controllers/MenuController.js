@@ -124,9 +124,10 @@ module.exports = {
         let getRandomMenu = []
         const allMenu = await Menu.findAll()
         let randomSize = 20
-        if(allMenu.length<20){
+        if(allMenu.length<randomSize){
             randomSize = allMenu.length
         }
+        // console.log("test")
         for(let i = 0; i < randomSize; i++){
             let cek = false
             do {
@@ -151,7 +152,13 @@ module.exports = {
                 if(cek==false) getRandomMenu.push(getMenu)        
             } while (cek);
         }
-        
-        return res.status(200).json({getRandomMenu: getRandomMenu})
+        for (let i = 0; i < getRandomMenu.length; i++) {
+            const menu = getRandomMenu[i];
+            if(menu.image!=""){
+              const binaryData = fs.readFileSync(menu.image)
+              menu.image = Buffer(binaryData).toString('base64')
+            }
+          }
+        return res.status(200).json({allRandomMenu: getRandomMenu})
     }
 }
