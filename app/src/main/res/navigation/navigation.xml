@@ -62,5 +62,14 @@
         android:id="@+id/menuFeedsSearch2"
         android:name="id.ac.istts.myfit.MenuFeed.MenuFeedsSearch"
         android:label="fragment_menu_feeds_search"
-        tools:layout="@layout/fragment_menu_feeds_search" />
+        tools:layout="@layout/fragment_menu_feeds_search" >
+        <action
+            android:id="@+id/action_menuFeedsSearch2_to_searchUserProfile"
+            app:destination="@id/searchUserProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchUserProfile"
+        android:name="id.ac.istts.myfit.MenuFeed.SearchUserProfile"
+        android:label="fragment_search_user_profile"
+        tools:layout="@layout/fragment_search_user_profile" />
 </navigation>

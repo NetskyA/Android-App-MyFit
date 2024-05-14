@@ -40,12 +40,12 @@ class MenuFeedSearchUserAdapter (
         if(f.image!=""){
             holder.ivProfile.setImageBitmap(decodeBase64ToBitmap(f.image.toString()))
         }
-//        holder.ivProfile.setOnClickListener {
-//            onDetailClickListener?.invoke(f)
-//        }
-//        holder.tvProfileName.setOnClickListener {
-//            onDetailClickListener?.invoke(f)
-//        }
+        holder.ivProfile.setOnClickListener {
+            onDetailClickListener?.invoke(f)
+        }
+        holder.tvProfileName.setOnClickListener {
+            onDetailClickListener?.invoke(f)
+        }
 //        holder.ivRemove.setOnClickListener {
 //            // TODO: Remove from search
 //        }

@@ -5,16 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import id.ac.istts.myfit.databinding.FragmentMenuFeedsSearchMenuBinding
+import id.ac.istts.myfit.R
+import id.ac.istts.myfit.databinding.FragmentSearchUserProfileBinding
 
-class MenuFeedsSearch_Menu : Fragment() {
+class SearchUserProfile : Fragment() {
 
-    private lateinit var binding: FragmentMenuFeedsSearchMenuBinding
-
-    private lateinit var recyclerViewSearch: RecyclerView
-    private lateinit var menuFeedSearchUserAdapter: MenuFeedSearchUserAdapter
-    private lateinit var layoutManagerSearch: RecyclerView.LayoutManager
+    private lateinit var binding: FragmentSearchUserProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +20,7 @@ class MenuFeedsSearch_Menu : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMenuFeedsSearchMenuBinding.inflate(inflater, container, false)
+        binding = FragmentSearchUserProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -33,4 +29,5 @@ class MenuFeedsSearch_Menu : Fragment() {
 
 
     }
+
 }

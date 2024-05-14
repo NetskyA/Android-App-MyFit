@@ -136,14 +136,11 @@
                     android:textSize="16sp" />
             </LinearLayout>
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/feedSearch_fragmentContainer"
-                android:name="androidx.navigation.fragment.NavHostFragment"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/feedSearch_rvContent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:defaultNavHost="true"
-                app:navGraph="@navigation/search_navigation" />
+                android:layout_height="match_parent" />
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
