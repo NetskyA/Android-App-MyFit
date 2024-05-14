@@ -3,14 +3,14 @@ const fs = require('fs');
 function readJSONFile() {
   const data = [];
   data.push(
-    fs.readFileSync("../data/salad.json", "utf8"),
-    fs.readFileSync("../data/grilled.json", "utf8"),
-    fs.readFileSync("../data/yoghurt.json", "utf8"),
-    fs.readFileSync("../data/juice.json", "utf8"),
-    fs.readFileSync("../data/oatmeal.json", "utf8"),
-    fs.readFileSync("../data/porridge.json", "utf8"),
-    fs.readFileSync("../data/rice.json", "utf8"),
-    fs.readFileSync("../data/smoothie.json", "utf8")
+    fs.readFileSync("./data/salad.json", "utf8"),
+    fs.readFileSync("./data/grilled.json", "utf8"),
+    fs.readFileSync("./data/yoghurt.json", "utf8"),
+    fs.readFileSync("./data/juice.json", "utf8"),
+    fs.readFileSync("./data/oatmeal.json", "utf8"),
+    fs.readFileSync("./data/porridge.json", "utf8"),
+    fs.readFileSync("./data/rice.json", "utf8"),
+    fs.readFileSync("./data/smoothie.json", "utf8")
   );
   var datareturn = [];
   var tempId = 0;

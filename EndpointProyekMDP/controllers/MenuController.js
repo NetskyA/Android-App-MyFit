@@ -160,5 +160,23 @@ module.exports = {
             }
           }
         return res.status(200).json({allRandomMenu: getRandomMenu})
+    },
+
+    searchAllMenu: async(req,res)=>{
+        const {
+            keyword,
+          } = req.query;
+          
+          let searchMenu = await Menu.findAll({
+            where: {
+              name: {
+                [Op.like]: '%' + keyword + '%' 
+              },
+              status: 1
+            }
+          });
+          
+          return res.status(200).send({searchMenu: searchUser})
     }
+
 }

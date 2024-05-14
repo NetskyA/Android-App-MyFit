@@ -9,6 +9,7 @@ const profile = multer({ dest: "uploads/profile" });
 const User = require("../models/Users");
 const { testFunction, generateDummyUsers } = require("../service/Functions");
 const nodemailer = require('nodemailer');
+const Diets = require("../models/Diets");
 
 module.exports = {
   uploadDummyUser: async (req, res) => {
@@ -104,6 +105,15 @@ module.exports = {
       allergy: allergy,
       image: image,
     });
+
+    var day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+    for(let i=0; i<day.length; i++){
+      await Diets.create({ 
+        user_id:cekUser.dataValues.id,
+        day: day[i]
+      })
+    }
 
     return res.status(200).send({
       id: cekUser.dataValues.id,

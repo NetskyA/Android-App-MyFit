@@ -2,17 +2,16 @@ package id.ac.istts.myfit.MenuDiet
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.Preferences.UserPreference
@@ -23,6 +22,7 @@ import id.ac.istts.myfit.databinding.FragmentMenuDietBinding
 class MenuDiet : Fragment() {
     private lateinit var binding: FragmentMenuDietBinding
     private lateinit var userPreference: UserPreference
+    lateinit var vm: MenuDietViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +39,8 @@ class MenuDiet : Fragment() {
         imageView.startAnimation(fadeInAnimation)
         val fadeInAnimation2 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         textWe.startAnimation(fadeInAnimation2)
+
+        vm = ViewModelProvider(this).get(MenuDietViewModel::class.java)
 
         userPreference = UserPreference(requireContext())
         binding.tvTitleHelo.setText("Hello, ${userPreference.getUser().username}")

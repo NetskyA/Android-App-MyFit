@@ -33,7 +33,7 @@ const { generateDummyUsers } = require("../service/Functions");
         await sequelize.sync({ force: true });
         // const users = generateDummyUsers
         for (let i = 0; i < users.length; i++) {
-            await Users.create({
+            var id =await Users.create({
                 email: users[i].email,
                 username: users[i].username,
                 phone: users[i].phone,
@@ -48,6 +48,17 @@ const { generateDummyUsers } = require("../service/Functions");
                 allergy: users[i].allergy ,
                 image  : users[i].image  ,
             })
+
+            var day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+            for(let i=0; i<day.length; i++){
+                if(id.dataValues.id !== 1 && id.dataValues.id !== 2){
+                    await Diets.create({ 
+                        user_id:id.dataValues.id,
+                        day: day[i]
+                    })
+                }
+            }
         }
 
         for (let i = 0; i < menus.length; i++) {
