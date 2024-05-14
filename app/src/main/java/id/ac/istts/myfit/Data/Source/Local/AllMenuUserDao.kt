@@ -13,11 +13,11 @@ interface AllMenuUserDao {
     @Query("select * from menus")
     fun getAll(): List<Menu>
 
-    @Query("select * from menus order by id desc")
+    @Query("select * from menus order by `id` desc")
     fun sortRecent(): List<Menu>
 
-//    @Query("select * from menus order by like asc")
-//    fun sortLike(): List<Menu>
+    @Query("select * from menus order by `like` desc")
+    fun sortLike(): List<Menu>
 
     @Query("select * from menus where id=:id")
     fun getById(id:Int): Menu

@@ -11,7 +11,7 @@ const { generateDummyUsers } = require("../service/Functions");
 
 module.exports = {
     setDummy: async(req, res)=>{
-        // const tempMenu = await Menu.findAll()
+        const tempMenu = await Menu.findAll()
         await Menu.update(
             { user_id: 1 }, 
             { 
@@ -36,6 +36,19 @@ module.exports = {
                 } 
             }
         )
+        for (let i = 0; i < tempMenu.length; i++) {
+            const m = tempMenu[i];
+            let randomNumber = Math.floor(Math.random() * 200)
+            await Menu.update(
+                {like: randomNumber},
+                {
+                    where:{
+                        id: m.id
+                    }
+                }
+            )
+            
+        }
         return res.status(200).send("OK")
     },
     upload: async(req, res)=>{

@@ -26,6 +26,12 @@ class AllMenuUserRepository (
     suspend fun sortRecent(): ArrayList<Menu> {
         return ArrayList(localDataSource.allMenuUserDao().sortRecent())
     }
+    suspend fun sortFavorite(): ArrayList<Menu> {
+        return ArrayList(localDataSource.allMenuUserDao().sortLike())
+    }
+    suspend fun reset(): ArrayList<Menu> {
+        return ArrayList(localDataSource.allMenuUserDao().getAll())
+    }
 //    suspend fun createMenu(menu:TempMenu) {
 //        val newPost = remoteDataSource.uploadMenu(menu) //insert remote dl
 //        localDataSource.allMenuUserDao().insert(menu)

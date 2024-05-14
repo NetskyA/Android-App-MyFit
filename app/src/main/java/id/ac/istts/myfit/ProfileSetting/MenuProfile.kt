@@ -60,7 +60,7 @@ class MenuProfile : Fragment() {
 
         recyclerViewContent = binding.rvFeedcontent
         layoutManager = GridLayoutManager(context, 2)
-
+        vm.getAllMenuUser(userPreference.getUser().id!!.toInt())
         vm.menus.observe(viewLifecycleOwner, Observer { menus ->
             // Update UI with the new list of menus
             temp = menus
@@ -79,6 +79,7 @@ class MenuProfile : Fragment() {
         binding.btnbydate.setOnClickListener {
             if(binding.btnbydate.text=="Recent"){
                 binding.btnbydate.setText("Reset")
+                binding.filterbykategori.setText(("Favorite"))
                 vm.sortRecent()
                 vm.menus.observe(viewLifecycleOwner, Observer { menus ->
                     // Update UI with the new list of menus
@@ -90,9 +91,47 @@ class MenuProfile : Fragment() {
                     recyclerViewContent.layoutManager = layoutManager
                 })
             }else{
-
+                binding.btnbydate.setText("Recent")
+                vm.reset()
+                vm.menus.observe(viewLifecycleOwner, Observer { menus ->
+                    // Update UI with the new list of menus
+                    temp = menus
+                    menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+                        startActivity(Intent(this.context, MenuFeedOpened::class.java))
+                    })
+                    recyclerViewContent.adapter = menuProfileAdapter
+                    recyclerViewContent.layoutManager = layoutManager
+                })
             }
+        }
 
+        binding.filterbykategori.setOnClickListener {
+            if(binding.filterbykategori.text=="Favorite"){
+                binding.filterbykategori.setText("Reset")
+                binding.btnbydate.setText(("Recent"))
+                vm.sortFavorite()
+                vm.menus.observe(viewLifecycleOwner, Observer { menus ->
+                    // Update UI with the new list of menus
+                    temp = menus
+                    menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+                        startActivity(Intent(this.context, MenuFeedOpened::class.java))
+                    })
+                    recyclerViewContent.adapter = menuProfileAdapter
+                    recyclerViewContent.layoutManager = layoutManager
+                })
+            }else{
+                binding.filterbykategori.setText("Favorite")
+                vm.reset()
+                vm.menus.observe(viewLifecycleOwner, Observer { menus ->
+                    // Update UI with the new list of menus
+                    temp = menus
+                    menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+                        startActivity(Intent(this.context, MenuFeedOpened::class.java))
+                    })
+                    recyclerViewContent.adapter = menuProfileAdapter
+                    recyclerViewContent.layoutManager = layoutManager
+                })
+            }
         }
 
         val rv_feedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
