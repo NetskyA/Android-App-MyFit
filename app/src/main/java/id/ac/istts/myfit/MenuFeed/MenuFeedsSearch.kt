@@ -64,8 +64,8 @@ class MenuFeedsSearch : Fragment() {
         recyclerViewSearch = binding.feedSearchRvContent
         layoutManagerSearch = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
-            // TODO: Open profile
-            findNavController().navigate(R.id.action_menuFeedsSearch2_to_searchUserProfile)
+            val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+            findNavController().navigate(action)
         })
 
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
@@ -88,7 +88,8 @@ class MenuFeedsSearch : Fragment() {
                         tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
                         mainScope.launch {
                             menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
-                                findNavController().navigate(R.id.action_menuFeedsSearch2_to_searchUserProfile)
+                                val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+                                findNavController().navigate(action)
                             })
                             recyclerViewSearch.adapter = menuFeedSearchUserAdapter
                         }
@@ -96,7 +97,8 @@ class MenuFeedsSearch : Fragment() {
                 }else{
                     tempSearchUser = arrayListOf()
                     menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
-                        findNavController().navigate(R.id.action_menuFeedsSearch2_to_searchUserProfile)
+                        val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+                        findNavController().navigate(action)
                     })
                     recyclerViewSearch.adapter = menuFeedSearchUserAdapter
                 }

@@ -17,7 +17,7 @@ import kotlinx.coroutines.withContext
 
 class MenuFeedsAdapter (
     var data: MutableList<RandomMenu>,
-    val onDetailClickListener:(String) -> Unit
+    val onDetailClickListener:(RandomMenu) -> Unit
 ): RecyclerView.Adapter<MenuFeedsAdapter.ViewHolder>() {
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val imageFeed: ImageView = row.findViewById(R.id.imagesfeed)
@@ -40,9 +40,9 @@ class MenuFeedsAdapter (
             holder.imageFeed.setImageBitmap(decodeBase64ToBitmap(f.image.toString()))
         }
 
-//        holder.imageFeed.setOnClickListener {
-//            onDetailClickListener?.invoke(f)
-//        }
+        holder.imageFeed.setOnClickListener {
+            onDetailClickListener?.invoke(f)
+        }
     }
     fun decodeBase64ToBitmap(base64Str: String): Bitmap {
         val imageBytes = Base64.decode(base64Str, Base64.DEFAULT)

@@ -20,6 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileSetting.EditMenu"
+            android:exported="false" />
+        <activity
             android:name=".Data.Modal.ModalDeleteAccount"
             android:exported="false" />
         <activity

@@ -61,7 +61,7 @@ class MenuProfile : Fragment() {
         recyclerViewContent = binding.rvFeedcontent
         layoutManager = GridLayoutManager(context, 2)
         menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-            startActivity(Intent(this.context, MenuFeedOpened::class.java))
+            startActivity(Intent(this.context, EditMenu::class.java))
         })
         recyclerViewContent.adapter = menuProfileAdapter
         recyclerViewContent.layoutManager = layoutManager
@@ -87,7 +87,7 @@ class MenuProfile : Fragment() {
                     // Update UI with the new list of menus
                     temp = menus
                     menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-                        startActivity(Intent(this.context, MenuFeedOpened::class.java))
+                        startActivity(Intent(this.context, EditMenu::class.java))
                     })
                     recyclerViewContent.adapter = menuProfileAdapter
                     recyclerViewContent.layoutManager = layoutManager
@@ -99,7 +99,7 @@ class MenuProfile : Fragment() {
                     // Update UI with the new list of menus
                     temp = menus
                     menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-                        startActivity(Intent(this.context, MenuFeedOpened::class.java))
+                        startActivity(Intent(this.context, EditMenu::class.java))
                     })
                     recyclerViewContent.adapter = menuProfileAdapter
                     recyclerViewContent.layoutManager = layoutManager
@@ -116,7 +116,7 @@ class MenuProfile : Fragment() {
                     // Update UI with the new list of menus
                     temp = menus
                     menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-                        startActivity(Intent(this.context, MenuFeedOpened::class.java))
+                        startActivity(Intent(this.context, EditMenu::class.java))
                     })
                     recyclerViewContent.adapter = menuProfileAdapter
                     recyclerViewContent.layoutManager = layoutManager
@@ -128,7 +128,7 @@ class MenuProfile : Fragment() {
                     // Update UI with the new list of menus
                     temp = menus
                     menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-                        startActivity(Intent(this.context, MenuFeedOpened::class.java))
+                        startActivity(Intent(this.context, EditMenu::class.java))
                     })
                     recyclerViewContent.adapter = menuProfileAdapter
                     recyclerViewContent.layoutManager = layoutManager

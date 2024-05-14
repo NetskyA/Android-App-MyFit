@@ -71,5 +71,9 @@
         android:id="@+id/searchUserProfile"
         android:name="id.ac.istts.myfit.MenuFeed.SearchUserProfile"
         android:label="fragment_search_user_profile"
-        tools:layout="@layout/fragment_search_user_profile" />
+        tools:layout="@layout/fragment_search_user_profile" >
+        <argument
+            android:name="username"
+            app:argType="string" />
+    </fragment>
 </navigation>

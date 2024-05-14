@@ -15,7 +15,7 @@ import id.ac.istts.myfit.R
 
 class MenuProfileAdapter (
     var data: ArrayList<Menu>,
-    val onDetailClickListener:(String) -> Unit
+    val onDetailClickListener:(Menu) -> Unit
 ): RecyclerView.Adapter<MenuProfileAdapter.ViewHolder>() {
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val imageFeed: ImageView = row.findViewById(R.id.imagesfeed)
@@ -38,9 +38,9 @@ class MenuProfileAdapter (
             holder.imageFeed.setImageBitmap(decodeBase64ToBitmap(f.image.toString()))
         }
 
-//        holder.imageFeed.setOnClickListener {
-//            onDetailClickListener?.invoke(f)
-//        }
+        holder.imageFeed.setOnClickListener {
+            onDetailClickListener?.invoke(f)
+        }
     }
     fun decodeBase64ToBitmap(base64Str: String): Bitmap {
         val imageBytes = Base64.decode(base64Str, Base64.DEFAULT)
