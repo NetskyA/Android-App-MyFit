@@ -286,13 +286,14 @@
                 app:layout_constraintTop_toTopOf="@+id/Bottom">
 
                 <TextView
+                    android:id="@+id/menuProfileSetting_tvDeleteAccount"
                     android:layout_width="@dimen/_170sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textSize="@dimen/_7sdp"
-                    android:textColor="@color/light_red"
-                    android:textAlignment="center"
                     android:text="Delete your account"
+                    android:textAlignment="center"
+                    android:textColor="@color/light_red"
+                    android:textSize="@dimen/_7sdp"
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 

@@ -154,7 +154,6 @@ class MenuProfile : Fragment() {
 //            findNavController().navigate(stepmove)
             startActivity(Intent(this.context, MenuProfileSettingV2::class.java))
         }
-
     }
 
     override fun onResume() {

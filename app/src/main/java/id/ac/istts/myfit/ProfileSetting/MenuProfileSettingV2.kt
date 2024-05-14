@@ -14,6 +14,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import id.ac.istts.myfit.Data.Modal.ModalDeleteAccount
 import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
@@ -99,6 +100,10 @@ class MenuProfileSettingV2 : AppCompatActivity() {
         val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_up)
         linearLayout22.startAnimation(fadeInAnimation)
 
+        binding.menuProfileSettingTvDeleteAccount.setOnClickListener {
+            val intent = Intent(this, ModalDeleteAccount::class.java)
+            startActivity(intent)
+        }
 
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
