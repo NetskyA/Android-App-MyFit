@@ -8,6 +8,9 @@ const profile = multer({ dest: "uploads/menu" });
 
 const Menu = require("../models/Menus");
 const { generateDummyUsers } = require("../service/Functions");
+const Diets = require("../models/Diets");
+const Users = require("../models/Users");
+const { text } = require("express");
 
 module.exports = {
     setDummy: async(req, res)=>{
@@ -164,19 +167,89 @@ module.exports = {
 
     searchAllMenu: async(req,res)=>{
         const {
-            keyword,
+            q,
           } = req.query;
           
           let searchMenu = await Menu.findAll({
-            where: {
+            where: { 
               name: {
-                [Op.like]: '%' + keyword + '%' 
+                [Op.like]: '%' + q + '%' 
               },
               status: 1
             }
           });
-          
-          return res.status(200).send({searchMenu: searchUser})
+
+        var hasil = []
+
+        for(let i = 0; i < searchMenu.length; i++){
+            if(searchMenu[i].dataValues.image!=""){
+              const binaryData = fs.readFileSync(searchMenu[i].image)
+              searchMenu[i].dataValues.image = Buffer(binaryData).toString('base64')
+            } 
+            var nama="System"
+            if(searchMenu[i].dataValues.user_id!==0){
+                temp = await Users.findByPk(searchMenu[i].dataValues.user_id)
+                nama = temp.dataValues.name.toString()
+                console.log(nama)
+            }
+
+            hasil.push({
+                id: searchMenu[i].dataValues.id,
+                name: searchMenu[i].dataValues.name,
+                ingredients: searchMenu[i].dataValues.ingredients,
+                nutrition: searchMenu[i].dataValues.nutrition,
+                how_to_make: searchMenu[i].dataValues.how_to_make,
+                note: searchMenu[i].dataValues.note,
+                like: searchMenu[i].dataValues.like,
+                date: searchMenu[i].dataValues.date,
+                image: searchMenu[i].dataValues.image,
+                nama_user: nama
+            })
+        }
+          console.log(hasil.length)
+          return res.status(200).send(hasil)
+    },
+
+    getMenuDiet: async(req,res)=>{ 
+        const {user_id} = req.query
+        let search = await Diets.findAll({
+            where:{
+                user_id: user_id
+            }
+        })
+        return res.status(200).send(search)
+    },
+
+    getmenuById: async(req,res)=>{
+        const {id} = req.query
+        console.log(id)
+        var list = id.split(",")
+        var hasil = []
+
+        for(let i = 0; i < list.length; i++){
+            let search = await Menu.findOne({
+                where:{
+                    id: list[i]
+                }
+            })
+            if(search.dataValues.image!=""){
+              const binaryData = fs.readFileSync(search.image)
+              search.dataValues.image = Buffer(binaryData).toString('base64')
+            } 
+            hasil.push(search) 
+        }
+        return res.status(200).send(hasil)
+    },
+
+    saveMenuDiet: async(req,res)=>{
+        const data = req.body
+        for(let i = 0; i < data.length; i++){
+            const {id,menu} = data[i]
+            const dietData = await Diets.findByPk(id)
+            dietData.menu = menu
+            await dietData.save()
+        }
+        return res.status(200).send({text: "Success"})
     }
 
 }

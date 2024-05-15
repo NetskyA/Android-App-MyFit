@@ -6,7 +6,6 @@ import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import android.text.Spanned
-import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -14,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.HomeUser.HomeUserActivity
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.SignPhone.MenuSigninPhone
@@ -97,7 +95,7 @@ class MenuLoginAll : AppCompatActivity() {
                     }else if(hasil == "Error") {
                         Toast.makeText(
                             this@MenuLoginAll,
-                            "Error, No Internet Connection",
+                            "No Internet Connection, Please check your connection",
                             Toast.LENGTH_SHORT
                         ).show()
                     }else{

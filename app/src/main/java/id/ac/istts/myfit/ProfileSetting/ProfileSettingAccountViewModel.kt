@@ -6,6 +6,7 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import id.ac.istts.myfit.Data.ErrorMsg
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.MyFitApplication
 import kotlinx.coroutines.Dispatchers
@@ -62,10 +63,16 @@ class ProfileSettingAccountViewModel (application: Application) : AndroidViewMod
         }
 
         val tempUser = userPreference.getUser()
-
-        var cekEmail = MyFitApplication.retrofitUserService?.checkEmail(tempUser.id.toString(), email)
-        var cekUsername = MyFitApplication.retrofitUserService?.checkUsername(tempUser.id.toString(), username)
-        var cekPhone = MyFitApplication.retrofitUserService?.checkPhone(tempUser.id.toString(), phone)
+        var cekEmail:ErrorMsg
+        var cekUsername:ErrorMsg
+        var cekPhone:ErrorMsg
+        try{
+            cekEmail = MyFitApplication.retrofitUserService?.checkEmail(tempUser.id.toString(), email)!!
+            cekUsername = MyFitApplication.retrofitUserService?.checkUsername(tempUser.id.toString(), username)!!
+            cekPhone = MyFitApplication.retrofitUserService?.checkPhone(tempUser.id.toString(), phone)!!
+        }catch(e: Exception){
+            return "Error"
+        }
 
         if(cekEmail?.text.equals("Fail") || cekUsername?.text.equals("Fail") || cekPhone?.text.equals("Fail")){
             return "Same"

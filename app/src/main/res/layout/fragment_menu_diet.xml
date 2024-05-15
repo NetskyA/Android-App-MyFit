@@ -236,6 +236,7 @@
 
 
                 <Button
+                    android:id="@+id/menuDiet_readyBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/backgroundnavigations3"
@@ -244,8 +245,8 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/_18sdp"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteY="26dp"
-                    tools:ignore="MissingConstraints" />
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="26dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

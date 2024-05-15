@@ -6,6 +6,8 @@ import androidx.room.Room
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import id.ac.istts.myfit.Data.AllMenuUserRepository
+import id.ac.istts.myfit.Data.ListMenuDietRepository
+import id.ac.istts.myfit.Data.MenuDietDataRepository
 import id.ac.istts.myfit.Data.RandomMenuRepository
 import id.ac.istts.myfit.Data.Source.Local.AppDatabase
 import id.ac.istts.myfit.Data.Source.Remote.MenuService
@@ -14,7 +16,6 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
-import kotlin.random.Random
 
 class MyFitApplication : Application() {
     override fun onCreate() {
@@ -25,6 +26,8 @@ class MyFitApplication : Application() {
     companion object {
         lateinit var allMenuUserRepository: AllMenuUserRepository
         lateinit var randomMenuRepository: RandomMenuRepository
+        lateinit var listMenuDietRepository: ListMenuDietRepository
+        lateinit var menuDietDataRepository: MenuDietDataRepository
 
         var retrofitUserService:UserService? = null
         var retrofitMenuService:MenuService? = null
@@ -41,7 +44,7 @@ class MyFitApplication : Application() {
             ).build()
             val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
             val retrofit = Retrofit.Builder().client(okHttpClient)
-                .baseUrl("http://192.168.0.118:3000")
+                .baseUrl("http://192.168.1.5:3000")
                 .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
                 .build()
 
@@ -57,6 +60,8 @@ class MyFitApplication : Application() {
             // load repo hybrid
             allMenuUserRepository = AllMenuUserRepository(roomDB, retrofit.create(MenuService::class.java))
             randomMenuRepository = RandomMenuRepository(roomDB, retrofit.create(MenuService::class.java))
+            listMenuDietRepository = ListMenuDietRepository(roomDB, retrofit.create(MenuService::class.java))
+            menuDietDataRepository = MenuDietDataRepository(roomDB, retrofit.create(MenuService::class.java))
         }
     }
 }

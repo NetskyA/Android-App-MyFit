@@ -2,8 +2,6 @@ package id.ac.istts.myfit.ProfileSetting
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
@@ -157,7 +156,7 @@ class ProfileSettingAccount : Fragment() {
                         mainScope.launch{
                             Toast.makeText(
                                 requireContext(),
-                                "Error, No Internet Connection",
+                                "No Internet Connection, Please check your connection",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }

@@ -13,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.SignAll.MenuSigninAll
 import id.ac.istts.myfit.SignEmail.MenuSigninEmail
-import id.ac.istts.myfit.SignEmail.MenuSigninEmail2
 import id.ac.istts.myfit.databinding.ActivityMenuSigninPhoneBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -57,7 +56,7 @@ class MenuSigninPhone : AppCompatActivity() {
                     }else if(hasil=="Error"){
                         Toast.makeText(
                             this@MenuSigninPhone,
-                            "Error, No Internet Connection",
+                            "No Internet Connection, Please check your connection",
                             Toast.LENGTH_SHORT).show()
                     }else{
                         startActivity(Intent(this@MenuSigninPhone, MenuSigninPhone2::class.java))

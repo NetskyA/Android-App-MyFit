@@ -95,7 +95,7 @@ class ProfileSettingBody : Fragment() {
                         }else if(msg=="Blood"){
                             Toast.makeText(requireContext(), "Invalid blood type", Toast.LENGTH_SHORT).show()
                         }else if(msg=="Error"){
-                            Toast.makeText(requireContext(), "Error, No Internet Connection", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(requireContext(), "Edited success", Toast.LENGTH_SHORT).show()
                         }

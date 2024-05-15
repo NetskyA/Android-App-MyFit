@@ -3,18 +3,14 @@ package id.ac.istts.myfit.SignEmail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
-import id.ac.istts.myfit.SignAll.MenuSigninAll
 import id.ac.istts.myfit.databinding.ActivityMenuSigninEmailBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -77,7 +73,7 @@ class MenuSigninEmail : AppCompatActivity() {
                     }else if(hasil == "Error"){
                         Toast.makeText(
                             this@MenuSigninEmail,
-                            "Error, No Internet Connection",
+                            "No Internet Connection, Please check your connection",
                             Toast.LENGTH_SHORT
                         ).show()
                     }else{

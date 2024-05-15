@@ -68,7 +68,7 @@ class ProfileSettingPassword : Fragment() {
                             Toast.LENGTH_SHORT
                         ).show()
                     } else if (hasil == "Error") {
-                        Toast.makeText(context, "Error, No Internet Connection", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                     } else if (hasil == "Password not match") {
                         Toast.makeText(context, "Password not match", Toast.LENGTH_SHORT).show()
                     }else{
@@ -87,7 +87,7 @@ class ProfileSettingPassword : Fragment() {
                 val hasil = vm.sendOtp(binding.editprofileemailsendotp.text.toString())
                 requireActivity().runOnUiThread {
                     if(hasil=="Error"){
-                        Toast.makeText(context, "Error, No Internet Connection", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                     }else if(hasil=="Invalid Email") {
                         Toast.makeText(context, "Invalid Email", Toast.LENGTH_SHORT).show()
                     }else{
@@ -99,7 +99,7 @@ class ProfileSettingPassword : Fragment() {
                                 val hasil1 = vm.cekOtp(binding.editprofileemailsendotp.text.toString())
                                 requireActivity().runOnUiThread {
                                     if(hasil1=="Error"){
-                                        Toast.makeText(context, "Error, No Internet Connection", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(context, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                                     }else if(hasil1!="OTP is valid") {
                                         Toast.makeText(context,  hasil1, Toast.LENGTH_SHORT).show()
                                     }else{

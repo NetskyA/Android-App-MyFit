@@ -85,12 +85,14 @@
                         android:paddingStart="@dimen/_5sdp" />
 
                     <TextView
+                        android:id="@+id/menuDaily_tvCreatorName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_5sdp"
                         android:text="by Aldiaafn"
-                        android:textSize="@dimen/_18ssp"
+                        android:textAlignment="textEnd"
                         android:textColor="@color/blue_main"
-                        android:paddingStart="@dimen/_5sdp" />
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
@@ -136,16 +138,17 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/menuDiet_buttonAdd"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_30sdp"
+                    android:layout_margin="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_3sdp"
                     android:background="@drawable/borders2"
                     android:text="Add"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:textColor="@color/blue_main"
                     android:textAllCaps="false"
-                    android:textStyle="bold"
+                    android:textColor="@color/blue_main"
                     android:textSize="@dimen/_17ssp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

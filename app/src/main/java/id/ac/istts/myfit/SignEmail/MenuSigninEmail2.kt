@@ -10,15 +10,14 @@ import android.widget.RadioButton
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import id.ac.istts.myfit.Util.Month
 import id.ac.istts.myfit.R
+import id.ac.istts.myfit.Util.Month
 import id.ac.istts.myfit.databinding.ActivityMenuSigninEmail2Binding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -145,7 +144,7 @@ class MenuSigninEmail2 : AppCompatActivity() {
                 }else if(hasil=="Error"){
                     Toast.makeText(
                         this@MenuSigninEmail2,
-                        "Error, No Internet Connection",
+                        "No Internet Connection, Please check your connection",
                         Toast.LENGTH_SHORT
                     ).show()
                 }else{

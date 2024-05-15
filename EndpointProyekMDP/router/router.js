@@ -14,7 +14,7 @@ const {
   uploadImageProfil,
   getImageProfil,
   search,
-  checkPass
+  checkPass,
 } = require("../controllers/UserController"); //function user
 
 const { 
@@ -22,7 +22,10 @@ const {
   upload,
   getAllMenuUser,
   getRandomMenu,
-
+  getMenuDiet,
+  searchAllMenu,
+  getmenuById,
+  saveMenuDiet
 } = require("../controllers/MenuController"); //function menu
 
 const { Router } = require("express");
@@ -71,5 +74,12 @@ router.get("/menus/getAllMenuUser", getAllMenuUser); //Buat get all menu yang di
 
 router.get("/menus/getRandomMenu", getRandomMenu); //Buat get 20 random menu
 
+router.get("/menus/getMenuDiet", getMenuDiet); //Buat get menu diet
+
+router.get("/menus/searchAllMenu", searchAllMenu); //Buat search all menu
+
+router.get("/menus/getmenuById", getmenuById); //Buat get menu by id
+
+router.post("/menus/saveMenuDiet", saveMenuDiet); //Buat save menu diet
 
 module.exports = router;

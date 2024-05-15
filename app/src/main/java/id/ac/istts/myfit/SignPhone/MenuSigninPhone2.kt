@@ -10,8 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.HomeUser.HomeUserActivity
 import id.ac.istts.myfit.R
-import id.ac.istts.myfit.SignAll.MenuSigninAll
-import id.ac.istts.myfit.SignEmail.MenuSigninEmail
 import id.ac.istts.myfit.databinding.ActivityMenuSigninPhone2Binding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -37,7 +35,7 @@ class MenuSigninPhone2 : AppCompatActivity() {
             val hasil = vm.sendOtp()
             if(hasil=="Error"){
                 runOnUiThread {
-                    Toast.makeText(this@MenuSigninPhone2, "Error, No Internet Connection", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MenuSigninPhone2, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -49,7 +47,7 @@ class MenuSigninPhone2 : AppCompatActivity() {
                         val hasil = vm.sendOtp()
                          runOnUiThread {
                              if(hasil=="Error"){
-                                 Toast.makeText(this@MenuSigninPhone2, "Error, No Internet Connection", Toast.LENGTH_SHORT).show()
+                                 Toast.makeText(this@MenuSigninPhone2, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                              }else {
                                  Toast.makeText(this@MenuSigninPhone2, "Email Has Been Sent", Toast.LENGTH_SHORT)
                                      .show()
@@ -68,7 +66,7 @@ class MenuSigninPhone2 : AppCompatActivity() {
                 val hasil = vm.cekOtp(code)
                 runOnUiThread {
                     if(hasil=="Error"){
-                        Toast.makeText(this@MenuSigninPhone2, "Error, No Internet Connection", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MenuSigninPhone2, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                     }else if(hasil!="OTP is valid"){
                         Toast.makeText(this@MenuSigninPhone2, hasil, Toast.LENGTH_SHORT).show()
                     }else{
