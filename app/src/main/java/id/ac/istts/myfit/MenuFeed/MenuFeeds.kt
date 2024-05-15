@@ -33,7 +33,7 @@ class MenuFeeds : Fragment() {
     private lateinit var recyclerViewContent: RecyclerView
     private lateinit var menuFeedsAdapter: MenuFeedsAdapter
     private lateinit var layoutManagerContent: RecyclerView.LayoutManager
-    var image_code = 1001
+
     val ioScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     val mainScope = CoroutineScope(Dispatchers.Main)
     lateinit var vm: MenuFeedsViewModel
@@ -62,7 +62,11 @@ class MenuFeeds : Fragment() {
         recyclerViewContent = binding.rvFeedcontent
         layoutManagerContent = GridLayoutManager(context, 2)
         menuFeedsAdapter = MenuFeedsAdapter(temp, onDetailClickListener = {
-            startActivity(Intent(this.context, MenuFeedOpened::class.java))
+//            Log.d("TESTMENU")
+            val intent = Intent(this.context, MenuFeedOpened::class.java).apply {
+                putExtra("Menu_ID", it.id.toString())
+            }
+            startActivity(intent)
         })
         recyclerViewContent.adapter = menuFeedsAdapter
         recyclerViewContent.layoutManager = layoutManagerContent

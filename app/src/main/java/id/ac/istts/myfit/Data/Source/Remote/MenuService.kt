@@ -32,4 +32,7 @@ interface MenuService {
 
     @POST("api/menus/saveMenuDiet")
     suspend fun saveMenuDiet(@Body menuDietData: MutableList<ListMenuDiet>): ErrorMsg
+
+    @GET("api/menus/getOneMenuById")
+    suspend fun getOneMenuById(@Query("id") id:String): Menu
 }

@@ -15,6 +15,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.istts.myfit.Data.Menu
 import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.Data.tempUser
@@ -33,7 +34,7 @@ class MenuFeedsSearch : Fragment() {
 
     private lateinit var recyclerViewSearch: RecyclerView
     private lateinit var menuFeedSearchUserAdapter: MenuFeedSearchUserAdapter
-    private lateinit var menuFeedSearchMenuAdapter: MenuFeedsAdapter
+    private lateinit var menuFeedSearchMenuAdapter: MenuProfileAdapter
     private lateinit var layoutManagerSearch: RecyclerView.LayoutManager
 
     private lateinit var userPreference: UserPreference
@@ -67,7 +68,7 @@ class MenuFeedsSearch : Fragment() {
             val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
             findNavController().navigate(action)
         })
-
+        binding.feedSearchBtnUser.isEnabled = false
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         rvfeedcontent.startAnimation(fadeInAnimation)
 
@@ -83,25 +84,34 @@ class MenuFeedsSearch : Fragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
 //                Toast.makeText(requireContext(), newText, Toast.LENGTH_SHORT).show()
-                if(binding.svSearch.query.toString()!=""){
-                    ioScope.launch {
-                        tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
-                        mainScope.launch {
-                            menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
-                                val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
-                                findNavController().navigate(action)
-                            })
-                            recyclerViewSearch.adapter = menuFeedSearchUserAdapter
+                if(binding.feedSearchBtnUser.isEnabled==false){
+                    if(binding.svSearch.query.toString()!=""){
+                        ioScope.launch {
+                            tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
+                            mainScope.launch {
+                                menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
+                                    val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+                                    findNavController().navigate(action)
+                                })
+                                recyclerViewSearch.adapter = menuFeedSearchUserAdapter
+                            }
                         }
+                    }else{
+                        tempSearchUser = arrayListOf()
+                        menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
+                            val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+                            findNavController().navigate(action)
+                        })
+                        recyclerViewSearch.adapter = menuFeedSearchUserAdapter
                     }
                 }else{
-                    tempSearchUser = arrayListOf()
-                    menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
-                        val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
-                        findNavController().navigate(action)
+                    var tempMenu:ArrayList<Menu> = arrayListOf()
+                    menuFeedSearchMenuAdapter = MenuProfileAdapter(tempMenu, onDetailClickListener = {
+//                val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+//                findNavController().navigate(action)
                     })
-                    recyclerViewSearch.adapter = menuFeedSearchUserAdapter
                 }
+
                 return true
             }
         })
@@ -109,15 +119,29 @@ class MenuFeedsSearch : Fragment() {
         binding.feedSearchBtnUser.setOnClickListener {
             binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.black))
             binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.icon_color))
-
-            // TODO: Change to user search
+            binding.feedSearchBtnUser.isEnabled = false
+            binding.feedSearchBtnMenu.isEnabled = true
+            binding.svSearch.setQuery("", true)
+            tempSearchUser = arrayListOf()
+            menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
+                val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+                findNavController().navigate(action)
+            })
+            recyclerViewSearch.adapter = menuFeedSearchUserAdapter
         }
 
         binding.feedSearchBtnMenu.setOnClickListener {
             binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.icon_color))
             binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.black))
-
-            // TODO: Change to menu search
+            binding.feedSearchBtnUser.isEnabled = true
+            binding.feedSearchBtnMenu.isEnabled = false
+            binding.svSearch.setQuery("", true)
+            var tempMenu:ArrayList<Menu> = arrayListOf()
+            menuFeedSearchMenuAdapter = MenuProfileAdapter(tempMenu, onDetailClickListener = {
+//                val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+//                findNavController().navigate(action)
+            })
+            recyclerViewSearch.adapter = menuFeedSearchMenuAdapter
         }
 
     }

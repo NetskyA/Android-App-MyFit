@@ -32,10 +32,10 @@ module.exports = {
             }
         )
         await Menu.update(
-            { user_id: 0 }, 
+            { user_id: 3 }, 
             { 
                 where: { 
-                    id: { [Op.between]: [51, 205] } 
+                    id: { [Op.between]: [51, tempMenu.length] } 
                 } 
             }
         )
@@ -142,6 +142,7 @@ module.exports = {
                       user_id: {
                         [Op.ne]: user_id
                       },
+                      status:1
                     }
                 })
                 if(getMenu){
@@ -250,6 +251,16 @@ module.exports = {
             await dietData.save()
         }
         return res.status(200).send({text: "Success"})
-    }
+    },
+
+    getOneMenuById: async(req, res)=>{
+        const {id} = req.query
+        let menu = await Menu.findByPk(id)
+        if(menu.image!=""){
+            const binaryData = fs.readFileSync(menu.image)
+            menu.image = Buffer(binaryData).toString('base64')
+          } 
+        return res.status(200).send(menu)
+    },
 
 }

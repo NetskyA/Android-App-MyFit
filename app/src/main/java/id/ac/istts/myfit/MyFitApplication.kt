@@ -10,6 +10,7 @@ import id.ac.istts.myfit.Data.ListMenuDietRepository
 import id.ac.istts.myfit.Data.MenuDietDataRepository
 import id.ac.istts.myfit.Data.RandomMenuRepository
 import id.ac.istts.myfit.Data.Source.Local.AppDatabase
+import id.ac.istts.myfit.Data.Source.Remote.LikeService
 import id.ac.istts.myfit.Data.Source.Remote.MenuService
 import id.ac.istts.myfit.Data.Source.Remote.UserService
 import okhttp3.OkHttpClient
@@ -31,6 +32,7 @@ class MyFitApplication : Application() {
 
         var retrofitUserService:UserService? = null
         var retrofitMenuService:MenuService? = null
+        var retrofitLikeService:LikeService? = null
 
         val okHttpClient = OkHttpClient.Builder()
             .connectTimeout(15, TimeUnit.SECONDS)
@@ -44,12 +46,13 @@ class MyFitApplication : Application() {
             ).build()
             val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
             val retrofit = Retrofit.Builder().client(okHttpClient)
-                .baseUrl("http://192.168.1.5:3000")
+                .baseUrl("http://192.168.0.7:3000")
                 .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
                 .build()
 
             retrofitUserService = retrofit.create(UserService::class.java)
             retrofitMenuService = retrofit.create(MenuService::class.java)
+            retrofitLikeService = retrofit.create(LikeService::class.java)
 
             // load repo dari room saja
 //            postRepository = DefaultPostRepository(roomDB)

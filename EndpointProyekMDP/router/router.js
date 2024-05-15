@@ -15,6 +15,7 @@ const {
   getImageProfil,
   search,
   checkPass,
+  getUsername,
 } = require("../controllers/UserController"); //function user
 
 const { 
@@ -25,8 +26,14 @@ const {
   getMenuDiet,
   searchAllMenu,
   getmenuById,
-  saveMenuDiet
+  saveMenuDiet,
+  getOneMenuById,
 } = require("../controllers/MenuController"); //function menu
+
+const { 
+  getLikeMenu,
+  likeMenu,
+} = require("../controllers/LikeController"); //function like
 
 const { Router } = require("express");
 
@@ -66,6 +73,8 @@ router.get("/users/search", search); // Buat search user
 
 router.post("/users/checkPass", checkPass); // Buat check dan update password
 
+router.get("/users/getUsername", getUsername); // Buat get username
+
 // Menu
 // ==================================================================================
 router.post("/menus/upload", upload); // Buat upload custom menu
@@ -81,5 +90,13 @@ router.get("/menus/searchAllMenu", searchAllMenu); //Buat search all menu
 router.get("/menus/getmenuById", getmenuById); //Buat get menu by id
 
 router.post("/menus/saveMenuDiet", saveMenuDiet); //Buat save menu diet
+
+router.get("/menus/getOneMenuById", getOneMenuById); //Buat Get menu by id
+
+// Like
+// ==================================================================================
+router.get("/likes/getLikeMenu", getLikeMenu); //Buat get like
+
+router.post("/likes/likeMenu", likeMenu); //Buat like dan unlike menu
 
 module.exports = router;

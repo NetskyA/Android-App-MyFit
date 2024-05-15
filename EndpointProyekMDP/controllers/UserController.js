@@ -479,4 +479,10 @@ module.exports = {
 
     return res.status(200).send({searchUser: searchUser})
   },
+
+  getUsername: async (req, res)=>{
+    const {id} = req.query
+    const user = await User.findByPk(id)
+    return res.status(200).send(user.username)
+  }
 };

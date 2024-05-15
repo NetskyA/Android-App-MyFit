@@ -55,4 +55,7 @@ interface UserService {
 
     @GET("api/users/search")
     suspend fun search(@Query("id") id:String, @Query("keyword") keyword:String): SearchResult
+
+    @GET("api/users/getUsername")
+    suspend fun getUsername(@Query("id") id:String):String
 }

@@ -18,10 +18,14 @@ class MenuFeedsSearchViewModel (application: Application) : AndroidViewModel(app
     val ioScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     val mainScope = CoroutineScope(Dispatchers.Main)
     suspend fun search(id:String, keyword: String): List<tempUser> {
-        return withContext(Dispatchers.IO) {
-            val searchResult: SearchResult = MyFitApplication.retrofitUserService!!.search(id, keyword)
-            val users: List<tempUser> = searchResult.searchUser
-            users
+        try {
+            return withContext(Dispatchers.IO) {
+                val searchResult: SearchResult = MyFitApplication.retrofitUserService!!.search(id, keyword)
+                val users: List<tempUser> = searchResult.searchUser
+                users
+            }
+        }catch (e:Exception){
+            return arrayListOf()
         }
     }
 

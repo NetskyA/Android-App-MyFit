@@ -14,9 +14,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main"
+            style="@style/Backgrounds"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/Backgrounds">
+            android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/Left"
@@ -64,28 +64,29 @@
                         android:id="@+id/ibAccount"
                         android:layout_width="@dimen/_30sdp"
                         android:layout_height="@dimen/_30sdp"
-                        android:scaleType="centerInside"
                         android:layout_gravity="center_vertical"
                         android:background="#00FFFFFF"
+                        android:scaleType="centerInside"
                         android:src="@drawable/back2" />
 
                     <TextView
                         android:id="@+id/tvAccount"
                         android:layout_width="@dimen/_195sdp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="Explore"
                         android:textAlignment="center"
                         android:textColor="@color/blue_main"
-                        android:text="Explore"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/_20sdp" />
+                        android:textSize="@dimen/_20sdp"
+                        android:textStyle="bold" />
 
                     <ImageView
+                        android:id="@+id/profileMFO"
                         android:layout_width="@dimen/_30sdp"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_gravity="end"
-                        android:src="@drawable/profileuser"
-                        android:layout_marginStart="@dimen/_5sdp" />
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:src="@drawable/profileuser" />
 
                 </LinearLayout>
 
@@ -93,8 +94,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:background="@drawable/backgroundnavigations2"
                     android:orientation="vertical">
 
@@ -106,32 +107,39 @@
                         android:background="@drawable/backgroundnavigations3"
                         android:orientation="horizontal">
 
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/background" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="@dimen/_280sdp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvTitleMFO"
                             android:layout_width="@dimen/_245sdp"
                             android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_5sdp"
                             android:text="Juice jembod"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/_18ssp"
                             android:textColor="@color/blue_main"
-                            android:paddingStart="@dimen/_5sdp" />
+                            android:textSize="@dimen/_18ssp"
+                            android:textStyle="bold" />
 
                         <ImageView
                             android:id="@+id/imagefeed2"
                             android:layout_width="@dimen/_20sdp"
                             android:layout_height="@dimen/_20sdp"
                             android:layout_gravity="center"
-                            android:src="@drawable/favoritebefore"
-                            android:scaleType="centerCrop" />
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/favoritebefore" />
 
                     </LinearLayout>
 
@@ -142,21 +150,22 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/likefeed2"
+                            android:id="@+id/tvLikeFMO"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
                             android:layout_gravity="end"
                             android:gravity="end"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingEnd="@dimen/_7sdp"
+                            android:text="0"
                             android:textSize="@dimen/_13ssp" />
 
                         <TextView
+                            android:id="@+id/tvUsernameMFO"
                             android:layout_width="@dimen/_203sdp"
                             android:layout_height="wrap_content"
-                            android:text="favorite Aldiaafn"
                             android:gravity="start"
+                            android:text="favorite Aldiaafn"
                             android:textSize="@dimen/_13ssp" />
 
                     </LinearLayout>
@@ -171,9 +180,9 @@
                         <ImageButton
                             android:layout_width="@dimen/_15sdp"
                             android:layout_height="@dimen/_15sdp"
-                            android:src="@drawable/hide"
                             android:background="@null"
-                            android:scaleType="centerCrop" />
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/hide" />
 
                     </LinearLayout>
 
@@ -186,18 +195,18 @@
                             android:layout_width="@dimen/_260sdp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:gravity="center_vertical"
                             android:layout_marginStart="@dimen/_5sdp"
                             android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center_vertical"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Nutrition"
-                                android:textStyle="bold"
                                 android:gravity="start"
-                                android:textSize="@dimen/_13ssp" />
+                                android:text="Nutrition"
+                                android:textSize="@dimen/_13ssp"
+                                android:textStyle="bold" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -206,17 +215,17 @@
                                 <ImageView
                                     android:layout_width="@dimen/_6sdp"
                                     android:layout_height="@dimen/_6sdp"
-                                    android:src="@drawable/circle"
                                     android:layout_marginTop="@dimen/_7sdp"
-                                    android:scaleType="centerCrop" />
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/circle" />
 
                                 <TextView
                                     android:id="@+id/MenuFeed_tvNutrition"
                                     android:layout_width="@dimen/_240sdp"
                                     android:layout_height="wrap_content"
-                                    android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
+                                    android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textSize="@dimen/_13ssp" />
 
                             </LinearLayout>
@@ -227,18 +236,18 @@
                             android:layout_width="@dimen/_260sdp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:gravity="center_vertical"
                             android:layout_marginStart="@dimen/_5sdp"
                             android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center_vertical"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Ingredients"
-                                android:textStyle="bold"
                                 android:gravity="start"
-                                android:textSize="@dimen/_13ssp" />
+                                android:text="Ingredients"
+                                android:textSize="@dimen/_13ssp"
+                                android:textStyle="bold" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -247,17 +256,17 @@
                                 <ImageView
                                     android:layout_width="@dimen/_6sdp"
                                     android:layout_height="@dimen/_6sdp"
-                                    android:src="@drawable/circle"
                                     android:layout_marginTop="@dimen/_7sdp"
-                                    android:scaleType="centerCrop" />
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/circle" />
 
                                 <TextView
                                     android:id="@+id/MenuFeed_tvIngredients"
                                     android:layout_width="@dimen/_240sdp"
                                     android:layout_height="wrap_content"
-                                    android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
+                                    android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textSize="@dimen/_13ssp" />
 
                             </LinearLayout>
@@ -268,18 +277,18 @@
                             android:layout_width="@dimen/_260sdp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:gravity="center_vertical"
                             android:layout_marginStart="@dimen/_5sdp"
                             android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center_vertical"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="How to Make"
-                                android:textStyle="bold"
                                 android:gravity="start"
-                                android:textSize="@dimen/_13ssp" />
+                                android:text="How to Make"
+                                android:textSize="@dimen/_13ssp"
+                                android:textStyle="bold" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -288,17 +297,17 @@
                                 <ImageView
                                     android:layout_width="@dimen/_6sdp"
                                     android:layout_height="@dimen/_6sdp"
-                                    android:src="@drawable/circle"
                                     android:layout_marginTop="@dimen/_7sdp"
-                                    android:scaleType="centerCrop" />
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/circle" />
 
                                 <TextView
                                     android:id="@+id/MenuFeed_tvHowToMake"
                                     android:layout_width="@dimen/_240sdp"
                                     android:layout_height="wrap_content"
-                                    android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
+                                    android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textSize="@dimen/_13ssp" />
 
                             </LinearLayout>
@@ -309,18 +318,18 @@
                             android:layout_width="@dimen/_260sdp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:gravity="center_vertical"
                             android:layout_marginStart="@dimen/_5sdp"
                             android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center_vertical"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Notes"
-                                android:textStyle="bold"
                                 android:gravity="start"
-                                android:textSize="@dimen/_13ssp" />
+                                android:text="Notes"
+                                android:textSize="@dimen/_13ssp"
+                                android:textStyle="bold" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -329,17 +338,17 @@
                                 <ImageView
                                     android:layout_width="@dimen/_6sdp"
                                     android:layout_height="@dimen/_6sdp"
-                                    android:src="@drawable/circle"
                                     android:layout_marginTop="@dimen/_7sdp"
-                                    android:scaleType="centerCrop" />
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/circle" />
 
                                 <TextView
                                     android:id="@+id/MenuFeed_tvNotes"
                                     android:layout_width="@dimen/_240sdp"
                                     android:layout_height="wrap_content"
-                                    android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
+                                    android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textSize="@dimen/_13ssp" />
 
                             </LinearLayout>
@@ -352,11 +361,11 @@
                         android:id="@+id/uploadcontentfeed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mei 2024"
                         android:layout_gravity="end"
-                        android:layout_marginEnd="@dimen/_15sdp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
                         android:layout_marginBottom="@dimen/_15sdp"
+                        android:text="Mei 2024"
                         android:textColor="@color/blue_main"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintEnd_toStartOf="@+id/Right"
