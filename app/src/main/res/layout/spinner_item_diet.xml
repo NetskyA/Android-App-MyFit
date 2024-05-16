@@ -5,5 +5,5 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="2dp"
     android:textAlignment="center"
-    android:textColor="@color/blue_main"
+    android:textColor="@color/green_main"
     android:textSize="@dimen/_15ssp" />

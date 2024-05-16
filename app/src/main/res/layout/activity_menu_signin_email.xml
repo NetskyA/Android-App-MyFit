@@ -92,7 +92,7 @@
                             android:layout_height="@dimen/_2sdp"
                             android:layout_gravity="start"
                             android:layout_weight="0"
-                            android:background="@color/blue_main"
+                            android:background="@color/green_main"
                             tools:ignore="NestedWeights" />
 
                         <View

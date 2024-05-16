@@ -128,7 +128,7 @@
                 android:id="@+id/nextCheckmenu"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_4sdp"
                 android:layout_marginRight="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_17sdp"

@@ -81,7 +81,7 @@
                         android:layout_weight="1"
                         android:paddingStart="@dimen/_5sdp"
                         android:text="Juice jembod"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/green_main"
                         android:textSize="@dimen/_18ssp"
                         android:textStyle="bold" />
 
@@ -93,7 +93,7 @@
                         android:paddingStart="@dimen/_5sdp"
                         android:text="by Aldiaafn"
                         android:textAlignment="textEnd"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/green_main"
                         android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
@@ -148,7 +148,7 @@
                     android:background="@drawable/borders2"
                     android:text="Add"
                     android:textAllCaps="false"
-                    android:textColor="@color/blue_main"
+                    android:textColor="@color/green_main"
                     android:textSize="@dimen/_17ssp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"

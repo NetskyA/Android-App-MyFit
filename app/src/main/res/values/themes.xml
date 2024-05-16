@@ -4,16 +4,16 @@
         <item name="backgroundColor">@color/grey</item>
     </style>
     <style name="Base.Theme.MyFit" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/blue_main</item>
+        <item name="colorPrimary">@color/green_main</item>
     </style>
     <style name="Theme.MyFit" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/blue_main</item>
+        <item name="colorPrimary">@color/green_main</item>
     </style>
     <style name ="TEXT">
         <item name="android:textColor">@color/dark_grey</item>
     </style>
     <style name="Theme">
-        <item name="colorSurface">@color/blue_main</item>
+        <item name="colorSurface">@color/green_main</item>
         <item name="colorOnSurfaceVariant">@color/dark_grey</item>
     </style>
     <style name="HINT">
@@ -24,8 +24,8 @@
         <item name="android:textColor">@color/dark_grey</item>
     </style>
     <style name="Navigationcolor">
-        <!--<item name="android:background">@drawable/backgroundnavigations3</item>-->
-        <item name="android:background">#F7E6E6E6</item>
+        <item name="android:background">#FDFDFD</item>
+        <!--<item name="android:background">#F7E6E6E6</item>-->
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
         <item name="itemIconSize">@dimen/_25sdp</item>

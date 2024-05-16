@@ -45,7 +45,7 @@ class MenuCustoms : Fragment() {
             binding.btnAddCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
             binding.btnResultCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
             binding.btnAddCustoms.setTextColor(resources.getColor(R.color.white))
-            binding.btnResultCustoms.setTextColor(resources.getColor(R.color.blue_main))
+            binding.btnResultCustoms.setTextColor(resources.getColor(R.color.green_main))
         }
 
         binding.btnResultCustoms.setOnClickListener {
@@ -54,10 +54,10 @@ class MenuCustoms : Fragment() {
             navHostFragment.findNavController().navigate(R.id.action_global_customsResult)
 
             // Change Active
-            binding.btnResultCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
+            binding.btnResultCustoms.setBackgroundResource(R.drawable.backgroundnavigations3)
             binding.btnAddCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
             binding.btnResultCustoms.setTextColor(resources.getColor(R.color.white))
-            binding.btnAddCustoms.setTextColor(resources.getColor(R.color.blue_main))
+            binding.btnAddCustoms.setTextColor(resources.getColor(R.color.green_main))
         }
     }
 

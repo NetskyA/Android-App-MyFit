@@ -42,22 +42,22 @@
 
             <TextView
                 android:id="@+id/customResult_tvMenuName"
-                android:layout_width="@dimen/_220sdp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:text="Juice jembod"
-                android:textColor="@color/blue_main"
+                android:textColor="@color/green_main"
                 android:textSize="@dimen/_18ssp"
                 android:textStyle="bold" />
 
-            <ImageView
+<!--            <ImageView
                 android:id="@+id/customResult_ivLikes"
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/favoritebefore" />
+                android:src="@drawable/favoritebefore" />-->
 
         </LinearLayout>
 

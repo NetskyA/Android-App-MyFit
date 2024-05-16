@@ -188,7 +188,7 @@ class ProfileSettingAccount : Fragment() {
 
         binding.editprofilename.setCompoundDrawablesWithIntrinsicBounds(R.drawable.namamenu, 0, 0, 0)
         binding.editprofileemail.setCompoundDrawablesWithIntrinsicBounds(R.drawable.emailimg, 0, 0, 0)
-        binding.editprofileusernmae.setCompoundDrawablesWithIntrinsicBounds(R.drawable.passimg, 0, 0, 0)
+        binding.editprofileusernmae.setCompoundDrawablesWithIntrinsicBounds(R.drawable.usernamecard, 0, 0, 0)
         binding.editprofilemobile.setCompoundDrawablesWithIntrinsicBounds(R.drawable.telephoneimg, 0, 0, 0)
 
     }

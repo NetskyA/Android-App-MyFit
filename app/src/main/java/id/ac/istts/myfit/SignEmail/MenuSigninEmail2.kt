@@ -159,7 +159,7 @@ class MenuSigninEmail2 : AppCompatActivity() {
         radioButtonsIds.forEach { radioButtonId ->
             val radioButton = findViewById<RadioButton>(radioButtonId)
             radioButton.setTextColor(ContextCompat.getColor(this, R.color.white))
-            radioButton.buttonTintList = ContextCompat.getColorStateList(this, R.color.blue_main)
+            radioButton.buttonTintList = ContextCompat.getColorStateList(this, R.color.green_main)
         }
     }
 }

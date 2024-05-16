@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="Get new codes?"
-            android:textColor="@color/blue_main"
+            android:textColor="@color/green_main"
             android:textSize="15sp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintStart_toStartOf="@+id/Left"
@@ -166,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Back to Sign in."
-                android:textColor="@color/blue_main"
+                android:textColor="@color/green_main"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>

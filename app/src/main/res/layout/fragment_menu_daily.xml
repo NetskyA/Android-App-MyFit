@@ -12,7 +12,7 @@
         style="@style/Backgrounds"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backgroundmenudiet">
+        android:background="@color/dark_grey">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -44,31 +44,31 @@
 
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:scaleType="centerCrop"
             android:id="@+id/imageView6"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
+            android:scaleType="centerCrop"
             android:src="@drawable/user"
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintEnd_toStartOf="@+id/tvTitleWe"
-            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintHorizontal_bias="0.535"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.15"
+            app:layout_constraintVertical_bias="0.198"
             app:shapeAppearance="@style/CircularFull" />
 
         <TextView
             android:id="@+id/tvTitleWe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
+            android:layout_marginStart="80dp"
             android:text="Hello,"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.16" />
+            app:layout_constraintVertical_bias="0.207" />
 
         <TextView
             android:id="@+id/tvTitleWe2"
@@ -81,7 +81,7 @@
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
             app:layout_constraintStart_toEndOf="@+id/tvTitleWe"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.16" />
+            app:layout_constraintVertical_bias="0.207" />
 
         <TextView
             android:id="@+id/tvTitleWe3"
@@ -144,10 +144,26 @@
                 android:id="@+id/buttonprevios"
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_30sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="Previous"
+                android:textAlignment="textStart"
+                android:textColor="@color/blue_second"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/buttonnext"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_30sdp"
                 android:text="Show next"
                 android:paddingEnd="@dimen/_10sdp"
                 android:textAlignment="textEnd"
-                android:textColor="@color/blue_main"
+                android:textColor="@color/green_main"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,19 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MyFit" parent="Theme.AppCompat.DayNight">
-         <item name="colorPrimary">@color/blue_main</item>
+         <item name="colorPrimary">@color/green_main</item>
     </style>
     <style name="Theme.MyFit" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/blue_main</item>
+        <item name="colorPrimary">@color/green_main</item>
     </style>
     <style name="Fab" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="backgroundColor">@color/white</item>
     </style>
     <style name ="TEXT">
-        <item name="android:textColor">@color/blue_main</item>
+        <item name="android:textColor">@color/green_main</item>
     </style>
     <style name="Theme">
-        <item name="colorSurface">@color/blue_main</item>
+        <item name="colorSurface">@color/green_main</item>
         <item name="colorOnSurfaceVariant">@color/dark_grey</item>
     </style>
     <style name="IMAGES">
@@ -24,8 +24,8 @@
         <item name="android:textColor">@color/white</item>
     </style>
     <style name="Navigationcolor" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <!--<item name="android:background">@drawable/backgroundnavigations2</item>-->
-        <item name="android:background">#F7E6E6E6</item>
+        <item name="android:background">#575757</item>
+        <!--<item name="android:background">#F7E6E6E6</item>-->
         <item name="android:theme">@style/Theme.MyFit</item>
         <item name="android:textColor">@style/TEXT</item>
         <item name="itemIconSize">@dimen/_25sdp</item>

@@ -123,7 +123,7 @@
                         android:layout_marginLeft="@dimen/_4sdp"
                         android:layout_marginRight="@dimen/_2sdp"
                         android:layout_marginBottom="@dimen/_3sdp"
-                        android:background="@drawable/backgroundnavigations4"
+                        android:background="@drawable/backgroundnavigations3"
                         android:textColor="@color/white"
                         android:layout_gravity="center"
                         android:gravity="center"
@@ -139,7 +139,7 @@
                         android:layout_marginLeft="@dimen/_2sdp"
                         android:layout_marginBottom="@dimen/_3sdp"
                         android:background="#0008C4D4"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/green_main"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:textSize="@dimen/_13sdp"/>

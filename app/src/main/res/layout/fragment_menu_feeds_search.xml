@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
+        android:background="@color/dark_grey"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
@@ -74,7 +75,7 @@
                     android:id="@+id/svSearch"
                     android:layout_width="@dimen/_280sdp"
                     android:layout_height="@dimen/_30sdp"
-                    android:background="@drawable/backgroundnavigations1"
+                    android:background="@drawable/backgroundnavigations9"
                     android:gravity="center"
                     android:iconifiedByDefault="false"
                     android:queryHint="Search"
@@ -91,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/_100sdp"
+            app:layout_constraintGuide_begin="@dimen/_90sdp"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/Left"
@@ -109,31 +110,36 @@
 
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/backgroundnavigations5"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/feedSearch_btnUser"
-                    android:layout_width="@dimen/_120sdp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:background="#00FFFFFF"
                     android:layout_weight="1"
-                    android:background="@drawable/backgroundnavigations2"
+                    android:textAlignment="textStart"
                     android:text="User"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textColorHint="@color/white"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
 
                 <Button
                     android:id="@+id/feedSearch_btnMenu"
-                    android:layout_width="@dimen/_120sdp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_20sdp"
                     android:layout_weight="1"
-                    android:background="@drawable/backgroundnavigations2"
                     android:text="Menu"
-                    android:textColor="@color/icon_color"
-                    android:textSize="16sp" />
+                    android:textAllCaps="false"
+                    android:textColorHint="@color/white"
+                    android:background="#00FFFFFF"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12ssp" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView

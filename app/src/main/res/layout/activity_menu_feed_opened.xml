@@ -76,11 +76,11 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="Explore"
                         android:textAlignment="center"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/green_main"
                         android:textSize="@dimen/_20sdp"
                         android:textStyle="bold" />
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profileMFO"
                         android:layout_width="@dimen/_30sdp"
                         android:layout_height="@dimen/_30sdp"
@@ -107,7 +107,7 @@
                         android:background="@drawable/backgroundnavigations3"
                         android:orientation="horizontal">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/imageView5"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -129,7 +129,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="@dimen/_5sdp"
                             android:text="Juice jembod"
-                            android:textColor="@color/blue_main"
+                            android:textColor="@color/green_main"
                             android:textSize="@dimen/_18ssp"
                             android:textStyle="bold" />
 
@@ -156,8 +156,19 @@
                             android:layout_gravity="end"
                             android:gravity="end"
                             android:paddingStart="@dimen/_10sdp"
-                            android:paddingEnd="@dimen/_7sdp"
+                            android:paddingEnd="@dimen/_2sdp"
                             android:text="0"
+                            android:textSize="@dimen/_13ssp" />
+
+
+                        <TextView
+                            android:id="@+id/tvby"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:text="Create by"
                             android:textSize="@dimen/_13ssp" />
 
                         <TextView
@@ -165,7 +176,8 @@
                             android:layout_width="@dimen/_203sdp"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:text="favorite Aldiaafn"
+                            android:textColor="@color/green_main"
+                            android:textStyle="bold"
                             android:textSize="@dimen/_13ssp" />
 
                     </LinearLayout>
@@ -366,7 +378,7 @@
                         android:layout_marginEnd="@dimen/_15sdp"
                         android:layout_marginBottom="@dimen/_15sdp"
                         android:text="Mei 2024"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/green_main"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintEnd_toStartOf="@+id/Right"
                         app:layout_constraintStart_toStartOf="@+id/Left"

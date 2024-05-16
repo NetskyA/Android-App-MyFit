@@ -58,7 +58,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Menu 1"
-                    android:textColor="@color/blue_main"
+                    android:textColor="@color/green_main"
                     android:textSize="@dimen/_20ssp"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,22 +82,16 @@
 
                     <TextView
                         android:id="@+id/openedDaily_tvTitle"
-                        android:layout_width="@dimen/_250sdp"
+                        android:layout_width="wrap_content"
                         android:layout_marginStart="@dimen/_3sdp"
                         android:layout_height="wrap_content"
                         android:text="Juice jembod"
                         android:textStyle="bold"
                         android:textSize="@dimen/_18ssp"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/green_main"
                         android:paddingStart="@dimen/_5sdp" />
 
-                    <ImageView
-                        android:id="@+id/openedDaily_ivLikes"
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/favoritebefore"
-                        android:scaleType="centerCrop" />
+
 
                 </LinearLayout>
 
@@ -321,7 +315,7 @@
                     android:layout_marginBottom="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="Mei 2024"
-                    android:textColor="@color/blue_main"
+                    android:textColor="@color/green_main"
                     android:textSize="@dimen/_10ssp" />
 
             </LinearLayout>

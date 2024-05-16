@@ -67,7 +67,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="Daily Menu"
                     android:textAlignment="center"
-                    android:textColor="@color/blue_main"
+                    android:textColor="@color/green_main"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold" />
 

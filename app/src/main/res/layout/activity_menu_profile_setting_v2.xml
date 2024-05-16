@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        style="@style/Backgrounds">
+        android:background="@color/dark_grey">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EDEDED">
+        android:background="@color/dark_grey">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Left"
@@ -62,7 +62,7 @@
                 android:layout_height="@dimen/_185sdp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="@drawable/backgroundcardprofile2"
+                android:background="@drawable/backgroundnavigations3"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
@@ -77,15 +77,15 @@
 
                     <Button
                         android:id="@+id/mp_btnBack"
-                        android:layout_width="@dimen/_40sdp"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_marginStart="10dp"
                         android:background="@drawable/back1" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/iv_userprofiles"
                         android:layout_width="@dimen/_200sdp"
                         android:layout_height="@dimen/_65sdp"
-                        android:layout_marginStart="10dp"
                         android:background="#00FFFFFF"
                         android:forceHasOverlappingRendering="false"
                         android:padding="@dimen/_2sdp"
@@ -96,7 +96,7 @@
                         android:id="@+id/imageView3"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:layout_marginStart="-106dp"
+                        android:layout_marginStart="-102dp"
                         android:layout_marginEnd="@dimen/_107sdp"
                         android:src="@drawable/pen" />
 
@@ -292,7 +292,7 @@
                     android:layout_gravity="center"
                     android:text="Delete your account"
                     android:textAlignment="center"
-                    android:textColor="@color/light_red"
+                    android:textColor="@color/green_main"
                     android:textSize="@dimen/_7sdp"
                     tools:ignore="HardcodedText" />
             </LinearLayout>
@@ -323,7 +323,7 @@
                     android:layout_gravity="center"
                     android:text="Logout"
                     android:textAlignment="center"
-                    android:textColor="@color/dark_grey"
+                    android:textColor="@color/light_red"
                     android:textSize="20sp" />
             </LinearLayout>
 

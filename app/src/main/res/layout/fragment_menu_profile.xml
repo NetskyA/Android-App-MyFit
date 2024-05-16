@@ -11,7 +11,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        style="@style/Backgrounds">
+        android:background="@color/dark_grey"
+        >
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -119,24 +120,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="start"
-                android:layout_marginStart="@dimen/_15sdp">
-
-                <TextView
-                    android:id="@+id/tv_favorite"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0 favorite"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_14ssp"
-                    android:visibility="visible" />
-
-            </LinearLayout>
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline
@@ -177,17 +160,15 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_created"
-                        android:layout_width="200dp"
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Created"
-                        android:textSize="@dimen/_22ssp"
-                        android:layout_gravity="start"
-                        android:textColor="@color/blue_main"
-                        android:textStyle="bold"
+                        android:text="Craft your healthiest menu, your way!"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/green_main"
                         android:visibility="visible"
-                        app:layout_constraintTop_toTopOf="@+id/lytengah1"/>
-
+                        app:layout_constraintTop_toTopOf="@+id/tv_created"/>
 
                     <TextView
                         android:id="@+id/tv_countcreated"
@@ -196,7 +177,7 @@
                         android:gravity="end|center_vertical"
                         android:paddingEnd="@dimen/_8sdp"
                         android:text="0 Post"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/green_main"
                         android:textSize="@dimen/_13ssp"
                         android:visibility="visible"
                         app:layout_constraintTop_toTopOf="@+id/lytengah2" />
@@ -204,35 +185,30 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv_title"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Craft your healthiest menu, your way!"
-                    android:textSize="15sp"
-                    android:textColor="@color/icon_color"
-                    android:visibility="visible"
-                    app:layout_constraintTop_toTopOf="@+id/tv_created"/>
+                    android:orientation="horizontal"
+                    android:layout_gravity="start">
+
+                    <TextView
+                        android:id="@+id/tv_favorite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 favorite"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/lytengah2"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_39sdp"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:background="@drawable/backgroundnavigation1"
                     android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Filter : "
-                            android:layout_gravity="center"
-                            android:textSize="@dimen/_14ssp"
-                            android:paddingStart="@dimen/_7sdp"
-                            android:textColor="@color/blue_main"
-                            android:visibility="visible"
-                            app:layout_constraintTop_toTopOf="@+id/lytengah2"/>
-
 
                         <Button
                             android:id="@+id/filterbykategori"
@@ -240,11 +216,10 @@
                             android:layout_height="@dimen/_30sdp"
                             android:text="Favorite"
                             android:layout_gravity="center"
-                            android:layout_marginStart="@dimen/_5sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:textSize="@dimen/_13ssp"
                             android:textColor="@color/white"
-                            android:background="@drawable/backgroundnavigation"
+                            android:background="@drawable/backgroundnavigations3"
                             android:textAllCaps="false"
                             />
 
@@ -257,7 +232,7 @@
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:textSize="@dimen/_13ssp"
                             android:textColor="@color/white"
-                            android:background="@drawable/backgroundnavigation"
+                            android:background="@drawable/backgroundnavigations3"
                             android:textAllCaps="false"
                             />
 

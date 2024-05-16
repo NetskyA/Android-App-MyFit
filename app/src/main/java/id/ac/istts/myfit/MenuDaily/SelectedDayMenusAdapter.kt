@@ -14,7 +14,7 @@ class SelectedDayMenusAdapter (
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val tvTitle: TextView = row.findViewById(R.id.openedDaily_tvTitle)
         val tvLikesValue: TextView = row.findViewById(R.id.openedDaily_tvLikesValue)
-        val ivLikes: ImageView = row.findViewById(R.id.openedDaily_ivLikes)
+        /*val ivLikes: ImageView = row.findViewById(R.id.openedDaily_ivLikes)*/
         /*val tvDescription: TextView = row.findViewById(R.id.openedDaily_tvDescription)*/
     }
 

@@ -77,7 +77,8 @@
                 android:text="Let health take you far"
                 android:textSize="@dimen/_14ssp"
                 android:layout_marginTop="@dimen/_70sdp"
-                android:textColor="@color/grey"
+                android:textStyle="bold|italic"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
@@ -113,7 +114,7 @@
                     android:id="@+id/linearLayout22"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_260sdp"
-                    android:background="@drawable/backgroundnavigations2"
+                    android:background="@drawable/backgroundnavigations8"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -151,7 +152,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAlignment="center"
-                                android:textColor="#8E8E8E"
+                                android:textColor="#FFFFFF"
                                 android:textStyle="bold"
                                 android:text="Already have an account? "
                                 tools:ignore="HardcodedText" />

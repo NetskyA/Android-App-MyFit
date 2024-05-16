@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:paddingBottom="@dimen/_80sdp"
             android:scaleType="centerCrop"
-            android:background="@drawable/backgroundmenudiet">
+            android:background="@color/dark_grey">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/Left"
@@ -239,7 +239,7 @@
                     android:id="@+id/menuDiet_readyBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/backgroundnavigations3"
+                    android:background="@drawable/borderblue"
                     android:text="Ready"
                     android:textAllCaps="false"
                     android:textColor="@color/white"

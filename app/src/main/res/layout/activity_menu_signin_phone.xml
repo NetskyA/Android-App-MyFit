@@ -156,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Back to Sign in."
-                android:textColor="@color/blue_main"
+                android:textColor="@color/green_main"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>

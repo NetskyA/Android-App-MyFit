@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:padding="25dp"
                 android:text="or"
-                android:textColor="@color/blue_main"
+                android:textColor="@color/green_main"
                 android:textSize="16sp"
                 tools:ignore="HardcodedText" />
 
@@ -170,7 +170,7 @@
         <EditText
             android:id="@+id/etusernameLogIn"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_marginTop="20dp"
             android:autofillHints="emailAddress"
             android:background="@drawable/borderbackground"
@@ -214,7 +214,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPasswordLogin"
                 android:layout_width="335dp"
-                android:layout_height="40dp"
+                android:layout_height="45dp"
                 android:background="@drawable/borderbackground"
                 android:hint="Password"
                 android:inputType="textPassword"
@@ -260,7 +260,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:textColor="@color/blue_main"
+                android:textColor="@color/green_main"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -314,7 +314,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Sign up here."
-                android:textColor="@color/blue_main"
+                android:textColor="@color/green_main"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>

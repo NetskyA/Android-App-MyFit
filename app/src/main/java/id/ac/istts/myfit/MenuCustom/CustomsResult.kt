@@ -83,10 +83,10 @@ class CustomsResult : Fragment() {
                 // Change Active
                 val navHostFragment = parentFragment as NavHostFragment
                 val menuCustoms = navHostFragment.parentFragment as MenuCustoms
-                menuCustoms.binding.btnAddCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
+                menuCustoms.binding.btnAddCustoms.setBackgroundResource(R.drawable.backgroundnavigations3)
                 menuCustoms.binding.btnResultCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
                 menuCustoms.binding.btnAddCustoms.setTextColor(resources.getColor(R.color.white))
-                menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.blue_main))
+                menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.green_main))
             }
         }
     }

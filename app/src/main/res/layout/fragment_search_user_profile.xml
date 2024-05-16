@@ -11,7 +11,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        style="@style/Backgrounds">
+        android:background="@color/dark_grey"
+        >
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -173,7 +174,7 @@
                         android:text="Created"
                         android:textSize="@dimen/_22ssp"
                         android:layout_gravity="start"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/green_main"
                         android:textStyle="bold"
                         android:visibility="visible"
                         app:layout_constraintTop_toTopOf="@+id/lytengah1"/>
@@ -185,7 +186,7 @@
                         android:gravity="end|center_vertical"
                         android:paddingEnd="@dimen/_8sdp"
                         android:text="0 Post"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/green_main"
                         android:textSize="@dimen/_13ssp"
                         android:visibility="visible"
                         app:layout_constraintTop_toTopOf="@+id/lytengah2" />
@@ -207,7 +208,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_39sdp"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:background="@drawable/backgroundnavigation1"
+                    android:background="@drawable/backgroundnavigations3"
                     android:orientation="horizontal">
 
                     <TextView
@@ -218,7 +219,7 @@
                         android:layout_gravity="center"
                         android:textSize="@dimen/_14ssp"
                         android:paddingStart="@dimen/_7sdp"
-                        android:textColor="@color/blue_main"
+                        android:textColor="@color/white"
                         android:visibility="visible"
                         app:layout_constraintTop_toTopOf="@+id/lytengah2"/>
 
@@ -232,7 +233,7 @@
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:textSize="@dimen/_13ssp"
                         android:textColor="@color/white"
-                        android:background="@drawable/backgroundnavigation"
+                        android:background="@drawable/backgroundnavigations9"
                         android:textAllCaps="false" />
 
                     <Button
@@ -244,7 +245,7 @@
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:textSize="@dimen/_13ssp"
                         android:textColor="@color/white"
-                        android:background="@drawable/backgroundnavigation"
+                        android:background="@drawable/backgroundnavigations9"
                         android:textAllCaps="false" />
 
                 </LinearLayout>
@@ -265,6 +266,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/Left"
                     app:layout_constraintTop_toTopOf="@+id/lytengah1"/>
+
 
             </LinearLayout>
 
