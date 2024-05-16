@@ -22,6 +22,7 @@ class EditMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        val menuId = intent.getStringExtra("menuId")
         binding = ActivityEditMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
