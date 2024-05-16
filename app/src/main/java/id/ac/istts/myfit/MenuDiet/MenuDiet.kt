@@ -118,12 +118,16 @@ class MenuDiet : Fragment() {
         }
         adapter = MenuDietAdapter(temp){ menuItem, status ->
             if(!status){
-                startActivity(Intent(context, MenuFeedOpened::class.java))
+                startActivity(Intent(context, MenuFeedOpened::class.java).apply {
+                    putExtra("Menu_ID", menuItem.id.toString())
+                })
             }else{
                 vm.deleteMenu(menuItem.id!!, binding.menuDietSpDay.selectedItem.toString())
                 adapter.notifyDataSetChanged()
             }}
-        adapter2 = MenuDietSearchAdapter(temp2,{ data -> startActivity(Intent(context, MenuFeedOpened::class.java)) },{ id -> vm.addMenu(id,binding.menuDietSpDay.selectedItem.toString()) })
+        adapter2 = MenuDietSearchAdapter(temp2,{ data -> startActivity(Intent(context, MenuFeedOpened::class.java).apply {
+            putExtra("Menu_ID", data.id.toString())
+        }) },{ id -> vm.addMenu(id,binding.menuDietSpDay.selectedItem.toString()) })
 
         setupRecyclerView(binding.recyclerViewmenuResultDiet, LinearLayoutManager.HORIZONTAL)
         setupRecyclerView(binding.recyclerViewmenuResultDiet2, LinearLayoutManager.VERTICAL)

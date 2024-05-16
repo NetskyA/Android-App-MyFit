@@ -484,5 +484,6 @@ module.exports = {
     const {id} = req.query
     const user = await User.findByPk(id)
     return res.status(200).send(user.username)
-  }
-};
+  } 
+};  
+  

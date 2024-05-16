@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import id.ac.istts.myfit.Data.Menu
 import id.ac.istts.myfit.Data.Preferences.UserPreference
+import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.ActivityMenuFeedOpenedBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -57,8 +58,8 @@ class MenuFeedOpened : AppCompatActivity() {
                     binding.imageView5.setImageBitmap(decodeBase64ToBitmap(tempMenu.image.toString()))
                 }
                 try {
-                    if(cekLike=="like") binding.imagefeed2.setImageBitmap(decodeBase64ToBitmap(tempMenu.image.toString()))
-                    else binding.imagefeed2.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+                    if(cekLike=="like") binding.imagefeed2.setImageResource(R.drawable.favoriteafter)
+                    else binding.imagefeed2.setImageResource(R.drawable.favoritebefore)
                 }catch (e:Exception){
                     Log.e("ERROR", e.toString())
                 }
@@ -71,8 +72,8 @@ class MenuFeedOpened : AppCompatActivity() {
                 var cek = vm.likeMenu(tempMenu.id.toString(), userPreference.getUser().id.toString())
 
                 try {
-                    if(cek=="like") binding.imagefeed2.setImageBitmap(decodeBase64ToBitmap(tempMenu.image.toString()))
-                    else if(cek=="unlike") binding.imagefeed2.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+                    if(cek=="like") binding.imagefeed2.setImageResource(R.drawable.favoriteafter)
+                    else if(cek=="unlike") binding.imagefeed2.setImageResource(R.drawable.favoritebefore)
                     else Toast.makeText(this@MenuFeedOpened, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                 }catch (e:Exception){
                     Log.e("ERROR2", e.toString())

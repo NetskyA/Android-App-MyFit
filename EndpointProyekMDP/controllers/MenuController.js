@@ -193,7 +193,7 @@ module.exports = {
                 nama = temp.dataValues.name.toString()
                 console.log(nama)
             }
-
+ 
             hasil.push({
                 id: searchMenu[i].dataValues.id,
                 name: searchMenu[i].dataValues.name,

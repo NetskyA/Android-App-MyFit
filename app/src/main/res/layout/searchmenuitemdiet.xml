@@ -78,16 +78,18 @@
                         android:id="@+id/menuDaily_tvMenuName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingStart="@dimen/_5sdp"
                         android:text="Juice jembod"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/_18ssp"
                         android:textColor="@color/blue_main"
-                        android:paddingStart="@dimen/_5sdp" />
+                        android:textSize="@dimen/_18ssp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/menuDaily_tvCreatorName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:paddingStart="@dimen/_5sdp"
                         android:text="by Aldiaafn"
                         android:textAlignment="textEnd"

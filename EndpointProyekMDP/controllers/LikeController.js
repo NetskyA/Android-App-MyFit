@@ -1,6 +1,7 @@
 const { Sequelize, Op } = require("sequelize");
 
 const Likes = require("../models/Likes");
+const Menus = require("../models/Menus");
 
 module.exports = {
     getLikeMenu: async(req, res)=>{
@@ -30,12 +31,16 @@ module.exports = {
                     user_id: user_id
                 }
             })
+            var menu = await Menus.findByPk(menu_id);
+            menu.decrement('like',{by:1})
             return res.status(200).send("unlike")
         }else{
             await Likes.create({
                 menu_id:menu_id,
                 user_id:user_id
             })
+            var menu = await Menus.findByPk(menu_id);
+            menu.increment('like',{by:1})
         }
         return res.status(200).send("like")
     },
