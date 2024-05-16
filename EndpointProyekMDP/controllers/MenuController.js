@@ -262,5 +262,29 @@ module.exports = {
           } 
         return res.status(200).send(menu)
     },
-
+    searchImageByQuery: async(req, res)=>{
+        const {
+            id, q,
+        } = req.query;
+        
+        let searchMenu = await Menu.findAll({
+        where: { 
+            name: {
+            [Op.like]: '%' + q + '%' 
+            },
+            user_id: {
+                [Op.ne]: id
+            },
+            status: 1
+        }
+        });
+        
+        for(let i = 0; i < searchMenu.length; i++){
+            if(searchMenu[i].dataValues.image!=""){
+              const binaryData = fs.readFileSync(searchMenu[i].image)
+              searchMenu[i].dataValues.image = Buffer(binaryData).toString('base64')
+            }         
+        }
+        return res.status(200).json(searchMenu)       
+    }
 }

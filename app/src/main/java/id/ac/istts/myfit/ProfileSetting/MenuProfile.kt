@@ -87,7 +87,9 @@ class MenuProfile : Fragment() {
                     // Update UI with the new list of menus
                     temp = menus
                     menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
-                        startActivity(Intent(this.context, EditMenu::class.java))
+                        startActivity(Intent(this.context, EditMenu::class.java).apply {
+                            putExtra("menu_id", it.id)
+                        })
                     })
                     recyclerViewContent.adapter = menuProfileAdapter
                     recyclerViewContent.layoutManager = layoutManager

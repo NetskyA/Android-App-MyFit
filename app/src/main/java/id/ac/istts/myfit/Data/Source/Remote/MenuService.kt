@@ -2,6 +2,7 @@ package id.ac.istts.myfit.Data.Source.Remote
 
 import id.ac.istts.myfit.Data.AllMenuUser
 import id.ac.istts.myfit.Data.ErrorMsg
+import id.ac.istts.myfit.Data.ImageData
 import id.ac.istts.myfit.Data.ListMenuDiet
 import id.ac.istts.myfit.Data.Menu
 import id.ac.istts.myfit.Data.MenuDietData
@@ -35,4 +36,7 @@ interface MenuService {
 
     @GET("api/menus/getOneMenuById")
     suspend fun getOneMenuById(@Query("id") id:String): Menu
+
+    @GET("api/menus/searchImageByQuery")
+    suspend fun searchImageByQuery(@Query("id") id:String, @Query("q") q:String): List<Menu>
 }

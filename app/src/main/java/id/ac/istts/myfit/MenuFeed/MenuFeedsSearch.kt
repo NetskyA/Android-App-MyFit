@@ -1,8 +1,10 @@
 package id.ac.istts.myfit.MenuFeed
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +17,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.istts.myfit.Data.ImageData
 import id.ac.istts.myfit.Data.Menu
 import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
 import id.ac.istts.myfit.Data.Preferences.UserPreference
@@ -87,7 +90,7 @@ class MenuFeedsSearch : Fragment() {
                 if(binding.feedSearchBtnUser.isEnabled==false){
                     if(binding.svSearch.query.toString()!=""){
                         ioScope.launch {
-                            tempSearchUser = vm.search(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
+                            tempSearchUser = vm.searchUser(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
                             mainScope.launch {
                                 menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
                                     val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
@@ -105,11 +108,32 @@ class MenuFeedsSearch : Fragment() {
                         recyclerViewSearch.adapter = menuFeedSearchUserAdapter
                     }
                 }else{
-                    var tempMenu:ArrayList<Menu> = arrayListOf()
-                    menuFeedSearchMenuAdapter = MenuProfileAdapter(tempMenu, onDetailClickListener = {
-//                val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
-//                findNavController().navigate(action)
-                    })
+                    var tempSearchMenu:ArrayList<Menu> = arrayListOf()
+
+                    if(binding.svSearch.query.toString()!=""){
+//                        Log.d("TESTTING", "Halo")
+                        ioScope.launch {
+                            tempSearchMenu = vm.searchMenu(userPreference.getUser().id.toString(), binding.svSearch.query.toString())
+                            mainScope.launch {
+                                Log.d("TESTT", tempSearchMenu.toString())
+                                menuFeedSearchMenuAdapter = MenuProfileAdapter(tempSearchMenu, onDetailClickListener = {
+                                    val intent = Intent(requireContext(), MenuFeedOpened::class.java).apply {
+                                        putExtra("Menu_ID", it.id.toString())
+                                    }
+                                    startActivity(intent)
+                                })
+
+                                recyclerViewSearch.adapter = menuFeedSearchMenuAdapter
+                            }
+                        }
+                    }else{
+                        tempSearchUser = arrayListOf()
+                        menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
+                            val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+                            findNavController().navigate(action)
+                        })
+                        recyclerViewSearch.adapter = menuFeedSearchUserAdapter
+                    }
                 }
 
                 return true

@@ -70,13 +70,16 @@ class MenuFeedOpened : AppCompatActivity() {
         binding.imagefeed2.setOnClickListener{
             ioScope.launch {
                 var cek = vm.likeMenu(tempMenu.id.toString(), userPreference.getUser().id.toString())
-
-                try {
-                    if(cek=="like") binding.imagefeed2.setImageResource(R.drawable.favoriteafter)
-                    else if(cek=="unlike") binding.imagefeed2.setImageResource(R.drawable.favoritebefore)
-                    else Toast.makeText(this@MenuFeedOpened, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
-                }catch (e:Exception){
-                    Log.e("ERROR2", e.toString())
+                tempMenu = vm.getOneMenuById(menuId.toString())
+                mainScope.launch {
+                    binding.tvLikeFMO.setText(tempMenu.like.toString()+" Favorite")
+                    try {
+                        if(cek=="like") binding.imagefeed2.setImageResource(R.drawable.favoriteafter)
+                        else if(cek=="unlike") binding.imagefeed2.setImageResource(R.drawable.favoritebefore)
+                        else Toast.makeText(this@MenuFeedOpened, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
+                    }catch (e:Exception){
+                        Log.e("ERROR2", e.toString())
+                    }
                 }
 
             }

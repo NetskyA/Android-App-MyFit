@@ -28,6 +28,7 @@ const {
   getmenuById,
   saveMenuDiet,
   getOneMenuById,
+  searchImageByQuery,
 } = require("../controllers/MenuController"); //function menu
 
 const { 
@@ -92,6 +93,8 @@ router.get("/menus/getmenuById", getmenuById); //Buat get menu by id
 router.post("/menus/saveMenuDiet", saveMenuDiet); //Buat save menu diet
 
 router.get("/menus/getOneMenuById", getOneMenuById); //Buat Get menu by id
+
+router.get("/menus/searchImageByQuery", searchImageByQuery); //Buat search menu
 
 // Like
 // ==================================================================================
