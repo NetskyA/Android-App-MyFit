@@ -40,6 +40,8 @@ class MenuDietViewModel (application: Application) : AndroidViewModel(applicatio
                 }
             }
             listMenu = listMenu.distinctBy { it.id }.toMutableList()
+            Log.e("MenuDiet", listMenu.toString())
+            Log.e("MenuDiet", listMenuDiet.toString())
             setMenu("Monday")
         } catch (e: Exception) {
             // Handle exceptions if needed
@@ -63,6 +65,10 @@ class MenuDietViewModel (application: Application) : AndroidViewModel(applicatio
         if(menu.size == 0 || listMenu.size == 0){
             return
         }
+        if(menu[0].menu == null){
+            _menu.postValue(mutableListOf<MenuDietData>())
+            return
+        }
         val tempData = menu[0].menu!!.split(",")
         var tempDataMenu = mutableListOf<MenuDietData>()
         for(data in tempData){
@@ -84,9 +90,13 @@ class MenuDietViewModel (application: Application) : AndroidViewModel(applicatio
 
     fun addMenu(menuBaru:MenuSearch,day: String){
         val menu = listMenuDiet.filter { it.day == day }
-        val tempData = menu[0].menu!!.split(",").toMutableList()
-        if(tempData.contains(menuBaru.id.toString())){
-            return
+        var tempData = mutableListOf<String>()
+        Log.e("Menu",menu[0].menu.toString())
+        if(menu[0].menu != null){
+            tempData = menu[0].menu!!.split(",").toMutableList()
+            if(tempData.contains(menuBaru.id.toString())){
+                return
+            }
         }
         listMenu.add(MenuDietData(null,menuBaru.id,menuBaru.user_id,menuBaru.name,menuBaru.ingredients,menuBaru.nutrition,menuBaru.how_to_make,menuBaru.note,menuBaru.like,menuBaru.date,menuBaru.status,menuBaru.image))
         tempData.add(menuBaru.id.toString())

@@ -245,8 +245,9 @@ module.exports = {
     saveMenuDiet: async(req,res)=>{
         const data = req.body
         for(let i = 0; i < data.length; i++){
-            const {id,menu} = data[i]
+            var {id,menu} = data[i]
             const dietData = await Diets.findByPk(id)
+            if(menu == undefined) menu = null
             dietData.menu = menu
             await dietData.save()
         }
