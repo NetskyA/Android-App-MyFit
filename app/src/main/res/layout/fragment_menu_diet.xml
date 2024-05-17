@@ -157,29 +157,13 @@
                 app:layout_constraintStart_toStartOf="@+id/Left"
                 app:layout_constraintTop_toBottomOf="@+id/layoutDropdown">
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/imageView4"-->
-<!--                    android:layout_width="@dimen/_65sdp"-->
-<!--                    android:layout_height="@dimen/_30sdp"-->
-<!--                    android:layout_marginTop="@dimen/_5sdp"-->
-<!--                    android:src="@drawable/monday"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintHorizontal_bias="0.034"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintVertical_bias="0.026" />-->
-
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewmenuResultDiet"
                     android:layout_width="@dimen/_187sdp"
-                    android:layout_height="@dimen/_65sdp"
+                    android:layout_height="@dimen/_60sdp"
                     android:layout_marginStart="12dp"
                     app:layout_constraintBottom_toTopOf="@+id/searchView"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView4"
-                    app:layout_constraintVertical_bias="0.705">
+                    app:layout_constraintStart_toStartOf="parent">Z
 
                 </androidx.recyclerview.widget.RecyclerView>
 
@@ -187,7 +171,6 @@
                     android:id="@+id/searchView"
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="@dimen/_30sdp"
-                    android:layout_marginTop="12dp"
                     android:background="@drawable/backgroundnavigations1"
                     android:iconifiedByDefault="false"
                     android:queryHint="Search menu"
@@ -201,12 +184,11 @@
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_60sdp"
                     android:layout_marginStart="4dp"
-                    android:layout_marginTop="15dp"
                     android:background="@drawable/backgroundnavigations1"
                     android:text="Delete"
                     android:textColor="@color/white"
                     app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDiet"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewmenuResultDiet2"

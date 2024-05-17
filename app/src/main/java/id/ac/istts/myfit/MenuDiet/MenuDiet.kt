@@ -2,6 +2,7 @@ package id.ac.istts.myfit.MenuDiet
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -128,7 +129,10 @@ class MenuDiet : Fragment() {
         adapter2 = MenuDietSearchAdapter(temp2,{ data -> startActivity(Intent(context, MenuFeedOpened::class.java).apply {
             putExtra("Menu_ID", data.id.toString())
         }) },{ id -> vm.addMenu(id,binding.menuDietSpDay.selectedItem.toString()) })
-
+        if(temp.isEmpty()){
+            binding.recyclerViewmenuResultDiet.visibility = View.GONE
+            binding.buttondelete.visibility = View.GONE
+        }
         setupRecyclerView(binding.recyclerViewmenuResultDiet, LinearLayoutManager.HORIZONTAL)
         setupRecyclerView(binding.recyclerViewmenuResultDiet2, LinearLayoutManager.VERTICAL)
         binding.buttondelete.setOnClickListener{
@@ -143,6 +147,14 @@ class MenuDiet : Fragment() {
         })
         vm.menu.observe(viewLifecycleOwner, Observer { menus ->
             // Update UI with the new list of menus
+            Log.e("MenuEmpty",menus.toString())
+            if(menus.isEmpty()){
+                binding.recyclerViewmenuResultDiet.visibility = View.GONE
+                binding.buttondelete.visibility = View.GONE
+            }else{
+                binding.recyclerViewmenuResultDiet.visibility = View.VISIBLE
+                binding.buttondelete.visibility = View.VISIBLE
+            }
             adapter.data = menus
             adapter.notifyDataSetChanged()
         })
