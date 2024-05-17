@@ -25,6 +25,9 @@ class MenuSigninEmail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu_signin_email)
+        userPreference = UserPreference(this)
+        val data = userPreference.getUser()
+
         /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -32,6 +35,10 @@ class MenuSigninEmail : AppCompatActivity() {
         }*/
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_menu_signin_email)
+        if(data.email != null && data.email != ""){
+            binding.userEmailSignIn.setText(data.email)
+            binding.userEmailSignIn.isEnabled = false
+        }
         binding.nextSignInInputPassword.setOnClickListener{
             var username = binding.usernameSignIn.text.toString()
             var email = binding.userEmailSignIn.text.toString()

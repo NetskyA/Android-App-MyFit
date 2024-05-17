@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.identity.SignInClient
@@ -22,11 +23,15 @@ import id.ac.istts.myfit.R
 import id.ac.istts.myfit.SignEmail.MenuSigninEmail
 import id.ac.istts.myfit.SignPhone.MenuSigninPhone
 import id.ac.istts.myfit.databinding.ActivityMenuSigninAllBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MenuSigninAll : AppCompatActivity() {
     lateinit var binding: ActivityMenuSigninAllBinding
     lateinit var vm: MenuSigninAllViewModel
     lateinit var oneTapClient: SignInClient
+    val ioScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     private lateinit var userPreference: UserPreference
     private lateinit var customMenuPreferences: CustomMenuPreferences
     lateinit var signInRequest: BeginSignInRequest
@@ -35,7 +40,7 @@ class MenuSigninAll : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu_signin_all)
-
+        vm = ViewModelProvider(this).get(MenuSigninAllViewModel::class.java)
         setupGoogleOneTap()
         binding = DataBindingUtil.setContentView(this, R.layout.activity_menu_signin_all)
         /*        val boldAndUnderlineText: Spanned = HtmlCompat.fromHtml("<u><b>Use phone number instead.</b></u>", HtmlCompat.FROM_HTML_MODE_LEGACY)
@@ -45,7 +50,7 @@ class MenuSigninAll : AppCompatActivity() {
         customMenuPreferences = CustomMenuPreferences(this)
         Log.e("PREFERENCEPROFIL", userPreference.getUser().toString())
         Log.e("PREFERENCEPROFIL", customMenuPreferences.getCustomMenu().toString())
-        if(userPreference.getUser().email != null && userPreference.getUser().email != ""){
+        if(userPreference.getUser().gender!=0){
             startActivity(Intent(this, HomeUserActivity::class.java))
             finish()
         }else{
@@ -95,18 +100,29 @@ class MenuSigninAll : AppCompatActivity() {
                     val credential = oneTapClient.getSignInCredentialFromIntent(data)
                     val idToken = credential.googleIdToken
                     val email = credential.id
-                    val phone = credential.displayName
-                    Toast.makeText(this, "Halo", Toast.LENGTH_SHORT).show()
+                    val phone = credential.phoneNumber
+                    val name = credential.displayName
                     val profilePicUri = credential.profilePictureUri
-                    Log.e("Hasil", phone.toString())
-                    if (idToken != null) {
-                        // Use the ID token to authenticate with your backend
-                    } else {
-                        // Handle sign-in error or retry logic
+                    ioScope.launch {
+                        val hasil = vm.checkEmail(email, name.orEmpty())
+                        runOnUiThread {
+                           if (hasil == "Ok") {
+                               startActivity(Intent(this@MenuSigninAll, HomeUserActivity::class.java))
+                               finish()
+                           }else if(hasil == "Error"){
+                                Toast.makeText(
+                                    this@MenuSigninAll,
+                                    "No Internet Connection, Please check your connection",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                           }else{
+                                startActivity(Intent(this@MenuSigninAll, MenuSigninEmail::class.java))
+                           }
+                        }
                     }
                 } catch (e: ApiException) {
                     // Handle API exception
-                    Toast.makeText(this, "gagal", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                     Log.e("SignIn", e.toString() )
                     Log.e("SignIn", "Sign in failed: ${e.statusCode}")
                 }
@@ -125,7 +141,7 @@ class MenuSigninAll : AppCompatActivity() {
             .setGoogleIdTokenRequestOptions(
                 BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
                     .setSupported(true)
-                    .setServerClientId("59220574093-s6hk0lcq2sp2lfqaj522lbtjieer8aag.apps.googleusercontent.com")
+                    .setServerClientId("59220574093-aik5prg91c6fvsnp18r3kl2t58kag0kl.apps.googleusercontent.com")
                     .setFilterByAuthorizedAccounts(false)
                     .build()
             )
@@ -146,12 +162,14 @@ class MenuSigninAll : AppCompatActivity() {
                     )
                 } catch (e: IntentSender.SendIntentException) {
                     // Handle error
+                    Toast.makeText(this, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                     Log.e("Error SignIn", e.toString())
                     Log.e("SignIn", "Couldn't start One Tap UI: ${e.localizedMessage}")
                 }
             }
             .addOnFailureListener {
                 // Handle error
+                Toast.makeText(this, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                 Log.e("Fail SignIn", it.toString())
                 Log.e("SignIn", "One Tap sign-in failed")
             }

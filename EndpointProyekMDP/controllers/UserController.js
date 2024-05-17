@@ -39,6 +39,41 @@ module.exports = {
     }
   },
 
+  loginGoogle: async (req, res) => {
+    const {email} = req.query;
+
+    const cekUser = await User.findOne({
+      where: {
+        email: email,
+      },
+    });
+
+    if (!cekUser) return res.status(200).send({ password: "0" });
+
+    let img = ""
+
+    if(cekUser.dataValues.image!=""){
+      const binaryData = fs.readFileSync(cekUser.dataValues.image)
+      img = Buffer(binaryData).toString('base64')
+    }
+
+    return res.status(200).send({
+      id: cekUser.dataValues.id,
+      name: cekUser.dataValues.name,
+      username: cekUser.dataValues.username,
+      email: cekUser.dataValues.email,
+      phone: cekUser.dataValues.phone,
+      dob: cekUser.dataValues.dob,
+      gender: cekUser.dataValues.gender,
+      height: cekUser.dataValues.height,
+      weight: cekUser.dataValues.weight,
+      age: cekUser.dataValues.age,
+      blood_type: cekUser.dataValues.blood_type,
+      allergy: cekUser.dataValues.allergy,
+      image: img,
+    });
+  },
+
   checkPass: async (req, res) => {
     let { id, password , newPassword } = req.query;
     let user = await User.findByPk(parseInt(id));

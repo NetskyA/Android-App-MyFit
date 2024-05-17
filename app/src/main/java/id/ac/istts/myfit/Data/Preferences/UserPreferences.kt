@@ -51,6 +51,13 @@ internal class UserPreference(context: Context) {
         editor.apply()
     }
 
+    fun setEmailandName(email: String, name: String) {
+        val editor = preferences.edit()
+        editor.putString(EMAIL, email)
+        editor.putString(NAME, name)
+        editor.apply()
+    }
+
     fun clearPref() {
         val editor = preferences.edit()
         editor.clear()

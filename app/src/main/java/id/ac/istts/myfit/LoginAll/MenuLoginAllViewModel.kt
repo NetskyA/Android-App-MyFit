@@ -39,4 +39,23 @@ class MenuLoginAllViewModel(application: Application) : AndroidViewModel(applica
             }
         }
     }
+
+    suspend fun checkEmail(
+        email: String,
+        name: String,
+    ): String {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = MyFitApplication.retrofitUserService?.loginGoogle(email)
+                userPreference.setEmailandName(email, name)
+                if(response!!.password.toString()=="0"){
+                    return@withContext "New User"
+                }
+                userPreference.login(response)
+                return@withContext "Ok"
+            }catch (e: Exception){
+                return@withContext "Error"
+            }
+        }
+    }
 }

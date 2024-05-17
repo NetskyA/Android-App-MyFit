@@ -16,6 +16,7 @@ const {
   search,
   checkPass,
   getUsername,
+  loginGoogle
 } = require("../controllers/UserController"); //function user
 
 const { 
@@ -47,6 +48,8 @@ router.get("/menus/setDummy", setDummy);
 
 // Enpoint Users
 router.post("/users/register", register); // Buat register user
+
+router.post("/users/loginGoogle", loginGoogle); // Buat login user
 
 router.post("/users/login", login); // Buat login user
 

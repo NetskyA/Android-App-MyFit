@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.Util.Month
 import id.ac.istts.myfit.databinding.ActivityMenuSigninEmail2Binding
@@ -28,6 +29,7 @@ class MenuSigninEmail2 : AppCompatActivity() {
     lateinit var binding: ActivityMenuSigninEmail2Binding
     val ioScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     lateinit var vm: MenuSigninEmail2ViewModel
+    private lateinit var userPreference: UserPreference
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +57,10 @@ class MenuSigninEmail2 : AppCompatActivity() {
             binding.ettitleage.setText(it.toString())
         }
         vm.age.observe(this, ageObserver)
+        userPreference = UserPreference(this)
+        if(userPreference.getUser().name != null && userPreference.getUser().name != ""){
+            binding.etNameUser.setText(userPreference.getUser().name)
+        }
 
         binding.etdaybirth.setOnFocusChangeListener { view, hasFocus ->
             if (!hasFocus) {
