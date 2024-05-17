@@ -42,7 +42,7 @@ class MenuCustoms : Fragment() {
             navHostFragment.findNavController().navigate(R.id.action_global_customsIngredients)
 
             // Change Active
-            binding.btnAddCustoms.setBackgroundResource(R.drawable.backgroundnavigations4)
+            binding.btnAddCustoms.setBackgroundResource(R.drawable.backgroundnavigations3)
             binding.btnResultCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
             binding.btnAddCustoms.setTextColor(resources.getColor(R.color.white))
             binding.btnResultCustoms.setTextColor(resources.getColor(R.color.green_main))

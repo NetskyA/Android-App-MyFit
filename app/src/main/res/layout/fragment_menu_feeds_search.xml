@@ -74,7 +74,7 @@
                 <SearchView
                     android:id="@+id/svSearch"
                     android:layout_width="@dimen/_280sdp"
-                    android:layout_height="@dimen/_30sdp"
+                    android:layout_height="@dimen/_33sdp"
                     android:background="@drawable/backgroundnavigations9"
                     android:gravity="center"
                     android:iconifiedByDefault="false"
@@ -108,12 +108,26 @@
             app:layout_constraintStart_toStartOf="@+id/Left"
             app:layout_constraintTop_toTopOf="@+id/Tengahtengah">
 
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/feedSearch_btnFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:text="Recommend"
+                    android:textAllCaps="false"
+                    android:textColorHint="@color/white"
+                    android:background="#00FFFFFF"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12ssp" />
 
                 <Button
                     android:id="@+id/feedSearch_btnUser"
@@ -140,6 +154,7 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12ssp" />
+
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView

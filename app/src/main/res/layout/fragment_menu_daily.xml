@@ -44,8 +44,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView6"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
             android:scaleType="centerCrop"
             android:src="@drawable/user"
             app:layout_constraintBottom_toTopOf="@+id/Tengahtengah"
@@ -133,8 +133,10 @@
                 android:layout_height="wrap_content"
                 android:text="Monday, 12 April 2021"
                 android:textColor="@color/white"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginStart="@dimen/_8sdp"
+                android:textStyle="bold"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:textSize="@dimen/_10ssp" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -145,9 +147,7 @@
                 android:layout_marginBottom="@dimen/_8sdp"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
-                android:background="@drawable/backgroundnavigations3"
                 android:padding="@dimen/_5sdp"
-                android:scrollbars="vertical"
                 android:visibility="visible"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 

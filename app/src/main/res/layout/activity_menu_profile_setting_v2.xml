@@ -257,7 +257,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:layout_height="@dimen/_495sdp"
+                    android:layout_height="@dimen/_450sdp"
                     app:defaultNavHost="true"
                     app:navGraph="@navigation/profile_navigation" />
 
@@ -278,7 +278,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_25sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toStartOf="@+id/Right"

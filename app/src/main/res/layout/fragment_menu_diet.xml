@@ -57,7 +57,7 @@
                 android:layout_marginTop="60dp"
                 android:gravity="center"
                 android:text="Hello, Aldi"
-                android:textColor="@color/white"
+                android:textColor="@color/green_main"
                 android:textSize="@dimen/_20sdp"
                 app:layout_constraintEnd_toEndOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.01"
@@ -151,7 +151,7 @@
                 android:id="@+id/linearLayoutmenudiet1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/backgroundnavigations6"
+                android:background="@drawable/backgroundnavigations9"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
@@ -172,9 +172,10 @@
                 <SearchView
                     android:id="@+id/searchView"
                     android:layout_width="@dimen/_250sdp"
-                    android:layout_height="@dimen/_30sdp"
+                    android:layout_height="@dimen/_33sdp"
                     android:layout_marginTop="19dp"
-                    android:background="@drawable/backgroundnavigations9"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/backgroundnavigations8"
                     android:iconifiedByDefault="false"
                     android:queryHint="Search menu"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -198,43 +199,29 @@
                     android:id="@+id/recyclerViewmenuResultDiet2"
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginBottom="@dimen/_11sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="12dp"
+                    app:layout_constraintBottom_toTopOf="@+id/menuDiet_readyBtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.49"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/searchView"
-                    app:layout_constraintVertical_bias="0.0" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/linearLayoutmenudiet8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toStartOf="@+id/Right"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/Left"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayoutmenudiet1">
-
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <Button
                     android:id="@+id/menuDiet_readyBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/borderblue"
+                    android:background="@drawable/backgroundnavigations2"
                     android:text="Ready"
                     android:textAllCaps="false"
-                    android:textColor="@color/white"
+                    android:textColor="@color/green_main"
                     android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="26dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    tools:layout_editor_absoluteX="0dp" />
 
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -1,6 +1,8 @@
 package id.ac.istts.myfit.MenuFeed
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,7 +12,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -59,6 +64,21 @@ class MenuFeeds : Fragment() {
         // Isi RV sementara
 //        vm.clearDataMenus()
         var temp:MutableList<RandomMenu> = mutableListOf()
+        val searchView = binding.svSearch
+
+        val searchTextId = searchView.context.resources.getIdentifier("android:id/search_src_text", null, null)
+        val searchText = searchView.findViewById<TextView>(searchTextId)
+        searchText.setTextColor(ContextCompat.getColor(requireContext(), R.color.white)) // Warna hijau
+        searchText.setHintTextColor(ContextCompat.getColor(requireContext(), R.color.white)) // Warna abu-abu
+
+        val searchIconId = searchView.context.resources.getIdentifier("android:id/search_mag_icon", null, null)
+        val searchIcon = searchView.findViewById<ImageView>(searchIconId)
+        searchIcon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.white), PorterDuff.Mode.SRC_IN)
+
+        val closeIconId = searchView.context.resources.getIdentifier("android:id/search_close_btn", null, null)
+        val closeIcon = searchView.findViewById<ImageView>(closeIconId)
+        closeIcon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.white), PorterDuff.Mode.SRC_IN)
+
         recyclerViewContent = binding.rvFeedcontent
         layoutManagerContent = GridLayoutManager(context, 2)
         menuFeedsAdapter = MenuFeedsAdapter(temp, onDetailClickListener = {
@@ -99,4 +119,9 @@ class MenuFeeds : Fragment() {
             findNavController().navigate(R.id.action_menuFeeds2_to_menuFeedsSearch2)
         }
     }
+
+    /*override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }*/
 }

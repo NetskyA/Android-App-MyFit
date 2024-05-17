@@ -41,8 +41,12 @@ class MenuDaily : Fragment() {
         var temp:ArrayList<String> = arrayListOf("test", "test2", "test3","test", "test2")
 
         val imageView: ImageView = requireView().findViewById(R.id.imageView7)
+        val lymenutoday: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday)
         val textWe: TextView = requireView().findViewById(R.id.tvTitleWe3)
         val clycontentmenutoday: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday)
+
+        val fadeInAnimation3 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
+        lymenutoday.startAnimation(fadeInAnimation3)
 
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in_right)
         imageView.startAnimation(fadeInAnimation)

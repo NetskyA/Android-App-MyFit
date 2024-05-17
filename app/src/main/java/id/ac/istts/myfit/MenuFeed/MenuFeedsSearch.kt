@@ -1,6 +1,7 @@
 package id.ac.istts.myfit.MenuFeed
 
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,11 +11,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.SearchView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.ImageData
@@ -75,6 +80,17 @@ class MenuFeedsSearch : Fragment() {
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         rvfeedcontent.startAnimation(fadeInAnimation)
 
+        val searchView = binding.svSearch
+        val searchTextId = searchView.context.resources.getIdentifier("android:id/search_src_text", null, null)
+        val searchText = searchView.findViewById<TextView>(searchTextId)
+        searchText.setTextColor(ContextCompat.getColor(requireContext(), R.color.white)) // Warna hijau
+        searchText.setHintTextColor(ContextCompat.getColor(requireContext(), R.color.white)) // Warna abu-abu
+
+        val searchIconId = searchView.context.resources.getIdentifier("android:id/search_mag_icon", null, null)
+        val searchIcon = searchView.findViewById<ImageView>(searchIconId)
+        searchIcon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.white), PorterDuff.Mode.SRC_IN)
+
+
         recyclerViewSearch.adapter = menuFeedSearchUserAdapter
         recyclerViewSearch.layoutManager = layoutManagerSearch
 
@@ -106,6 +122,7 @@ class MenuFeedsSearch : Fragment() {
                             findNavController().navigate(action)
                         })
                         recyclerViewSearch.adapter = menuFeedSearchUserAdapter
+                        recyclerViewSearch.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                     }
                 }else{
                     var tempSearchMenu:ArrayList<Menu> = arrayListOf()
@@ -124,6 +141,7 @@ class MenuFeedsSearch : Fragment() {
                                 })
 
                                 recyclerViewSearch.adapter = menuFeedSearchMenuAdapter
+                                recyclerViewSearch.layoutManager = GridLayoutManager(context, 2)
                             }
                         }
                     }else{
@@ -141,7 +159,7 @@ class MenuFeedsSearch : Fragment() {
         })
 
         binding.feedSearchBtnUser.setOnClickListener {
-            binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.black))
+            binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.green_main))
             binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.icon_color))
             binding.feedSearchBtnUser.isEnabled = false
             binding.feedSearchBtnMenu.isEnabled = true
@@ -156,7 +174,7 @@ class MenuFeedsSearch : Fragment() {
 
         binding.feedSearchBtnMenu.setOnClickListener {
             binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.icon_color))
-            binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.black))
+            binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.green_main))
             binding.feedSearchBtnUser.isEnabled = true
             binding.feedSearchBtnMenu.isEnabled = false
             binding.svSearch.setQuery("", true)
@@ -167,6 +185,5 @@ class MenuFeedsSearch : Fragment() {
             })
             recyclerViewSearch.adapter = menuFeedSearchMenuAdapter
         }
-
     }
 }

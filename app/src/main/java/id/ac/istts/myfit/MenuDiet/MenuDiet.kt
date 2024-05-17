@@ -1,6 +1,7 @@
 package id.ac.istts.myfit.MenuDiet
 
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,11 +10,13 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -48,10 +51,13 @@ class MenuDiet : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val imageView: ImageView = requireView().findViewById(R.id.menudietnih)
         val textWe: TextView = requireView().findViewById(R.id.tvTitleWe)
+        val btnReady: Button = requireView().findViewById(R.id.menuDiet_readyBtn)
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         imageView.startAnimation(fadeInAnimation)
         val fadeInAnimation2 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         textWe.startAnimation(fadeInAnimation2)
+        val fadeInAnimation3 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
+        btnReady.startAnimation(fadeInAnimation3)
         var temp:MutableList<MenuDietData> = mutableListOf()
         var temp2:MutableList<MenuSearch> = mutableListOf()
         vm = ViewModelProvider(this).get(MenuDietViewModel::class.java)
@@ -60,6 +66,19 @@ class MenuDiet : Fragment() {
         }
         userPreference = UserPreference(requireContext())
         binding.tvTitleHelo.setText("Hello, ${userPreference.getUser().username}")
+
+        val searchView = binding.searchView
+
+        val searchTextId = searchView.context.resources.getIdentifier("android:id/search_src_text", null, null)
+        val searchText = searchView.findViewById<TextView>(searchTextId)
+        searchText.setTextColor(ContextCompat.getColor(requireContext(), R.color.white)) // Warna hijau
+        searchText.setHintTextColor(ContextCompat.getColor(requireContext(), R.color.white)) // Warna abu-abu
+
+        val searchIconId = searchView.context.resources.getIdentifier("android:id/search_mag_icon", null, null)
+        val searchIcon = searchView.findViewById<ImageView>(searchIconId)
+        searchIcon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.white), PorterDuff.Mode.SRC_IN)
+
+
         // Spinner Day
         val spinner = binding.menuDietSpDay
         spinner.setSelection(0, false)
@@ -74,18 +93,7 @@ class MenuDiet : Fragment() {
                 // write code to perform some action
             }
         }*/
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                val selectedItem = parent.getItemAtPosition(position).toString()
-                // Handle the selected item
-                vm.setMenu(selectedItem)
-                // You can also start an activity or update the UI based on the selected item
-            }
 
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Another interface callback
-            }
-        }
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -167,6 +175,18 @@ class MenuDiet : Fragment() {
                         Toast.makeText(context, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
                     }
                 }
+            }
+        }
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                val selectedItem = parent.getItemAtPosition(position).toString()
+                // Handle the selected item
+                vm.setMenu(selectedItem)
+                // You can also start an activity or update the UI based on the selected item
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Another interface callback
             }
         }
     }
