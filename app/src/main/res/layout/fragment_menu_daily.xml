@@ -42,7 +42,6 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.96" />
 
-
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView6"
             android:layout_width="@dimen/_40sdp"
@@ -116,11 +115,12 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.40" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:id="@+id/lycontentmenutoday"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_310sdp"
-            android:background="@drawable/backgroundnavigations2"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgroundnavigations9"
             app:layout_constraintBottom_toTopOf="@+id/Bottom"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="1.0"
@@ -128,50 +128,30 @@
             app:layout_constraintTop_toTopOf="@+id/Tengahtengah"
             app:layout_constraintVertical_bias="0.0">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_50sdp"
-            app:layout_constraintBottom_toTopOf="@+id/Bottom"
-            app:layout_constraintEnd_toStartOf="@+id/Right"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/Left"
-            app:layout_constraintTop_toBottomOf="@+id/lycontentmenutoday"
-            app:layout_constraintVertical_bias="0.54">
-
             <TextView
-                android:id="@+id/buttonprevios"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:text="Previous"
-                android:textAlignment="textStart"
-                android:textColor="@color/blue_second"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monday, 12 April 2021"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:textSize="@dimen/_10ssp" />
 
-            <TextView
-                android:id="@+id/buttonnext"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:text="Show next"
-                android:paddingEnd="@dimen/_10sdp"
-                android:textAlignment="textEnd"
-                android:textColor="@color/green_main"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:id="@+id/recyclerView"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/backgroundnavigations3"
+                android:padding="@dimen/_5sdp"
+                android:scrollbars="vertical"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

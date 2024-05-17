@@ -2,8 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/_62sdp"
-    android:layout_height="@dimen/_62sdp">
+    android:layout_width="@dimen/_88sdp"
+    android:layout_height="@dimen/_88sdp">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,8 +37,8 @@
 
         <LinearLayout
             android:id="@+id/lybarmenudiet"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_width="@dimen/_88sdp"
+            android:layout_height="@dimen/_88sdp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -66,20 +66,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:id="@+id/cancelmenudiet"
-                android:layout_width="@dimen/_12sdp"
-                android:layout_height="@dimen/_12sdp"
-                android:src="@drawable/cancel"
-                android:layout_gravity="end"
-                android:translationZ="999dp"
-                android:layout_marginTop="-72dp"
-                android:layout_marginEnd="@dimen/_6sdp"
-                android:scaleType="centerCrop" />
-
         </LinearLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

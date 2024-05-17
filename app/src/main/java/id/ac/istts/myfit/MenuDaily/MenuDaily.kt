@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
@@ -41,8 +42,7 @@ class MenuDaily : Fragment() {
 
         val imageView: ImageView = requireView().findViewById(R.id.imageView7)
         val textWe: TextView = requireView().findViewById(R.id.tvTitleWe3)
-        val clycontentmenutoday: ConstraintLayout = requireView().findViewById(R.id.lycontentmenutoday)
-        val buttonprevios: TextView = requireView().findViewById(R.id.buttonprevios)
+        val clycontentmenutoday: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday)
 
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in_right)
         imageView.startAnimation(fadeInAnimation)
@@ -57,7 +57,6 @@ class MenuDaily : Fragment() {
         buttonnext.startAnimation(fadeInAnimation3)*/
 
         val fadeInAnimation4 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
-        buttonprevios.startAnimation(fadeInAnimation4)
 
         userPreference = UserPreference(requireContext())
         if(userPreference.getUser().image!=""){
