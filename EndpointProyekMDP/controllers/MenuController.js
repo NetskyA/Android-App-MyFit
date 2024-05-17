@@ -233,6 +233,7 @@ module.exports = {
                     id: list[i]
                 }
             })
+            if(search == null) continue
             if(search.dataValues.image!=""){
               const binaryData = fs.readFileSync(search.image)
               search.dataValues.image = Buffer(binaryData).toString('base64')

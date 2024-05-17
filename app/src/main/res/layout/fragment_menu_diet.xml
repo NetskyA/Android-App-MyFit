@@ -161,9 +161,11 @@
                     android:id="@+id/recyclerViewmenuResultDiet"
                     android:layout_width="@dimen/_187sdp"
                     android:layout_height="@dimen/_60sdp"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="20dp"
                     app:layout_constraintBottom_toTopOf="@+id/searchView"
-                    app:layout_constraintStart_toStartOf="parent">Z
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.4">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
@@ -171,6 +173,7 @@
                     android:id="@+id/searchView"
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="19dp"
                     android:background="@drawable/backgroundnavigations1"
                     android:iconifiedByDefault="false"
                     android:queryHint="Search menu"
@@ -184,6 +187,7 @@
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_60sdp"
                     android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/backgroundnavigations1"
                     android:text="Delete"
                     android:textColor="@color/white"
@@ -194,14 +198,14 @@
                     android:id="@+id/recyclerViewmenuResultDiet2"
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_11sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.49"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/searchView"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintVertical_bias="0.0" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

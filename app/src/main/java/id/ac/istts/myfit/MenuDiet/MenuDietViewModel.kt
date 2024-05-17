@@ -63,7 +63,7 @@ class MenuDietViewModel (application: Application) : AndroidViewModel(applicatio
         if(menu.size == 0 || listMenu.size == 0){
             return
         }
-        if(menu[0].menu == null){
+        if(menu[0].menu == null || menu[0].menu == ""){
             _menu.postValue(mutableListOf<MenuDietData>())
             return
         }
@@ -90,7 +90,7 @@ class MenuDietViewModel (application: Application) : AndroidViewModel(applicatio
     fun addMenu(menuBaru:MenuSearch,day: String){
         val menu = listMenuDiet.filter { it.day == day }
         var tempData = mutableListOf<String>()
-        if(menu[0].menu != null){
+        if(menu[0].menu != null && menu[0].menu != ""){
             tempData = menu[0].menu!!.split(",").toMutableList()
             if(tempData.contains(menuBaru.id.toString())){
                 return
