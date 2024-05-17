@@ -96,6 +96,14 @@ class MenuFeedsSearch : Fragment() {
 
         binding.svSearch.requestFocus()
 
+        binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.icon_color))
+        binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.icon_color))
+        binding.feedSearchBtnFavorite.setTextColor(resources.getColor(R.color.green_main))
+
+        binding.feedSearchBtnUser.isEnabled = true
+        binding.feedSearchBtnMenu.isEnabled = true
+        binding.feedSearchBtnFavorite.isEnabled = false
+
         binding.svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
@@ -161,8 +169,10 @@ class MenuFeedsSearch : Fragment() {
         binding.feedSearchBtnUser.setOnClickListener {
             binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.green_main))
             binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.icon_color))
+            binding.feedSearchBtnFavorite.setTextColor(resources.getColor(R.color.icon_color))
             binding.feedSearchBtnUser.isEnabled = false
             binding.feedSearchBtnMenu.isEnabled = true
+            binding.feedSearchBtnFavorite.isEnabled = true
             binding.svSearch.setQuery("", true)
             tempSearchUser = arrayListOf()
             menuFeedSearchUserAdapter = MenuFeedSearchUserAdapter(tempSearchUser, onDetailClickListener = {
@@ -175,8 +185,10 @@ class MenuFeedsSearch : Fragment() {
         binding.feedSearchBtnMenu.setOnClickListener {
             binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.icon_color))
             binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.green_main))
+            binding.feedSearchBtnFavorite.setTextColor(resources.getColor(R.color.icon_color))
             binding.feedSearchBtnUser.isEnabled = true
             binding.feedSearchBtnMenu.isEnabled = false
+            binding.feedSearchBtnFavorite.isEnabled = true
             binding.svSearch.setQuery("", true)
             var tempMenu:ArrayList<Menu> = arrayListOf()
             menuFeedSearchMenuAdapter = MenuProfileAdapter(tempMenu, onDetailClickListener = {
@@ -184,6 +196,23 @@ class MenuFeedsSearch : Fragment() {
 //                findNavController().navigate(action)
             })
             recyclerViewSearch.adapter = menuFeedSearchMenuAdapter
+        }
+
+        binding.feedSearchBtnFavorite.setOnClickListener {
+            binding.feedSearchBtnUser.setTextColor(resources.getColor(R.color.icon_color))
+            binding.feedSearchBtnMenu.setTextColor(resources.getColor(R.color.icon_color))
+            binding.feedSearchBtnFavorite.setTextColor(resources.getColor(R.color.green_main))
+            binding.feedSearchBtnUser.isEnabled = true
+            binding.feedSearchBtnMenu.isEnabled = true
+            binding.feedSearchBtnFavorite.isEnabled = false
+            binding.svSearch.setQuery("", true)
+
+//            var tempMenu:ArrayList<Menu> = arrayListOf()
+//            menuFeedSearchMenuAdapter = MenuProfileAdapter(tempMenu, onDetailClickListener = {
+////                val action = MenuFeedsSearchDirections.actionMenuFeedsSearch2ToSearchUserProfile(it.username)
+////                findNavController().navigate(action)
+//            })
+//            recyclerViewSearch.adapter = menuFeedSearchMenuAdapter
         }
     }
 }

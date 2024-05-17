@@ -8,16 +8,16 @@
     android:layout_margin="16dp">
 
     <EditText
-        android:id="@+id/postName"
-        android:inputType="text"
+        android:id="@+id/InputConfirmation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:padding="12dp"
         android:background="@drawable/edit_text_background"
-        android:hint="Post Name"
-        android:textSize="16sp"
-        android:fontFamily="sans-serif-medium" />
+        android:fontFamily="sans-serif-medium"
+        android:hint="Type here.."
+        android:inputType="text"
+        android:padding="12dp"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btnSubmit"

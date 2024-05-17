@@ -18,6 +18,8 @@ class EditMenu : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditMenuBinding
 
+    var hideState: Boolean = false;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -50,12 +52,22 @@ class EditMenu : AppCompatActivity() {
             binding.editMenuBtnDelete.visibility = View.GONE
         }
 
+        binding.editMenuIbHide.setOnClickListener {
+            if (hideState) {
+                binding.editMenuLayoutDetail.visibility = View.VISIBLE
+                binding.editMenuIbHide.setImageResource(R.drawable.hide)
+            } else {
+                binding.editMenuLayoutDetail.visibility = View.GONE
+                binding.editMenuIbHide.setImageResource(R.drawable.hide_invert)
+            }
+            hideState = !hideState
+        }
+
         binding.editMenuBtnDelete.setOnClickListener {
             // TODO Modal Delete Confirmation
             val builder: AlertDialog.Builder = AlertDialog.Builder(this)
             builder
                 .setTitle("Delete Confirmation Prompt")
-                .setMessage("Are you sure you want to delete this menu?")
                 .setMessage("Please re-enter your post title to confirm deletion.")
                 .setView(layoutInflater.inflate(R.layout.dialog_delete_menu, null))
                 // Add action buttons.
@@ -69,6 +81,7 @@ class EditMenu : AppCompatActivity() {
                     })
 
             val dialog: AlertDialog = builder.create()
+            dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.dialog_rounded))
             dialog.show()
         }
     }

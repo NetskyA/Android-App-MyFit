@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,8 @@ class MenuFeedOpened : AppCompatActivity() {
     val mainScope = CoroutineScope(Dispatchers.Main)
     lateinit var vm: MenuFeedOpenedViewModel
     private lateinit var userPreference: UserPreference
+
+    var hideState: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,6 +86,17 @@ class MenuFeedOpened : AppCompatActivity() {
                 }
 
             }
+        }
+
+        binding.feedOpenIbHide.setOnClickListener {
+            if (hideState) {
+                binding.feedOpenLayoutDetail.visibility = View.VISIBLE
+                binding.feedOpenIbHide.setImageResource(R.drawable.hide)
+            } else {
+                binding.feedOpenLayoutDetail.visibility = View.GONE
+                binding.feedOpenIbHide.setImageResource(R.drawable.hide_invert)
+            }
+            hideState = !hideState
         }
 
         binding.ibAccount.setOnClickListener {

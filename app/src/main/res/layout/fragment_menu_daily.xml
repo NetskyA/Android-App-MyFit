@@ -170,7 +170,7 @@
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView"
+                        android:id="@+id/menuDaily_rvSunday"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_120sdp"
                         android:layout_marginTop="@dimen/_2sdp"
@@ -214,7 +214,7 @@
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView2"
+                        android:id="@+id/menuDaily_rvMonday"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_120sdp"
                         android:layout_marginTop="@dimen/_2sdp"
@@ -258,7 +258,7 @@
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView3"
+                        android:id="@+id/menuDaily_rvTuesday"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_120sdp"
                         android:layout_marginTop="@dimen/_2sdp"
@@ -302,7 +302,7 @@
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView4"
+                        android:id="@+id/menuDaily_rvWednesday"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_120sdp"
                         android:layout_marginTop="@dimen/_2sdp"
@@ -346,7 +346,7 @@
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView5"
+                        android:id="@+id/menuDaily_rvThursday"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_120sdp"
                         android:layout_marginTop="@dimen/_2sdp"
@@ -390,7 +390,7 @@
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView6"
+                        android:id="@+id/menuDaily_rvFriday"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_120sdp"
                         android:layout_marginTop="@dimen/_2sdp"
@@ -434,7 +434,7 @@
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView7"
+                        android:id="@+id/menuDaily_rvSaturday"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_120sdp"
                         android:layout_marginTop="@dimen/_2sdp"

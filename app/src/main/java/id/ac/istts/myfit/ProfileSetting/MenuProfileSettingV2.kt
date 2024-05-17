@@ -1,9 +1,13 @@
 package id.ac.istts.myfit.ProfileSetting
 
 import android.app.Activity
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -11,6 +15,7 @@ import android.util.Base64
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -101,8 +106,24 @@ class MenuProfileSettingV2 : AppCompatActivity() {
         linearLayout22.startAnimation(fadeInAnimation)
 
         binding.menuProfileSettingTvDeleteAccount.setOnClickListener {
-            val intent = Intent(this, ModalDeleteAccount::class.java)
-            startActivity(intent)
+            val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+            builder
+                .setTitle("Delete Confirmation Prompt")
+                .setMessage("Please re-enter your username to confirm deletion.")
+                .setView(layoutInflater.inflate(R.layout.dialog_delete_menu, null))
+                // Add action buttons.
+                .setPositiveButton("Delete",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        Toast.makeText(this, "Account Deleted", Toast.LENGTH_SHORT).show()
+                    })
+                .setNegativeButton("Cancel",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        dialog.cancel()
+                    })
+
+            val dialog: AlertDialog = builder.create()
+            dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.dialog_rounded))
+            dialog.show()
         }
 
     }

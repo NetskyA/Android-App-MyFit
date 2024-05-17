@@ -1,5 +1,6 @@
 package id.ac.istts.myfit.MenuDaily
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.MenuDiet.MenuDietAdapter
 import id.ac.istts.myfit.MenuDiet.MenuDietSearchAdapter
+import id.ac.istts.myfit.MenuFeed.MenuFeedOpened
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuDailyBinding
 
@@ -28,7 +30,23 @@ class MenuDaily : Fragment() {
 
     private lateinit var binding: FragmentMenuDailyBinding
     private lateinit var userPreference: UserPreference
-    lateinit var adapter: MenuDailyAdapter
+
+    lateinit var recyclerViewMonday: RecyclerView
+    lateinit var recyclerViewTuesday: RecyclerView
+    lateinit var recyclerViewWednesday: RecyclerView
+    lateinit var recyclerViewThursday: RecyclerView
+    lateinit var recyclerViewFriday: RecyclerView
+    lateinit var recyclerViewSaturday: RecyclerView
+    lateinit var recyclerViewSunday: RecyclerView
+
+    lateinit var adapterMonday: MenuDailyAdapter
+    lateinit var adapterTuesday: MenuDailyAdapter
+    lateinit var adapterWednesday: MenuDailyAdapter
+    lateinit var adapterThursday: MenuDailyAdapter
+    lateinit var adapterFriday: MenuDailyAdapter
+    lateinit var adapterSaturday: MenuDailyAdapter
+    lateinit var adapterSunday: MenuDailyAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -66,6 +84,80 @@ class MenuDaily : Fragment() {
         buttonnext.startAnimation(fadeInAnimation3)*/
 
         val fadeInAnimation4 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+
+        // Recycler View
+        recyclerViewMonday = binding.menuDailyRvMonday
+        recyclerViewTuesday = binding.menuDailyRvTuesday
+        recyclerViewWednesday = binding.menuDailyRvWednesday
+        recyclerViewThursday = binding.menuDailyRvThursday
+        recyclerViewFriday = binding.menuDailyRvFriday
+        recyclerViewSaturday = binding.menuDailyRvSaturday
+        recyclerViewSunday = binding.menuDailyRvSunday
+
+        adapterMonday = MenuDailyAdapter(temp, onDetailClickListener = {
+            val intent = Intent(this.context, MenuFeedOpened::class.java).apply {
+//                putExtra("Menu_ID", it.id.toString())
+            }
+            startActivity(intent)
+        })
+        adapterTuesday = MenuDailyAdapter(temp, onDetailClickListener = {
+            val intent = Intent(this.context, MenuFeedOpened::class.java).apply {
+//                putExtra("Menu_ID", it.id.toString())
+            }
+            startActivity(intent)
+        })
+        adapterWednesday = MenuDailyAdapter(temp, onDetailClickListener = {
+            val intent = Intent(this.context, MenuFeedOpened::class.java).apply {
+//                putExtra("Menu_ID", it.id.toString())
+            }
+            startActivity(intent)
+        })
+        adapterThursday = MenuDailyAdapter(temp, onDetailClickListener = {
+            val intent = Intent(this.context, MenuFeedOpened::class.java).apply {
+//                putExtra("Menu_ID", it.id.toString())
+            }
+            startActivity(intent)
+        })
+        adapterFriday = MenuDailyAdapter(temp, onDetailClickListener = {
+            val intent = Intent(this.context, MenuFeedOpened::class.java).apply {
+//                putExtra("Menu_ID", it.id.toString())
+            }
+            startActivity(intent)
+        })
+        adapterSaturday = MenuDailyAdapter(temp, onDetailClickListener = {
+            val intent = Intent(this.context, MenuFeedOpened::class.java).apply {
+//                putExtra("Menu_ID", it.id.toString())
+            }
+            startActivity(intent)
+        })
+        adapterSunday = MenuDailyAdapter(temp, onDetailClickListener = {
+            val intent = Intent(this.context, MenuFeedOpened::class.java).apply {
+//                putExtra("Menu_ID", it.id.toString())
+            }
+            startActivity(intent)
+        })
+
+        recyclerViewMonday.adapter = adapterMonday
+        recyclerViewMonday.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        recyclerViewTuesday.adapter = adapterTuesday
+        recyclerViewTuesday.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        recyclerViewWednesday.adapter = adapterWednesday
+        recyclerViewWednesday.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        recyclerViewThursday.adapter = adapterThursday
+        recyclerViewThursday.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        recyclerViewFriday.adapter = adapterFriday
+        recyclerViewFriday.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        recyclerViewSaturday.adapter = adapterSaturday
+        recyclerViewSaturday.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        recyclerViewSunday.adapter = adapterSunday
+        recyclerViewSunday.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
 
         userPreference = UserPreference(requireContext())
         if(userPreference.getUser().image!=""){
