@@ -14,7 +14,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main"
-            style="@style/Backgrounds"
+            android:background="@color/dark_grey"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -96,7 +96,6 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:layout_marginBottom="@dimen/_20sdp"
-                    android:background="@drawable/backgroundnavigations2"
                     android:orientation="vertical">
 
                     <androidx.cardview.widget.CardView
@@ -139,7 +138,8 @@
                             android:id="@+id/imagefeed2"
                             android:layout_width="@dimen/_20sdp"
                             android:layout_height="@dimen/_20sdp"
-                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginStart="@dimen/_8sdp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/favoritebefore" />
 
@@ -157,6 +157,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:gravity="end"
+                            android:textColor="@color/white"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingEnd="@dimen/_2sdp"
                             android:text="0"
@@ -168,6 +169,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="start"
+                            android:textColor="@color/white"
                             android:layout_marginStart="@dimen/_2sdp"
                             android:layout_marginEnd="@dimen/_2sdp"
                             android:text="Create by"
@@ -178,16 +180,17 @@
                             android:layout_width="@dimen/_203sdp"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textColor="@color/green_main"
+                            android:textColor="@color/white"
                             android:textStyle="bold"
                             android:textSize="@dimen/_13ssp" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
                         android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -222,6 +225,7 @@
                                 android:gravity="start"
                                 android:text="Nutrition"
                                 android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/green_main"
                                 android:textStyle="bold" />
 
                             <LinearLayout
@@ -240,6 +244,7 @@
                                     android:layout_width="@dimen/_240sdp"
                                     android:layout_height="wrap_content"
                                     android:gravity="start"
+                                    android:textColor="@color/white"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textSize="@dimen/_13ssp" />
@@ -262,6 +267,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="start"
                                 android:text="Ingredients"
+                                android:textColor="@color/green_main"
                                 android:textSize="@dimen/_13ssp"
                                 android:textStyle="bold" />
 
@@ -282,6 +288,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
+                                    android:textColor="@color/white"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textSize="@dimen/_13ssp" />
 
@@ -304,6 +311,7 @@
                                 android:gravity="start"
                                 android:text="How to Make"
                                 android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/green_main"
                                 android:textStyle="bold" />
 
                             <LinearLayout
@@ -323,6 +331,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
+                                    android:textColor="@color/white"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textSize="@dimen/_13ssp" />
 
@@ -345,6 +354,7 @@
                                 android:gravity="start"
                                 android:text="Notes"
                                 android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/green_main"
                                 android:textStyle="bold" />
 
                             <LinearLayout
@@ -364,6 +374,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
+                                    android:textColor="@color/white"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textSize="@dimen/_13ssp" />
 

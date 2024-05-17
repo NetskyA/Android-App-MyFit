@@ -56,6 +56,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="60dp"
                 android:gravity="center"
+                android:textStyle="bold"
                 android:text="Hello, Aldi"
                 android:textColor="@color/green_main"
                 android:textSize="@dimen/_20sdp"
@@ -137,7 +138,7 @@
                 <Spinner
                     android:id="@+id/menuDiet_spDay"
                     android:layout_width="@dimen/_270sdp"
-                    android:layout_height="@dimen/_35sdp"
+                    android:layout_height="@dimen/_33sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:background="@drawable/borders2"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -191,7 +192,8 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/backgroundnavigations1"
                     android:text="Delete"
-                    android:textColor="@color/white"
+                    android:textColor="@color/blue_second"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/recyclerViewmenuResultDiet"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -210,7 +212,7 @@
                 <Button
                     android:id="@+id/menuDiet_readyBtn"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_33sdp"
                     android:background="@drawable/backgroundnavigations2"
                     android:text="Ready"
                     android:textAllCaps="false"

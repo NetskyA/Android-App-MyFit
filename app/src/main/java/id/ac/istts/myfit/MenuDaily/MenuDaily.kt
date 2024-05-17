@@ -65,11 +65,14 @@ class MenuDaily : Fragment() {
 
         val imageView: ImageView = requireView().findViewById(R.id.imageView7)
         val lymenutoday: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday)
+        val lymenutoday2: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday2)
+        val lymenutoday3: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday3)
+        val lymenutoday4: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday4)
+        val lymenutoday5: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday5)
+        val lymenutoday6: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday6)
+        val lymenutoday7: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday7)
         val textWe: TextView = requireView().findViewById(R.id.tvTitleWe3)
         val clycontentmenutoday: LinearLayout = requireView().findViewById(R.id.lycontentmenutoday)
-
-        val fadeInAnimation3 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_up)
-        lymenutoday.startAnimation(fadeInAnimation3)
 
         val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in_right)
         imageView.startAnimation(fadeInAnimation)
@@ -79,6 +82,21 @@ class MenuDaily : Fragment() {
 
         val fadeInAnimation2 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in_left)
         textWe.startAnimation(fadeInAnimation2)
+
+        val fadeInAnimation3 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        lymenutoday.startAnimation(fadeInAnimation3)
+        val fadeInAnimation5 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        lymenutoday2.startAnimation(fadeInAnimation5)
+        val fadeInAnimation6 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        lymenutoday3.startAnimation(fadeInAnimation6)
+        val fadeInAnimation7 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        lymenutoday4.startAnimation(fadeInAnimation7)
+        val fadeInAnimation8 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        lymenutoday5.startAnimation(fadeInAnimation8)
+        val fadeInAnimation9 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        lymenutoday6.startAnimation(fadeInAnimation9)
+        val fadeInAnimation10 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        lymenutoday7.startAnimation(fadeInAnimation10)
 
         /*val fadeInAnimation3 = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         buttonnext.startAnimation(fadeInAnimation3)*/

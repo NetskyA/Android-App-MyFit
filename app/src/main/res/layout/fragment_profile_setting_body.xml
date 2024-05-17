@@ -66,6 +66,7 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:text="Data Body"
+                    android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="@dimen/_20ssp"
                     android:textStyle="bold" />
@@ -85,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:text="Gender"
                         android:textSize="@dimen/_15ssp"
-                        android:textColor="@color/green_main"
+                        android:textColor="@color/white"
                         android:layout_marginStart="@dimen/_3sdp"
                         app:layout_constraintEnd_toStartOf="@+id/Right"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -108,7 +109,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             style="@style/CustomRadioButton"
-                            android:textColor="@color/green_main"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
                             android:text="Man" />
 
                         <RadioButton
@@ -116,7 +118,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             style="@style/CustomRadioButton"
-                            android:textColor="@color/green_main"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
                             android:layout_marginStart="@dimen/_5sdp"
                             android:text="Woman" />
 
@@ -124,7 +127,8 @@
                             android:id="@+id/rbNonBinary"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/green_main"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
                             style="@style/CustomRadioButton"
                             android:layout_marginStart="@dimen/_5sdp"
                             android:text="Non-binary" />
@@ -162,6 +166,7 @@
                         android:autofillHints="emailAddress"
                         android:textColorHint="@color/grey"
                         android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/white"
                         android:inputType="number"
                         android:paddingStart="@dimen/_20sdp"
                         android:drawablePadding="@dimen/_10sdp"
@@ -203,6 +208,7 @@
                         android:textColorHint="@color/grey"
                         android:textSize="@dimen/_15ssp"
                         android:inputType="number"
+                        android:textColor="@color/white"
                         android:paddingStart="@dimen/_20sdp"
                         android:drawablePadding="@dimen/_10sdp"
                         android:background="@drawable/borders4"
@@ -243,6 +249,7 @@
                         android:textColorHint="@color/grey"
                         android:textSize="@dimen/_15ssp"
                         android:inputType="number"
+                        android:textColor="@color/white"
                         android:paddingStart="@dimen/_20sdp"
                         android:drawablePadding="@dimen/_10sdp"
                         android:background="@drawable/borders4"
@@ -293,6 +300,7 @@
                             android:textColorHint="@color/grey"
                             android:textSize="@dimen/_15ssp"
                             android:inputType="text"
+                            android:textColor="@color/white"
                             android:paddingStart="@dimen/_20sdp"
                             android:drawablePadding="@dimen/_10sdp"
                             android:background="@drawable/borders4"
@@ -309,7 +317,7 @@
                         android:layout_height="@dimen/_40sdp"
                         android:orientation="vertical"
                         android:layout_marginTop="@dimen/_20sdp"
-                        android:background="@drawable/borders2"
+                        android:background="@drawable/borders5"
                         android:layout_weight="1">
 
                         <Button

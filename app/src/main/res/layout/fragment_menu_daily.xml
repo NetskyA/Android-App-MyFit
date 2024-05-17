@@ -85,7 +85,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Hello,"
-                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textColor="@color/green_main"
                             android:textSize="@dimen/_20ssp"/>
 
                         <TextView
@@ -94,7 +95,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:text="Aldi"
-                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textColor="@color/green_main"
                             android:textSize="@dimen/_20ssp"/>
 
                     </LinearLayout>
@@ -104,7 +106,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -148,9 +149,8 @@
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday"
-                    android:layout_width="@dimen/_280sdp"
+                    android:layout_width="@dimen/_284sdp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/backgroundnavigations9"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -161,23 +161,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="Sunday"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/green_main"
+                        android:textSize="@dimen/_18ssp"
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/menuDaily_rvSunday"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_height="wrap_content"
                         android:padding="@dimen/_5sdp"
                         android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:text="Click to see more"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -192,9 +199,8 @@
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday2"
-                    android:layout_width="@dimen/_280sdp"
+                    android:layout_width="@dimen/_284sdp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/backgroundnavigations9"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -205,23 +211,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="Monday"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/green_main"
+                        android:textSize="@dimen/_18ssp"
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/menuDaily_rvMonday"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_height="wrap_content"
                         android:padding="@dimen/_5sdp"
                         android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:text="Click to see more"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -236,9 +249,8 @@
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday3"
-                    android:layout_width="@dimen/_280sdp"
+                    android:layout_width="@dimen/_284sdp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/backgroundnavigations9"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -249,23 +261,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="Tuesday"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/green_main"
+                        android:textSize="@dimen/_18ssp"
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/menuDaily_rvTuesday"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_height="wrap_content"
                         android:padding="@dimen/_5sdp"
                         android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:text="Click to see more"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -280,9 +299,8 @@
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday4"
-                    android:layout_width="@dimen/_280sdp"
+                    android:layout_width="@dimen/_284sdp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/backgroundnavigations9"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -293,23 +311,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="Wednesday"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/green_main"
+                        android:textSize="@dimen/_18ssp"
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/menuDaily_rvWednesday"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_height="wrap_content"
                         android:padding="@dimen/_5sdp"
                         android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:text="Click to see more"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -324,9 +349,8 @@
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday5"
-                    android:layout_width="@dimen/_280sdp"
+                    android:layout_width="@dimen/_284sdp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/backgroundnavigations9"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -337,23 +361,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="Thursday"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/green_main"
+                        android:textSize="@dimen/_18ssp"
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/menuDaily_rvThursday"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_height="wrap_content"
                         android:padding="@dimen/_5sdp"
                         android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:text="Click to see more"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -368,9 +399,8 @@
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday6"
-                    android:layout_width="@dimen/_280sdp"
+                    android:layout_width="@dimen/_284sdp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/backgroundnavigations9"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -381,23 +411,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="Friday"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/green_main"
+                        android:textSize="@dimen/_18ssp"
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/menuDaily_rvFriday"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_height="wrap_content"
                         android:padding="@dimen/_5sdp"
                         android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:text="Click to see more"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -412,9 +449,8 @@
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday7"
-                    android:layout_width="@dimen/_280sdp"
+                    android:layout_width="@dimen/_284sdp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/backgroundnavigations9"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -422,26 +458,40 @@
                     app:layout_constraintTop_toTopOf="@+id/Tengahtengah"
                     app:layout_constraintVertical_bias="0.0">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_15sdp"
-                        android:text="Saturday"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:text="Saturday"
+                            android:textColor="@color/green_main"
+                            android:textSize="@dimen/_18ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/menuDaily_rvSaturday"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_height="wrap_content"
                         android:padding="@dimen/_5sdp"
                         android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:text="Click to see more"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 

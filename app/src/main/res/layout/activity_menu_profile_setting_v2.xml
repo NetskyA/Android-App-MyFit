@@ -18,7 +18,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/dark_grey">
+        android:background="@drawable/from">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Left"
@@ -59,10 +59,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_185sdp"
+                android:layout_height="@dimen/_190sdp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="@drawable/backgroundnavigations3"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
@@ -129,7 +128,7 @@
             <LinearLayout
                 android:layout_width="@dimen/_280sdp"
                 android:layout_height="@dimen/_85sdp"
-                android:layout_marginTop="-60dp"
+                android:layout_marginTop="-65dp"
                 android:layout_gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -152,7 +151,7 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:background="@drawable/borders2"
+                        android:background="@drawable/borders6"
                         android:layout_weight="1">
 
                         <ImageButton
@@ -169,6 +168,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="Personal"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
                             android:textAlignment="center"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -182,7 +183,7 @@
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:background="@drawable/borders2"
+                        android:background="@drawable/borders6"
                         android:layout_weight="1">
 
                         <ImageButton
@@ -199,6 +200,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="Body"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
                             android:textAlignment="center"
                             android:textSize="16sp" />
 
@@ -213,7 +216,7 @@
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:background="@drawable/borders2"
+                        android:background="@drawable/borders6"
                         android:layout_weight="1">
 
                         <ImageButton
@@ -230,6 +233,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="Password"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
                             android:textAlignment="center"
                             android:textSize="16sp" />
 
@@ -243,7 +248,7 @@
                 android:layout_width="@dimen/_260sdp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/borderyellow"
+                android:background="@drawable/borderwhites"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -255,8 +260,6 @@
                     android:name="androidx.navigation.fragment.NavHostFragment"
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_5sdp"
                     android:layout_height="@dimen/_450sdp"
                     app:defaultNavHost="true"
                     app:navGraph="@navigation/profile_navigation" />
@@ -267,7 +270,7 @@
                     android:layout_gravity="center"
                     android:textSize="@dimen/_7sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:textColor="@color/dark_grey"
+                    android:textColor="@color/grey"
                     android:textAlignment="center"
                     android:text="All data will be encrypted to avoid theft of your personal data."
                     tools:ignore="HardcodedText" />

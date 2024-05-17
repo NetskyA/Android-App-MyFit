@@ -16,7 +16,7 @@
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            style="@style/Backgrounds">
+            android:background="@color/dark_grey">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/Left"
@@ -97,7 +97,6 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:layout_marginBottom="@dimen/_20sdp"
-                        android:background="@drawable/backgroundnavigations2"
                         android:orientation="vertical"
                         tools:ignore="MissingConstraints">
 
@@ -153,23 +152,46 @@
                                 android:gravity="end"
                                 android:paddingStart="@dimen/_10sdp"
                                 android:paddingEnd="@dimen/_7sdp"
+                                android:textColor="@color/white"
                                 android:text="0"
                                 android:textSize="@dimen/_13ssp" />
 
                             <TextView
                                 android:id="@+id/editMenu_tvFavorite"
-                                android:layout_width="@dimen/_203sdp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="start"
+                                android:textColor="@color/white"
                                 android:text="favorite"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <TextView
+                                android:id="@+id/editMenu_tvCreated"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textColor="@color/white"
+                                android:text="Created by"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <TextView
+                                android:id="@+id/editMenu_tvCreatedUsername"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textColor="@color/white"
+                                android:text="Aldiaafn"
                                 android:textSize="@dimen/_13ssp" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
                             android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:gravity="center"
                             android:orientation="horizontal">
 
@@ -205,6 +227,7 @@
                                 android:gravity="start"
                                 android:text="Nutrition"
                                 android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/green_main"
                                 android:textStyle="bold" />
 
                             <LinearLayout
@@ -227,7 +250,7 @@
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
-                                    android:textColor="@color/dark_grey"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/_13ssp" />
 
                             </LinearLayout>
@@ -250,6 +273,7 @@
                                 android:gravity="start"
                                 android:text="Ingredients"
                                 android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/green_main"
                                 android:textStyle="bold" />
 
                             <LinearLayout
@@ -272,7 +296,7 @@
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
-                                    android:textColor="@color/dark_grey"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/_13ssp" />
 
                             </LinearLayout>
@@ -295,6 +319,7 @@
                                 android:gravity="start"
                                 android:text="How to Make"
                                 android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/green_main"
                                 android:textStyle="bold" />
 
                             <LinearLayout
@@ -317,7 +342,7 @@
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
-                                    android:textColor="@color/dark_grey"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/_13ssp" />
 
                             </LinearLayout>
@@ -340,6 +365,7 @@
                                 android:gravity="start"
                                 android:text="Notes"
                                 android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/green_main"
                                 android:textStyle="bold" />
 
                             <LinearLayout
@@ -362,7 +388,7 @@
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
-                                    android:textColor="@color/dark_grey"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/_13ssp" />
 
                             </LinearLayout>
@@ -380,29 +406,31 @@
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
+                                android:layout_gravity="center"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:orientation="horizontal">
 
                                 <Button
                                     android:id="@+id/editMenu_btnSave"
-                                    android:layout_width="@dimen/_260sdp"
+                                    android:layout_width="@dimen/_120sdp"
                                     android:layout_height="@dimen/_30sdp"
                                     android:layout_marginTop="@dimen/_15sdp"
-                                    android:background="@drawable/backgroundnavigations3"
+                                    android:background="@drawable/backgroundnavigations1"
                                     android:gravity="center"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="Save"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/dark_grey"
                                     android:textSize="@dimen/_13ssp"
                                     android:visibility="gone" />
 
                                 <Button
                                     android:id="@+id/editMenu_btnDelete"
-                                    android:layout_width="@dimen/_260sdp"
+                                    android:layout_width="@dimen/_120sdp"
                                     android:layout_height="@dimen/_30sdp"
-                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:layout_marginTop="@dimen/_15sdp"
                                     android:background="@drawable/backgroundnavigations7"
                                     android:gravity="center"
+                                    android:layout_marginStart="@dimen/_7sdp"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="Delete"
                                     android:textColor="@color/white"
