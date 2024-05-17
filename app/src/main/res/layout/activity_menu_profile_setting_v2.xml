@@ -90,7 +90,8 @@
                         android:forceHasOverlappingRendering="false"
                         android:padding="@dimen/_2sdp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/_61204" />
+                        android:src="@drawable/user"
+                        />
 
                     <ImageView
                         android:id="@+id/imageView3"
