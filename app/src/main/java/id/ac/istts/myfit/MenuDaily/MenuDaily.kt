@@ -15,7 +15,11 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.Preferences.UserPreference
+import id.ac.istts.myfit.MenuDiet.MenuDietAdapter
+import id.ac.istts.myfit.MenuDiet.MenuDietSearchAdapter
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuDailyBinding
 
@@ -24,6 +28,7 @@ class MenuDaily : Fragment() {
 
     private lateinit var binding: FragmentMenuDailyBinding
     private lateinit var userPreference: UserPreference
+    lateinit var adapter: MenuDailyAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -77,4 +82,5 @@ class MenuDaily : Fragment() {
         val imageBytes = Base64.decode(base64Str, Base64.DEFAULT)
         return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
     }
+
 }
