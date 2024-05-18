@@ -380,7 +380,7 @@
                                     android:scaleType="centerCrop"
                                     android:src="@drawable/circle" />
 
-                                <TextView
+                                <EditText
                                     android:id="@+id/editMenu_tvNotes"
                                     android:layout_width="@dimen/_240sdp"
                                     android:layout_height="wrap_content"

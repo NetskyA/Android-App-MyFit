@@ -517,8 +517,29 @@ module.exports = {
 
   getUsername: async (req, res)=>{
     const {id} = req.query
-    const user = await User.findByPk(id)
-    return res.status(200).send(user.username)
-  } 
+    var user = await User.findOne({
+      where:{
+        id: id,
+        status: 1
+      }
+    })
+    if(user) return res.status(200).send(user.username)
+    else return res.status(200).json("Deleted Account")
+  }, 
+
+  getUserByUsername: async (req, res)=>{
+    const {username} = req.query
+    var user = await User.findOne({
+      where:{
+        username: username,
+        status: 1
+      }
+    })
+    if(user.image!=""){
+      const binaryData = fs.readFileSync(user.image)
+      user.image = Buffer(binaryData).toString('base64')
+    }
+    return res.status(200).send(user)
+  } ,
 };  
   

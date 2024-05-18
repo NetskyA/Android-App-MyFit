@@ -62,14 +62,30 @@ const { generateDummyUsers } = require("../service/Functions");
         }
 
         for (let i = 0; i < menus.length; i++) {
+            var acak = Math.floor(Math.random() * (users.length/2))
+            var user_id = Math.floor((Math.random() * users.length/2) + 1)
+            for (let j = 0; j < acak; j++) {
+                let cek = false
+                do {
+                    cek = false
+                    var acakUser = Math.floor((Math.random() * users.length) + 1)
+                    if(acakUser==user_id) {
+                        cek = true
+                    }else {
+                        await Likes.create({menu_id: i+1, user_id: acakUser})
+                    }
+                } while (cek);
+            }
             await Menus.create({
                 name: menus[i].name,
+                user_id: user_id,
                 ingredients: menus[i].ingredients,
                 nutrition: menus[i].nutrition,
                 how_to_make: menus[i].how_to_make,
                 note: menus[i].note,
-                like: menus[i].like,
+                like: menus[i].acak,
                 date: menus[i].date,
+                note: "",
                 image: menus[i].image,
             })
         }

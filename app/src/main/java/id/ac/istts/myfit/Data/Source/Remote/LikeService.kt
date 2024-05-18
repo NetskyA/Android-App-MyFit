@@ -18,4 +18,7 @@ interface LikeService {
 
     @GET("api/likes/getLikeMenu")
     suspend fun getLikeMenu(@Query("menu_id") menu_id:String, @Query("user_id") user_id:String): String
+
+    @GET("api/likes/savedMenu")
+    suspend fun savedMenu(@Query("id") id:String): List<Menu>
 }

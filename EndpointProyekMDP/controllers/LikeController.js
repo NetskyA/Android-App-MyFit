@@ -1,5 +1,8 @@
 const { Sequelize, Op } = require("sequelize");
 
+const multer = require("multer");
+const fs = require("fs");
+
 const Likes = require("../models/Likes");
 const Menus = require("../models/Menus");
 
@@ -43,5 +46,30 @@ module.exports = {
             menu.increment('like',{by:1})
         }
         return res.status(200).send("like")
+    },
+    savedMenu: async (req, res)=>{
+        const {id} = req.query
+        const like = await Likes.findAll({
+            where:{
+                user_id: id
+            },
+            order: [['id', 'DESC']]
+        })
+        const savedMenu = []
+        for (let i = 0; i < like.length; i++) {
+            const l = like[i];
+            const menu = await Menus.findOne({
+                where:{
+                    id: l.menu_id,
+                    status: 1
+                }
+            })
+            if(menu.image!=""){
+                const binaryData = fs.readFileSync(menu.image)
+                menu.image = Buffer(binaryData).toString('base64')
+              } 
+            savedMenu.push(menu)
+        }
+        return res.status(200).json(savedMenu)        
     },
 }

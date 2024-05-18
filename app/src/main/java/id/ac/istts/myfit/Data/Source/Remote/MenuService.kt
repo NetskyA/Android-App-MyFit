@@ -9,8 +9,10 @@ import id.ac.istts.myfit.Data.MenuDietData
 import id.ac.istts.myfit.Data.MenuSearch
 import id.ac.istts.myfit.Data.RandomMenuData
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface MenuService {
@@ -39,4 +41,15 @@ interface MenuService {
 
     @GET("api/menus/searchImageByQuery")
     suspend fun searchImageByQuery(@Query("id") id:String, @Query("q") q:String): List<Menu>
+
+    @GET("api/menus/recommendMenu")
+    suspend fun recommendMenu(@Query("id") id:String, @Query("limit") limit:String = "30"): List<Menu>
+
+    @DELETE("api/menus/deleteMenuById")
+    suspend fun deleteMenuById(@Query("id") id:String): ErrorMsg
+
+    @PUT("api/menus/editMenuById")
+    suspend fun editMenuById(@Query("id") id:String, @Query("name") name:String, @Query("nutrition") nutrition:String
+    , @Query("ingredients") ingredients:String, @Query("howToMake") howToMake:String, @Query("notes") notes:String, @Query("image") image:String): ErrorMsg
+
 }

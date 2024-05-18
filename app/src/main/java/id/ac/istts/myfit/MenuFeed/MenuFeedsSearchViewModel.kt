@@ -44,4 +44,16 @@ class MenuFeedsSearchViewModel (application: Application) : AndroidViewModel(app
             return arrayListOf()
         }
     }
+    suspend fun recommendMenu(id:String): ArrayList<Menu> {
+        try {
+            return withContext(Dispatchers.IO) {
+                val searchResult: List<Menu> = MyFitApplication.retrofitMenuService!!.recommendMenu(id)
+                val menus: ArrayList<Menu> = ArrayList(searchResult)
+                menus
+            }
+        }catch (e:Exception){
+            Log.e("ERROR", e.toString())
+            return arrayListOf()
+        }
+    }
 }

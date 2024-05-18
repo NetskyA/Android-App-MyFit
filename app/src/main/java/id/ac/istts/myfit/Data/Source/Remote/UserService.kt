@@ -61,4 +61,7 @@ interface UserService {
 
     @POST("api/users/loginGoogle")
     suspend fun loginGoogle(@Query("email") email: String): User
+
+    @GET("api/users/getUserByUsername")
+    suspend fun getUserByUsername(@Query("username") username:String):User
 }

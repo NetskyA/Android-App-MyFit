@@ -240,13 +240,13 @@
                         android:id="@+id/searchUserProfile_btnFilterRecent"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_30sdp"
-                        android:text="Recent"
                         android:layout_gravity="center"
                         android:layout_marginEnd="@dimen/_5sdp"
-                        android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/white"
                         android:background="@drawable/backgroundnavigations9"
-                        android:textAllCaps="false" />
+                        android:text="Oldest"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp" />
 
                 </LinearLayout>
 

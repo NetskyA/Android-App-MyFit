@@ -10,11 +10,11 @@ import id.ac.istts.myfit.Data.Menu
 
 @Dao
 interface AllMenuUserDao {
-    @Query("select * from menus")
+    @Query("select * from menus order by `id` desc")
     fun getAll(): List<Menu>
 
-    @Query("select * from menus order by `id` desc")
-    fun sortRecent(): List<Menu>
+    @Query("select * from menus order by `id` asc")
+    fun sortOldest(): List<Menu>
 
     @Query("select * from menus order by `like` desc")
     fun sortLike(): List<Menu>

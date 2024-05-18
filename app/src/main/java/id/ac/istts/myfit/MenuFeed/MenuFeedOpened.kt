@@ -47,6 +47,7 @@ class MenuFeedOpened : AppCompatActivity() {
         ioScope.launch {
             tempMenu = vm.getOneMenuById(menuId.toString())
             username = vm.getUsername(tempMenu.user_id.toString())
+//            Log.d("USERNAME", username)
             var cekLike = vm.getLikeMenu(tempMenu.id.toString(), userPreference.getUser().id.toString())
             mainScope.launch {
                 binding.tvTitleMFO.setText(tempMenu.name)
@@ -73,9 +74,11 @@ class MenuFeedOpened : AppCompatActivity() {
         binding.imagefeed2.setOnClickListener{
             ioScope.launch {
                 var cek = vm.likeMenu(tempMenu.id.toString(), userPreference.getUser().id.toString())
-                tempMenu = vm.getOneMenuById(menuId.toString())
+                var tempMenu2 = vm.getOneMenuById(menuId.toString())
                 mainScope.launch {
-                    binding.tvLikeFMO.setText(tempMenu.like.toString()+" Favorite")
+                    if(tempMenu2.like.toString()!="0"){
+                        binding.tvLikeFMO.setText(tempMenu2.like.toString()+" Favorite")
+                    }
                     try {
                         if(cek=="like") binding.imagefeed2.setImageResource(R.drawable.favoriteafter)
                         else if(cek=="unlike") binding.imagefeed2.setImageResource(R.drawable.favoritebefore)

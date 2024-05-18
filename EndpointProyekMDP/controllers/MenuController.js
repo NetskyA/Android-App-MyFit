@@ -257,7 +257,12 @@ module.exports = {
 
     getOneMenuById: async(req, res)=>{
         const {id} = req.query
-        let menu = await Menu.findByPk(id)
+        let menu = await Menu.findOne({
+            where:{
+                id: id,
+                status: 1
+            }
+        })
         if(menu.image!=""){
             const binaryData = fs.readFileSync(menu.image)
             menu.image = Buffer(binaryData).toString('base64')
@@ -288,5 +293,69 @@ module.exports = {
             }         
         }
         return res.status(200).json(searchMenu)       
+    },
+    recommendMenu: async (req, res)=>{
+        const {id, limit} = req.query
+        const menu = await Menu.findAll({
+            where: {
+                user_id:{
+                    [Op.ne] : id
+                },
+                status:1
+            },
+            order: [
+                ['like', 'DESC']
+            ],
+            limit: parseInt(limit)
+        });
+        for(let i = 0; i < menu.length; i++){
+            if(menu[i].dataValues.image!=""){
+              const binaryData = fs.readFileSync(menu[i].image)
+              menu[i].dataValues.image = Buffer(binaryData).toString('base64')
+            }         
+        }
+        return res.status(200).send(menu)        
+    },
+
+    deleteMenuById: async(req, res)=>{
+        const {id} = req.query
+        await Menu.update(
+            {
+                status: 0
+            },
+            {
+                where: {
+                    id: id
+                }
+            }
+        )
+        return res.status(200).send({text: "Success"})
+    },
+
+    editMenuById: async(req, res)=>{
+        const {id, name, nutrition, ingredients, howToMake, notes, image} = req.query
+        console.log(id)
+        await Menu.update(
+            {
+                name: name,
+                nutrition: nutrition,
+                ingredients: ingredients,
+                how_to_make: howToMake,
+                note: notes,
+            },
+            {
+                where: {
+                    id: id
+                }
+            }
+        )
+        const imageBuffer = Buffer.from(image, 'base64')
+        fs.writeFile(`uploads/menu/${id}.jpg`, imageBuffer, (err) => {
+            if (err) {
+                console.error(err);
+                return res.status(200).send({text: 'Failed'});
+            }
+        })
+        return res.status(200).send({text: "Success"})
     }
 }

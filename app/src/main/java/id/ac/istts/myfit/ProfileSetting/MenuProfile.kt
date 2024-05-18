@@ -81,8 +81,8 @@ class MenuProfile : Fragment() {
 //        vm.getAllMenuUser(userId!!.toInt())
 
         binding.btnbydate.setOnClickListener {
-            if(binding.btnbydate.text=="Recent"){
-                binding.btnbydate.setText("Reset")
+            if(binding.btnbydate.text=="Oldest"){
+                binding.btnbydate.setText("Newest")
                 binding.filterbykategori.setText(("Favorite"))
                 vm.sortRecent()
                 vm.menus.observe(viewLifecycleOwner, Observer { menus ->
@@ -97,7 +97,7 @@ class MenuProfile : Fragment() {
                     recyclerViewContent.layoutManager = layoutManager
                 })
             }else{
-                binding.btnbydate.setText("Recent")
+                binding.btnbydate.setText("Oldest")
                 vm.reset()
                 vm.menus.observe(viewLifecycleOwner, Observer { menus ->
                     // Update UI with the new list of menus
@@ -116,7 +116,7 @@ class MenuProfile : Fragment() {
         binding.filterbykategori.setOnClickListener {
             if(binding.filterbykategori.text=="Favorite"){
                 binding.filterbykategori.setText("Reset")
-                binding.btnbydate.setText(("Recent"))
+                binding.btnbydate.setText(("Oldest"))
                 vm.sortFavorite()
                 vm.menus.observe(viewLifecycleOwner, Observer { menus ->
                     // Update UI with the new list of menus
@@ -146,6 +146,23 @@ class MenuProfile : Fragment() {
             }
         }
 
+        binding.btnbysvaed.setOnClickListener {
+            ioScope.launch {
+                var savedMenu = vm.savedMenu(userPreference.getUser().id.toString())
+                temp = savedMenu
+                mainScope.launch {
+                    menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
+                        val intent = Intent(requireContext(), MenuFeedOpened::class.java).apply {
+                            putExtra("Menu_ID", it.id.toString())
+                        }
+                        startActivity(intent)
+                    })
+                    recyclerViewContent.adapter = menuProfileAdapter
+                    recyclerViewContent.layoutManager = layoutManager
+                }
+            }
+        }
+
         val rv_feedcontent: RecyclerView = requireView().findViewById(R.id.rv_feedcontent)
 
 //        Log.e("PREFERENCE", userPreference.getUser().toString())
@@ -170,6 +187,34 @@ class MenuProfile : Fragment() {
         super.onResume()
         if(userPreference.getUser().image!=""){
             binding.ivUserprofiles.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+        }
+        if(binding.btnbysvaed.isEnabled==false){
+            ioScope.launch {
+                var savedMenu = vm.savedMenu(userPreference.getUser().id.toString())
+                mainScope.launch {
+                    menuProfileAdapter = MenuProfileAdapter(savedMenu, onDetailClickListener = {
+                        val intent = Intent(requireContext(), MenuFeedOpened::class.java).apply {
+                            putExtra("Menu_ID", it.id.toString())
+                        }
+                        startActivity(intent)
+                    })
+                    recyclerViewContent.adapter = menuProfileAdapter
+                    recyclerViewContent.layoutManager = layoutManager
+                }
+            }
+        }else {
+            vm.reset()
+            vm.menus.observe(viewLifecycleOwner, Observer { menus ->
+                // Update UI with the new list of menus
+                menuProfileAdapter = MenuProfileAdapter(menus, onDetailClickListener = {
+                    startActivity(Intent(this.context, EditMenu::class.java).apply {
+                        putExtra("menuId", it.id.toString())
+                    })
+                })
+                recyclerViewContent.adapter = menuProfileAdapter
+                recyclerViewContent.layoutManager = layoutManager
+            })
+
         }
     }
 

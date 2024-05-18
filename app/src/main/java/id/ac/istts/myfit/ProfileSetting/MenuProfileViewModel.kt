@@ -46,7 +46,7 @@ class MenuProfileViewModel (application: Application) : AndroidViewModel(applica
         ioScope.launch {
             try {
                 // Fetch menus from the repository
-                val menusList = allMenuUserRepository.sortRecent()
+                val menusList = allMenuUserRepository.sortOldest()
                 // Update the LiveData with the fetched menus on the main thread
                 withContext(Dispatchers.Main) {
                     _menus.value = ArrayList(menusList) // Convert the list to ArrayList
@@ -95,50 +95,31 @@ class MenuProfileViewModel (application: Application) : AndroidViewModel(applica
         }
         return fav
     }
-//    fun getAllMenuUser(id: Int): ArrayList<Menu> {
-//        var menus:ArrayList<Menu> = arrayListOf()
-//        try {
-//            ioScope.launch {
-//                menus = allMenuUserRepository.getAllMenus(id)
-//                Log.d("BBBBBBBBBBBBBBBBBB", menus.toString())
-//                mainScope.launch {
-//                    return menus
-//                }
-//            }
-//        }catch (err:Exception){
-//
-//        }
-//        return menus
-//    }
-//    fun getPost(id:Int){
+
+//    fun savedMenu(id: String): ArrayList<Menu>{
+//        var saveMenus:ArrayList<Menu> = arrayListOf()
 //        ioScope.launch {
-//            _menu.postValue(allMenuUserRepository.getMenuById(id))
-//        }
-//    }
-//
-//    fun createPost(title:String, content:String){
-//        ioScope.launch {
-//            postRepository.createPost(Post(0, title, content))
-//        }
-//    }
-//
-//    fun updatePost(title:String, content:String){
-//        if(post.value != null){
-//            ioScope.launch {
-//                postRepository.updatePost(Post(post.value!!.id, title, content))
-//            }
-//        }
-//    }
-//    suspend fun uploadImage(image: String): String{
-//        return withContext(Dispatchers.IO) {
 //            try {
-//                val imageData = ImageData(userPreference.getUser().id.toString(), image)
-//                val response = MyFitApplication.retrofitUserService?.uploadImage(imageData)
-//                userPreference.setImage(image)
-//                response.toString()
-//            }catch (e: Exception){
-//                return@withContext "Fail"
+//                saveMenus = ArrayList(MyFitApplication.retrofitLikeService!!.savedMenu(id))
+//                return ArrayList(saveMenus)
+////                Log.d("TEMP", saveMenus.toString())
+//            }catch(e:Exception){
+//                Log.e("error ap nih", e.toString())
+//                saveMenus = arrayListOf()
+//                return saveMenus
 //            }
 //        }
+////        return ArrayList(saveMenus)
 //    }
+    suspend fun savedMenu(id: String): ArrayList<Menu> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val saveMenus = ArrayList(MyFitApplication.retrofitLikeService!!.savedMenu(id))
+                saveMenus
+            } catch (e: Exception) {
+                Log.e("error ap nih", e.toString())
+                arrayListOf()
+            }
+        }
+    }
 }

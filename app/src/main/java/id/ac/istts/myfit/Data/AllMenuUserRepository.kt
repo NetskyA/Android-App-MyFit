@@ -27,8 +27,8 @@ class AllMenuUserRepository (
         return localDataSource.allMenuUserDao().getById(id)
     }
 
-    suspend fun sortRecent(): ArrayList<Menu> {
-        return ArrayList(localDataSource.allMenuUserDao().sortRecent())
+    suspend fun sortOldest(): ArrayList<Menu> {
+        return ArrayList(localDataSource.allMenuUserDao().sortOldest())
     }
     suspend fun sortFavorite(): ArrayList<Menu> {
         return ArrayList(localDataSource.allMenuUserDao().sortLike())
@@ -44,8 +44,9 @@ class AllMenuUserRepository (
 //        remoteDataSource.update(menu.id, menu)
 //        localDataSource.allMenuUserDao().update(menu)
 //    }
-//    suspend fun deleteMenu(menu:Menu) {
-//        remoteDataSource.delete(menu.id)
-//        localDataSource.allMenuUserDao().update(menu)
-//    }
+    suspend fun deleteMenu(menu:Menu):String {
+        var result = remoteDataSource.deleteMenuById(menu.id.toString())
+        localDataSource.allMenuUserDao().delete(menu)
+        return result.text
+    }
 }

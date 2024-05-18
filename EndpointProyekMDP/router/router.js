@@ -16,7 +16,8 @@ const {
   search,
   checkPass,
   getUsername,
-  loginGoogle
+  loginGoogle,
+  getUserByUsername
 } = require("../controllers/UserController"); //function user
 
 const { 
@@ -30,11 +31,15 @@ const {
   saveMenuDiet,
   getOneMenuById,
   searchImageByQuery,
+  recommendMenu,
+  deleteMenuById,
+  editMenuById,
 } = require("../controllers/MenuController"); //function menu
 
 const { 
   getLikeMenu,
   likeMenu,
+  savedMenu
 } = require("../controllers/LikeController"); //function like
 
 const { Router } = require("express");
@@ -79,6 +84,8 @@ router.post("/users/checkPass", checkPass); // Buat check dan update password
 
 router.get("/users/getUsername", getUsername); // Buat get username
 
+router.get("/users/getUserByUsername", getUserByUsername); // Buat get user by username
+
 // Menu
 // ==================================================================================
 router.post("/menus/upload", upload); // Buat upload custom menu
@@ -99,10 +106,18 @@ router.get("/menus/getOneMenuById", getOneMenuById); //Buat Get menu by id
 
 router.get("/menus/searchImageByQuery", searchImageByQuery); //Buat search menu
 
+router.get("/menus/recommendMenu", recommendMenu); //Buat get reecommended menu
+
+router.delete("/menus/deleteMenuById", deleteMenuById); //Buat delete menu
+
+router.put("/menus/editMenuById", editMenuById); //Buat update menu
+
 // Like
 // ==================================================================================
 router.get("/likes/getLikeMenu", getLikeMenu); //Buat get like
 
 router.post("/likes/likeMenu", likeMenu); //Buat like dan unlike menu
+
+router.get("/likes/savedMenu", savedMenu); //Buat get saved menu
 
 module.exports = router;
