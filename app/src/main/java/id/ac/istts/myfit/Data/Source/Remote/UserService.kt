@@ -5,6 +5,7 @@ import id.ac.istts.myfit.Data.ImageData
 import id.ac.istts.myfit.Data.SearchResult
 import id.ac.istts.myfit.Data.User
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
@@ -64,4 +65,8 @@ interface UserService {
 
     @GET("api/users/getUserByUsername")
     suspend fun getUserByUsername(@Query("username") username:String):User
+
+    @DELETE("api/users/deleteAccount")
+    suspend fun deleteAccount(@Query("id") id:String ,@Query("pass") password:String):ErrorMsg
+
 }

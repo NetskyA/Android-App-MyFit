@@ -19,13 +19,4 @@
         android:padding="12dp"
         android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:background="@drawable/backgroundnavigations7"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false" />
-
-    </LinearLayout>
+</LinearLayout>

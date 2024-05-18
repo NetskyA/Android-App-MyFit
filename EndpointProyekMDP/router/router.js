@@ -17,7 +17,8 @@ const {
   checkPass,
   getUsername,
   loginGoogle,
-  getUserByUsername
+  getUserByUsername,
+  deleteAccount
 } = require("../controllers/UserController"); //function user
 
 const { 
@@ -67,6 +68,8 @@ router.post("/users/sendCode", sendCode); // Buat kirim kode otp
 router.post("/users/verifyOtp", verifyOtp); // Buat verifikasi kode otp
 
 router.post("/users/updateProfile", updateProfile); // Buat update profil account dan body
+
+router.delete("/users/deleteAccount", deleteAccount); // Buat delete account
 
 router.post("/users/checkEmail", checkEmail); // Buat pengecekan email kembar
 

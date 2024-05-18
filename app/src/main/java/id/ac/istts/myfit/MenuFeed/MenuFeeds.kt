@@ -1,32 +1,23 @@
 package id.ac.istts.myfit.MenuFeed
 
 import android.content.Intent
-import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import id.ac.istts.myfit.Data.Menu
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.Data.RandomMenu
-import id.ac.istts.myfit.ProfileSetting.MenuProfileAdapter
-import id.ac.istts.myfit.ProfileSetting.MenuProfileViewModel
 import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuFeedsBinding
 import kotlinx.coroutines.CoroutineScope
@@ -120,8 +111,8 @@ class MenuFeeds : Fragment() {
         }
     }
 
-    /*override fun onDestroyView() {
+    override fun onDestroyView() {
         super.onDestroyView()
-        binding = null
-    }*/
+        vm.clearDataMenus()
+    }
 }

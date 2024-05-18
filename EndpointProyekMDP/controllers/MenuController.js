@@ -187,12 +187,13 @@ module.exports = {
               const binaryData = fs.readFileSync(searchMenu[i].image)
               searchMenu[i].dataValues.image = Buffer(binaryData).toString('base64')
             } 
-            var nama="System"
-            if(searchMenu[i].dataValues.user_id!==0){
-                temp = await Users.findByPk(searchMenu[i].dataValues.user_id)
+            var nama="Deleted Account"
+            temp = await Users.findByPk(searchMenu[i].dataValues.user_id)
+            if(temp != null){
                 nama = temp.dataValues.name.toString()
-                console.log(nama)
             }
+            console.log(nama)
+            
  
             hasil.push({
                 id: searchMenu[i].dataValues.id,
@@ -218,6 +219,22 @@ module.exports = {
                 user_id: user_id
             }
         })
+        console.log(search)
+        for(let i = 0; i < search.length; i++){
+            var list = search[i].dataValues.menu.split(",")
+            var hasil = []
+            for(let j = 0; j < list.length; j++){
+                let menu = await Menu.findOne({
+                    where:{
+                        id: list[j],
+                        status: 1
+                    }
+                })
+                if(menu != null) hasil.push(menu.id)
+            }
+            var temp = hasil.join(",")
+            search[i].dataValues.menu = temp
+        }
         return res.status(200).send(search)
     },
 
@@ -225,11 +242,11 @@ module.exports = {
         const {id} = req.query
         console.log(id)
         var list = id.split(",")
-        var hasil = []
+        var hasil = [] 
 
         for(let i = 0; i < list.length; i++){
             let search = await Menu.findOne({
-                where:{
+                where:{ 
                     id: list[i]
                 }
             })

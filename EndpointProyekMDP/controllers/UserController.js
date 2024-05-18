@@ -18,6 +18,7 @@ module.exports = {
     // return res.status(200).send("OK");
     return res.status(201).send(users);
   },
+
   test: async (req, res) => {
     const hashPass = await bcrypt.hash("123", 10);
     return res.status(200).send({ test: hashPass });
@@ -38,6 +39,8 @@ module.exports = {
       return res.status(200).send({ text: "Ok" });
     }
   },
+
+  
 
   loginGoogle: async (req, res) => {
     const {email} = req.query;
@@ -71,6 +74,32 @@ module.exports = {
       blood_type: cekUser.dataValues.blood_type,
       allergy: cekUser.dataValues.allergy,
       image: img,
+    });
+  },
+
+  deleteAccount: async (req, res) => {
+    const { id,pass } = req.query;
+    console.log(pass)
+    let user = await User.findByPk(parseInt(id));
+
+    const cekPass = await bcrypt.compare(pass, user.password);
+
+    if (!cekPass) return res.status(200).send({ text: "Incorrect Password" });
+
+    await user.destroy({
+      where: {
+        id: id
+      }
+    })
+
+    await Diets.destroy({
+      where: {
+        user_id: id
+      }
+    })
+
+    return res.status(200).send({
+      text: "Success"
     });
   },
 

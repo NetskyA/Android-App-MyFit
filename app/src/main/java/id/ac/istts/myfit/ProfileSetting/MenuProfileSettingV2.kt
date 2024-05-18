@@ -5,21 +5,18 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
 import android.view.animation.AnimationUtils
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import id.ac.istts.myfit.Data.Modal.ModalDeleteAccount
 import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
@@ -107,15 +104,14 @@ class MenuProfileSettingV2 : AppCompatActivity() {
 
         binding.menuProfileSettingTvDeleteAccount.setOnClickListener {
             val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.dialog_delete_menu, null)
+            dialogView.findViewById<EditText>(R.id.InputConfirmation).hint = "Input your password here"
             builder
                 .setTitle("Delete Confirmation Prompt")
-                .setMessage("Please re-enter your username to confirm deletion.")
-                .setView(layoutInflater.inflate(R.layout.dialog_delete_menu, null))
+                .setMessage("Please enter your password to confirm deletion.")
+                .setView(dialogView)
+                .setPositiveButton("Delete", null)
                 // Add action buttons.
-                .setPositiveButton("Delete",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        Toast.makeText(this, "Account Deleted", Toast.LENGTH_SHORT).show()
-                    })
                 .setNegativeButton("Cancel",
                     DialogInterface.OnClickListener { dialog, id ->
                         dialog.cancel()
@@ -124,8 +120,44 @@ class MenuProfileSettingV2 : AppCompatActivity() {
             val dialog: AlertDialog = builder.create()
             dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.dialog_rounded))
             dialog.show()
-        }
 
+            if (!isFinishing) {
+                dialog.show()
+
+                // Get the positive button and set a custom click listener
+                val positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                positiveButton.setOnClickListener {
+                    val editTextUsername = dialogView.findViewById<EditText>(R.id.InputConfirmation).text.toString()
+                    if (editTextUsername.isEmpty()) {
+                        Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show()
+                    } else {
+                        ioScope.launch {
+                            val msg = vm.deleteAccount(editTextUsername)
+                            mainScope.launch {
+                                // Check if the activity is still running before performing UI operations
+                                if (!isFinishing) {
+                                    if (msg == "Incorrect Password") {
+                                        Toast.makeText(this@MenuProfileSettingV2, "Failed to delete account", Toast.LENGTH_SHORT).show()
+                                    } else if (msg == "Fail") {
+                                        Toast.makeText(
+                                            this@MenuProfileSettingV2,
+                                            "No Internet Connection, Please check your connection",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    } else {
+                                        Toast.makeText(this@MenuProfileSettingV2, "Account Deleted", Toast.LENGTH_SHORT).show()
+                                        userPreference.clearPref()
+                                        menuPreferences.clearCustomMenu()
+                                        startActivity(Intent(this@MenuProfileSettingV2, MenuSigninAll::class.java))
+                                        finish()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
