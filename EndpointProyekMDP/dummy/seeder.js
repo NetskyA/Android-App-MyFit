@@ -83,7 +83,7 @@ const { generateDummyUsers } = require("../service/Functions");
                 nutrition: menus[i].nutrition,
                 how_to_make: menus[i].how_to_make,
                 note: menus[i].note,
-                like: menus[i].acak,
+                like: acak,
                 date: menus[i].date,
                 note: "",
                 image: menus[i].image,

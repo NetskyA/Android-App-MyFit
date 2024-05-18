@@ -333,15 +333,21 @@ module.exports = {
     },
 
     editMenuById: async(req, res)=>{
-        const {id, name, nutrition, ingredients, howToMake, notes, image} = req.query
+        const {id, name, nutrition, ingredients, how_to_make, note, image} = req.body
         console.log(id)
+        console.log(name)
+        console.log(nutrition)
+        console.log(ingredients)
+        console.log(how_to_make)
+        console.log(note)
+        console.log(image)
         await Menu.update(
             {
                 name: name,
                 nutrition: nutrition,
                 ingredients: ingredients,
-                how_to_make: howToMake,
-                note: notes,
+                how_to_make: how_to_make,
+                note: note,
             },
             {
                 where: {
@@ -350,12 +356,14 @@ module.exports = {
             }
         )
         const imageBuffer = Buffer.from(image, 'base64')
+
         fs.writeFile(`uploads/menu/${id}.jpg`, imageBuffer, (err) => {
             if (err) {
                 console.error(err);
-                return res.status(200).send({text: 'Failed'});
+                return res.status(200).send({text: 'Fail'});
             }
         })
+
         return res.status(200).send({text: "Success"})
     }
 }

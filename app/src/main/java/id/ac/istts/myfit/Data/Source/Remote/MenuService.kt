@@ -49,7 +49,6 @@ interface MenuService {
     suspend fun deleteMenuById(@Query("id") id:String): ErrorMsg
 
     @PUT("api/menus/editMenuById")
-    suspend fun editMenuById(@Query("id") id:String, @Query("name") name:String, @Query("nutrition") nutrition:String
-    , @Query("ingredients") ingredients:String, @Query("howToMake") howToMake:String, @Query("notes") notes:String, @Query("image") image:String): ErrorMsg
+    suspend fun editMenuById(@Body menu: Menu): ErrorMsg
 
 }

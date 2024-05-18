@@ -203,7 +203,7 @@ class MenuProfile : Fragment() {
                 }
             }
         }else {
-            vm.reset()
+            vm.getAllMenuUser(userPreference.getUser().id!!.toInt())
             vm.menus.observe(viewLifecycleOwner, Observer { menus ->
                 // Update UI with the new list of menus
                 menuProfileAdapter = MenuProfileAdapter(menus, onDetailClickListener = {

@@ -39,8 +39,9 @@ class EditMenuViewModel (application: Application) : AndroidViewModel(applicatio
     , howToMake:String, notes:String, image:String): String {
         try {
             return withContext(Dispatchers.IO) {
-                var result = MyFitApplication.retrofitMenuService!!.editMenuById(id, name, nutrition,
-                    ingredients, howToMake, notes, image)
+                var tempMenu = Menu(id = id.toInt(), name = name, nutrition = nutrition,
+                    ingredients = ingredients, how_to_make = howToMake, note = notes, image = image)
+                var result = MyFitApplication.retrofitMenuService!!.editMenuById(tempMenu)
                 result.text
             }
         } catch (e: Exception) {

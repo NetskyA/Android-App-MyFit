@@ -10,6 +10,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -131,6 +132,17 @@ class EditMenu : AppCompatActivity() {
                             Toast.makeText(this@EditMenu, "Edited Success!", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@EditMenu, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
+                            binding.editMenuTvLike.setText(menu.like.toString())
+                            binding.editMenuTvCreatedUsername.setText(userPreference.getUser().username)
+                            binding.editMenuTvNamaMenu.setText(menu.name)
+                            binding.editMenuTvNutrition.setText(menu.nutrition)
+                            binding.editMenuTvIngredients.setText(menu.ingredients)
+                            binding.editMenuTvHowToMake.setText(menu.how_to_make)
+                            binding.editMenuTvNotes.setText(menu.note)
+                            binding.editMenuTvSaveContentFeed.setText(menu.date)
+                            if(menu.image!=""){
+                                binding.editMenuIvMenu.setImageBitmap(decodeBase64ToBitmap(menu.image.toString()))
+                            }
                         }
                     }
                 }
