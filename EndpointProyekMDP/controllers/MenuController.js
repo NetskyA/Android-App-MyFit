@@ -221,6 +221,7 @@ module.exports = {
         })
         console.log(search)
         for(let i = 0; i < search.length; i++){
+            if(search[i].dataValues.menu == null) continue
             var list = search[i].dataValues.menu.split(",")
             var hasil = []
             for(let j = 0; j < list.length; j++){
@@ -279,7 +280,7 @@ module.exports = {
                 id: id,
                 status: 1
             }
-        })
+        }) 
         if(menu.image!=""){
             const binaryData = fs.readFileSync(menu.image)
             menu.image = Buffer(binaryData).toString('base64')
@@ -288,7 +289,7 @@ module.exports = {
     },
     searchImageByQuery: async(req, res)=>{
         const {
-            id, q,
+            id, q, 
         } = req.query;
         
         let searchMenu = await Menu.findAll({

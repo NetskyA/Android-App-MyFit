@@ -173,6 +173,10 @@ class MenuDiet : Fragment() {
                 requireActivity().runOnUiThread {
                     if (hasil == "Failed") {
                         Toast.makeText(context, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
+                    }else{
+                        adapter2.data.clear()
+                        adapter2.notifyDataSetChanged()
+                        Toast.makeText(context, "Menu Diet Saved", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

@@ -67,7 +67,6 @@ class MenuDietViewModel (application: Application) : AndroidViewModel(applicatio
             _menu.postValue(mutableListOf<MenuDietData>())
             return
         }
-        Log.e("menu",menu[0].menu.toString())
         val tempData = menu[0].menu!!.split(",")
         var tempDataMenu = mutableListOf<MenuDietData>()
         for(data in tempData){

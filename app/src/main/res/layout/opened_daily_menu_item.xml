@@ -53,24 +53,23 @@
                 android:layout_marginEnd="@dimen/_10sdp"
                 tools:ignore="MissingConstraints">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="Menu 1"
-                    android:textColor="@color/green_main"
-                    android:textSize="@dimen/_20ssp"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <LinearLayout
                     android:id="@+id/openedDaily_lyImage"
                     android:layout_width="@dimen/_260sdp"
                     android:layout_height="@dimen/_210sdp"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/backgroundnavigations3"
                     android:orientation="horizontal">
 
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/openedDaily_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/examplemenu"
+                        android:scaleType="fitXY"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:shapeAppearanceOverlay="@style/Circular"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -116,8 +115,8 @@
                         android:id="@+id/openedDaily_tvLikes"
                         android:layout_width="@dimen/_225sdp"
                         android:layout_height="wrap_content"
-                        android:text="favorite Aldiaafn"
                         android:gravity="start"
+                        android:text="favorite"
                         android:textSize="@dimen/_13ssp" />
 
                 </LinearLayout>
@@ -130,11 +129,12 @@
                     android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/menuDaily_hide"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/hide"
                         android:background="@null"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/hide_invert" />
 
                 </LinearLayout>
 
@@ -143,24 +143,24 @@
                     android:layout_width="@dimen/_280sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:visibility="gone"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="@dimen/_260sdp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:gravity="center_vertical"
                         android:layout_marginTop="@dimen/_8sdp"
+                        android:gravity="center_vertical"
                         android:orientation="vertical">
 
-                            <TextView
-                                android:layout_width="@dimen/_230sdp"
-                                android:layout_height="wrap_content"
-                                android:text="Nutrition"
-                                android:textStyle="bold"
-                                android:gravity="start"
-                                android:textSize="@dimen/_13ssp" />
+                        <TextView
+                            android:layout_width="@dimen/_230sdp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="Nutrition"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -169,17 +169,17 @@
                             <ImageView
                                 android:layout_width="@dimen/_6sdp"
                                 android:layout_height="@dimen/_6sdp"
-                                android:src="@drawable/circle"
                                 android:layout_marginTop="@dimen/_7sdp"
-                                android:scaleType="centerCrop" />
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/circle" />
 
                             <TextView
                                 android:id="@+id/customDailymenu_tvNutrition"
                                 android:layout_width="@dimen/_250sdp"
                                 android:layout_height="wrap_content"
-                                android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                 android:gravity="start"
                                 android:paddingStart="@dimen/_6sdp"
+                                android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                 android:textSize="@dimen/_13ssp" />
 
                         </LinearLayout>
@@ -196,10 +196,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ingredients"
-                            android:textStyle="bold"
                             android:gravity="start"
-                            android:textSize="@dimen/_13ssp" />
+                            android:text="Ingredients"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -208,17 +208,17 @@
                             <ImageView
                                 android:layout_width="@dimen/_6sdp"
                                 android:layout_height="@dimen/_6sdp"
-                                android:src="@drawable/circle"
                                 android:layout_marginTop="@dimen/_7sdp"
-                                android:scaleType="centerCrop" />
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/circle" />
 
                             <TextView
                                 android:id="@+id/customDailymenu_tvIngredients"
                                 android:layout_width="@dimen/_250sdp"
                                 android:layout_height="wrap_content"
-                                android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                 android:gravity="start"
                                 android:paddingStart="@dimen/_6sdp"
+                                android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                 android:textSize="@dimen/_13ssp" />
 
                         </LinearLayout>
@@ -235,10 +235,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="How to Make"
-                            android:textStyle="bold"
                             android:gravity="start"
-                            android:textSize="@dimen/_13ssp" />
+                            android:text="How to Make"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -247,17 +247,17 @@
                             <ImageView
                                 android:layout_width="@dimen/_6sdp"
                                 android:layout_height="@dimen/_6sdp"
-                                android:src="@drawable/circle"
                                 android:layout_marginTop="@dimen/_7sdp"
-                                android:scaleType="centerCrop" />
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/circle" />
 
                             <TextView
                                 android:id="@+id/customDailymenu_tvHowToMake"
                                 android:layout_width="@dimen/_250sdp"
                                 android:layout_height="wrap_content"
-                                android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                 android:gravity="start"
                                 android:paddingStart="@dimen/_6sdp"
+                                android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                 android:textSize="@dimen/_13ssp" />
 
                         </LinearLayout>
@@ -269,15 +269,16 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="visible">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Notes"
-                            android:textStyle="bold"
                             android:gravity="start"
-                            android:textSize="@dimen/_13ssp" />
+                            android:text="Notes"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -286,17 +287,17 @@
                             <ImageView
                                 android:layout_width="@dimen/_6sdp"
                                 android:layout_height="@dimen/_6sdp"
-                                android:src="@drawable/circle"
                                 android:layout_marginTop="@dimen/_7sdp"
-                                android:scaleType="centerCrop" />
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/circle" />
 
                             <TextView
                                 android:id="@+id/customDailymenu_tvNotes"
                                 android:layout_width="@dimen/_250sdp"
                                 android:layout_height="wrap_content"
-                                android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                 android:gravity="start"
                                 android:paddingStart="@dimen/_6sdp"
+                                android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                 android:textSize="@dimen/_13ssp" />
 
                         </LinearLayout>

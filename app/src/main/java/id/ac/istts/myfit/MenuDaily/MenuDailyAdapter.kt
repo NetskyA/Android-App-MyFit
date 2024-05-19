@@ -12,8 +12,8 @@ import id.ac.istts.myfit.Data.MenuDietData
 import id.ac.istts.myfit.R
 
 class MenuDailyAdapter (
-    var data: MutableList<String>,
-    val onDetailClickListener:(String) -> Unit
+    var data: MutableList<MenuDietData>,
+    val onDetailClickListener:(Int) -> Unit
 ): RecyclerView.Adapter<MenuDailyAdapter.ViewHolder>() {
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val imageFeed: ImageView = row.findViewById(R.id.imagesmenudiet)
@@ -32,9 +32,16 @@ class MenuDailyAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val f = data[position]
-
-        holder.row.setOnClickListener {
-            onDetailClickListener.invoke(f)
+        if(f.image!="" && f.image!=null){
+            holder.imageFeed.setImageBitmap(decodeBase64ToBitmap(f.image.toString()))
         }
+        holder.row.setOnClickListener {
+            onDetailClickListener.invoke(f.id!!)
+        }
+    }
+
+    fun decodeBase64ToBitmap(base64Str: String): Bitmap {
+        val imageBytes = Base64.decode(base64Str, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
     }
 }
