@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/menuDaily">
+    app:startDestination="@id/menuFeeds2">
     <fragment
         android:id="@+id/menuDaily"
         android:name="id.ac.istts.myfit.MenuDaily.MenuDaily"

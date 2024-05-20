@@ -10,16 +10,16 @@ Users.init(
       autoIncrement: true
     },
     email: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING(255),
       unique: true
     },
     username: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING(255),
       allowNull: true,
       unique: true
     },
     phone: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING(255),
       allowNull: true,
       unique: true
     },

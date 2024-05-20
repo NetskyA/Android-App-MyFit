@@ -6,9 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentContainerView
 import androidx.navigation.findNavController
-import id.ac.istts.myfit.R
 import com.google.android.material.navigation.NavigationBarView
 import id.ac.istts.myfit.Data.Preferences.UserPreference
+import id.ac.istts.myfit.R
 
 class HomeUserActivity : AppCompatActivity() {
 
@@ -24,7 +24,7 @@ class HomeUserActivity : AppCompatActivity() {
         Log.e("Pref", userPreference.getUser().toString())
 
         val navigationBarView = findViewById<NavigationBarView>(R.id.bottom_navigation)
-        navigationBarView.selectedItemId = R.id.Menu_Item_Daily
+        navigationBarView.selectedItemId = R.id.Menu_Item_Feed
         navigationBarView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.Menu_Item_Feed -> {
