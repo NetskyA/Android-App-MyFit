@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -88,14 +89,30 @@ class MenuFeeds : Fragment() {
             menuFeedsAdapter.notifyDataSetChanged()
         })
 
-        binding.extendedFab.setOnClickListener{
-            vm.getAllMenus(userPreference.getUser().id!!.toInt())
-            vm.menus.observe(viewLifecycleOwner, Observer { menus ->
-                // Update UI with the new list of menus
-                menuFeedsAdapter.data = menus
-                menuFeedsAdapter.notifyDataSetChanged()
-            })
-        }
+//        binding.extendedFab.setOnClickListener{
+//            vm.getAllMenus(userPreference.getUser().id!!.toInt())
+//            vm.menus.observe(viewLifecycleOwner, Observer { menus ->
+//                // Update UI with the new list of menus
+//                menuFeedsAdapter.data = menus
+//                menuFeedsAdapter.notifyDataSetChanged()
+//            })
+//        }
+
+        recyclerViewContent.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                if (!recyclerView.canScrollVertically(1)) {
+                    vm.getAllMenus(userPreference.getUser().id!!.toInt())
+                    vm.menus.observe(viewLifecycleOwner, Observer { menus ->
+                        // Update UI with the new list of menus
+                        menuFeedsAdapter.data = menus
+                        menuFeedsAdapter.notifyDataSetChanged()
+                    })
+                }
+            }
+        })
+
 
 //        menuProfileAdapter = MenuProfileAdapter(temp, onDetailClickListener = {
 //            startActivity(Intent(this.context, MenuFeedOpened::class.java))
