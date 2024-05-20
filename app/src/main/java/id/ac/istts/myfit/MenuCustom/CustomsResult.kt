@@ -70,7 +70,7 @@ class CustomsResult : Fragment() {
                         }
                     }else{
                         vm.clear()
-//                        vm.getAllMenuUser(userPreference.getUser().id!!.toInt())
+                        vm.getAllMenuUser(userPreference.getUser().id!!.toInt())
                         mainScope.launch {
                             Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
                             findNavController().navigate(R.id.action_global_customsIngredients)

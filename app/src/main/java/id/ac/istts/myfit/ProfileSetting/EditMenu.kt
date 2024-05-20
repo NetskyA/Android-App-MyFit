@@ -164,9 +164,9 @@ class EditMenu : AppCompatActivity() {
             // TODO Modal Delete Confirmation
             val builder: AlertDialog.Builder = AlertDialog.Builder(this)
             builder
-                .setTitle("Delete Confirmation Prompt")
-                .setMessage("Please re-enter your post title to confirm deletion.")
-                .setView(layoutInflater.inflate(R.layout.dialog_delete_menu, null))
+                .setTitle("Delete this Menu?")
+//                .setMessage("Please re-enter your post title to confirm deletion.")
+//                .setView(layoutInflater.inflate(R.layout.dialog_delete_menu, null))
                 // Add action buttons.
                 .setPositiveButton("Delete",
                     DialogInterface.OnClickListener { dialog, id ->
@@ -192,6 +192,20 @@ class EditMenu : AppCompatActivity() {
             val dialog: AlertDialog = builder.create()
             dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.dialog_rounded))
             dialog.show()
+
+//            ioScope.launch {
+//                var result = vm.deleteMenuById(menu)
+//                if(result=="Success"){
+//                    mainScope.launch {
+//                        Toast.makeText(this@EditMenu, "Menu Deleted", Toast.LENGTH_SHORT).show()
+//                        finish()
+//                    }
+//                }else{
+//                    mainScope.launch {
+//                        Toast.makeText(this@EditMenu, "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            }
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
