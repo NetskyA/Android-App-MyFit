@@ -28,7 +28,8 @@ class AllMenuUserRepository (
     }
 
     suspend fun sortOldest(): ArrayList<Menu> {
-        return ArrayList(localDataSource.allMenuUserDao().sortOldest())
+        var temp = localDataSource.allMenuUserDao().sortOldest()
+        return ArrayList(temp)
     }
     suspend fun sortFavorite(): ArrayList<Menu> {
         return ArrayList(localDataSource.allMenuUserDao().sortLike())
@@ -36,10 +37,11 @@ class AllMenuUserRepository (
     suspend fun reset(): ArrayList<Menu> {
         return ArrayList(localDataSource.allMenuUserDao().getAll())
     }
-//    suspend fun createMenu(menu:TempMenu) {
-//        val newPost = remoteDataSource.uploadMenu(menu) //insert remote dl
-//        localDataSource.allMenuUserDao().insert(menu)
-//    }
+    suspend fun uploadMenu(menu:Menu): ErrorMsg{
+        val newPost = remoteDataSource.uploadMenu(menu) //insert remote dl
+        localDataSource.allMenuUserDao().insert(menu)
+        return newPost
+    }
 //    suspend fun updateMenu(menu:Menu) {
 //        remoteDataSource.update(menu.id, menu)
 //        localDataSource.allMenuUserDao().update(menu)

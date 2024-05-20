@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Base64
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,30 +64,47 @@ class CustomsResult : Fragment() {
             else{
                 ioScope.launch {
                     val msg = vm.upload()
-                    mainScope.launch {
-                        if(msg == "Fail"){
+                    if(msg=="Fail"){
+                        mainScope.launch {
                             Toast.makeText(requireContext(), "No Internet Connection, Please check your connection", Toast.LENGTH_SHORT).show()
-                        }else{
+                        }
+                    }else{
+                        vm.clear()
+//                        vm.getAllMenuUser(userPreference.getUser().id!!.toInt())
+                        mainScope.launch {
                             Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
-                            ioScope.launch {
-                                vm.clear()
-                                mainScope.launch {
+                            findNavController().navigate(R.id.action_global_customsIngredients)
 
-                                }
-                            }
+                            val navHostFragment = parentFragment as NavHostFragment
+                            val menuCustoms = navHostFragment.parentFragment as MenuCustoms
+                            menuCustoms.binding.btnAddCustoms.setBackgroundResource(R.drawable.backgroundnavigations3)
+                            menuCustoms.binding.btnResultCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
+                            menuCustoms.binding.btnAddCustoms.setTextColor(resources.getColor(R.color.white))
+                            menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.green_main))
                         }
                     }
+
+//                    mainScope.launch {
+//                        if(msg == "Fail"){
+//                        }else{
+//                            Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
+//                            ioScope.launch {
+//                                vm.clear()
+//                                mainScope.launch {
+//                                    findNavController().navigate(R.id.action_global_customsIngredients)
+//
+//                                    // Change Active
+//                                    val navHostFragment = parentFragment as NavHostFragment
+//                                    val menuCustoms = navHostFragment.parentFragment as MenuCustoms
+//                                    menuCustoms.binding.btnAddCustoms.setBackgroundResource(R.drawable.backgroundnavigations3)
+//                                    menuCustoms.binding.btnResultCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
+//                                    menuCustoms.binding.btnAddCustoms.setTextColor(resources.getColor(R.color.white))
+//                                    menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.green_main))
+//                                }
+//                            }
+//                        }
+//                    }
                 }
-
-                findNavController().navigate(R.id.action_global_customsIngredients)
-
-                // Change Active
-                val navHostFragment = parentFragment as NavHostFragment
-                val menuCustoms = navHostFragment.parentFragment as MenuCustoms
-                menuCustoms.binding.btnAddCustoms.setBackgroundResource(R.drawable.backgroundnavigations3)
-                menuCustoms.binding.btnResultCustoms.setBackgroundColor(Color.parseColor("#0008C4D4"))
-                menuCustoms.binding.btnAddCustoms.setTextColor(resources.getColor(R.color.white))
-                menuCustoms.binding.btnResultCustoms.setTextColor(resources.getColor(R.color.green_main))
             }
         }
     }
