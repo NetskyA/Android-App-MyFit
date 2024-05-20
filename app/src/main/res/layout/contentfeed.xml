@@ -2,8 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/_136sdp"
-    android:layout_height="@dimen/_135sdp">
+    android:layout_width="@dimen/_146sdp"
+    android:layout_height="@dimen/_145sdp">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,8 +37,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/lybar"
-            android:layout_width="@dimen/_131sdp"
-            android:layout_height="@dimen/_130sdp"
+            android:layout_width="@dimen/_141sdp"
+            android:layout_height="@dimen/_140sdp"
             app:cardCornerRadius="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

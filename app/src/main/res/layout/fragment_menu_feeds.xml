@@ -109,8 +109,9 @@
 
         <LinearLayout
             android:id="@+id/lytengah"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/_500sdp"
+            android:layout_marginStart="@dimen/_3sdp"
             android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
@@ -122,6 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginStart="@dimen/_10sdp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"

@@ -149,7 +149,7 @@
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday"
-                    android:layout_width="@dimen/_284sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -193,13 +193,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday2"
-                    android:layout_width="@dimen/_284sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -243,13 +242,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday3"
-                    android:layout_width="@dimen/_284sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -293,13 +291,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday4"
-                    android:layout_width="@dimen/_284sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -343,13 +340,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday5"
-                    android:layout_width="@dimen/_284sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -393,13 +389,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday6"
-                    android:layout_width="@dimen/_284sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
@@ -443,13 +438,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/lycontentmenutoday7"
-                    android:layout_width="@dimen/_284sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/Right"

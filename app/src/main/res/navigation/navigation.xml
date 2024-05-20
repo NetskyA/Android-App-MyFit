@@ -43,6 +43,9 @@
         android:name="id.ac.istts.myfit.ProfileSetting.MenuProfile"
         android:label="fragment_menu_profile"
         tools:layout="@layout/fragment_menu_profile" >
+        <action
+            android:id="@+id/action_menuProfile_to_menu_chat_bot_in_profile"
+            app:destination="@id/menu_chat_bot_in_profile" />
     </fragment>
     <action
         android:id="@+id/action_global_menuFeeds2"
@@ -76,4 +79,9 @@
             android:name="username"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/menu_chat_bot_in_profile"
+        android:name="id.ac.istts.myfit.chatbot.Menu_chat_bot_in_profile"
+        android:label="fragment_menu_chat_bot_in_profile"
+        tools:layout="@layout/fragment_menu_chat_bot_in_profile" />
 </navigation>

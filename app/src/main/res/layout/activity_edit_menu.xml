@@ -105,16 +105,17 @@
                             android:layout_width="@dimen/_290sdp"
                             android:layout_height="@dimen/_210sdp"
                             android:layout_gravity="center"
-                            app:cardCornerRadius="@dimen/_15sdp"
-                            android:background="@drawable/backgroundnavigations3"
+                            app:cardCornerRadius="@dimen/_15ssp"
                             android:orientation="horizontal">
 
                             <ImageView
                                 android:id="@+id/editMenu_ivMenu"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="@color/green_main"
-                                android:scaleType="centerCrop"/>
+                                android:src="@drawable/examplemenu"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"/>
 
                     </androidx.cardview.widget.CardView>
 
@@ -247,6 +248,7 @@
                                     android:layout_width="@dimen/_240sdp"
                                     android:layout_height="wrap_content"
                                     android:enabled="false"
+                                    android:background="#00CCCCCC"
                                     android:gravity="start"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
@@ -294,6 +296,7 @@
                                     android:layout_height="wrap_content"
                                     android:enabled="false"
                                     android:gravity="start"
+                                    android:background="#00CCCCCC"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textColor="@color/white"
@@ -340,6 +343,7 @@
                                     android:layout_height="wrap_content"
                                     android:enabled="false"
                                     android:gravity="start"
+                                    android:background="#00CCCCCC"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textColor="@color/white"
@@ -386,6 +390,7 @@
                                     android:layout_height="wrap_content"
                                     android:enabled="false"
                                     android:gravity="start"
+                                    android:background="#00CCCCCC"
                                     android:paddingStart="@dimen/_6sdp"
                                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                                     android:textColor="@color/white"

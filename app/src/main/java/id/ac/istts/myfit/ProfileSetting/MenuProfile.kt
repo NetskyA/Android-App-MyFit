@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.AllMenuUser
@@ -181,6 +182,11 @@ class MenuProfile : Fragment() {
 //            findNavController().navigate(stepmove)
             startActivity(Intent(this.context, MenuProfileSettingV2::class.java))
         }
+
+        binding.gotomenuchatbot.setOnClickListener {
+            findNavController().navigate(R.id.action_menuProfile_to_menu_chat_bot_in_profile)
+        }
+
     }
 
     override fun onResume() {

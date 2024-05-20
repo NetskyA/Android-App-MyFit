@@ -135,8 +135,9 @@
 
         <LinearLayout
             android:id="@+id/lytengah"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/_500sdp"
+            android:layout_marginStart="@dimen/_3sdp"
             android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@+id/Right"
             app:layout_constraintHorizontal_bias="0.0"
@@ -148,6 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginStart="@dimen/_10sdp"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/Left"
@@ -254,18 +256,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_5sdp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_feedcontent"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_390sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:paddingBottom="@dimen/_20sdp"
+                    android:layout_height="@dimen/_370sdp"
                     app:layout_constraintEnd_toStartOf="@+id/Right"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/Left"
                     app:layout_constraintTop_toTopOf="@+id/lytengah1"/>
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/gotomenuchatbot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginTop="-80dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:backgroundTint="@color/green_main"
+                    android:contentDescription="More"
+                    android:textColor="@color/white"
+                    android:theme="@style/Fab"
+                    app:icon="@drawable/showmore" />
 
             </LinearLayout>
 

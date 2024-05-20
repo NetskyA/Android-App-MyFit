@@ -47,18 +47,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/backgroundnavigations2"
-                android:orientation="vertical"
+                android:background="@drawable/borders6"                android:orientation="vertical"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 tools:ignore="MissingConstraints">
 
                 <LinearLayout
                     android:id="@+id/openedDaily_lyImage"
-                    android:layout_width="@dimen/_260sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/_210sdp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_10sdp"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -106,6 +104,7 @@
                         android:layout_height="wrap_content"
                         android:text="0"
                         android:layout_gravity="end"
+                        android:textColor="@color/white"
                         android:gravity="end"
                         android:paddingStart="@dimen/_10sdp"
                         android:paddingEnd="@dimen/_7sdp"
@@ -116,6 +115,7 @@
                         android:layout_width="@dimen/_225sdp"
                         android:layout_height="wrap_content"
                         android:gravity="start"
+                        android:textColor="@color/white"
                         android:text="favorite"
                         android:textSize="@dimen/_13ssp" />
 
