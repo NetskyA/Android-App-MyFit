@@ -248,7 +248,7 @@
                 android:layout_width="@dimen/_260sdp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/borderwhites"
+                android:background="@drawable/borders6"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintHorizontal_bias="0.0"
