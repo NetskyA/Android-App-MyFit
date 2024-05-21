@@ -2,10 +2,10 @@ package id.ac.istts.myfit.ChatBot
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.ai.client.generativeai.GenerativeModel
@@ -15,12 +15,10 @@ import com.google.ai.client.generativeai.type.SafetySetting
 import com.google.ai.client.generativeai.type.ServerException
 import com.google.ai.client.generativeai.type.generationConfig
 import id.ac.istts.myfit.Data.ChatBot
-import id.ac.istts.myfit.R
 import id.ac.istts.myfit.databinding.FragmentMenuChatBotInProfileBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 
 class Menu_chat_bot_in_profile : Fragment() {
 
@@ -108,6 +106,9 @@ class Menu_chat_bot_in_profile : Fragment() {
                     Log.e("GenerativeAI", "An internal error has occurred: ${e.message}")
                     response = "Sorry, I am having trouble processing your request. Please try again later."
                     // Retry the operation or report the issue to Google
+                } catch (e:Exception){
+                    Log.e("GenerativeAI", "An internal error has occurred: ${e.message}")
+                    response = "Sorry, I am having trouble processing your request. Please try again later."
                 }
 
                 mainScope.launch {
@@ -121,34 +122,4 @@ class Menu_chat_bot_in_profile : Fragment() {
         }
 
     }
-
-    fun geminiAI(prompt: String) : String {
-        val model = GenerativeModel(
-            "gemini-1.5-flash-latest",
-            // Retrieve API key as an environmental variable defined in a Build Configuration
-            // see https://github.com/google/secrets-gradle-plugin for further instructions
-            "AIzaSyC4E6SD5wvfOlUB72H5vGlufHl6MZc_YXo",
-            generationConfig = generationConfig {
-                temperature = 2f
-                topK = 64
-                topP = 0.95f
-                maxOutputTokens = 8192
-            },
-            safetySettings = listOf(
-                SafetySetting(HarmCategory.HARASSMENT, BlockThreshold.MEDIUM_AND_ABOVE),
-                SafetySetting(HarmCategory.HATE_SPEECH, BlockThreshold.MEDIUM_AND_ABOVE),
-                SafetySetting(HarmCategory.SEXUALLY_EXPLICIT, BlockThreshold.MEDIUM_AND_ABOVE),
-                SafetySetting(HarmCategory.DANGEROUS_CONTENT, BlockThreshold.MEDIUM_AND_ABOVE),
-            ),
-        )
-
-        val result = runBlocking {
-            model.generateContent(prompt)
-        }
-
-        val response = result.text
-
-        return response.toString()
-    }
-
 }

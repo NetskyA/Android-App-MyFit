@@ -4,11 +4,8 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.istts.myfit.Data.ChatBot
 import id.ac.istts.myfit.R
@@ -18,7 +15,7 @@ class ChatBotAdapter (
 ): RecyclerView.Adapter<ChatBotAdapter.ViewHolder>() {
     class ViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val chatBotContraintLayout: View = row.findViewById(R.id.chatBot_ConstrainLayout)
-        val chatBotLinearLayout: View = row.findViewById(R.id.innerLinearLayoutChatBot)
+        val chatBotLinearLayout: LinearLayout = row.findViewById(R.id.innerLinearLayoutChatBot)
         val tvMsg: TextView = row.findViewById(R.id.tv_send_bot)
     }
 
@@ -36,5 +33,9 @@ class ChatBotAdapter (
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val f = data[position]
         holder.tvMsg.text = f.message
+        if(f.side != "bot") {
+            holder.chatBotLinearLayout.gravity = Gravity.RIGHT
+            holder.tvMsg.setBackgroundResource(R.drawable.borderwhites)
+        }
     }
 }

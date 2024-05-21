@@ -37,7 +37,8 @@
         <activity
             android:name=".HomeUser.HomeUserActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".MenuDaily.MenuDaily"
             android:exported="false"
