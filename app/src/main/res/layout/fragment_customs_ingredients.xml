@@ -19,25 +19,31 @@
             android:layout_marginTop="@dimen/_6sdp"
             android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/uploadimagemenucustoms"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_140sdp"
-                android:layout_marginTop="@dimen/_3sdp"
-                android:layout_marginLeft="@dimen/_4sdp"
-                android:layout_marginRight="@dimen/_2sdp"
-                android:layout_marginBottom="@dimen/_3sdp"
-                android:background="@drawable/borders4"
-                android:paddingStart="@dimen/_12sdp"
-                android:src="@drawable/galerry"
-                android:paddingBottom="@dimen/_2sdp"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_20ssp"
+                android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/uploadimagemenucustoms"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:background="#373737"
+                    android:src="@drawable/galerry"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.cardview.widget.CardView>
 
 
             <EditText
                 android:id="@+id/etNamaMenuCustoms"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
+                android:textColor="@color/white"
                 android:hint="Avocado Juice*"
                 android:layout_marginLeft="@dimen/_4sdp"
                 android:layout_marginRight="@dimen/_2sdp"
@@ -56,6 +62,7 @@
                 android:layout_height="@dimen/_40sdp"
                 android:hint="Avocado, Milk, Sugar*"
                 android:layout_marginLeft="@dimen/_4sdp"
+                android:textColor="@color/white"
                 android:layout_marginRight="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:background="@drawable/borders4"
@@ -70,6 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 android:hint="Calories, Protein, Fat*"
+                android:textColor="@color/white"
                 android:layout_marginLeft="@dimen/_4sdp"
                 android:layout_marginRight="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_3sdp"
@@ -87,6 +95,7 @@
                 android:hint="How to make (1st A, 2nd B)"
                 android:layout_marginLeft="@dimen/_4sdp"
                 android:layout_marginRight="@dimen/_2sdp"
+                android:textColor="@color/white"
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:background="@drawable/borders4"
                 android:textColorHint="@color/grey"
@@ -103,6 +112,7 @@
                 android:layout_marginRight="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:background="@drawable/borders4"
+                android:textColor="@color/white"
                 android:drawablePadding="@dimen/_10sdp"
                 android:hint="Note (Alergy, etc) Optional"
                 android:paddingStart="@dimen/_20sdp"

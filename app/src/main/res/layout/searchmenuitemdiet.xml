@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/borders2"
+                android:background="@drawable/borders6"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -95,6 +95,7 @@
                     <TextView
                         android:id="@+id/menuDaily_tvCreatorName"
                         android:layout_width="wrap_content"
+                        android:textColor="@color/white"
                         android:layout_height="wrap_content"
                         android:paddingStart="@dimen/_5sdp"
                         android:text="Create by "
@@ -118,6 +119,7 @@
                         android:layout_height="wrap_content"
                         android:text="Nutrition"
                         android:textStyle="bold"
+                        android:textColor="@color/white"
                         android:gravity="start"
                         android:textSize="@dimen/_13ssp" />
 
@@ -138,6 +140,7 @@
                             android:layout_height="wrap_content"
                             android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a"
                             android:gravity="start"
+                            android:textColor="@color/white"
                             android:paddingStart="@dimen/_6sdp"
                             android:textSize="@dimen/_13ssp" />
 

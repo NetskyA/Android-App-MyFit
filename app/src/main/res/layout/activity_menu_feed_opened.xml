@@ -94,6 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:background="@drawable/borders6"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:layout_marginBottom="@dimen/_20sdp"
                     android:orientation="vertical">
@@ -110,7 +111,7 @@
                             android:id="@+id/imageView5"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/examplemenu"
+                            android:background="#373737"
                             android:scaleType="centerCrop"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"/>
@@ -129,7 +130,6 @@
                             android:layout_width="@dimen/_245sdp"
                             android:layout_height="wrap_content"
                             android:paddingStart="@dimen/_5sdp"
-                            android:text="Juice jembod"
                             android:textColor="@color/green_main"
                             android:textSize="@dimen/_18ssp"
                             android:textStyle="bold" />

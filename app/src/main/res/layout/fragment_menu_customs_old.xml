@@ -18,7 +18,7 @@
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            style="@style/Backgrounds">
+            android:background="@color/dark_grey">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/Left"
@@ -99,7 +99,6 @@
                 android:layout_width="@dimen/_275sdp"
                 android:layout_height="@dimen/_480sdp"
                 android:orientation="vertical"
-                android:background="@drawable/backgroundnavigations2"
                 app:layout_constraintStart_toStartOf="@+id/Left"
                 app:layout_constraintEnd_toStartOf="@+id/Right"
                 app:layout_constraintTop_toTopOf="@+id/Tengahtengah">
@@ -150,7 +149,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/_5sdp"
-                    android:background="@drawable/backgroundnavigations2"
                     android:layout_marginTop="@dimen/_6sdp"
                     android:orientation="vertical">
 
@@ -163,7 +161,7 @@
                         android:layout_marginLeft="@dimen/_4sdp"
                         android:layout_marginRight="@dimen/_2sdp"
                         android:layout_marginBottom="@dimen/_3sdp"
-                        android:background="@drawable/borders4"
+                        android:background="@drawable/backgroundnavigations8"
                         android:paddingStart="@dimen/_12sdp"
                         android:src="@drawable/galerry"
                         android:paddingBottom="@dimen/_2sdp"/>

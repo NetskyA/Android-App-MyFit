@@ -112,7 +112,7 @@
                                 android:id="@+id/editMenu_ivMenu"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/examplemenu"
+                                android:background="#373737"
                                 android:scaleType="centerCrop"
                                 app:layout_constraintHorizontal_bias="0.5"
                                 app:layout_constraintStart_toStartOf="parent"/>
