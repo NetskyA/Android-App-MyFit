@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
@@ -13,6 +15,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -73,8 +77,8 @@ class MenuProfile : Fragment() {
             // Update UI with the new list of menus
             menuProfileAdapter.data = menus
             menuProfileAdapter.notifyDataSetChanged()
-            binding.tvCountcreated.setText("${menus.size} Posts")
-            binding.tvFavorite.setText("${vm.countFavorite(menus)} Favorites")
+            binding.tvCountcreated.setText("${menus.size}")
+            binding.tvFavorite.setText("${vm.countFavorite(menus)}")
 
         })
 
@@ -85,6 +89,9 @@ class MenuProfile : Fragment() {
             if(binding.btnbydate.text=="Oldest"){
                 binding.btnbydate.setText("Newest")
                 binding.filterbykategori.setText(("Favorite"))
+                binding.btnbysvaed.setBackgroundResource(R.drawable.borders6)
+                binding.filterbykategori.setBackgroundResource(R.drawable.borders6)
+                binding.btnbydate.setBackgroundResource(R.drawable.backgroundnavigations10)
                 vm.sortRecent()
                 vm.menus.observe(viewLifecycleOwner, Observer { menus ->
                     // Update UI with the new list of menus
@@ -99,6 +106,9 @@ class MenuProfile : Fragment() {
                 })
             }else{
                 binding.btnbydate.setText("Oldest")
+                binding.btnbydate.setBackgroundResource(R.drawable.backgroundnavigations10)
+                binding.btnbysvaed.setBackgroundResource(R.drawable.borders6)
+                binding.filterbykategori.setBackgroundResource(R.drawable.borders6)
                 vm.reset()
                 vm.menus.observe(viewLifecycleOwner, Observer { menus ->
                     // Update UI with the new list of menus
@@ -114,10 +124,16 @@ class MenuProfile : Fragment() {
             }
         }
 
+        val iconDrawable = binding.gotomenuchatbot.icon
+        iconDrawable?.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
+
         binding.filterbykategori.setOnClickListener {
             if(binding.filterbykategori.text=="Favorite"){
                 binding.filterbykategori.setText("Reset")
                 binding.btnbydate.setText(("Oldest"))
+                binding.btnbydate.setBackgroundResource(R.drawable.borders6)
+                binding.btnbysvaed.setBackgroundResource(R.drawable.borders6)
+                binding.filterbykategori.setBackgroundResource(R.drawable.backgroundnavigations10)
                 vm.sortFavorite()
                 vm.menus.observe(viewLifecycleOwner, Observer { menus ->
                     // Update UI with the new list of menus
@@ -132,6 +148,9 @@ class MenuProfile : Fragment() {
                 })
             }else{
                 binding.filterbykategori.setText("Favorite")
+                binding.filterbykategori.setBackgroundResource(R.drawable.borders6)
+                binding.filterbykategori.setBackgroundResource(R.drawable.backgroundnavigations10)
+                binding.btnbysvaed.setBackgroundResource(R.drawable.borders6)
                 vm.reset()
                 vm.menus.observe(viewLifecycleOwner, Observer { menus ->
                     // Update UI with the new list of menus
@@ -148,6 +167,9 @@ class MenuProfile : Fragment() {
         }
 
         binding.btnbysvaed.setOnClickListener {
+            binding.btnbydate.setBackgroundResource(R.drawable.borders6)
+            binding.filterbykategori.setBackgroundResource(R.drawable.borders6)
+            binding.btnbysvaed.setBackgroundResource(R.drawable.backgroundnavigations10)
             ioScope.launch {
                 var savedMenu = vm.savedMenu(userPreference.getUser().id.toString())
                 temp = savedMenu
@@ -180,6 +202,14 @@ class MenuProfile : Fragment() {
         binding.lybar2.setOnClickListener {
 //            val stepmove = MenuProfileDirections.actionMenuProfileToMenuProfileSeeting()
 //            findNavController().navigate(stepmove)
+            startActivity(Intent(this.context, MenuProfileSettingV2::class.java))
+        }
+
+        binding.toeditdatadiri.setOnClickListener {
+            startActivity(Intent(this.context, MenuProfileSettingV2::class.java))
+        }
+
+        binding.ivUserprofiles.setOnClickListener {
             startActivity(Intent(this.context, MenuProfileSettingV2::class.java))
         }
 
