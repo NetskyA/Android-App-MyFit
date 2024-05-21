@@ -106,7 +106,7 @@ class MenuProfile : Fragment() {
                 })
             }else{
                 binding.btnbydate.setText("Oldest")
-                binding.btnbydate.setBackgroundResource(R.drawable.backgroundnavigations10)
+                binding.btnbydate.setBackgroundResource(R.drawable.borders6)
                 binding.btnbysvaed.setBackgroundResource(R.drawable.borders6)
                 binding.filterbykategori.setBackgroundResource(R.drawable.borders6)
                 vm.reset()
@@ -149,7 +149,7 @@ class MenuProfile : Fragment() {
             }else{
                 binding.filterbykategori.setText("Favorite")
                 binding.filterbykategori.setBackgroundResource(R.drawable.borders6)
-                binding.filterbykategori.setBackgroundResource(R.drawable.backgroundnavigations10)
+                binding.filterbykategori.setBackgroundResource(R.drawable.borders6)
                 binding.btnbysvaed.setBackgroundResource(R.drawable.borders6)
                 vm.reset()
                 vm.menus.observe(viewLifecycleOwner, Observer { menus ->
