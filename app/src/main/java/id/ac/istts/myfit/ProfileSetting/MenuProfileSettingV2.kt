@@ -17,6 +17,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import id.ac.istts.myfit.ChatBot.Menu_chat_bot_in_profile
 import id.ac.istts.myfit.Data.Preferences.CustomMenuPreferences
 import id.ac.istts.myfit.Data.Preferences.UserPreference
 import id.ac.istts.myfit.R
@@ -60,6 +61,7 @@ class MenuProfileSettingV2 : AppCompatActivity() {
         }
         binding.logoutFromProfileSetting.setOnClickListener {
             userPreference.clearPref()
+            Menu_chat_bot_in_profile.chatBotList.clear()
             startActivity(Intent(this,MenuSigninAll::class.java))
         }
 

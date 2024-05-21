@@ -29,7 +29,6 @@ class Menu_chat_bot_in_profile : Fragment() {
     val mainScope = CoroutineScope(Dispatchers.Main)
 
 //    var chatBotList = mutableListOf<String>("temp1","temp2","temp3","temp4","temp5")
-    var chatBotList = mutableListOf<ChatBot>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -121,5 +120,9 @@ class Menu_chat_bot_in_profile : Fragment() {
             recyclerView.scrollToPosition(chatBotList.size - 1)
         }
 
+    }
+
+    companion object{
+        var chatBotList = mutableListOf<ChatBot>()
     }
 }

@@ -11,7 +11,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/dark_grey">
+        android:background="@drawable/backgroundimage3">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -77,7 +77,7 @@
             <LinearLayout
                 android:layout_width="@dimen/_290sdp"
                 android:layout_height="@dimen/_40sdp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="7dp"
                 android:layout_gravity="center"
                 android:background="@drawable/borders4"
                 android:orientation="horizontal">
@@ -87,6 +87,8 @@
                     android:layout_width="@dimen/_240sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
                     android:layout_marginBottom="2dp"
                     android:textColorHint="@color/grey"
                     android:layout_gravity="center"

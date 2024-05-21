@@ -35,7 +35,8 @@ class ChatBotAdapter (
         holder.tvMsg.text = f.message
         if(f.side != "bot") {
             holder.chatBotLinearLayout.gravity = Gravity.RIGHT
-            holder.tvMsg.setBackgroundResource(R.drawable.borderwhites)
+            holder.tvMsg.setBackgroundResource(R.drawable.borderyellow)
+            holder.tvMsg.setTextColor(holder.tvMsg.context.resources.getColor(R.color.green_main))
         }
     }
 }
