@@ -2,18 +2,19 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_gravity="end"
-    android:layout_marginEnd="@dimen/_6sdp"
+    android:id="@+id/chatBot_FrameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/_6sdp"
-    android:layout_height="wrap_content">
+    android:layout_marginEnd="@dimen/_6sdp">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
-        android:layout_width="@dimen/_280sdp"
-        android:background="@drawable/backgroundnavigations8"
-        android:layout_height="match_parent">
+        android:id="@+id/chatBot_ConstrainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        >
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/Left"
@@ -40,6 +41,7 @@
             android:orientation="vertical" />
 
         <LinearLayout
+            android:id="@+id/innerLinearLayoutChatBot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -50,13 +52,18 @@
 
             <TextView
                 android:id="@+id/tv_send_bot"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
-                android:text="lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/backgroundnavigations10"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:text="lorem"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/Bottom"

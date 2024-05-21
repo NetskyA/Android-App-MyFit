@@ -1,3 +1,5 @@
+import com.android.build.api.variant.BuildConfigField
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -18,6 +20,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        var apiKey = project.properties["API_KEY"]
     }
 
     buildTypes {
@@ -28,6 +32,7 @@ android {
                 "proguard-rules.pro"
             )
         }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -72,7 +77,7 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC2")
     implementation("de.hdodenhof:circleimageview:3.1.0")
-
+    implementation("com.google.ai.client.generativeai:generativeai:0.6.0")
 
     // sign in with google
     implementation("com.google.android.gms:play-services-auth:21.1.0")

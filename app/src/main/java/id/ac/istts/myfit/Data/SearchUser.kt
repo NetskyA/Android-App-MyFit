@@ -15,3 +15,4 @@ data class tempUser(
 data class SearchResult(
     val searchUser: List<tempUser>
 )
+
