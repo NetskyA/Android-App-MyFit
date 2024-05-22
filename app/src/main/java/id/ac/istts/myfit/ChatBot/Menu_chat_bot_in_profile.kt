@@ -117,7 +117,7 @@ class Menu_chat_bot_in_profile : Fragment() {
                 }
             }
 
-            recyclerView.scrollToPosition(chatBotList.size - 1)
+            recyclerView.smoothScrollToPosition(chatBotList.size - 1)
         }
 
     }
