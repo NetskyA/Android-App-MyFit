@@ -72,6 +72,12 @@ class Menu_chat_bot_in_profile : Fragment() {
             }
             etChat.text.clear()
 
+            recyclerView.smoothScrollToPosition(chatBotList.size - 1)
+
+            // Hide Keyboard
+            val imm = context?.getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+
             // Bot Response
             val model = GenerativeModel(
                 "gemini-1.5-flash-latest",
@@ -114,10 +120,9 @@ class Menu_chat_bot_in_profile : Fragment() {
                     val id = chatBotList.last().id + 1
                     chatBotList.add(ChatBot(id= id,side = "bot", message = response))
                     recyclerView.adapter?.notifyItemInserted(chatBotList.size)
+                    recyclerView.smoothScrollToPosition(chatBotList.size - 1)
                 }
             }
-
-            recyclerView.smoothScrollToPosition(chatBotList.size - 1)
         }
 
     }
