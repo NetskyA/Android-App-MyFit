@@ -39,7 +39,7 @@
             android:id="@+id/lybar"
             android:layout_width="@dimen/_141sdp"
             android:layout_height="@dimen/_140sdp"
-            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/backgroundnavigations3"

@@ -74,9 +74,9 @@ class SearchUserProfile : Fragment() {
                     if(user.image!=""){
                         binding.searchUserProfileIvUserProfile.setImageBitmap(decodeBase64ToBitmap(user.image.toString()))
                     }
-                    binding.searchUserProfileTvFavorite.setText(fav.toString()+" Favorite")
+                    binding.searchUserProfileTvFavorite.setText(fav.toString())
 
-                    binding.searchUserProfileTvCountCreated.setText(menus.size.toString()+" Post")
+                    binding.searchUserProfileTvCountCreated.setText(menus.size.toString())
 
                     detailUserMenuAdapter = MenuProfileAdapter(ArrayList(menus), onDetailClickListener = {
                         val intent = Intent(requireContext(), MenuFeedOpened::class.java).apply {
@@ -92,6 +92,8 @@ class SearchUserProfile : Fragment() {
 
         binding.searchUserProfileBtnFilterRecent.setOnClickListener {
             if(binding.searchUserProfileBtnFilterRecent.text=="Oldest"){
+                binding.searchUserProfileBtnFilterKategori.setBackgroundResource(R.drawable.borders6)
+                binding.searchUserProfileBtnFilterRecent.setBackgroundResource(R.drawable.backgroundnavigations10)
                 binding.searchUserProfileBtnFilterRecent.setText("Newest")
                 binding.searchUserProfileBtnFilterKategori.setText(("Favorite"))
                 ioScope.launch {
@@ -108,6 +110,9 @@ class SearchUserProfile : Fragment() {
                 }
             }else{
                 binding.searchUserProfileBtnFilterRecent.setText("Oldest")
+                binding.searchUserProfileBtnFilterKategori.setBackgroundResource(R.drawable.borders6)
+                binding.searchUserProfileBtnFilterRecent.setBackgroundResource(R.drawable.borders6)
+
                 detailUserMenuAdapter = MenuProfileAdapter(ArrayList(menus), onDetailClickListener = {
                     val intent = Intent(requireContext(), MenuFeedOpened::class.java).apply {
                         putExtra("Menu_ID", it.id.toString())
@@ -120,6 +125,8 @@ class SearchUserProfile : Fragment() {
 
         binding.searchUserProfileBtnFilterKategori.setOnClickListener {
             if(binding.searchUserProfileBtnFilterKategori.text=="Favorite"){
+                binding.searchUserProfileBtnFilterKategori.setBackgroundResource(R.drawable.backgroundnavigations10)
+                binding.searchUserProfileBtnFilterRecent.setBackgroundResource(R.drawable.borders6)
                 binding.searchUserProfileBtnFilterKategori.setText("Reset")
                 binding.searchUserProfileBtnFilterRecent.setText(("Oldest"))
                 ioScope.launch {
@@ -136,6 +143,8 @@ class SearchUserProfile : Fragment() {
                 }
             }else{
                 binding.searchUserProfileBtnFilterKategori.setText("Favorite")
+                binding.searchUserProfileBtnFilterKategori.setBackgroundResource(R.drawable.borders6)
+                binding.searchUserProfileBtnFilterRecent.setBackgroundResource(R.drawable.borders6)
                 detailUserMenuAdapter = MenuProfileAdapter(ArrayList(menus), onDetailClickListener = {
                     val intent = Intent(requireContext(), MenuFeedOpened::class.java).apply {
                         putExtra("Menu_ID", it.id.toString())
@@ -159,7 +168,7 @@ class SearchUserProfile : Fragment() {
                 var tempMenu = vm.getUserMenu(userId)
                 var tempFav = vm.countFav(tempMenu)
                 mainScope.launch {
-                    binding.searchUserProfileTvFavorite.setText(tempFav.toString()+" Favorite")
+                    binding.searchUserProfileTvFavorite.setText(tempFav.toString())
                 }
             }
         }

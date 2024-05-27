@@ -30,7 +30,7 @@
                     android:id="@+id/uploadimagemenucustoms"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_140sdp"
-                    android:background="#373737"
+                    android:background="#80CC28"
                     android:src="@drawable/galerry"
                     android:scaleType="fitCenter"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -38,13 +38,13 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <EditText
                 android:id="@+id/etNamaMenuCustoms"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 android:textColor="@color/white"
                 android:hint="Avocado Juice*"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginLeft="@dimen/_4sdp"
                 android:layout_marginRight="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_3sdp"

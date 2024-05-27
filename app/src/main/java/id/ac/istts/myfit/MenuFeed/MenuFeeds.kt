@@ -58,6 +58,7 @@ class MenuFeeds : Fragment() {
         var temp:MutableList<RandomMenu> = mutableListOf()
         val searchView = binding.svSearch
 
+/*
         val searchTextId = searchView.context.resources.getIdentifier("android:id/search_src_text", null, null)
         val searchText = searchView.findViewById<TextView>(searchTextId)
         searchText.setTextColor(ContextCompat.getColor(requireContext(), R.color.white)) // Warna hijau
@@ -70,6 +71,7 @@ class MenuFeeds : Fragment() {
         val closeIconId = searchView.context.resources.getIdentifier("android:id/search_close_btn", null, null)
         val closeIcon = searchView.findViewById<ImageView>(closeIconId)
         closeIcon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.white), PorterDuff.Mode.SRC_IN)
+*/
 
         recyclerViewContent = binding.rvFeedcontent
         layoutManagerContent = GridLayoutManager(context, 2)

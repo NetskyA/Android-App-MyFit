@@ -127,7 +127,7 @@
 
                         <TextView
                             android:id="@+id/tvTitleMFO"
-                            android:layout_width="@dimen/_245sdp"
+                            android:layout_width="@dimen/_240sdp"
                             android:layout_height="wrap_content"
                             android:paddingStart="@dimen/_5sdp"
                             android:textColor="@color/green_main"
