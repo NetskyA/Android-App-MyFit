@@ -41,7 +41,11 @@ class MenuFeedOpened : AppCompatActivity() {
 
         val menuId = intent.getStringExtra("Menu_ID")
 //        Log.d("MenuID", menuId.toString())
-        binding.profileMFO.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+        try{
+            binding.profileMFO.setImageBitmap(decodeBase64ToBitmap(userPreference.getUser().image.toString()))
+        }catch(ex: Exception){
+
+        }
         var tempMenu = Menu()
         var username = ""
         ioScope.launch {
